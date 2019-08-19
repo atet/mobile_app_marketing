@@ -1,0 +1,16 @@
+https://opengameart.org/content/superpowers-assets-sound-effects
+
+Sound effects from Sparklin Labs' Superpowers HTML5 game maker.  
+
+Superpowers has a variety of free assets: 2D sprites, backgrounds, 3D models, sound effects, music, and animations. This is just the sound effects, but I'll be uploading the other assets: http://opengameart.org/content/superpowers-asset-packs
+
+They make periodic updates to thier asset packs. You can always find the latest version of the full asset pack at https://github.com/sparklinlabs/superpowers-asset-packs 
+
+Copyright/Attribution Notice: 
+Creative Commons Zero: http://creativecommons.org/publicdomain/zero/1.0/ Attribution is not required but appreciated. Placing a link to http://superpowers-html5.com/ somewhere would be awesome :)
+File(s): 
+superpowers-asset-packs-soundeffects.zip superpowers-asset-packs-soundeffects.zip 13.4 Mb [1409 download(s)]
+
+License(s): 
+
+CC0
