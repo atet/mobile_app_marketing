@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainCamera : MonoBehaviour
+public class CameraControl : MonoBehaviour
 {
     Vector3 touchStart;
 
