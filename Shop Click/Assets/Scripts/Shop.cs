@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Shop : MonoBehaviour
 {
+
+    [SerializeField] Button buttonRebate;
+    [SerializeField] Button buttonUpcharge;
+    [SerializeField] Button buttonSuggest;
+
+
+
     private const int chakraSuggestCost = 30; private const int chakraRebateGain = 20; private const int chakraUpchargeCost = 40; 
     [SerializeField] TextMeshProUGUI tMProSuggest, tMProRebate, tMProUpcharge;
     public void UpdateTMProSuggest(){ tMProSuggest.text = "-" + chakraSuggestCost.ToString() + "%"; }
@@ -21,22 +29,50 @@ public class Shop : MonoBehaviour
     public void AddChakraRefuse(int addChakraRefuse){ chakraRefuse += addChakraRefuse; UpdateTMProRefuse(); }
     public void ResetChakraRefuse(){ chakraRefuse = 0; UpdateTMProRefuse(); }
 
-    [SerializeField] TextMeshProUGUI tMProSell;
-    public void UpdateTMProSell(){ tMProSell.text = sellGain.ToString("N0"); }
-    private ulong sellGain;
-    public ulong GetSellGain(){ return(sellGain); }
-    public void SetSellGain(ulong setSellGain){ sellGain = setSellGain; UpdateTMProSell(); }
-    public void RebateSellGain(){ SetSellGain( (ulong)Mathf.RoundToInt(GetSellGain() / 2) ); }
-    public void UpchargeSellGain(){ SetSellGain( GetSellGain() * 2 ); }
+    [SerializeField] TextMeshProUGUI tMProSellCoins;
+    public void UpdateTMProSellCoins(){ tMProSellCoins.text = "+" + sellGainCoins.ToString("N0"); }
+    private ulong sellGainCoins;
+    public ulong GetSellGainCoins(){ return(sellGainCoins); }
+    public void SetSellGainCoins(ulong setSellGainCoins){ sellGainCoins = setSellGainCoins; UpdateTMProSellCoins(); }
+    public void RebateSellGainCoins(){ SetSellGainCoins( (ulong)Mathf.RoundToInt(GetSellGainCoins() / 2) ); }
+    public void UpchargeSellGainCoins(){ SetSellGainCoins( GetSellGainCoins() * 2 ); }
+
+
+    [SerializeField] TextMeshProUGUI tMProSellChakra;
+    public void UpdateTMProSellChakra(){ tMProSellChakra.text = "+" + sellGainChakra.ToString() + "%"; }
+    private int sellGainChakra = 1;
+    public void AddSellGainChakra(int addSellGainChakra){ sellGainChakra += addSellGainChakra; UpdateTMProSellChakra(); }
+
+
+
+    private ulong countSales;
+    public ulong GetCountSales(){ return(countSales); }
+    public void SetCountSales(ulong setCountSales){ countSales = setCountSales; }
+    public void IncrementCountSales(){ countSales += 1; }
+
+    private ulong countRefusals;
+    public ulong GetCountRefusals(){ return(countRefusals); }
+    public void SetCountRefusals(ulong setCountRefusals){ countRefusals = setCountRefusals; }
+    public void IncrementCountRefusals(){ countRefusals += 1; }
+
 
     // Start is called before the first frame update
     void Start()
     {
+        // New game.
+        SetCountSales(0);
+        SetCountRefusals(0);
+
+
+
+        UpdateTMProSellChakra();
         UpdateTMProSuggest();
         UpdateTMProRebate();
         UpdateTMProUpcharge();
         AddChakraRefuse(0);
-        SetSellGain(1000);
+        
+        // First customer.
+        NextCustomer();
     }
 
     // Update is called once per frame
@@ -50,6 +86,10 @@ public class Shop : MonoBehaviour
         if(Global.instance.CheckChakra(chakraSuggestCost)){
             Global.instance.RemoveChakra(chakraSuggestCost);
             
+
+            // Disable buttons.
+            ButtonDisable(buttonSuggest);
+
             // Change chakra cost for refusing
             AddChakraRefuse(chakraSuggestCost);
             
@@ -61,7 +101,12 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Pressed Rebate...");
         Global.instance.AddChakra(chakraRebateGain);
-        RebateSellGain();
+        RebateSellGainCoins();
+
+        // Disable buttons.
+        ButtonDisable(buttonRebate);
+        ButtonDisable(buttonUpcharge);
+        ButtonDisable(buttonSuggest);
 
         // Change chakra cost for refusing
         AddChakraRefuse(-chakraRebateGain);
@@ -71,7 +116,13 @@ public class Shop : MonoBehaviour
         Debug.Log("Pressed Upcharge...");
         if(Global.instance.CheckChakra(chakraUpchargeCost)){
             Global.instance.RemoveChakra(chakraUpchargeCost);
-            UpchargeSellGain();
+            UpchargeSellGainCoins();
+
+            // Disable buttons.
+            ButtonDisable(buttonRebate);
+            ButtonDisable(buttonUpcharge);
+            ButtonDisable(buttonSuggest);
+
 
             // Change chakra cost for refusing
             AddChakraRefuse(chakraUpchargeCost);
@@ -80,10 +131,16 @@ public class Shop : MonoBehaviour
     public void OnPressSell()
     {
         Debug.Log("Pressed Sell...");
-        Global.instance.AddCoins(GetSellGain());
+        Global.instance.AddCoins(GetSellGainCoins());
+
+        // Gain a bit of chakra from sale
+        Global.instance.AddChakra(sellGainChakra);
 
         // Reset Chakra for refuse to 0.
         ResetChakraRefuse();
+
+        // Increment sales count.
+        IncrementCountSales();
 
 
         NextCustomer();
@@ -95,6 +152,9 @@ public class Shop : MonoBehaviour
         // Reset Chakra for refuse to 0.
         ResetChakraRefuse();
 
+        // Increment refusal count.
+        IncrementCountRefusals();
+
         NextCustomer();
     }
 
@@ -103,7 +163,23 @@ public class Shop : MonoBehaviour
         Debug.Log("Next customer...");
 
 
+        // Reset buttons.
+        ButtonEnable(buttonRebate);
+        ButtonEnable(buttonUpcharge);
+        ButtonEnable(buttonSuggest);
+
         // Go to next person (simulate).
-        SetSellGain(1000);
+        SetSellGainCoins(1000);
+    }
+
+
+
+    public void ButtonEnable(Button button)
+    {
+        button.interactable = true;
+    }
+    public void ButtonDisable(Button button)
+    {
+        button.interactable = false;
     }
 }
