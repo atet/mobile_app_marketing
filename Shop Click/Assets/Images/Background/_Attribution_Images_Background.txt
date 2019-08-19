@@ -1,0 +1,27 @@
+The assets in this repository are created at Sparklin Labs by Pixel-boy: https://twitter.com/2pblog1
+Their creation is funded by your support on Patreon (http://patreon.com/SparklinLabs) and through donations (http://sparklinlabs.itch.io/superpowers) Thanks!
+
+Originally downloaded from https://github.com/sparklinlabs/superpowers-asset-packs
+
+Attribution/Licensing:
+	Creative Commons Zero: http://creativecommons.org/publicdomain/zero/1.0/
+	Attribution is not required but appreciated. Placing a link to http://superpowers-html5.com/ somewhere would be awesome :)
+
+Also available at http://opengameart.org/content/superpowers-assets-background-elements
+
+https://opengameart.org/content/superpowers-assets-background-elements
+
+Background elements from Sparklin Labs' Superpowers HTML5 game maker. 
+
+Superpowers has a variety of free assets: 2D sprites, backgrounds, 3D models, sound effects, music, and animations. This is just the background elements, but I'll be uploading the other assets: http://opengameart.org/content/superpowers-asset-packs
+
+They make periodic updates to thier asset packs. You can always find the latest version of the full asset pack at https://github.com/sparklinlabs/superpowers-asset-packs
+
+Copyright/Attribution Notice: 
+Creative Commons Zero: http://creativecommons.org/publicdomain/zero/1.0/ Attribution is not required but appreciated. Placing a link to http://superpowers-html5.com/ somewhere would be awesome :)
+File(s): 
+superpowers-asset-packs-background-elements.zip superpowers-asset-packs-background-elements.zip 2.5 Mb [2389 download(s)]
+
+License(s): 
+
+CC0
