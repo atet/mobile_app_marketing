@@ -36,20 +36,7 @@ public class Global : MonoBehaviour
     private int chakra;
     public void SetChakra(int setChakra){ chakra = setChakra; UpdateTMProChakra(); }
     public void AddChakra(int addChakra){ if((chakra + addChakra) >= 100 ){ chakra = 100; }else{ chakra += addChakra; } UpdateTMProChakra(); Debug.Log("AddChakra(" + addChakra.ToString() + ") = " + chakra.ToString()); }
-    public bool CheckChakra(int removeChakra)
-    { 
-        Debug.Log("Checking Chakra amount...");
-        if(removeChakra <= chakra)
-        { 
-            Debug.Log("...enough chakra.");
-            return(true); 
-        } 
-        else 
-        { 
-            Debug.Log("...not enough chakra.");
-            return(false); 
-        } 
-    }
+    public bool CheckChakra(int removeChakra){ Debug.Log("Checking Chakra amount..."); if(removeChakra <= chakra){ Debug.Log("...enough chakra."); return(true); }else{ Debug.Log("...not enough chakra."); return(false); } }
     public void RemoveChakra(int removeChakra){ chakra -= removeChakra; UpdateTMProChakra(); Debug.Log("RemoveChakra(" + removeChakra.ToString() + ") = " + chakra.ToString()); }
     
 
@@ -61,6 +48,12 @@ public class Global : MonoBehaviour
     private int inventoryTotalCount;
     public int GetInventoryTotalCount(){ return(inventoryTotalCount); }
     public void SetInventoryTotalCount(int addInventoryTotalCount){ inventoryTotalCount += addInventoryTotalCount; }
+
+
+
+
+
+
 
 
     void Start()
