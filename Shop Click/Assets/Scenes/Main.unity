@@ -1205,6 +1205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1348041706}
+  - {fileID: 575651519}
   - {fileID: 1816412437}
   - {fileID: 1494828932}
   - {fileID: 1497494822}
@@ -1579,7 +1580,7 @@ RectTransform:
   - {fileID: 1368393686}
   - {fileID: 910157993}
   m_Father: {fileID: 555802671}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3497,8 +3498,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 645151401}
   - {fileID: 257182451}
+  - {fileID: 645151401}
   - {fileID: 890795614}
   - {fileID: 462266243}
   m_Father: {fileID: 519420032}
@@ -3569,6 +3570,61 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &575651518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 575651519}
+  - component: {fileID: 575651520}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &575651519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575651518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 122043202}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &575651520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575651518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0354ac4af37c61b4c870d831b8ceee7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 910157994}
+  coins: {fileID: 1044299088}
+  chakra: {fileID: 2024171172}
+  gems: {fileID: 1365969297}
+  iron: {fileID: 1443172582}
+  hide: {fileID: 501591186}
+  wood: {fileID: 506249012}
+  herbs: {fileID: 1929351153}
+  steel: {fileID: 126495656}
+  oil: {fileID: 1306876932}
+  electricity: {fileID: 1490716626}
+  titanium: {fileID: 401481714}
 --- !u!1 &605998422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4031,7 +4087,7 @@ RectTransform:
   - {fileID: 1022560622}
   - {fileID: 1044299087}
   m_Father: {fileID: 555802671}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6570,9 +6626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ada5ba7a5bd0e42bc4d3e2c92cb1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tMProLevel: {fileID: 910157994}
-  tMProCoins: {fileID: 1044299088}
-  tMProChakra: {fileID: 2024171172}
 --- !u!4 &1348041706
 Transform:
   m_ObjectHideFlags: 0
@@ -7197,7 +7250,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 122043202}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1490716624
 GameObject:
@@ -7386,7 +7439,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 122043202}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1494828933
 MonoBehaviour:
@@ -7429,7 +7482,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 122043202}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1497494823
 MonoBehaviour:
@@ -9287,7 +9340,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 122043202}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1816412438
 MonoBehaviour:
@@ -10988,7 +11041,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 122043202}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2064429376
 MonoBehaviour:
@@ -11002,14 +11055,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f302b1083180c324b9f1d11fe72603d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tMProIron: {fileID: 1443172582}
-  tMProHide: {fileID: 501591186}
-  tMProWood: {fileID: 506249012}
-  tMProHerbs: {fileID: 1929351153}
-  tMProSteel: {fileID: 126495656}
-  tMProOil: {fileID: 1306876932}
-  tMProElectricity: {fileID: 1490716626}
-  tMProTitanium: {fileID: 401481714}
 --- !u!1 &2104171300
 GameObject:
   m_ObjectHideFlags: 0
