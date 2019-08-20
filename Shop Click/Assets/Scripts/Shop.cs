@@ -11,6 +11,7 @@ public class Shop : MonoBehaviour
     [SerializeField] TextMeshProUGUI tMProStock;
     public void UpdateTMProStock(){ tMProStock.text = Inventory.instance.GetStock().ToString(); }
 
+    // Need to bring buttons in to disable them.
     [SerializeField] Button buttonRebate;
     [SerializeField] Button buttonUpcharge;
     [SerializeField] Button buttonSuggest;
