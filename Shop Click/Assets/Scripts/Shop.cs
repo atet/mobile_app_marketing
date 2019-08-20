@@ -7,6 +7,10 @@ using TMPro;
 public class Shop : MonoBehaviour
 {
 
+
+    [SerializeField] TextMeshProUGUI tMProStock;
+    public void UpdateTMProStock(){ tMProStock.text = Inventory.instance.GetStock().ToString(); }
+
     [SerializeField] Button buttonRebate;
     [SerializeField] Button buttonUpcharge;
     [SerializeField] Button buttonSuggest;
@@ -131,19 +135,27 @@ public class Shop : MonoBehaviour
     public void OnPressSell()
     {
         Debug.Log("Pressed Sell...");
-        Global.instance.AddCoins(GetSellGainCoins());
 
-        // Gain a bit of chakra from sale
-        Global.instance.AddChakra(sellGainChakra);
+        if(Inventory.instance.CheckStock(1)){
+            Debug.Log("1");
+            Global.instance.AddCoins(GetSellGainCoins());
 
-        // Reset Chakra for refuse to 0.
-        ResetChakraRefuse();
+            // Gain a bit of chakra from sale
+            Global.instance.AddChakra(sellGainChakra);
 
-        // Increment sales count.
-        IncrementCountSales();
+            // Reset Chakra for refuse to 0.
+            ResetChakraRefuse();
+
+            // Increment sales count.
+            IncrementCountSales();
+
+            // Remove stock.
+            Inventory.instance.RemoveStock(1);
+
+            NextCustomer();
+        }
 
 
-        NextCustomer();
     }
     public void OnPressRefuse(){
         Debug.Log("Pressed Refuse...");
@@ -168,12 +180,16 @@ public class Shop : MonoBehaviour
         ButtonEnable(buttonUpcharge);
         ButtonEnable(buttonSuggest);
 
+        // Check Stock.
+        UpdateTMProStock();
+
         // Go to next person (simulate).
-        SetSellGainCoins(1000);
+        SetSellGainCoins(Inventory.instance.GetValue());
     }
 
 
 
+    // Helper functions, move to their own script
     public void ButtonEnable(Button button)
     {
         button.interactable = true;
