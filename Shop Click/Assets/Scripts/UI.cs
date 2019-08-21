@@ -10,7 +10,7 @@ public class UI : MonoBehaviour
     [SerializeField] public TextMeshProUGUI coins;
     public void UpdateCoins(){ coins.text = Global.instance.GetCoins().GetAmount().ToString("N0"); }
     [SerializeField] public TextMeshProUGUI chakra;
-    public void UpdateChakra(){ chakra.text = Global.instance.GetChakra().GetAmount().ToString("N0"); }
+    public void UpdateChakra(){ chakra.text = Global.instance.GetChakra().GetAmount().ToString("N0") + "%"; }
     [SerializeField] public TextMeshProUGUI gems;
     public void UpdateGems(){ gems.text = Global.instance.GetGems().GetAmount().ToString("N0"); }
 

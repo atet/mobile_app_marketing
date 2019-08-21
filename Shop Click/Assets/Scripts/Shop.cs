@@ -6,8 +6,6 @@ using TMPro;
 
 public class Shop : MonoBehaviour
 {
-
-
     [SerializeField] public TextMeshProUGUI tMProStock;
     public void UpdateTMProStock(){ tMProStock.text = Inventory.instance.GetStock().ToString(); }
 
@@ -82,13 +80,11 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Pressed Suggest...");
 
-       
-
         if(Global.instance.GetChakra().CheckAmount(chakraSuggestCost)){
             Global.instance.GetChakra().RemoveAmount(chakraSuggestCost);
             
             // Disable buttons.
-            ButtonDisable(buttonSuggest);
+            Helper.ButtonDisable(buttonSuggest);
 
             // Change chakra cost for refusing
             AddChakraRefuse(chakraSuggestCost);
@@ -105,9 +101,9 @@ public class Shop : MonoBehaviour
         RebateSellGainCoins();
 
         // Disable buttons.
-        ButtonDisable(buttonRebate);
-        ButtonDisable(buttonUpcharge);
-        ButtonDisable(buttonSuggest);
+        Helper.ButtonDisable(buttonRebate);
+        Helper.ButtonDisable(buttonUpcharge);
+        Helper.ButtonDisable(buttonSuggest);
 
         // Change chakra cost for refusing
         RemoveChakraRefuse(chakraRebateGain);
@@ -120,9 +116,9 @@ public class Shop : MonoBehaviour
             UpchargeSellGainCoins();
 
             // Disable buttons.
-            ButtonDisable(buttonRebate);
-            ButtonDisable(buttonUpcharge);
-            ButtonDisable(buttonSuggest);
+            Helper.ButtonDisable(buttonRebate);
+            Helper.ButtonDisable(buttonUpcharge);
+            Helper.ButtonDisable(buttonSuggest);
 
             // Change chakra cost for refusing
             AddChakraRefuse(chakraUpchargeCost);
@@ -150,8 +146,6 @@ public class Shop : MonoBehaviour
 
             NextCustomer();
         }
-
-
     }
     public void OnPressRefuse(){
         Debug.Log("Pressed Refuse...");
@@ -180,9 +174,9 @@ public class Shop : MonoBehaviour
         Debug.Log("Next customer...");
 
         // Reset buttons.
-        ButtonEnable(buttonRebate);
-        ButtonEnable(buttonUpcharge);
-        ButtonEnable(buttonSuggest);
+        Helper.ButtonEnable(buttonRebate);
+        Helper.ButtonEnable(buttonUpcharge);
+        Helper.ButtonEnable(buttonSuggest);
 
         // Check Stock.
         UpdateTMProStock();
@@ -191,15 +185,4 @@ public class Shop : MonoBehaviour
         SetSellGainCoins(Inventory.instance.GetValue());
     }
 
-
-
-    // Helper functions, move to their own script
-    public void ButtonEnable(Button button)
-    {
-        button.interactable = true;
-    }
-    public void ButtonDisable(Button button)
-    {
-        button.interactable = false;
-    }
 }
