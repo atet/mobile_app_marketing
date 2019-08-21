@@ -6,6 +6,8 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
 
+    private Item[] items;
+
     private int stock;
     public int GetStock(){ return(stock); }
     public void SetStock(int setStock){ stock = setStock; }
@@ -24,6 +26,9 @@ public class Inventory : MonoBehaviour
         instance = this;
         SetStock(10);
         SetValue(100);
+
+        string filePath = "Data/shop_click_values_SHORT";
+        readValues(filePath);
     }
 
     // Update is called once per frame
@@ -31,4 +36,14 @@ public class Inventory : MonoBehaviour
     {
         
     }
+
+    public void readValues(string filePath)
+    {
+        Debug.Log("Before JSON read.");
+        TextAsset jsonTextFile = Resources.Load<TextAsset>(filePath);
+        items = Helper.FromJson<Item>(jsonTextFile.ToString());
+        Debug.Log("After JSON read.");
+        Debug.Log("items[0].GetStock() = " + items[0].GetStock());
+    }
+
 }

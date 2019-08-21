@@ -2,62 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item
+[System.Serializable] public class Item
 {
-    private string name;
-    private string type;
-    private string prerequsiteUnlock;
-    private string prerequsiteUnlockCostResearchScrolls;
-    private int tier;
-    private ulong value;
-    private int timeCrafting;
-    private ulong xPMerchant;
-    private ulong xPWorker;
-    private string prerequisiteWorker1;
-    private int prerequisiteWorker1Level;
-    private string prerequisiteWorker2;
-    private int prerequisiteWorker2Level;
-    private ulong costIron;
-    private ulong costWood;
-    private ulong costHide;
-    private ulong costHerbs;
-    private ulong costSteel;
-    private ulong costTitanium;
-    private ulong costElectricity;
-    private ulong costOil;
-    private string costComponent1Name;
-    private string costComponent1Quality;
-    private ulong costComponent1;
-    private string costComponent2Name;
-    private string costComponent2Quality;
-    private ulong costComponent2;
-    private int statATK;
-    private int statDEF;
-    private int statHP;
-    private string upgradeCrafting1;
-    private int upgradeCrafting1Count;
-    private string upgradeCrafting2;
-    private int upgradeCrafting2Count;
-    private string upgradeCrafting3;
-    private int upgradeCrafting3Count;
-    private string upgradeCrafting4;
-    private int upgradeCrafting4Count;
-    private string upgradeCrafting5;
-    private int upgradeCrafting5Count;
-    private string upgradeAscension1;
-    private int upgradeAscension1Cost;
-    private string upgradeAscension2;
-    private int upgradeAscension2Cost;
-    private string upgradeAscension3;
-    private int upgradeAscension3Cost;
-    private int energyDiscount;
-    private int energySurcharge;
-    private int energySuggest;
-    private int energySpeedUp;
+    public string name;
+    public string category;
+    public string filepathImage;
+    public string prerequsiteUnlock;
+    public string prerequsiteUnlockCostResearchScrolls;
+    public string tier;
+    public int value;
+    public string timeCrafting;
+    public string xPMerchant;
+    public string xPWorker;
+    public string prerequisiteWorker1;
+    public string prerequisiteWorker1Level;
+    public string prerequisiteWorker2;
+    public string prerequisiteWorker2Level;
+    public string costIron;
+    public string costWood;
+    public string costHide;
+    public string costHerbs;
+    public string costSteel;
+    public string costTitanium; 
+    public string costElectricity;
+    public string costOil;
+    public string costComponent1Name; 
+    public string costComponent1Quality; 
+    public string costComponent1; 
+    public string costComponent2Name; 
+    public string costComponent2Quality; 
+    public string costComponent2; 
+    public string statATK; 
+    public string statDEF; 
+    public string statHP; 
+    public string upgradeCrafting1;
+    public string upgradeCrafting1Count; 
+    public string upgradeCrafting2;
+    public string upgradeCrafting2Count; 
+    public string upgradeCrafting3; 
+    public string upgradeCrafting3Count; 
+    public string upgradeCrafting4; 
+    public string upgradeCrafting4Count; 
+    public string upgradeCrafting5;
+    public string upgradeCrafting5Count; 
+    public string upgradeAscension1; 
+    public string upgradeAscension1Cost; 
+    public string upgradeAscension2; 
+    public string upgradeAscension2Cost; 
+    public string upgradeAscension3; 
+    public string upgradeAscension3Cost; 
+    public string energyDiscount;
+    public string energySurcharge; 
+    public string energySuggest;
+    public string energySpeedUp;
 
+    private int stock; public int GetStock(){ return(stock); }
 
     public Item()
     {
-        
+        stock = 0;
     }
 }
