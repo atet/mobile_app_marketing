@@ -62,7 +62,8 @@ using UnityEngine;
     private int stock;
     public int GetStock(){ return(stock); }
     public void SetStock(int stock){ this.stock = stock; }
-    public bool CheckStock(){ if(stock <= 0){ return(false); } else { return(true); }}
+    public bool CheckStock(int stock){ if(stock <= this.stock){ return(true); } else { return(false); }}
+    public void AddStock(int stock){ this.stock += stock; }
     public int lifetimeCrafted;
     public void CraftItem(){ stock += 1; lifetimeCrafted += 1; }
     public int lifetimeSold;

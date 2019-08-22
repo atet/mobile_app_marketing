@@ -6,6 +6,8 @@ public class Global : MonoBehaviour
 {
     public static Global instance;
 
+    public Random rnd = new Random();
+
     Dictionary<string, Resource> stats; public Dictionary<string, Resource> GetStats(){ return(stats); }
     Dictionary<string, Resource> resources; public Dictionary<string, Resource> GetResources(){ return(resources); }
     Dictionary<string, Item> inventory; public Dictionary<string, Item> GetInventory(){ return(inventory); }
@@ -17,6 +19,8 @@ public class Global : MonoBehaviour
         InitStats();
         InitResources();
         InitInventory();
+        inventory["Wood Bow"].SetStock(5);
+        inventory["Wood Dagger"].SetStock(5);
     }
 
 
@@ -64,6 +68,20 @@ public class Global : MonoBehaviour
             inventory.Add(items[i].name, items[i]);
             // Debug.Log(items[i].name);
         }
+    }
+    public Item RandomItem()
+    {
+        // Returns a random item from the inventory.
+        // Will make this more elaborate later (only return things in stock or mixed, etc.).
+
+        // https://stackoverflow.com/a/1028238
+        List<string> keyList = new List<string>(inventory.Keys);
+
+        int randomInt = Random.Range(0, inventory.Count);
+        Debug.Log("Radom Int: " + randomInt);
+        string randomKey = keyList[randomInt];
+
+        return(inventory[randomKey]);
     }
 }
 

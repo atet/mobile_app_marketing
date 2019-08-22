@@ -6,22 +6,22 @@ using TMPro;
 
 public class Shop : MonoBehaviour
 {
+    private Item currentItem;
+
     [SerializeField] public TextMeshProUGUI tMProStock;
-    public void UpdateTMProStock(){ tMProStock.text = Inventory.instance.GetStock().ToString(); }
+    public void UpdateTMProStock(){ tMProStock.text = currentItem.GetStock().ToString(); }
+
 
     // Need to bring buttons in to disable them.
     [SerializeField] public Button buttonRebate;
     [SerializeField] public Button buttonUpcharge;
     [SerializeField] public Button buttonSuggest;
 
-    private const int chakraSuggestCost = 30; private const int chakraRebateGain = 20; private const int chakraUpchargeCost = 40; 
+    private int chakraSuggestCost; private int chakraRebateGain; private int chakraUpchargeCost; 
     [SerializeField] public TextMeshProUGUI tMProSuggest, tMProRebate, tMProUpcharge;
     public void UpdateTMProSuggest(){ tMProSuggest.text = "-" + chakraSuggestCost.ToString() + "%"; }
     public void UpdateTMProRebate(){ tMProRebate.text = "+" + chakraRebateGain.ToString() + "%"; }
     public void UpdateTMProUpcharge(){ tMProUpcharge.text = "-" + chakraUpchargeCost.ToString() + "%"; }
-    //public int GetChakraSuggestCost(){ return(chakraSuggestCost); }
-    //public int GetChakraRebateGain(){ return(chakraRebateGain); }
-    //public int GetChakraUpchargeCost(){ return(chakraUpchargeCost); }
 
     [SerializeField] public TextMeshProUGUI tMProRefuse;
     public void UpdateTMProRefuse(){ if(chakraRefuse >= 0){ tMProRefuse.text = "+" + chakraRefuse.ToString() + "%"; }else{ tMProRefuse.text = chakraRefuse.ToString() + "%"; } }
@@ -54,19 +54,30 @@ public class Shop : MonoBehaviour
     public void SetCountRefusals(ulong setCountRefusals){ countRefusals = setCountRefusals; }
     public void IncrementCountRefusals(){ countRefusals += 1; }
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] public SpriteRenderer spriteRendererItem;
+    public void UpdateSpriteItem(){ 
+        
+        //Debug.Log(currentItem.filepathImage);
+        spriteRendererItem.sprite = Resources.Load<Sprite>(currentItem.filepathImage); }
+
+    [SerializeField] public TextMeshProUGUI tMProDialog;
+    public void UpdateTMProDialog(){ tMProDialog.text = "NPC: I would like to buy a " + currentItem.name + "."; }
+
+
+    void Awake()
     {
-        // New game.
+        // Lifetime stats, should be put somewhere else when implementing save game.
         SetCountSales(0);
         SetCountRefusals(0);
 
-        UpdateTMProSellChakra();
-        UpdateTMProSuggest();
-        UpdateTMProRebate();
-        UpdateTMProUpcharge();
-        AddChakraRefuse(0);
-        
+        chakraSuggestCost = 30;
+        chakraRebateGain = 20;
+        chakraUpchargeCost = 40;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
         // First customer.
         NextCustomer();
     }
@@ -76,14 +87,50 @@ public class Shop : MonoBehaviour
     {
     }
 
+    public void NextCustomer(){
+        Debug.Log("Next customer...");
+
+        // Pick random item from inventory.
+        currentItem = Global.instance.RandomItem();
+        Debug.Log(currentItem.name);
+        // Update Item Sprite.
+        UpdateSpriteItem();
+
+
+        // Update values on all buttons.
+        UpdateTMProSellChakra();
+        UpdateTMProSuggest();
+        UpdateTMProRebate();
+        UpdateTMProUpcharge();
+        ResetChakraRefuse();
+
+
+        // Reset buttons.
+        Helper.ButtonEnable(buttonRebate);
+        Helper.ButtonEnable(buttonUpcharge);
+        Helper.ButtonEnable(buttonSuggest);
+
+        // Check Stock.
+        UpdateTMProStock();
+
+        // Update customer dialog.
+        UpdateTMProDialog();
+
+        // Set value for this transaction.
+        SetSellGainCoins(currentItem.value);
+    }
+
+
+
+
     public void OnPressSuggest()
     {
         Debug.Log("Pressed Suggest...");
 
         
 
-        if(Global.instance.GetStats()["Chakra"].CheckAmount(chakraSuggestCost)){
-            Global.instance.GetStats()["Chakra"].RemoveAmount(chakraSuggestCost);
+        if(Global.instance.GetStats()["Chakra"].CheckAmount((ulong)chakraSuggestCost)){
+            Global.instance.GetStats()["Chakra"].RemoveAmount((ulong)chakraSuggestCost);
             
             // Disable buttons.
             Helper.ButtonDisable(buttonSuggest);
@@ -98,7 +145,7 @@ public class Shop : MonoBehaviour
     public void OnPressRebate()
     {
         Debug.Log("Pressed Rebate...");
-        Global.instance.GetStats()["Chakra"].AddAmount(chakraRebateGain);
+        Global.instance.GetStats()["Chakra"].AddAmount((ulong)chakraRebateGain);
 
         RebateSellGainCoins();
 
@@ -113,8 +160,8 @@ public class Shop : MonoBehaviour
     public void OnPressUpcharge()
     {
         Debug.Log("Pressed Upcharge...");
-        if(Global.instance.GetStats()["Chakra"].CheckAmount(chakraUpchargeCost)){
-            Global.instance.GetStats()["Chakra"].RemoveAmount(chakraUpchargeCost);
+        if(Global.instance.GetStats()["Chakra"].CheckAmount((ulong)chakraUpchargeCost)){
+            Global.instance.GetStats()["Chakra"].RemoveAmount((ulong)chakraUpchargeCost);
             UpchargeSellGainCoins();
 
             // Disable buttons.
@@ -130,14 +177,12 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Pressed Sell...");
 
-        if(Inventory.instance.CheckStock(1)){
+        if(currentItem.CheckStock(1)){
             // Get coins from sale.
-
-
             Global.instance.GetStats()["Coins"].AddAmount(sellGainCoins);
 
             // Remove stock.
-            Inventory.instance.RemoveStock(1);
+            currentItem.SoldItem();
 
             // Gain a bit of chakra from sale
             Global.instance.GetStats()["Chakra"].AddAmount((ulong)sellGainChakra);
@@ -174,19 +219,6 @@ public class Shop : MonoBehaviour
     }
 
 
-    public void NextCustomer(){
-        Debug.Log("Next customer...");
 
-        // Reset buttons.
-        Helper.ButtonEnable(buttonRebate);
-        Helper.ButtonEnable(buttonUpcharge);
-        Helper.ButtonEnable(buttonSuggest);
-
-        // Check Stock.
-        UpdateTMProStock();
-
-        // Go to next person (simulate).
-        SetSellGainCoins(Inventory.instance.GetValue());
-    }
 
 }
