@@ -11,6 +11,8 @@ public class CameraControl : MonoBehaviour
     Vector2 secondPressPos;
     Vector2 currentSwipe;
 
+    private const float currentSwipeMagnitudeThreshold = 10;
+
     // Current camera position
     Vector2 cameraPositionShop = new Vector2(0f, 0f);
     Vector2 cameraPositionColosseum = new Vector2(5.65f, 0f);
@@ -49,25 +51,28 @@ public class CameraControl : MonoBehaviour
             // create vector from the two points
             currentSwipe = new Vector2(secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
 
-            // normalize the 2d vector
-            currentSwipe.Normalize();
+            if(currentSwipe.magnitude > currentSwipeMagnitudeThreshold)
+            {
+                // normalize the 2d vector
+                currentSwipe.Normalize();
 
-            // swipe is upwards
-            if(currentSwipe.y > 0 & currentSwipe.x > -0.5f & currentSwipe.x < 0.5f)
-            {
-                CameraTransition("down");
-            }
-            if(currentSwipe.y < 0 & currentSwipe.x > -0.5f & currentSwipe.x < 0.5f)
-            {
-                CameraTransition("up");
-            }
-            if(currentSwipe.x < 0 & currentSwipe.y > -0.5f & currentSwipe.y < 0.5f)
-            {
-                CameraTransition("right");
-            }
-            if(currentSwipe.x > 0 & currentSwipe.y > -0.5f & currentSwipe.y < 0.5f)
-            {
-                CameraTransition("left");
+                // swipe is upwards
+                if(currentSwipe.y > 0 & currentSwipe.x > -0.5f & currentSwipe.x < 0.5f)
+                {
+                    CameraTransition("down");
+                }
+                if(currentSwipe.y < 0 & currentSwipe.x > -0.5f & currentSwipe.x < 0.5f)
+                {
+                    CameraTransition("up");
+                }
+                if(currentSwipe.x < 0 & currentSwipe.y > -0.5f & currentSwipe.y < 0.5f)
+                {
+                    CameraTransition("right");
+                }
+                if(currentSwipe.x > 0 & currentSwipe.y > -0.5f & currentSwipe.y < 0.5f)
+                {
+                    CameraTransition("left");
+                }
             }
         }
         
@@ -77,66 +82,57 @@ public class CameraControl : MonoBehaviour
     {
         if(direction == "down")
         {
-            Debug.Log("Swiped up, going down");
+            //Debug.Log("Swiped up, going down");
             if(cameraPositionShop.Equals(Camera.main.transform.position)){
-                Debug.Log("At Shop, going down to Town");
+                //Debug.Log("At Shop, going down to Town");
                 Camera.main.transform.position = cameraPositionTown;
             }
             else if(cameraPositionMenu.Equals(Camera.main.transform.position))
             {
-                Debug.Log("At Menu, going down to Shop");
+                //Debug.Log("At Menu, going down to Shop");
                 Camera.main.transform.position = cameraPositionShop;
             }
         }
         if(direction == "up")
         {
-            Debug.Log("Swiped down, going up");
+            //Debug.Log("Swiped down, going up");
             if(cameraPositionShop.Equals(Camera.main.transform.position)){
-                Debug.Log("At Shop, going up to Menu");
+                //Debug.Log("At Shop, going up to Menu");
                 Camera.main.transform.position = cameraPositionMenu;
             }
             else if(cameraPositionTown.Equals(Camera.main.transform.position))
             {
-                Debug.Log("At Town, going up to Shop");
+                //Debug.Log("At Town, going up to Shop");
                 Camera.main.transform.position = cameraPositionShop;
             }
         }
         if(direction == "right")
         {
-            Debug.Log("Swiped left, going right");
+            //Debug.Log("Swiped left, going right");
             if(cameraPositionShop.Equals(Camera.main.transform.position)){
-                Debug.Log("At Shop, going right to Colosseum");
+                //Debug.Log("At Shop, going right to Colosseum");
                 Camera.main.transform.position = cameraPositionColosseum;
             }
             else if(cameraPositionMine.Equals(Camera.main.transform.position))
             {
-                Debug.Log("At Mine, going right to Shop");
+                //Debug.Log("At Mine, going right to Shop");
                 Camera.main.transform.position = cameraPositionShop;
             }
         }
         if(direction == "left")
         {
-            Debug.Log("Swiped right, going left");
+            //Debug.Log("Swiped right, going left");
             if(cameraPositionShop.Equals(Camera.main.transform.position)){
-                Debug.Log("At Shop, going left to Mine");
+                //Debug.Log("At Shop, going left to Mine");
                 Camera.main.transform.position = cameraPositionMine;
             }
             else if(cameraPositionColosseum.Equals(Camera.main.transform.position))
             {
-                Debug.Log("At Colosseum, going left to Shop");
+                //Debug.Log("At Colosseum, going left to Shop");
                 Camera.main.transform.position = cameraPositionShop;
             }
         }
     }
-
-
-
-
-
-
-
-
-
 
     public void CameraPan()
     {

@@ -11,7 +11,6 @@ public class Shop : MonoBehaviour
     [SerializeField] public TextMeshProUGUI tMProStock;
     public void UpdateTMProStock(){ tMProStock.text = currentItem.GetStock().ToString(); }
 
-
     // Need to bring buttons in to disable them.
     [SerializeField] public Button buttonRebate;
     [SerializeField] public Button buttonUpcharge;
@@ -55,14 +54,10 @@ public class Shop : MonoBehaviour
     public void IncrementCountRefusals(){ countRefusals += 1; }
 
     [SerializeField] public SpriteRenderer spriteRendererItem;
-    public void UpdateSpriteItem(){ 
-        
-        //Debug.Log(currentItem.filepathImage);
-        spriteRendererItem.sprite = Resources.Load<Sprite>(currentItem.filepathImage); }
+    public void UpdateSpriteItem(){ spriteRendererItem.sprite = Resources.Load<Sprite>(currentItem.filepathImage); }
 
     [SerializeField] public TextMeshProUGUI tMProDialog;
     public void UpdateTMProDialog(){ tMProDialog.text = "NPC: I would like to buy a " + currentItem.name + "."; }
-
 
     void Awake()
     {
@@ -74,19 +69,16 @@ public class Shop : MonoBehaviour
         chakraRebateGain = 20;
         chakraUpchargeCost = 40;
     }
-
     // Start is called before the first frame update
     void Start()
     {
         // First customer.
         NextCustomer();
     }
-
     // Update is called once per frame
     void Update()
     {
     }
-
     public void NextCustomer(){
         Debug.Log("Next customer...");
 
@@ -119,16 +111,9 @@ public class Shop : MonoBehaviour
         // Set value for this transaction.
         SetSellGainCoins(currentItem.value);
     }
-
-
-
-
     public void OnPressSuggest()
     {
-        Debug.Log("Pressed Suggest...");
-
-        
-
+        //Debug.Log("Pressed Suggest...");
         if(Global.instance.GetStats()["Chakra"].CheckAmount((ulong)chakraSuggestCost)){
             Global.instance.GetStats()["Chakra"].RemoveAmount((ulong)chakraSuggestCost);
             
@@ -144,7 +129,7 @@ public class Shop : MonoBehaviour
     }
     public void OnPressRebate()
     {
-        Debug.Log("Pressed Rebate...");
+        //Debug.Log("Pressed Rebate...");
         Global.instance.GetStats()["Chakra"].AddAmount((ulong)chakraRebateGain);
 
         RebateSellGainCoins();
@@ -159,7 +144,7 @@ public class Shop : MonoBehaviour
     }
     public void OnPressUpcharge()
     {
-        Debug.Log("Pressed Upcharge...");
+        //Debug.Log("Pressed Upcharge...");
         if(Global.instance.GetStats()["Chakra"].CheckAmount((ulong)chakraUpchargeCost)){
             Global.instance.GetStats()["Chakra"].RemoveAmount((ulong)chakraUpchargeCost);
             UpchargeSellGainCoins();
@@ -175,8 +160,7 @@ public class Shop : MonoBehaviour
     }
     public void OnPressSell()
     {
-        Debug.Log("Pressed Sell...");
-
+        //Debug.Log("Pressed Sell...");
         if(currentItem.CheckStock(1)){
             // Get coins from sale.
             Global.instance.GetStats()["Coins"].AddAmount(sellGainCoins);
@@ -217,8 +201,5 @@ public class Shop : MonoBehaviour
 
         NextCustomer();
     }
-
-
-
 
 }
