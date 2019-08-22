@@ -24,8 +24,8 @@ public class Inventory : MonoBehaviour
     void Awake()
     {
 
-        string filePath = "Data/shop_click_values_SHORT";
-        readValues(filePath);
+        // string filePath = "Data/shop_click_values_SHORT";
+        // readValues(filePath);
     }
 
     // Start is called before the first frame update

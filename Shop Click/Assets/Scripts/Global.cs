@@ -8,6 +8,7 @@ public class Global : MonoBehaviour
 
     Dictionary<string, Resource> stats; public Dictionary<string, Resource> GetStats(){ return(stats); }
     Dictionary<string, Resource> resources; public Dictionary<string, Resource> GetResources(){ return(resources); }
+    Dictionary<string, Item> inventory; public Dictionary<string, Item> GetInventory(){ return(inventory); }
 
     void Awake()
     {
@@ -15,12 +16,12 @@ public class Global : MonoBehaviour
         // TODO: Load saved game state;
         InitStats();
         InitResources();
+        InitInventory();
     }
 
 
     void Start()
     {
-
     }
 
     public void InitStats()
@@ -47,7 +48,23 @@ public class Global : MonoBehaviour
         resources.Add("Titanium",    new Resource("Titanium", 1, 1,  0,  0));
     }
 
+    public void InitInventory()
+    {
+        // Read in JSON data
+        string filepathJSON = "Data/shop_click_values_SHORT";
+        TextAsset jsonTextFile = Resources.Load<TextAsset>(filepathJSON);
+        Item[] items = Helper.FromJson<Item>(jsonTextFile.ToString());
+        // Debug.Log("JSON inventory read, contains " + items.Length.ToString() + " items.");
 
+        // Populate dictionary with JSON values
+        inventory = new Dictionary<string, Item>();
+
+        for (int i = 0; i < items.Length; i++)
+        {
+            inventory.Add(items[i].name, items[i]);
+            // Debug.Log(items[i].name);
+        }
+    }
 }
 
 

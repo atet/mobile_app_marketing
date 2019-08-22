@@ -53,7 +53,7 @@ public class Resource
         this.rate = rate;
         this.cap = cap;
         this.amount = amount;
-        DebugLog();
+        // DebugLog();
     }
 
 }
