@@ -80,8 +80,10 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Pressed Suggest...");
 
-        if(Global.instance.GetChakra().CheckAmount(chakraSuggestCost)){
-            Global.instance.GetChakra().RemoveAmount(chakraSuggestCost);
+        
+
+        if(Global.instance.GetStats()["Chakra"].CheckAmount(chakraSuggestCost)){
+            Global.instance.GetStats()["Chakra"].RemoveAmount(chakraSuggestCost);
             
             // Disable buttons.
             Helper.ButtonDisable(buttonSuggest);
@@ -96,7 +98,7 @@ public class Shop : MonoBehaviour
     public void OnPressRebate()
     {
         Debug.Log("Pressed Rebate...");
-        Global.instance.GetChakra().AddAmount(chakraRebateGain);
+        Global.instance.GetStats()["Chakra"].AddAmount(chakraRebateGain);
 
         RebateSellGainCoins();
 
@@ -111,8 +113,8 @@ public class Shop : MonoBehaviour
     public void OnPressUpcharge()
     {
         Debug.Log("Pressed Upcharge...");
-        if(Global.instance.GetChakra().CheckAmount(chakraUpchargeCost)){
-            Global.instance.GetChakra().RemoveAmount(chakraUpchargeCost);
+        if(Global.instance.GetStats()["Chakra"].CheckAmount(chakraUpchargeCost)){
+            Global.instance.GetStats()["Chakra"].RemoveAmount(chakraUpchargeCost);
             UpchargeSellGainCoins();
 
             // Disable buttons.
@@ -130,13 +132,15 @@ public class Shop : MonoBehaviour
 
         if(Inventory.instance.CheckStock(1)){
             // Get coins from sale.
-            Global.instance.GetCoins().AddAmount(sellGainCoins);
+
+
+            Global.instance.GetStats()["Coins"].AddAmount(sellGainCoins);
 
             // Remove stock.
             Inventory.instance.RemoveStock(1);
 
             // Gain a bit of chakra from sale
-            Global.instance.GetChakra().AddAmount((ulong)sellGainChakra);
+            Global.instance.GetStats()["Chakra"].AddAmount((ulong)sellGainChakra);
 
             // Reset Chakra for refuse to 0.
             ResetChakraRefuse();
@@ -153,11 +157,11 @@ public class Shop : MonoBehaviour
 
         if(chakraRefuse >= 0)
         {
-            Global.instance.GetChakra().AddAmount((ulong)chakraRefuse);
+            Global.instance.GetStats()["Chakra"].AddAmount((ulong)chakraRefuse);
         }
         else
         {
-            Global.instance.GetChakra().RemoveAmount((ulong)chakraRefuse);
+            Global.instance.GetStats()["Chakra"].RemoveAmount((ulong)chakraRefuse);
         }
 
         // Reset Chakra for refuse to 0.

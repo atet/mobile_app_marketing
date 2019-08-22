@@ -5,31 +5,37 @@ using TMPro;
 
 public class UI : MonoBehaviour
 {
+    // [SerializeField] public TextMeshProUGUI level, coins, chakra, gems, iron, hide, wood, herbs, steel, oil, electricity, titanium;
+
+
     [SerializeField] public TextMeshProUGUI level;
-    public void UpdateLevel(){ level.text = Global.instance.GetLevel().GetAmount().ToString("N0"); }
+    public void UpdateLevel(){ level.text = Global.instance.GetStats()["Level"].ToStringAmount(); }
+
+
+
     [SerializeField] public TextMeshProUGUI coins;
-    public void UpdateCoins(){ coins.text = Global.instance.GetCoins().GetAmount().ToString("N0"); }
+    public void UpdateCoins(){ coins.text = Global.instance.GetStats()["Coins"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI chakra;
-    public void UpdateChakra(){ chakra.text = Global.instance.GetChakra().GetAmount().ToString("N0") + "%"; }
+    public void UpdateChakra(){ chakra.text = Global.instance.GetStats()["Chakra"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI gems;
-    public void UpdateGems(){ gems.text = Global.instance.GetGems().GetAmount().ToString("N0"); }
+    public void UpdateGems(){ gems.text = Global.instance.GetStats()["Gems"].ToStringAmount(); }
 
     [SerializeField] public TextMeshProUGUI iron;
-    public void UpdateIron(){ iron.text = Global.instance.GetIron().GetAmount().ToString("N0"); }
+    public void UpdateIron(){ iron.text = Global.instance.GetResources()["Iron"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI hide;
-    public void UpdateHide(){ hide.text = Global.instance.GetHide().GetAmount().ToString("N0"); }
+    public void UpdateHide(){ hide.text = Global.instance.GetResources()["Hide"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI wood;
-    public void UpdateWood(){ wood.text = Global.instance.GetWood().GetAmount().ToString("N0"); }
+    public void UpdateWood(){ wood.text = Global.instance.GetResources()["Wood"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI herbs;
-    public void UpdateHerbs(){ herbs.text = Global.instance.GetHerbs().GetAmount().ToString("N0"); }
+    public void UpdateHerbs(){ herbs.text = Global.instance.GetResources()["Herbs"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI steel;
-    public void UpdateSteel(){ steel.text = Global.instance.GetSteel().GetAmount().ToString("N0"); }
+    public void UpdateSteel(){ steel.text = Global.instance.GetResources()["Steel"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI oil;
-    public void UpdateOil(){ oil.text = Global.instance.GetOil().GetAmount().ToString("N0"); }
+    public void UpdateOil(){ oil.text = Global.instance.GetResources()["Oil"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI electricity;
-    public void UpdateElectricity(){ electricity.text = Global.instance.GetElectricity().GetAmount().ToString("N0"); }
+    public void UpdateElectricity(){ electricity.text = Global.instance.GetResources()["Electricity"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI titanium;
-    public void UpdateTitanium(){ titanium.text = Global.instance.GetTitanium().GetAmount().ToString("N0"); }
+    public void UpdateTitanium(){ titanium.text = Global.instance.GetResources()["Titanium"].ToStringAmount(); }
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +45,12 @@ public class UI : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        UpdateTMP();
+    }
+
+
+    public void UpdateTMP()
     {
         UpdateLevel();
         UpdateCoins();
@@ -53,4 +65,6 @@ public class UI : MonoBehaviour
         UpdateElectricity();
         UpdateTitanium();
     }
+
+
 }

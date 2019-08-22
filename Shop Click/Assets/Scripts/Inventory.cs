@@ -20,6 +20,14 @@ public class Inventory : MonoBehaviour
     public void SetValue(ulong setValue){ value = setValue; }
 
 
+    // Awake is called before the game starts
+    void Awake()
+    {
+
+        string filePath = "Data/shop_click_values_SHORT";
+        readValues(filePath);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +35,7 @@ public class Inventory : MonoBehaviour
         SetStock(10);
         SetValue(100);
 
-        string filePath = "Data/shop_click_values_SHORT";
-        readValues(filePath);
+
     }
 
     // Update is called once per frame
@@ -42,7 +49,7 @@ public class Inventory : MonoBehaviour
         TextAsset jsonTextFile = Resources.Load<TextAsset>(filePath);
         items = Helper.FromJson<Item>(jsonTextFile.ToString());
         Debug.Log("After JSON read.");
-        Debug.Log("items[0].GetStock() = " + items[0].GetStock());
+        //Debug.Log("items[0].GetStock() = " + items[0].GetStock());
     }
 
 }

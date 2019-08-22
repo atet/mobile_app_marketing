@@ -36,6 +36,12 @@ public class Resource
     public void SetAmountLifetimeSpend(ulong amountLifetimeSpend){ this.amountLifetimeSpend = amountLifetimeSpend; }
     public ulong GetAmountLifetimeSpend(){ return(amountLifetimeSpend); }
 
+
+    public void DebugLog(){ Debug.Log("label: " + label + ", level: " + level.ToString() + ", rate: " + rate.ToString() + ", cap: " + cap.ToString() + ", amount: " + amount.ToString()); }
+
+    public string ToStringAmount(){ return(amount.ToString("N0")); }
+
+
     // Not implemented yet, placeholder.
     // private ulong[] levelThresholds; public void SetLevelThresholds(ulong[] setLevelThresholds){ levelThresholds = setLevelThresholds; } public ulong[] GetLevelThresholds(){ return(levelThresholds); }
 
@@ -43,11 +49,11 @@ public class Resource
     public Resource(string label, int level, float rate, ulong cap, ulong amount)
     {
         this.label = label;
-
         this.level = level;
         this.rate = rate;
         this.cap = cap;
         this.amount = amount;
+        DebugLog();
     }
 
 }

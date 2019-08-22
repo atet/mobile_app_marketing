@@ -8,33 +8,33 @@ using UnityEngine;
     public string category;
     public string filepathImage;
     public string prerequsiteUnlock;
-    public string prerequsiteUnlockCostResearchScrolls;
-    public string tier;
-    public int value;
-    public string timeCrafting;
-    public string xPMerchant;
-    public string xPWorker;
+    public ulong prerequsiteUnlockCostResearchScrolls;
+    public ulong tier;
+    public ulong value;
+    public ulong timeCrafting;
+    public ulong xPMerchant;
+    public ulong xPWorker;
     public string prerequisiteWorker1;
     public string prerequisiteWorker1Level;
     public string prerequisiteWorker2;
     public string prerequisiteWorker2Level;
-    public string costIron;
-    public string costWood;
-    public string costHide;
-    public string costHerbs;
-    public string costSteel;
-    public string costTitanium; 
-    public string costElectricity;
-    public string costOil;
+    public ulong costIron;
+    public ulong costWood;
+    public ulong costHide;
+    public ulong costHerbs;
+    public ulong costSteel;
+    public ulong costTitanium; 
+    public ulong costElectricity;
+    public ulong costOil;
     public string costComponent1Name; 
     public string costComponent1Quality; 
-    public string costComponent1; 
+    public ulong costComponent1; 
     public string costComponent2Name; 
     public string costComponent2Quality; 
-    public string costComponent2; 
-    public string statATK; 
-    public string statDEF; 
-    public string statHP; 
+    public ulong costComponent2; 
+    public ulong statATK; 
+    public ulong statDEF; 
+    public ulong statHP; 
     public string upgradeCrafting1;
     public string upgradeCrafting1Count; 
     public string upgradeCrafting2;
@@ -51,15 +51,28 @@ using UnityEngine;
     public string upgradeAscension2Cost; 
     public string upgradeAscension3; 
     public string upgradeAscension3Cost; 
-    public string energyDiscount;
-    public string energySurcharge; 
-    public string energySuggest;
-    public string energySpeedUp;
+    public ulong energyDiscount;
+    public ulong energySurcharge; 
+    public ulong energySuggest;
+    public ulong energySpeedUp;
 
-    private int stock; public int GetStock(){ return(stock); }
+    private bool isAvailable;
+    public bool GetIsAvailable(){ return(isAvailable); }
+    public void SetIsAvailable(bool isAvailable){ this.isAvailable = isAvailable; }
+    private int stock;
+    public int GetStock(){ return(stock); }
+    public void SetStock(int stock){ this.stock = stock; }
+    public bool CheckStock(){ if(stock <= 0){ return(false); } else { return(true); }}
+    public int lifetimeCrafted;
+    public void CraftItem(){ stock += 1; lifetimeCrafted += 1; }
+    public int lifetimeSold;
+    public void SoldItem(){ stock -= 1; lifetimeSold += 1; }
 
     public Item()
     {
+        isAvailable = false;
         stock = 0;
+        lifetimeCrafted = 0;
+        lifetimeSold = 0;
     }
 }
