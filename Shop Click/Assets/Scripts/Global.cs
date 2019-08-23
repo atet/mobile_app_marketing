@@ -20,7 +20,9 @@ public class Global : MonoBehaviour
         InitStats();
         InitResources();
         InitInventory();
+        inventory["Wood Bow"].SetIsAvailable(true);
         inventory["Wood Bow"].SetStock(5);
+        inventory["Wood Dagger"].SetIsAvailable(true);
         inventory["Wood Dagger"].SetStock(5);
         InitCharacters();
     }
