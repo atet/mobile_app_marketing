@@ -15,7 +15,7 @@ public class CameraControl : MonoBehaviour
 
     // Current camera position
     Vector2 cameraPositionShop = new Vector2(0f, 0f);
-    Vector2 cameraPositionColosseum = new Vector2(5.65f, 0f);
+    Vector2 cameraPositionColosseum = new Vector2(5.67f, 0f);
     Vector2 cameraPositionMine = new Vector2(-5.65f, 0f);
     Vector2 cameraPositionMenu = new Vector2(0f, 10f);
     Vector2 cameraPositionTown = new Vector2(0f, -10f);
