@@ -11,6 +11,7 @@ public class Global : MonoBehaviour
     Dictionary<string, Resource> stats; public Dictionary<string, Resource> GetStats(){ return(stats); }
     Dictionary<string, Resource> resources; public Dictionary<string, Resource> GetResources(){ return(resources); }
     Dictionary<string, Item> inventory; public Dictionary<string, Item> GetInventory(){ return(inventory); }
+    Dictionary<string, Character> characters; public Dictionary<string, Character> GetCharacters(){ return(characters); }
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class Global : MonoBehaviour
         InitInventory();
         inventory["Wood Bow"].SetStock(5);
         inventory["Wood Dagger"].SetStock(5);
+        InitCharacters();
     }
 
 
@@ -50,6 +52,30 @@ public class Global : MonoBehaviour
         resources.Add("Oil",         new Resource("Oil", 1, 1,  0,  0));
         resources.Add("Electricity", new Resource("Electricity", 1, 1,  0,  0));
         resources.Add("Titanium",    new Resource("Titanium", 1, 1,  0,  0));
+    }
+
+    public void InitCharacters()
+    {
+        // Read in JSON data
+        string filepathJSON = "Data/shop_click_characters";
+        TextAsset jsonTextFile = Resources.Load<TextAsset>(filepathJSON);
+        Character[] items = Helper.FromJson<Character>(jsonTextFile.ToString());
+        // Debug.Log("JSON inventory read, contains " + items.Length.ToString() + " items.");
+
+        // Populate dictionary with JSON values
+        characters = new Dictionary<string, Character>();
+
+        for (int i = 0; i < items.Length; i++)
+        {
+            characters.Add(items[i].name, items[i]);
+            // Debug.Log(items[i].name);
+        }
+    }
+    public Character RandomCharacter()
+    {
+        // Returns a random character from the characters.
+        List<string> keyList = new List<string>(characters.Keys);
+        return(characters[keyList[Random.Range(0, characters.Count)]]);
     }
 
     public void InitInventory()

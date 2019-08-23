@@ -7,6 +7,7 @@ using TMPro;
 public class Shop : MonoBehaviour
 {
     private Item currentItem;
+    private Character currentCharacter;
 
     [SerializeField] public TextMeshProUGUI tMProStock;
     public void UpdateTMProStock(){ tMProStock.text = currentItem.GetStock().ToString(); }
@@ -56,8 +57,12 @@ public class Shop : MonoBehaviour
     [SerializeField] public SpriteRenderer spriteRendererItem;
     public void UpdateSpriteItem(){ spriteRendererItem.sprite = Resources.Load<Sprite>(currentItem.filepathImage); }
 
+    [SerializeField] public SpriteRenderer spriteRendererCharacter;
+    public void UpdateSpriteCharacter(){ spriteRendererCharacter.sprite = Resources.Load<Sprite>(currentCharacter.filepathImage); }
+
+
     [SerializeField] public TextMeshProUGUI tMProDialog;
-    public void UpdateTMProDialog(){ tMProDialog.text = "NPC: I would like to buy a " + currentItem.name + "."; }
+    public void UpdateTMProDialog(){ tMProDialog.text = currentCharacter.name + ": I would like to buy a " + currentItem.name + "."; }
 
     void Awake()
     {
@@ -84,9 +89,12 @@ public class Shop : MonoBehaviour
 
         // Pick random item from inventory.
         currentItem = Global.instance.RandomItem();
-        Debug.Log(currentItem.name);
+        //Debug.Log(currentItem.name);
         // Update Item Sprite.
         UpdateSpriteItem();
+
+        currentCharacter = Global.instance.RandomCharacter();
+        UpdateSpriteCharacter();
 
 
         // Update values on all buttons.
