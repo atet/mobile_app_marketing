@@ -9,6 +9,9 @@ public class Shop : MonoBehaviour
     private Item currentItem;
     private Character currentCharacter;
 
+    [SerializeField] public TextMeshProUGUI tMProQueue;
+    public void UpdateTMProQueue() { tMProQueue.text = Global.instance.GetResources()["Queue"].ToStringAmount(); }
+
     [SerializeField] public TextMeshProUGUI tMProStock;
     public void UpdateTMProStock(){ tMProStock.text = currentItem.GetStock().ToString(); }
 
@@ -85,6 +88,12 @@ public class Shop : MonoBehaviour
     {
     }
     public void NextCustomer(){
+        // Check if there are customers
+        Global.instance.GetResources()["Queue"].DecrementAmount();
+        UpdateTMProQueue();
+
+        // TODO: Need to think about where to add queue check/close panel, etc. when there are currently no customers.
+
         Debug.Log("Next customer...");
 
         // Pick random item from inventory.

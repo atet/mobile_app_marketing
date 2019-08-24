@@ -26,6 +26,7 @@ public class Resource
     }
     public void IncrementAmount(){ amount += 1; amountLifetimeGain += 1; }
     public bool CheckAmount(ulong amount){ if(amount <= this.amount){ return(true); }else{ return(false); } }
+    public void DecrementAmount(){ amount -= 1; amountLifetimeSpend += 1; }
     public void RemoveAmount(ulong amount){ this.amount -= amount; amountLifetimeSpend += amount; }
 
     private ulong amountLifetimeGain;

@@ -46,6 +46,9 @@ public class Global : MonoBehaviour
     {
         resources = new Dictionary<string, Resource>();
 
+        // Customers coming in the store.
+        resources.Add("Queue",       new Resource("Queue", 1, 1, 10, 5));
+
         resources.Add("Iron",        new Resource("Iron", 1, 1, 20, 10));
         resources.Add("Hide",        new Resource("Hide", 1, 1,  0,  0));
         resources.Add("Wood",        new Resource("Wood", 1, 1,  0,  0));
