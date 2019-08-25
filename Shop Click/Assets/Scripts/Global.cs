@@ -52,16 +52,16 @@ public class Global : MonoBehaviour
         resources = new Dictionary<string, Resource>();
 
         // Customers coming in the store.
-        resources.Add("Queue",       new Resource("Queue", 1, 10, 10, 5));
+        resources.Add("Queue",       new Resource("Queue",       1, 10, 10,  5));
 
-        resources.Add("Iron",        new Resource("Iron", 1, 10, 20, 10));
-        resources.Add("Hide",        new Resource("Hide", 1, 10,  0,  0));
-        resources.Add("Wood",        new Resource("Wood", 1, 10,  0,  0));
-        resources.Add("Herbs",       new Resource("Herbs", 1, 10,  0,  0));
-        resources.Add("Steel",       new Resource("Steel", 1, 10,  0,  0));
-        resources.Add("Oil",         new Resource("Oil", 1, 10,  0,  0));
+        resources.Add("Iron",        new Resource("Iron",        1, 10, 20, 10));
+        resources.Add("Wood",        new Resource("Wood",        1, 10, 20, 10));
+        resources.Add("Hide",        new Resource("Hide",        1, 10,  0,  0));
+        resources.Add("Herbs",       new Resource("Herbs",       1, 10,  0,  0));
+        resources.Add("Steel",       new Resource("Steel",       1, 10,  0,  0));
+        resources.Add("Oil",         new Resource("Oil",         1, 10,  0,  0));
         resources.Add("Electricity", new Resource("Electricity", 1, 10,  0,  0));
-        resources.Add("Titanium",    new Resource("Titanium", 1, 10,  0,  0));
+        resources.Add("Titanium",    new Resource("Titanium",    1, 10,  0,  0));
     }
 
     public void InitCharacters()

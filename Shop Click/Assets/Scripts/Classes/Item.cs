@@ -65,9 +65,58 @@ using UnityEngine;
     public bool CheckStock(int stock){ if(stock <= this.stock){ return(true); } else { return(false); }}
     public void AddStock(int stock){ this.stock += stock; }
     public int lifetimeCrafted;
-    public void CraftItem(){ stock += 1; lifetimeCrafted += 1; }
+    public void CraftItem()
+    {
+        Debug.Log(name + " has been crafted.");
+        Global.instance.GetResources()["Iron"].RemoveAmount(costIron);
+        Global.instance.GetResources()["Wood"].RemoveAmount(costWood);
+        Global.instance.GetResources()["Hide"].RemoveAmount(costHide);
+        Global.instance.GetResources()["Herbs"].RemoveAmount(costHerbs);
+        Global.instance.GetResources()["Steel"].RemoveAmount(costSteel);
+        Global.instance.GetResources()["Titanium"].RemoveAmount(costTitanium);
+        Global.instance.GetResources()["Electricity"].RemoveAmount(costElectricity);
+        Global.instance.GetResources()["Oil"].RemoveAmount(costOil);
+
+        // TEST: Immediately craft item.
+        stock += 1; lifetimeCrafted += 1;
+        
+    }
     public int lifetimeSold;
     public void SoldItem(){ stock -= 1; lifetimeSold += 1; }
+
+    public bool CheckResource()
+    {
+            Debug.Log("Iron: " + Global.instance.GetResources()["Iron"].ToStringAmount() + " > cost " + costIron + " = " + Global.instance.GetResources()["Iron"].CheckAmount(costIron));
+            Debug.Log("Wood: " + Global.instance.GetResources()["Wood"].ToStringAmount() + " > cost " + costWood + " = " + Global.instance.GetResources()["Wood"].CheckAmount(costWood));
+            Debug.Log("Hide: " + Global.instance.GetResources()["Hide"].ToStringAmount() + " > cost " + costHide + " = " + Global.instance.GetResources()["Hide"].CheckAmount(costHide));
+            Debug.Log("Herbs: " + Global.instance.GetResources()["Herbs"].ToStringAmount() + " > cost " + costHerbs + " = " + Global.instance.GetResources()["Herbs"].CheckAmount(costHerbs));
+            Debug.Log("Steel: " + Global.instance.GetResources()["Steel"].ToStringAmount() + " > cost " + costSteel + " = " + Global.instance.GetResources()["Steel"].CheckAmount(costSteel));
+            Debug.Log("Titanium: " + Global.instance.GetResources()["Titanium"].ToStringAmount() + " > cost " + costTitanium + " = " + Global.instance.GetResources()["Titanium"].CheckAmount(costTitanium));
+            Debug.Log("Electricity: " + Global.instance.GetResources()["Electricity"].ToStringAmount() + " > cost " + costElectricity + " = " + Global.instance.GetResources()["Electricity"].CheckAmount(costElectricity));
+            Debug.Log("Oil: " + Global.instance.GetResources()["Oil"].ToStringAmount() + " > cost " + costOil + " = " + Global.instance.GetResources()["Oil"].CheckAmount(costOil));
+
+
+        if(
+            (Global.instance.GetResources()["Iron"].CheckAmount(costIron)) &&
+            (Global.instance.GetResources()["Wood"].CheckAmount(costWood)) &&
+            (Global.instance.GetResources()["Hide"].CheckAmount(costHide)) &&
+            (Global.instance.GetResources()["Herbs"].CheckAmount(costHerbs)) &&
+            (Global.instance.GetResources()["Steel"].CheckAmount(costSteel)) &&
+            (Global.instance.GetResources()["Titanium"].CheckAmount(costTitanium)) &&
+            (Global.instance.GetResources()["Electricity"].CheckAmount(costElectricity)) &&
+            (Global.instance.GetResources()["Oil"].CheckAmount(costOil))
+        ){
+            Debug.Log("CheckResource() = true");
+            return(true);
+        }
+        else
+        {
+            Debug.Log("CheckResource() = false");
+            return(false);
+        }
+        
+    }
+
 
     public Item()
     {

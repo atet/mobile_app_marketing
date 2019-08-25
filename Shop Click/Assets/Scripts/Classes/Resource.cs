@@ -13,7 +13,7 @@ public class Resource
     {
         timeRemaining -= Time.deltaTime;
         if(timeRemaining < 0){
-            Debug.Log("Hello from " + label);
+            //Debug.Log("Hello from " + label);
             IncrementAmount();
             // Reset time remianing
             timeRemaining = rate;
