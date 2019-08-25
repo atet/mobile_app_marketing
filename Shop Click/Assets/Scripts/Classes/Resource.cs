@@ -7,6 +7,19 @@ public class Resource
     private string label; public void SetLabel(string label){ this.label = label; } public string GetLabel(){ return(label); }
     private int level; public void SetLevel(int level){ this.level = level; } public int GetLevel(){ return(level); }
     private float rate; public void SetRate(float rate){ this.rate = rate; } public float GetRate(){ return(rate); }
+
+    private float timeRemaining;
+    public void CheckTimeRemaining()
+    {
+        timeRemaining -= Time.deltaTime;
+        if(timeRemaining < 0){
+            Debug.Log("Hello from " + label);
+            IncrementAmount();
+            // Reset time remianing
+            timeRemaining = rate;
+        }
+    }
+
     private ulong cap; public void SetCap(ulong cap){ this.cap = cap; } public ulong GetCap(){ return(cap); }
 
     private ulong amount;
@@ -14,17 +27,24 @@ public class Resource
     public ulong GetAmount(){ return(amount); } 
     public void AddAmount(ulong amount)
     { 
-        if((this.amount + amount) > cap){
-            amountLifetimeGain += (cap - this.amount);
-            this.amount = cap;
+        if((this.amount + amount) <= cap){
+            this.amount += amount; amountLifetimeGain += amount;
+            
         }
         else
         {
-            this.amount += amount; amountLifetimeGain += amount;
+            amountLifetimeGain += (cap - this.amount);
+            this.amount = cap;
         }
         
     }
-    public void IncrementAmount(){ amount += 1; amountLifetimeGain += 1; }
+    public void IncrementAmount()
+    { 
+        if((amount + 1) <= cap){
+        amount += 1;
+        amountLifetimeGain += 1; 
+        }
+    }
     public bool CheckAmount(ulong amount){ if(amount <= this.amount){ return(true); }else{ return(false); } }
     public void DecrementAmount(){ amount -= 1; amountLifetimeSpend += 1; }
     public void RemoveAmount(ulong amount){ this.amount -= amount; amountLifetimeSpend += amount; }
@@ -52,6 +72,7 @@ public class Resource
         this.label = label;
         this.level = level;
         this.rate = rate;
+        timeRemaining = rate;
         this.cap = cap;
         this.amount = amount;
         // DebugLog();

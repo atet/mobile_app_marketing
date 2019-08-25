@@ -10,31 +10,36 @@ public class UI : MonoBehaviour
 
     // UI Overlay: Shown on all screens.
     [SerializeField] public TextMeshProUGUI uIOverlayLevel;
-    public void UpdateLevel(){ uIOverlayLevel.text = Global.instance.GetStats()["Level"].ToStringAmount(); }
+    public void UpdateUIOverlayLevel(){ uIOverlayLevel.text = Global.instance.GetStats()["Level"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI uIOverlayCoins;
-    public void UpdateCoins(){ uIOverlayCoins.text = Global.instance.GetStats()["Coins"].ToStringAmount(); }
+    public void UpdateUIOverlayCoins(){ uIOverlayCoins.text = Global.instance.GetStats()["Coins"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI uIOverlayChakra;
-    public void UpdateChakra(){ uIOverlayChakra.text = Global.instance.GetStats()["Chakra"].ToStringAmount(); }
+    public void UpdateUIOverlayChakra(){ uIOverlayChakra.text = Global.instance.GetStats()["Chakra"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI uIOverlayGems;
-    public void UpdateGems(){ uIOverlayGems.text = Global.instance.GetStats()["Gems"].ToStringAmount(); }
+    public void UpdateUIOverlayGems(){ uIOverlayGems.text = Global.instance.GetStats()["Gems"].ToStringAmount(); }
 
     [SerializeField] public TextMeshProUGUI uIMineIron;
-    public void UpdateIron(){ uIMineIron.text = Global.instance.GetResources()["Iron"].ToStringAmount(); }
+    public void UpdateUIMineIron(){ uIMineIron.text = Global.instance.GetResources()["Iron"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI uIMineHide;
-    public void UpdateHide(){ uIMineHide.text = Global.instance.GetResources()["Hide"].ToStringAmount(); }
+    public void UpdateUIMineHide(){ uIMineHide.text = Global.instance.GetResources()["Hide"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI uIMineWood;
-    public void UpdateWood(){ uIMineWood.text = Global.instance.GetResources()["Wood"].ToStringAmount(); }
+    public void UpdateUIMineWood(){ uIMineWood.text = Global.instance.GetResources()["Wood"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI uIMineHerbs;
-    public void UpdateHerbs(){ uIMineHerbs.text = Global.instance.GetResources()["Herbs"].ToStringAmount(); }
+    public void UpdateUIMineHerbs(){ uIMineHerbs.text = Global.instance.GetResources()["Herbs"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI uIMineSteel;
-    public void UpdateSteel(){ uIMineSteel.text = Global.instance.GetResources()["Steel"].ToStringAmount(); }
+    public void UpdateUIMineSteel(){ uIMineSteel.text = Global.instance.GetResources()["Steel"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI uIMineOil;
-    public void UpdateOil(){ uIMineOil.text = Global.instance.GetResources()["Oil"].ToStringAmount(); }
+    public void UpdateUIMineOil(){ uIMineOil.text = Global.instance.GetResources()["Oil"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI uIMineElectricity;
-    public void UpdateElectricity(){ uIMineElectricity.text = Global.instance.GetResources()["Electricity"].ToStringAmount(); }
+    public void UpdateUIMineElectricity(){ uIMineElectricity.text = Global.instance.GetResources()["Electricity"].ToStringAmount(); }
     [SerializeField] public TextMeshProUGUI uIMineTitanium;
-    public void UpdateTitanium(){ uIMineTitanium.text = Global.instance.GetResources()["Titanium"].ToStringAmount(); }
+    public void UpdateUIMineTitanium(){ uIMineTitanium.text = Global.instance.GetResources()["Titanium"].ToStringAmount(); }
     
+
+    [SerializeField] public TextMeshProUGUI uIShopQueue;
+    public void UpdateUIShopQueue() { uIShopQueue.text = Global.instance.GetResources()["Queue"].ToStringAmount(); }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,18 +55,20 @@ public class UI : MonoBehaviour
 
     public void UpdateTMP()
     {
-        UpdateLevel();
-        UpdateCoins();
-        UpdateChakra();
-        UpdateGems();
-        UpdateIron();
-        UpdateHide();
-        UpdateWood();
-        UpdateHerbs();
-        UpdateSteel();
-        UpdateOil();
-        UpdateElectricity();
-        UpdateTitanium();
+        UpdateUIOverlayLevel();
+        UpdateUIOverlayCoins();
+        UpdateUIOverlayChakra();
+        UpdateUIOverlayGems();
+        UpdateUIMineIron();
+        UpdateUIMineHide();
+        UpdateUIMineWood();
+        UpdateUIMineHerbs();
+        UpdateUIMineSteel();
+        UpdateUIMineOil();
+        UpdateUIMineElectricity();
+        UpdateUIMineTitanium();
+
+        UpdateUIShopQueue();
     }
 
 

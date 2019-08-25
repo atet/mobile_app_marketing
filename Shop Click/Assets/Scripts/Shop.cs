@@ -12,6 +12,20 @@ public class Shop : MonoBehaviour
     [SerializeField] public TextMeshProUGUI tMProQueue;
     public void UpdateTMProQueue() { tMProQueue.text = Global.instance.GetResources()["Queue"].ToStringAmount(); }
 
+    [SerializeField] public GameObject panelShopDialog;
+    
+    [SerializeField] public Button buttonQueue;
+
+    public void OnPressQueue()
+    {
+        if(Global.instance.GetResources()["Queue"].GetAmount() > 0){
+            panelShopDialog.SetActive(true);
+        }else{
+            panelShopDialog.SetActive(false);
+        }
+    }
+
+
     [SerializeField] public TextMeshProUGUI tMProStock;
     public void UpdateTMProStock(){ tMProStock.text = currentItem.GetStock().ToString(); }
 
@@ -88,45 +102,52 @@ public class Shop : MonoBehaviour
     {
     }
     public void NextCustomer(){
-        // Check if there are customers
-        Global.instance.GetResources()["Queue"].DecrementAmount();
-        UpdateTMProQueue();
+
+        if(Global.instance.GetResources()["Queue"].GetAmount() > 0)
+        {
+            Debug.Log("Next customer...");
+
+            // Pick random item from inventory.
+            currentItem = Global.instance.RandomItem();
+            //Debug.Log(currentItem.name);
+            // Update Item Sprite.
+            UpdateSpriteItem();
+
+            currentCharacter = Global.instance.RandomCharacter();
+            UpdateSpriteCharacter();
+
+
+            // Update values on all buttons.
+            UpdateTMProSellChakra();
+            UpdateTMProSuggest();
+            UpdateTMProRebate();
+            UpdateTMProUpcharge();
+            ResetChakraRefuse();
+
+
+            // Reset buttons.
+            Helper.ButtonEnable(buttonRebate);
+            Helper.ButtonEnable(buttonUpcharge);
+            Helper.ButtonEnable(buttonSuggest);
+
+            // Check Stock.
+            UpdateTMProStock();
+
+            // Update customer dialog.
+            UpdateTMProDialog();
+
+            // Set value for this transaction.
+            SetSellGainCoins(currentItem.value);
+        }
+        else
+        {
+            panelShopDialog.SetActive(false);
+        }
+
 
         // TODO: Need to think about where to add queue check/close panel, etc. when there are currently no customers.
 
-        Debug.Log("Next customer...");
-
-        // Pick random item from inventory.
-        currentItem = Global.instance.RandomItem();
-        //Debug.Log(currentItem.name);
-        // Update Item Sprite.
-        UpdateSpriteItem();
-
-        currentCharacter = Global.instance.RandomCharacter();
-        UpdateSpriteCharacter();
-
-
-        // Update values on all buttons.
-        UpdateTMProSellChakra();
-        UpdateTMProSuggest();
-        UpdateTMProRebate();
-        UpdateTMProUpcharge();
-        ResetChakraRefuse();
-
-
-        // Reset buttons.
-        Helper.ButtonEnable(buttonRebate);
-        Helper.ButtonEnable(buttonUpcharge);
-        Helper.ButtonEnable(buttonSuggest);
-
-        // Check Stock.
-        UpdateTMProStock();
-
-        // Update customer dialog.
-        UpdateTMProDialog();
-
-        // Set value for this transaction.
-        SetSellGainCoins(currentItem.value);
+        
     }
     public void OnPressSuggest()
     {
@@ -194,6 +215,8 @@ public class Shop : MonoBehaviour
             // Increment sales count.
             IncrementCountSales();
 
+            Global.instance.GetResources()["Queue"].DecrementAmount();
+            UpdateTMProQueue();
             NextCustomer();
         }
     }
@@ -216,6 +239,8 @@ public class Shop : MonoBehaviour
         // Increment refusal count.
         IncrementCountRefusals();
 
+        Global.instance.GetResources()["Queue"].DecrementAmount();
+        UpdateTMProQueue();
         NextCustomer();
     }
 
