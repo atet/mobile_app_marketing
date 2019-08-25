@@ -100,6 +100,10 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // TODO: This is a temporary work around since UI wouldn't know what Item's stock to update.
+        // :.. Consider making this a static class, so that the instance's currentItem can be accessed elsewhere.
+        UpdateTMProStock();
+
     }
     public void NextCustomer(){
 
