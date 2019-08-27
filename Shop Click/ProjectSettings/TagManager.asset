@@ -13,16 +13,16 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Background (Non-Interactive)
+  - Background Window (Non-Interactive)
+  - Background Back Image/Text (Non-Interactive)
+  - Background Front Image/Text (Non-Interactive)
+  - Background Window (Interactive)
+  - Background Back Image/Text (Interactive)
+  - Background Front Image/Text (Interactive)
+  - Foreground Window (Interactive)
+  - Foreground Back Image/Text (Interactive)
+  - Foreground Front Image/Text (Interactive)
   - 
   - 
   - 

@@ -71,11 +71,17 @@ public class Shop : MonoBehaviour
     public void SetCountRefusals(ulong setCountRefusals){ countRefusals = setCountRefusals; }
     public void IncrementCountRefusals(){ countRefusals += 1; }
 
-    [SerializeField] public SpriteRenderer spriteRendererItem;
-    public void UpdateSpriteItem(){ spriteRendererItem.sprite = Resources.Load<Sprite>(currentItem.filepathImage); }
+    [SerializeField] public Image imageItem;
+    public void UpdateSpriteItem(){ 
+        imageItem.sprite = Resources.Load<Sprite>(currentItem.filepathImage); 
+        imageItem.SetNativeSize();
+    }
 
-    [SerializeField] public SpriteRenderer spriteRendererCharacter;
-    public void UpdateSpriteCharacter(){ spriteRendererCharacter.sprite = Resources.Load<Sprite>(currentCharacter.filepathImage); }
+    [SerializeField] public Image imageCharacter;
+    public void UpdateSpriteCharacter(){ 
+        imageCharacter.sprite = Resources.Load<Sprite>(currentCharacter.filepathImage); 
+        imageCharacter.SetNativeSize();
+    }
 
 
     [SerializeField] public TextMeshProUGUI tMProDialog;

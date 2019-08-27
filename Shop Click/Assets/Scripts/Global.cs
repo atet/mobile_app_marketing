@@ -30,6 +30,7 @@ public class Global : MonoBehaviour
 
     void Start()
     {
+        //Debug.Log(Helper.TimeFormatter(101));
     }
 
     void Update()
