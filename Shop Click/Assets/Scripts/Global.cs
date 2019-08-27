@@ -6,6 +6,9 @@ public class Global : MonoBehaviour
 {
     public static Global instance;
 
+    private const string filepathInventoryJSON = "Data/shop_click_values_20190827";
+    private const string filepathCharactersJSON = "Data/shop_click_characters";
+
     public Random rnd = new Random();
 
     Dictionary<string, Resource> stats; public Dictionary<string, Resource> GetStats(){ return(stats); }
@@ -19,24 +22,30 @@ public class Global : MonoBehaviour
         // TODO: Load saved game state;
         InitStats();
         InitResources();
+        InitCharacters(); // This has to be run before inventory?
         InitInventory();
-        inventory["Wood Bow"].SetIsAvailable(true);
-        inventory["Wood Bow"].SetStock(5);
-        inventory["Wood Dagger"].SetIsAvailable(true);
-        inventory["Wood Dagger"].SetStock(5);
-        InitCharacters();
+        InitInventoryStarting();
+
+
+
+
+
+        
     }
 
 
     void Start()
     {
         //Debug.Log(Helper.TimeFormatter(101));
+
+        
     }
 
     void Update()
     {
         CheckTimeRemaining();
     }
+
 
     public void InitStats()
     {
@@ -53,10 +62,10 @@ public class Global : MonoBehaviour
         resources = new Dictionary<string, Resource>();
 
         // Customers coming in the store.
-        resources.Add("Queue",       new Resource("Queue",       1, 10, 10,  5));
+        resources.Add("Queue",       new Resource("Queue",       1,  1, 999, 999));
 
         resources.Add("Iron",        new Resource("Iron",        1, 10, 20, 10));
-        resources.Add("Wood",        new Resource("Wood",        1, 10, 20, 10));
+        resources.Add("Wood",        new Resource("Wood",        1,  5, 40, 10));
         resources.Add("Hide",        new Resource("Hide",        1, 10,  0,  0));
         resources.Add("Herbs",       new Resource("Herbs",       1, 10,  0,  0));
         resources.Add("Steel",       new Resource("Steel",       1, 10,  0,  0));
@@ -67,9 +76,9 @@ public class Global : MonoBehaviour
 
     public void InitCharacters()
     {
+        //Debug.Log("InitCharacters()");
         // Read in JSON data
-        string filepathJSON = "Data/shop_click_characters";
-        TextAsset jsonTextFile = Resources.Load<TextAsset>(filepathJSON);
+        TextAsset jsonTextFile = Resources.Load<TextAsset>(filepathCharactersJSON);
         Character[] items = Helper.FromJson<Character>(jsonTextFile.ToString());
         // Debug.Log("JSON inventory read, contains " + items.Length.ToString() + " items.");
 
@@ -79,21 +88,22 @@ public class Global : MonoBehaviour
         for (int i = 0; i < items.Length; i++)
         {
             characters.Add(items[i].name, items[i]);
-            // Debug.Log(items[i].name);
+            //Debug.Log(items[i].name);
         }
     }
     public Character RandomCharacter()
     {
         // Returns a random character from the characters.
         List<string> keyList = new List<string>(characters.Keys);
-        return(characters[keyList[Random.Range(0, characters.Count)]]);
+        string randomCharacter = keyList[Random.Range(0, characters.Count)];
+        //Debug.Log("CHECK: " + randomCharacter);
+        return(characters[randomCharacter]);
     }
 
     public void InitInventory()
     {
         // Read in JSON data
-        string filepathJSON = "Data/shop_click_values_SHORT";
-        TextAsset jsonTextFile = Resources.Load<TextAsset>(filepathJSON);
+        TextAsset jsonTextFile = Resources.Load<TextAsset>(filepathInventoryJSON);
         Item[] items = Helper.FromJson<Item>(jsonTextFile.ToString());
         // Debug.Log("JSON inventory read, contains " + items.Length.ToString() + " items.");
 
@@ -106,6 +116,48 @@ public class Global : MonoBehaviour
             // Debug.Log(items[i].name);
         }
     }
+    public void InitInventoryStarting()
+    {
+        inventory["Wood Axe"].SetIsAvailable(true);
+        inventory["Wood Axe"].SetStock(5);
+
+        inventory["Dirk"].SetIsAvailable(true);
+        inventory["Dirk"].SetStock(5);
+
+        inventory["Javelin"].SetIsAvailable(true);
+        inventory["Javelin"].SetStock(5);
+
+        inventory["Long Bow"].SetIsAvailable(true);
+        inventory["Long Bow"].SetStock(5);
+
+        inventory["Breastplate"].SetIsAvailable(true);
+        inventory["Breastplate"].SetStock(5);
+
+        inventory["Leather Armor"].SetIsAvailable(true);
+        inventory["Leather Armor"].SetStock(5);
+        
+        inventory["Wooden Dome"].SetIsAvailable(true);
+        inventory["Wooden Dome"].SetStock(5);
+
+        inventory["Leather Cap"].SetIsAvailable(true);
+        inventory["Leather Cap"].SetStock(5);
+
+        inventory["Stitched Cone"].SetIsAvailable(true);
+        inventory["Stitched Cone"].SetStock(5);
+        
+        inventory["Iron Armguards"].SetIsAvailable(true);
+        inventory["Iron Armguards"].SetStock(5);
+        
+        inventory["Shin Guards"].SetIsAvailable(true);
+        inventory["Shin Guards"].SetStock(5);
+        
+        inventory["Escutcheon"].SetIsAvailable(true);
+        inventory["Escutcheon"].SetStock(5);
+
+        inventory["Warm Tea"].SetIsAvailable(true);
+        inventory["Warm Tea"].SetStock(5);
+    }
+
     public Item RandomItem()
     {
         // Returns a random item from the inventory.
@@ -146,6 +198,22 @@ public class Global : MonoBehaviour
             entry.Value.CheckTimeRemaining();
         }
     }
+
+    public List<Item> CheckItemsAvailable(string itemCategory)
+    {
+        // Returns a vector of all items available for a specific item class
+        List<Item> itemsAvailable = new List<Item>();
+
+        foreach(KeyValuePair<string, Item> entry in inventory)
+        {
+            if((entry.Value.category == itemCategory) && (entry.Value.GetIsAvailable())){
+                Debug.Log("Available " + itemCategory + ": " + entry.Value.name);
+                itemsAvailable.Add(entry.Value);
+            }
+        }
+        return(itemsAvailable);
+    }
+
 
 
 }

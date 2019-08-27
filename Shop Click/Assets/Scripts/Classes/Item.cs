@@ -65,9 +65,10 @@ using UnityEngine;
     public bool CheckStock(int stock){ if(stock <= this.stock){ return(true); } else { return(false); }}
     public void AddStock(int stock){ this.stock += stock; }
     public int lifetimeCrafted;
-    public void CraftItem()
+
+    public void AcquireResources()
     {
-        Debug.Log(name + " has been crafted.");
+        Debug.Log("Acquiring resources for " + name + ".");
         Global.instance.GetResources()["Iron"].RemoveAmount(costIron);
         Global.instance.GetResources()["Wood"].RemoveAmount(costWood);
         Global.instance.GetResources()["Hide"].RemoveAmount(costHide);
@@ -76,8 +77,10 @@ using UnityEngine;
         Global.instance.GetResources()["Titanium"].RemoveAmount(costTitanium);
         Global.instance.GetResources()["Electricity"].RemoveAmount(costElectricity);
         Global.instance.GetResources()["Oil"].RemoveAmount(costOil);
-
-        // TEST: Immediately craft item.
+    }
+    public void CraftItem()
+    {
+        Debug.Log(name + " has been crafted.");
         stock += 1; lifetimeCrafted += 1;
         
     }

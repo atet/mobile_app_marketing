@@ -100,6 +100,9 @@ public class Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Close shop window if opened during dev.
+        panelShopDialog.SetActive(false);
+
         // First customer.
         NextCustomer();
     }
