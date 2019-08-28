@@ -26,11 +26,11 @@ public static class Helper
         string shortForm = "";
         if (t.Hours > 0)
         {
-            shortForm += string.Format("{0}h:", t.Hours.ToString());
+            shortForm += string.Format("{0}h ", t.Hours.ToString());
         }
         if (t.Minutes > 0)
         {
-            shortForm += string.Format("{0}m:", t.Minutes.ToString());
+            shortForm += string.Format("{0}m ", t.Minutes.ToString());
         }
         if (t.Seconds > 0)
         {

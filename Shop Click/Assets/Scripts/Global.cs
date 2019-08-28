@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Global : MonoBehaviour
 {
+
+    private const bool MODE_DEBUG = false;
     public static Global instance;
 
     private const string filepathInventoryJSON = "Data/shop_click_values_20190827";
@@ -61,17 +63,36 @@ public class Global : MonoBehaviour
     {
         resources = new Dictionary<string, Resource>();
 
-        // Customers coming in the store.
-        resources.Add("Queue",       new Resource("Queue",       1,  1, 999, 999));
+        if(MODE_DEBUG)
+        {
+            // Customers coming in the store.
+            resources.Add("Queue",       new Resource("Queue",       1,  1, 999, 900));
 
-        resources.Add("Iron",        new Resource("Iron",        1, 10, 20, 10));
-        resources.Add("Wood",        new Resource("Wood",        1,  5, 40, 10));
-        resources.Add("Hide",        new Resource("Hide",        1, 10,  0,  0));
-        resources.Add("Herbs",       new Resource("Herbs",       1, 10,  0,  0));
-        resources.Add("Steel",       new Resource("Steel",       1, 10,  0,  0));
-        resources.Add("Oil",         new Resource("Oil",         1, 10,  0,  0));
-        resources.Add("Electricity", new Resource("Electricity", 1, 10,  0,  0));
-        resources.Add("Titanium",    new Resource("Titanium",    1, 10,  0,  0));
+            resources.Add("Iron",        new Resource("Iron",        1,  1, 999, 900));
+            resources.Add("Wood",        new Resource("Wood",        1,  1, 999, 900));
+            resources.Add("Hide",        new Resource("Hide",        1,  1, 999, 900));
+            resources.Add("Herbs",       new Resource("Herbs",       1,  1, 999, 900));
+            resources.Add("Steel",       new Resource("Steel",       1,  1, 999, 900));
+            resources.Add("Oil",         new Resource("Oil",         1,  1, 999, 900));
+            resources.Add("Electricity", new Resource("Electricity", 1,  1, 999, 900));
+            resources.Add("Titanium",    new Resource("Titanium",    1,  1, 999, 900));
+        }
+        else
+        {
+            // Customers coming in the store.
+            resources.Add("Queue",       new Resource("Queue",       1, 10,  5, 10));
+
+            resources.Add("Iron",        new Resource("Iron",        1, 10, 20, 10));
+            resources.Add("Wood",        new Resource("Wood",        1,  5, 40, 10));
+            resources.Add("Hide",        new Resource("Hide",        0, 10,  0,  0));
+            resources.Add("Herbs",       new Resource("Herbs",       0, 10,  0,  0));
+            resources.Add("Steel",       new Resource("Steel",       0, 10,  0,  0));
+            resources.Add("Oil",         new Resource("Oil",         0, 10,  0,  0));
+            resources.Add("Electricity", new Resource("Electricity", 0, 10,  0,  0));
+            resources.Add("Titanium",    new Resource("Titanium",    0, 10,  0,  0));
+        }
+
+
     }
 
     public void InitCharacters()
@@ -118,44 +139,28 @@ public class Global : MonoBehaviour
     }
     public void InitInventoryStarting()
     {
-        inventory["Wood Axe"].SetIsAvailable(true);
-        inventory["Wood Axe"].SetStock(5);
-
-        inventory["Dirk"].SetIsAvailable(true);
-        inventory["Dirk"].SetStock(5);
-
-        inventory["Javelin"].SetIsAvailable(true);
-        inventory["Javelin"].SetStock(5);
-
-        inventory["Long Bow"].SetIsAvailable(true);
-        inventory["Long Bow"].SetStock(5);
-
-        inventory["Breastplate"].SetIsAvailable(true);
-        inventory["Breastplate"].SetStock(5);
-
-        inventory["Leather Armor"].SetIsAvailable(true);
-        inventory["Leather Armor"].SetStock(5);
-        
-        inventory["Wooden Dome"].SetIsAvailable(true);
-        inventory["Wooden Dome"].SetStock(5);
-
-        inventory["Leather Cap"].SetIsAvailable(true);
-        inventory["Leather Cap"].SetStock(5);
-
-        inventory["Stitched Cone"].SetIsAvailable(true);
-        inventory["Stitched Cone"].SetStock(5);
-        
-        inventory["Iron Armguards"].SetIsAvailable(true);
-        inventory["Iron Armguards"].SetStock(5);
-        
-        inventory["Shin Guards"].SetIsAvailable(true);
-        inventory["Shin Guards"].SetStock(5);
-        
-        inventory["Escutcheon"].SetIsAvailable(true);
-        inventory["Escutcheon"].SetStock(5);
-
-        inventory["Warm Tea"].SetIsAvailable(true);
-        inventory["Warm Tea"].SetStock(5);
+        if(MODE_DEBUG){
+            foreach (var kvp in inventory)
+            {
+                kvp.Value.SetIsAvailable(true);    
+            }
+        }
+        else
+        {
+            inventory["Wood Axe"].SetIsAvailable(true); inventory["Wood Axe"].SetStock(1);
+            inventory["Dirk"].SetIsAvailable(true); inventory["Dirk"].SetStock(0);
+            inventory["Javelin"].SetIsAvailable(true); inventory["Javelin"].SetStock(0);
+            inventory["Long Bow"].SetIsAvailable(true); inventory["Long Bow"].SetStock(0);
+            inventory["Breastplate"].SetIsAvailable(true); inventory["Breastplate"].SetStock(0);
+            inventory["Leather Armor"].SetIsAvailable(true); inventory["Leather Armor"].SetStock(0);
+            inventory["Wooden Dome"].SetIsAvailable(true); inventory["Wooden Dome"].SetStock(0);
+            inventory["Leather Cap"].SetIsAvailable(true); inventory["Leather Cap"].SetStock(0);
+            inventory["Stitched Cone"].SetIsAvailable(true); inventory["Stitched Cone"].SetStock(0);
+            inventory["Iron Armguards"].SetIsAvailable(true); inventory["Iron Armguards"].SetStock(0);
+            inventory["Shin Guards"].SetIsAvailable(true); inventory["Shin Guards"].SetStock(0);
+            inventory["Escutcheon"].SetIsAvailable(true); inventory["Escutcheon"].SetStock(0);
+            inventory["Warm Tea"].SetIsAvailable(true); inventory["Warm Tea"].SetStock(0);
+        }
     }
 
     public Item RandomItem()
@@ -207,14 +212,12 @@ public class Global : MonoBehaviour
         foreach(KeyValuePair<string, Item> entry in inventory)
         {
             if((entry.Value.category == itemCategory) && (entry.Value.GetIsAvailable())){
-                Debug.Log("Available " + itemCategory + ": " + entry.Value.name);
+                //Debug.Log("Available " + itemCategory + ": " + entry.Value.name);
                 itemsAvailable.Add(entry.Value);
             }
         }
         return(itemsAvailable);
     }
-
-
 
 }
 

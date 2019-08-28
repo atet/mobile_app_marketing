@@ -13,7 +13,9 @@ public class Mine : MonoBehaviour
 
     private void CraftingItem(string itemName){
         // Different from CraftItem(), this waits a certain amount of time before CraftItem()
-        if(CraftingItemSlotOpen()){
+        if(Global.instance.GetInventory()[itemName].CheckResource() && CraftingItemSlotOpen()){
+            Debug.Log("CraftingItem(" + itemName + ")");
+
             // Subtract resources.
             Global.instance.GetInventory()[itemName].AcquireResources();
 
@@ -41,6 +43,32 @@ public class Mine : MonoBehaviour
             // Set text on slot to reflect countdown time.
             CraftingItemUpdateTime(currentIndex);
         }
+    }
+    private bool CraftingItemSlotOpen()
+    {
+        if(CraftingItemSelectSlot() != -1)
+        {
+            return(true);
+        }
+        else
+        {
+            Debug.Log("No crafting slots open!");
+            return(false);
+        }
+    }
+    private int CraftingItemSelectSlot()
+    {
+        // TODO: Rearrage slots in descending time remaining order
+        // Finds out which slots are free
+        for(int i = 0; i < panelMineCraftQueue.transform.childCount; i++)
+        {
+            if(!panelMineCraftQueue.transform.GetChild(i).gameObject.activeSelf)
+            {
+                return(i);
+            }
+        }
+        // else
+        return(-1);
     }
 
     private void CraftingItemUpdateTimeAll()
@@ -74,32 +102,7 @@ public class Mine : MonoBehaviour
         }
     }
 
-    private bool CraftingItemSlotOpen()
-    {
-        if(CraftingItemSelectSlot() != -1)
-        {
-            return(true);
-        }
-        else
-        {
-            Debug.Log("No crafting slots open!");
-            return(false);
-        }
-    }
-    private int CraftingItemSelectSlot()
-    {
-        // TODO: Rearrage slots in descending time remaining order
-        // Finds out which slots are free
-        for(int i = 0; i < panelMineCraftQueue.transform.childCount; i++)
-        {
-            if(!panelMineCraftQueue.transform.GetChild(i).gameObject.activeSelf)
-            {
-                return(i);
-            }
-        }
-        // else
-        return(-1);
-    }
+
 
     [SerializeField] public GameObject panelCraftWindow;
     
@@ -111,7 +114,9 @@ public class Mine : MonoBehaviour
     [SerializeField] public List<GameObject> panelsCraft;
     
     public void OnPressButtonItemClass(string itemCategory){
-        Debug.Log("itemCategory = " + itemCategory);
+        //Debug.Log("itemCategory = " + itemCategory);
+
+        int maxIndex = panelsCraft.Count; // Currently max of seven menu items
 
         // Grab all Items with available blueprints
         List<Item> itemsAvailable = Global.instance.CheckItemsAvailable(itemCategory);
@@ -121,16 +126,50 @@ public class Mine : MonoBehaviour
         {
             for(int i = 0; i < itemsAvailable.Count; i++)
             {
-                GameObject currentButton = panelsCraft[i].transform.GetChild(0).gameObject;
+                Button currentButton = panelsCraft[i].transform.GetChild(0).gameObject.GetComponent<Button>();
+                Item currentItem = itemsAvailable[i];
 
                 // Name of item
-                currentButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = itemsAvailable[i].name;
+                currentButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentItem.name;
 
                 // Value
-                currentButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "+" + itemsAvailable[i].value.ToString("N0");
+                currentButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "+" + currentItem.value.ToString("N0");
 
+                // Level (TODO: Have a tier number somewhere and a level/count how many have been made over lifetime)
+                currentButton.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = currentItem.tier.ToString();
+
+                // Stock
+                currentButton.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = currentItem.GetStock().ToString("N0");
+
+                // Crafting time
+                currentButton.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = Helper.TimeFormatter(currentItem.timeCrafting);
+
+                // Image
+                currentButton.transform.GetChild(9).GetComponent<Image>().sprite = Resources.Load<Sprite>(currentItem.filepathImage);
+                currentButton.transform.GetChild(9).GetComponent<Image>().SetNativeSize();
+
+                // Required resources
+                GameObject currentPanelResource = currentButton.transform.GetChild(10).gameObject;
+                // Inactivate all panels first
+                for(int j = 0; j < 6; j++){ currentPanelResource.transform.GetChild(j).gameObject.SetActive(false); }
+
+                SetPanelResources(currentItem, currentPanelResource);
+
+
+
+
+                // Link button to function to craft said item.
+                currentButton.onClick.RemoveAllListeners(); // Remove any previous listeners.
+                currentButton.onClick.AddListener(delegate { CraftingItem(currentItem.name); });
+                
                 // Show the button
                 panelsCraft[i].SetActive(true);
+            }
+
+            for(int i = itemsAvailable.Count; i < maxIndex; i++)
+            {
+                // Deactivate panel/button after clicked, important when selecting a menu that has less items after a many that had more items
+                panelsCraft[i].SetActive(false); 
             }
 
             // Show panel
@@ -139,6 +178,8 @@ public class Mine : MonoBehaviour
 
 
     }
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -191,5 +232,74 @@ public class Mine : MonoBehaviour
         buttonPotion.onClick.AddListener(delegate {OnPressButtonItemClass("Potion"); });
         buttonMagic.onClick.AddListener(delegate {OnPressButtonItemClass("Magic"); });
 
+    }
+
+    public void SetPanelResources(Item item, GameObject panelResource)
+    {
+        int currentIndexPanelResources = 0;
+        if(item.costIron > 0)
+        {
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/iron");
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costIron.ToString();
+            // Set panel active
+            panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
+            currentIndexPanelResources++;
+        }
+        if(item.costHide > 0)
+        {
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/hide");
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costHide.ToString();
+            // Set panel active
+            panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
+            currentIndexPanelResources++;
+        }
+        if(item.costWood > 0)
+        {
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/wood");
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costWood.ToString();
+            // Set panel active
+            panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
+            currentIndexPanelResources++;
+        }
+        if(item.costHerbs > 0)
+        {
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/herbs");
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costHerbs.ToString();
+            // Set panel active
+            panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
+            currentIndexPanelResources++;
+        }
+        if(item.costSteel > 0)
+        {
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/steel");
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costSteel.ToString();
+            // Set panel active
+            panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
+            currentIndexPanelResources++;
+        }
+        if(item.costOil > 0)
+        {
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/oil");
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costOil.ToString();
+            // Set panel active
+            panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
+            currentIndexPanelResources++;
+        }
+        if(item.costElectricity > 0)
+        {
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/electricity");
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costElectricity.ToString();
+            // Set panel active
+            panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
+            currentIndexPanelResources++;
+        }
+        if(item.costTitanium > 0)
+        {
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/titanium");
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costTitanium.ToString();
+            // Set panel active
+            panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
+            currentIndexPanelResources++;
+        }
     }
 }
