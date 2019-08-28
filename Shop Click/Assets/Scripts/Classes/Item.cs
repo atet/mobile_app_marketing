@@ -56,9 +56,8 @@ using UnityEngine;
     public ulong energySuggest;
     public ulong energySpeedUp;
 
-    private bool isAvailable;
-    public bool GetIsAvailable(){ return(isAvailable); }
-    public void SetIsAvailable(bool isAvailable){ this.isAvailable = isAvailable; }
+    private bool isFavorite; public bool GetIsFavorite(){ return(isFavorite); } public void SetIsFavorite(bool isFavorite){ this.isFavorite = isFavorite; }
+    private bool isAvailable; public bool GetIsAvailable(){ return(isAvailable); } public void SetIsAvailable(bool isAvailable){ this.isAvailable = isAvailable; }
     private int stock;
     public int GetStock(){ return(stock); }
     public void SetStock(int stock){ this.stock = stock; Global.instance.GetStats()["Stock"].AddAmount((ulong)stock); }
@@ -125,6 +124,7 @@ using UnityEngine;
 
     public Item()
     {
+        isFavorite = false;
         isAvailable = false;
         stock = 0;
         lifetimeCrafted = 0;

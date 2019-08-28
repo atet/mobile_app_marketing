@@ -6,7 +6,7 @@ public class Global : MonoBehaviour
 {
     private bool MODE_TUTORIAL = true; public bool GetMODE_TUTORIAL(){ return(MODE_TUTORIAL); } public void SetMODE_TUTORIAL(bool MODE_TUTORIAL){ this.MODE_TUTORIAL = MODE_TUTORIAL; }
     private int ID_TUTORIAL_EVENT = 0; public int GetID_TUTORIAL_EVENT(){ return(ID_TUTORIAL_EVENT); } public void IncrementID_TUTORIAL_EVENT(){ ID_TUTORIAL_EVENT++; }
-    private const bool MODE_DEBUG = false; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
+    private const bool MODE_DEBUG = true; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
 
     // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
     private const float globalMultiplier = 20; public float GetGlobalMultiplier(){ return(globalMultiplier); }

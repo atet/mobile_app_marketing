@@ -141,38 +141,48 @@ public class Mine : MonoBehaviour
         {
             for(int i = 0; i < items.Count; i++)
             {
-                Button currentButton = panelsCraft[i].transform.GetChild(0).gameObject.GetComponent<Button>();
+                Button currentButtonCraft = panelsCraft[i].transform.GetChild(0).gameObject.GetComponent<Button>();
+                Button currentButtonFavorites = panelsCraft[i].transform.GetChild(1).gameObject.GetComponent<Button>();
                 Item currentItem = items[i];
 
                 // Name of item
-                currentButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentItem.name;
+                currentButtonCraft.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentItem.name;
 
                 // Value
-                currentButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "+" + currentItem.value.ToString("N0");
+                currentButtonCraft.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "+" + currentItem.value.ToString("N0");
 
                 // Level (TODO: Have a tier number somewhere and a level/count how many have been made over lifetime)
-                currentButton.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = currentItem.tier.ToString();
+                currentButtonCraft.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = currentItem.tier.ToString();
 
                 // Stock
-                currentButton.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = currentItem.GetStock().ToString("N0");
+                currentButtonCraft.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = currentItem.GetStock().ToString("N0");
 
                 // Crafting time
-                currentButton.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = Helper.TimeFormatter(currentItem.timeCrafting);
+                currentButtonCraft.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = Helper.TimeFormatter(currentItem.timeCrafting);
 
                 // Image
-                currentButton.transform.GetChild(9).GetComponent<Image>().sprite = Resources.Load<Sprite>(currentItem.filepathImage);
-                currentButton.transform.GetChild(9).GetComponent<Image>().SetNativeSize();
+                currentButtonCraft.transform.GetChild(9).GetComponent<Image>().sprite = Resources.Load<Sprite>(currentItem.filepathImage);
+                currentButtonCraft.transform.GetChild(9).GetComponent<Image>().SetNativeSize();
+
+                // Favorites
+                SetImageCraftFavorites(currentButtonFavorites, currentItem); // Default appropriate image on creation.
+                currentButtonFavorites.gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
+                currentButtonFavorites.gameObject.GetComponent<Button>().onClick.AddListener(
+                delegate
+                {
+                    OnClickButtonCraftFavorites(currentButtonFavorites, currentItem);
+                });
 
                 // Required resources
-                GameObject currentPanelResource = currentButton.transform.GetChild(10).gameObject;
+                GameObject currentPanelResource = currentButtonCraft.transform.GetChild(10).gameObject;
                 // Inactivate all panels first
                 for(int j = 0; j < 6; j++){ currentPanelResource.transform.GetChild(j).gameObject.SetActive(false); }
 
                 SetPanelResources(currentItem, currentPanelResource);
 
                 // Link button to function to craft said item.
-                currentButton.onClick.RemoveAllListeners(); // Remove any previous listeners.
-                currentButton.onClick.AddListener(delegate { CraftingItem(currentItem.name); });
+                currentButtonCraft.onClick.RemoveAllListeners(); // Remove any previous listeners.
+                currentButtonCraft.onClick.AddListener(delegate { CraftingItem(currentItem.name); });
                 
                 // Show the button
                 panelsCraft[i].SetActive(true);
@@ -180,7 +190,7 @@ public class Mine : MonoBehaviour
 
             for(int i = items.Count; i < maxIndex; i++)
             {
-                Debug.Log("Blank index =" + i);
+                //Debug.Log("Blank index =" + i);
                 // Deactivate panel/button after clicked, important when selecting a menu that has less items after a many that had more items
                 panelsCraft[i].SetActive(false); 
             }
@@ -240,7 +250,7 @@ public class Mine : MonoBehaviour
     {
         // This function will get called everytime an item is crafted
 
-        // Check if item is already in the Dictionary
+        // Check if item is already in the List
         if(itemsRecent.Count > 0)
         {
             for(int i = 0; i < itemsRecent.Count; i++)
@@ -272,7 +282,81 @@ public class Mine : MonoBehaviour
 
 
     [SerializeField] public Button buttonCraftFavorites;
-    private Dictionary<string, Item> itemsFavorites = new Dictionary<string, Item>();
+    private List<Item> itemsFavorites = new List<Item>();
+    private void OnClickButtonCraftFavorites(Button currentButton, Item currentItem){
+        string imageFilepath;
+        //Debug.Log("Currently favorite bool = " + currentItem.GetIsFavorite());
+        if(currentItem.GetIsFavorite())
+        {
+            //Debug.Log("Setting back to black");
+            currentItem.SetIsFavorite(false);
+            imageFilepath = "Images/UI/heart_black_transparent";
+            DepopulateCraftFavoritesWindow(currentItem);
+        }
+        else
+        {
+            //Debug.Log("Setting back to red");
+            currentItem.SetIsFavorite(true);
+            imageFilepath = "Images/UI/heart_red_transparent";
+            PopulateCraftFavoritesWindow(currentItem);
+        }
+        SetImageCraftFavorites(currentButton, imageFilepath);
+    }
+    public void SetImageCraftFavorites(Button currentButton, string imageFilepath)
+    {
+        currentButton.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(imageFilepath);
+        //currentButton.transform.GetChild(0).GetComponent<Image>().SetNativeSize(); // Don't do this
+    }
+    public void SetImageCraftFavorites(Button currentButton, Item currentItem)
+    {
+        string imageFilepath;
+        if(currentItem.GetIsFavorite())
+        {
+            imageFilepath = "Images/UI/heart_red_transparent";
+        }
+        else
+        {
+            imageFilepath = "Images/UI/heart_black_transparent";
+        }
+        SetImageCraftFavorites(currentButton, imageFilepath);
+    }
+    public void PopulateCraftFavoritesWindow(Item itemFavorite)
+    {
+        // This function will get called everytime an item is added to favorites
+
+        // Add Item to itemsFavorites
+        itemsFavorites.Add(itemFavorite);
+
+        // Remove oldest item if list gets over panelsCraft.Count, currently max of 7 slots
+        if(itemsFavorites.Count > panelsCraft.Count)
+        {
+            Debug.Log("Removing the oldest item.");
+            itemsFavorites[0].SetIsFavorite(false);
+            itemsFavorites.RemoveAt(0);
+        }
+    }
+    public void DepopulateCraftFavoritesWindow(Item itemFavorite)
+    {
+        string itemNameFavorite = itemFavorite.name;
+        // This function will get called everytime an item is removed from favorites
+        // Check if item is already in the List
+        if(itemsFavorites.Count > 0)
+        {
+            for(int i = 0; i < itemsFavorites.Count; i++)
+            {
+                if(itemsFavorites[i].name == itemNameFavorite)
+                {
+                    itemsFavorites.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+    }
+    public void LinkButtonCraftFavorites()
+    {
+        // Setup onClick events through code
+        buttonCraftFavorites.onClick.AddListener(delegate { OnClickCraftWindow(itemsFavorites); });
+    }
 
 
 
@@ -286,6 +370,7 @@ public class Mine : MonoBehaviour
         LinkButtonsCategory();
 
         LinkButtonCraftRecent();
+        LinkButtonCraftFavorites();
     }
     // Update is called once per frame
     void Update()
