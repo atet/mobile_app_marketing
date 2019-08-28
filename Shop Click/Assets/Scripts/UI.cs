@@ -23,7 +23,7 @@ public class UI : MonoBehaviour
     {
         uIMineIron.text = Global.instance.GetResources()["Iron"].ToStringAmount();
         uIMineIronDetailLevel.text = "Lvl. " + Global.instance.GetResources()["Iron"].GetLevel().ToString();
-        uIMineIronDetailRate.text = Global.instance.GetResources()["Iron"].GetRate().ToString() + "/min.";
+        uIMineIronDetailRate.text = System.Math.Round(60 / Global.instance.GetResources()["Iron"].GetRate(), 1).ToString() + "/min.";
         uIMineIronDetailCap.text = Global.instance.GetResources()["Iron"].ToStringAmount() + "/" + Global.instance.GetResources()["Iron"].GetCap().ToString();
     }
     [SerializeField] public TextMeshProUGUI uIMineHide, uIMineHideDetailLevel, uIMineHideDetailRate, uIMineHideDetailCap;
@@ -31,7 +31,7 @@ public class UI : MonoBehaviour
     {
         uIMineHide.text = Global.instance.GetResources()["Hide"].ToStringAmount();
         uIMineHideDetailLevel.text = "Lvl. " + Global.instance.GetResources()["Hide"].GetLevel().ToString();
-        uIMineHideDetailRate.text = Global.instance.GetResources()["Hide"].GetRate().ToString() + "/min.";
+        uIMineHideDetailRate.text = System.Math.Round(60 / Global.instance.GetResources()["Hide"].GetRate(), 1).ToString() + "/min.";
         uIMineHideDetailCap.text = Global.instance.GetResources()["Hide"].ToStringAmount() + "/" + Global.instance.GetResources()["Hide"].GetCap().ToString();
     }
     [SerializeField] public TextMeshProUGUI uIMineWood, uIMineWoodDetailLevel, uIMineWoodDetailRate, uIMineWoodDetailCap;
@@ -39,7 +39,7 @@ public class UI : MonoBehaviour
     {
         uIMineWood.text = Global.instance.GetResources()["Wood"].ToStringAmount();
         uIMineWoodDetailLevel.text = "Lvl. " + Global.instance.GetResources()["Wood"].GetLevel().ToString();
-        uIMineWoodDetailRate.text = Global.instance.GetResources()["Wood"].GetRate().ToString() + "/min.";
+        uIMineWoodDetailRate.text = System.Math.Round(60 / Global.instance.GetResources()["Wood"].GetRate(), 1).ToString() + "/min.";
         uIMineWoodDetailCap.text = Global.instance.GetResources()["Wood"].ToStringAmount() + "/" + Global.instance.GetResources()["Wood"].GetCap().ToString();
     }
     [SerializeField] public TextMeshProUGUI uIMineHerbs, uIMineHerbsDetailLevel, uIMineHerbsDetailRate, uIMineHerbsDetailCap;
@@ -47,7 +47,7 @@ public class UI : MonoBehaviour
     {
         uIMineHerbs.text = Global.instance.GetResources()["Herbs"].ToStringAmount();
         uIMineHerbsDetailLevel.text = "Lvl. " + Global.instance.GetResources()["Herbs"].GetLevel().ToString();
-        uIMineHerbsDetailRate.text = Global.instance.GetResources()["Herbs"].GetRate().ToString() + "/min.";
+        uIMineHerbsDetailRate.text = System.Math.Round(60 / Global.instance.GetResources()["Herbs"].GetRate(), 1).ToString() + "/min.";
         uIMineHerbsDetailCap.text = Global.instance.GetResources()["Herbs"].ToStringAmount() + "/" + Global.instance.GetResources()["Herbs"].GetCap().ToString();
     }
     [SerializeField] public TextMeshProUGUI uIMineSteel, uIMineSteelDetailLevel, uIMineSteelDetailRate, uIMineSteelDetailCap;
@@ -55,7 +55,7 @@ public class UI : MonoBehaviour
     {
         uIMineSteel.text = Global.instance.GetResources()["Steel"].ToStringAmount();
         uIMineSteelDetailLevel.text = "Lvl. " + Global.instance.GetResources()["Steel"].GetLevel().ToString();
-        uIMineSteelDetailRate.text = Global.instance.GetResources()["Steel"].GetRate().ToString() + "/min.";
+        uIMineSteelDetailRate.text = System.Math.Round(60 / Global.instance.GetResources()["Steel"].GetRate(), 1).ToString() + "/min.";
         uIMineSteelDetailCap.text = Global.instance.GetResources()["Steel"].ToStringAmount() + "/" + Global.instance.GetResources()["Steel"].GetCap().ToString();
     }
     [SerializeField] public TextMeshProUGUI uIMineOil, uIMineOilDetailLevel, uIMineOilDetailRate, uIMineOilDetailCap;
@@ -63,7 +63,7 @@ public class UI : MonoBehaviour
     {
         uIMineOil.text = Global.instance.GetResources()["Oil"].ToStringAmount();
         uIMineOilDetailLevel.text = "Lvl. " + Global.instance.GetResources()["Oil"].GetLevel().ToString();
-        uIMineOilDetailRate.text = Global.instance.GetResources()["Oil"].GetRate().ToString() + "/min.";
+        uIMineOilDetailRate.text = System.Math.Round(60 / Global.instance.GetResources()["Oil"].GetRate(), 1).ToString() + "/min.";
         uIMineOilDetailCap.text = Global.instance.GetResources()["Oil"].ToStringAmount() + "/" + Global.instance.GetResources()["Oil"].GetCap().ToString();
     }
     [SerializeField] public TextMeshProUGUI uIMineElectricity, uIMineElectricityDetailLevel, uIMineElectricityDetailRate, uIMineElectricityDetailCap;
@@ -71,7 +71,7 @@ public class UI : MonoBehaviour
     {
         uIMineElectricity.text = Global.instance.GetResources()["Electricity"].ToStringAmount();
         uIMineElectricityDetailLevel.text = "Lvl. " + Global.instance.GetResources()["Electricity"].GetLevel().ToString();
-        uIMineElectricityDetailRate.text = Global.instance.GetResources()["Electricity"].GetRate().ToString() + "/min.";
+        uIMineElectricityDetailRate.text = System.Math.Round(60 / Global.instance.GetResources()["Electricity"].GetRate(), 1).ToString() + "/min.";
         uIMineElectricityDetailCap.text = Global.instance.GetResources()["Electricity"].ToStringAmount() + "/" + Global.instance.GetResources()["Electricity"].GetCap().ToString();
     }
     [SerializeField] public TextMeshProUGUI uIMineTitanium, uIMineTitaniumDetailLevel, uIMineTitaniumDetailRate, uIMineTitaniumDetailCap;
@@ -79,7 +79,7 @@ public class UI : MonoBehaviour
     {
         uIMineTitanium.text = Global.instance.GetResources()["Titanium"].ToStringAmount();
         uIMineTitaniumDetailLevel.text = "Lvl. " + Global.instance.GetResources()["Titanium"].GetLevel().ToString();
-        uIMineTitaniumDetailRate.text = Global.instance.GetResources()["Titanium"].GetRate().ToString() + "/min.";
+        uIMineTitaniumDetailRate.text = System.Math.Round(60 / Global.instance.GetResources()["Titanium"].GetRate(), 1).ToString() + "/min.";
         uIMineTitaniumDetailCap.text = Global.instance.GetResources()["Titanium"].ToStringAmount() + "/" + Global.instance.GetResources()["Titanium"].GetCap().ToString();
     }
     

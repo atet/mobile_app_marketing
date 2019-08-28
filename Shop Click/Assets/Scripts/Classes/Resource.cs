@@ -71,8 +71,8 @@ public class Resource
     {
         this.label = label;
         this.level = level;
-        this.rate = rate;
-        timeRemaining = rate;
+        this.rate = rate * (1 / Global.instance.GetGlobalMultiplier());
+        timeRemaining = this.rate; // Initial set
         this.cap = cap;
         this.amount = amount;
         // DebugLog();

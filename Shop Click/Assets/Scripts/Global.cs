@@ -5,7 +5,10 @@ using UnityEngine;
 public class Global : MonoBehaviour
 {
 
-    private const bool MODE_DEBUG = false;
+    private const bool MODE_DEBUG = false; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
+
+    // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
+    private const float globalMultiplier = 1; public float GetGlobalMultiplier(){ return(globalMultiplier); }
     public static Global instance;
 
     private const string filepathInventoryJSON = "Data/shop_click_values_20190827";
@@ -82,14 +85,14 @@ public class Global : MonoBehaviour
             // Customers coming in the store.
             resources.Add("Queue",       new Resource("Queue",       1, 10,  5, 10));
 
-            resources.Add("Iron",        new Resource("Iron",        1, 10, 20, 10));
-            resources.Add("Wood",        new Resource("Wood",        1,  5, 40, 10));
-            resources.Add("Hide",        new Resource("Hide",        0, 10,  0,  0));
-            resources.Add("Herbs",       new Resource("Herbs",       0, 10,  0,  0));
-            resources.Add("Steel",       new Resource("Steel",       0, 10,  0,  0));
-            resources.Add("Oil",         new Resource("Oil",         0, 10,  0,  0));
-            resources.Add("Electricity", new Resource("Electricity", 0, 10,  0,  0));
-            resources.Add("Titanium",    new Resource("Titanium",    0, 10,  0,  0));
+            resources.Add("Iron",        new Resource("Iron",        1, 10, 35,  5));
+            resources.Add("Wood",        new Resource("Wood",        1, 10, 35,  0));
+            resources.Add("Hide",        new Resource("Hide",        1, 10, 35,  0));
+            resources.Add("Herbs",       new Resource("Herbs",       1, 10, 35,  0));
+            resources.Add("Steel",       new Resource("Steel",       1, 45, 15,  0));
+            resources.Add("Oil",         new Resource("Oil",         1, 45, 15,  0));
+            resources.Add("Electricity", new Resource("Electricity", 1, 45, 15,  0));
+            resources.Add("Titanium",    new Resource("Titanium",    1, 45, 15,  0));
         }
 
 
@@ -134,6 +137,7 @@ public class Global : MonoBehaviour
         for (int i = 0; i < items.Length; i++)
         {
             inventory.Add(items[i].name, items[i]);
+            inventory[items[i].name].timeCrafting = (ulong)(inventory[items[i].name].timeCrafting * (1 / Global.instance.GetGlobalMultiplier()));
             // Debug.Log(items[i].name);
         }
     }
