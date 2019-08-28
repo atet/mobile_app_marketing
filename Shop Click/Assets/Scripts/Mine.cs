@@ -6,11 +6,14 @@ using TMPro;
 
 public class Mine : MonoBehaviour
 {
+    [SerializeField] public Button buttonStock;
+    public void UpdateButtonStock()
+    {
+        buttonStock.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Global.instance.GetStats()["Stock"].GetAmount().ToString();
+        buttonStock.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = Global.instance.GetStats()["Stock"].GetCap().ToString();
+    }
 
     [SerializeField] public GameObject panelMineCraftQueue;
-    
-    private float[] countdownQueue;
-
     private void CraftingItem(string itemName){
         // Different from CraftItem(), this waits a certain amount of time before CraftItem()
         if(
@@ -61,6 +64,10 @@ public class Mine : MonoBehaviour
             // Set text on slot to reflect countdown time.
             CraftingItemUpdateTime(currentIndex);
 
+            // Add item to Recent (ly crafted items list)
+            Debug.Log("Adding item to Recent");
+            PopulateCraftRecentWindow(itemName);
+
         }
     }
     private bool CraftingItemSlotOpen()
@@ -89,7 +96,8 @@ public class Mine : MonoBehaviour
         // else
         return(-1);
     }
-
+    
+    private float[] countdownQueue;
     private void CraftingItemUpdateTimeAll()
     {
         // Will update time on all slots.
@@ -98,7 +106,6 @@ public class Mine : MonoBehaviour
             CraftingItemUpdateTime(i);
         }
     }
-
     private void CraftingItemUpdateTime(int index)
     {
         if(countdownQueue[index] != -999)
@@ -112,49 +119,30 @@ public class Mine : MonoBehaviour
             {
                 // Countdown done.
                 // Enable button.
-
                 panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).GetComponent<Button>().interactable = true;
 
+                // Set countdown to -999 to denote this slot is no longer being used
                 countdownQueue[index] = -999;
-                panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Done!";
+
+                // Change button text to "Finished"
+                panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Finished";
             }
 
         }
     }
 
-    [SerializeField] public Button buttonStock;
-
-    public void UpdateButtonStock()
-    {
-        buttonStock.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Global.instance.GetStats()["Stock"].GetAmount().ToString();
-        buttonStock.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = Global.instance.GetStats()["Stock"].GetCap().ToString();
-    }
-
-
     [SerializeField] public GameObject panelCraftWindow;
-    
-
-    [SerializeField] public Button buttonDagger, buttonStaff, buttonBow, buttonMace, buttonAxe, buttonSpear, buttonSword, buttonWand, buttonCrossbow, buttonGun;
-    [SerializeField] public Button buttonShield, buttonShoes, buttonBoots, buttonGloves, buttonGauntlets, buttonHeadgear, buttonHat, buttonHelmet, buttonClothing, buttonLightArmor, buttonHeavyArmor;
-    [SerializeField] public Button buttonRing, buttonAmulet, buttonRunestone, buttonEnchantment, buttonSpirit, buttonMedicine, buttonPotion, buttonMagic;
-
     [SerializeField] public List<GameObject> panelsCraft;
-    
-    public void OnPressButtonItemClass(string itemCategory){
-        //Debug.Log("itemCategory = " + itemCategory);
-
+    public void OnClickCraftWindow(List<Item> items)
+    {
         int maxIndex = panelsCraft.Count; // Currently max of seven menu items
-
-        // Grab all Items with available blueprints
-        List<Item> itemsAvailable = Global.instance.CheckItemsAvailable(itemCategory);
-
         // Only open menu if there's actually available items
-        if(itemsAvailable.Count > 0)
+        if(items.Count > 0)
         {
-            for(int i = 0; i < itemsAvailable.Count; i++)
+            for(int i = 0; i < items.Count; i++)
             {
                 Button currentButton = panelsCraft[i].transform.GetChild(0).gameObject.GetComponent<Button>();
-                Item currentItem = itemsAvailable[i];
+                Item currentItem = items[i];
 
                 // Name of item
                 currentButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = currentItem.name;
@@ -190,18 +178,102 @@ public class Mine : MonoBehaviour
                 panelsCraft[i].SetActive(true);
             }
 
-            for(int i = itemsAvailable.Count; i < maxIndex; i++)
+            for(int i = items.Count; i < maxIndex; i++)
             {
+                Debug.Log("Blank index =" + i);
                 // Deactivate panel/button after clicked, important when selecting a menu that has less items after a many that had more items
                 panelsCraft[i].SetActive(false); 
             }
-
             // Show panel
             panelCraftWindow.SetActive(true);
         }
+        else
+        {
+            panelCraftWindow.SetActive(false);
+        }
+    }
 
+
+    [SerializeField] public Button buttonDagger, buttonStaff, buttonBow, buttonMace, buttonAxe, buttonSpear, buttonSword, buttonWand, buttonCrossbow, buttonGun;
+    [SerializeField] public Button buttonShield, buttonShoes, buttonBoots, buttonGloves, buttonGauntlets, buttonHeadgear, buttonHat, buttonHelmet, buttonClothing, buttonLightArmor, buttonHeavyArmor;
+    [SerializeField] public Button buttonRing, buttonAmulet, buttonRunestone, buttonEnchantment, buttonSpirit, buttonMedicine, buttonPotion, buttonMagic;
+    public void LinkButtonsCategory()
+    {
+        // Setup onClick events through code
+        buttonDagger.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Dagger")); });
+        buttonStaff.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Staff")); });
+        buttonBow.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Bow")); });
+        buttonMace.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Mace")); });
+        buttonAxe.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Axe")); });
+        buttonSpear.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Spear")); });
+        buttonSword.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Sword")); });
+        buttonWand.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Wand")); });
+        buttonCrossbow.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Crossbow")); });
+        buttonGun.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Gun")); });
+
+        buttonShield.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Shield")); });
+        buttonShoes.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Shoes")); });
+        buttonBoots.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Boots")); });
+        buttonGloves.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Gloves")); });
+        buttonGauntlets.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Gauntlets")); });
+        buttonHeadgear.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Headgear")); });
+        buttonHat.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Hat")); });
+        buttonHelmet.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Helmet")); });
+        buttonClothing.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Clothing")); });
+        buttonLightArmor.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Light Armor")); });
+        buttonHeavyArmor.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Heavy Armor")); });
+
+        buttonRing.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Ring")); });
+        buttonAmulet.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Amulet")); });
+        buttonRunestone.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Runestone")); });
+        buttonEnchantment.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Enchantment")); });
+        buttonSpirit.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Spirit")); });
+        buttonMedicine.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Medicine")); });
+        buttonPotion.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Potion")); });
+        buttonMagic.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Magic")); });
 
     }
+
+    [SerializeField] public Button buttonCraftRecent;
+    private List<Item> itemsRecent = new List<Item>();
+    public void PopulateCraftRecentWindow(string itemNameRecent)
+    {
+        // This function will get called everytime an item is crafted
+
+        // Check if item is already in the Dictionary
+        if(itemsRecent.Count > 0)
+        {
+            for(int i = 0; i < itemsRecent.Count; i++)
+            {
+                if(itemsRecent[i].name == itemNameRecent)
+                {
+                    Debug.Log("Already have a " + itemNameRecent + " in Recent list.");
+                    itemsRecent.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+
+        // Add Item to itemsRecent
+        itemsRecent.Add(Global.instance.GetInventory()[itemNameRecent]);
+
+        // Remove oldest item if list gets over panelsCraft.Count, currently max of 7 slots
+        if(itemsRecent.Count > panelsCraft.Count)
+        {
+            Debug.Log("Removing the oldest item.");
+            itemsRecent.RemoveAt(0);
+        }
+    }
+    public void LinkButtonCraftRecent()
+    {
+        // Setup onClick events through code
+        buttonCraftRecent.onClick.AddListener(delegate { OnClickCraftWindow(itemsRecent); });
+    }
+
+
+    [SerializeField] public Button buttonCraftFavorites;
+    private Dictionary<string, Item> itemsFavorites = new Dictionary<string, Item>();
+
 
 
 
@@ -213,8 +285,8 @@ public class Mine : MonoBehaviour
 
         LinkButtonsCategory();
 
+        LinkButtonCraftRecent();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -222,43 +294,8 @@ public class Mine : MonoBehaviour
         CraftingItemUpdateTimeAll();
     }
 
-    public void LinkButtonsCategory()
-    {
-        // Setup onClick events through code
-        buttonDagger.onClick.AddListener(delegate {OnPressButtonItemClass("Dagger"); });
-        buttonStaff.onClick.AddListener(delegate {OnPressButtonItemClass("Staff"); });
-        buttonBow.onClick.AddListener(delegate {OnPressButtonItemClass("Bow"); });
-        buttonMace.onClick.AddListener(delegate {OnPressButtonItemClass("Mace"); });
-        buttonAxe.onClick.AddListener(delegate {OnPressButtonItemClass("Axe"); });
-        buttonSpear.onClick.AddListener(delegate {OnPressButtonItemClass("Spear"); });
-        buttonSword.onClick.AddListener(delegate {OnPressButtonItemClass("Sword"); });
-        buttonWand.onClick.AddListener(delegate {OnPressButtonItemClass("Wand"); });
-        buttonCrossbow.onClick.AddListener(delegate {OnPressButtonItemClass("Crossbow"); });
-        buttonGun.onClick.AddListener(delegate {OnPressButtonItemClass("Gun"); });
 
-        buttonShield.onClick.AddListener(delegate {OnPressButtonItemClass("Shield"); });
-        buttonShoes.onClick.AddListener(delegate {OnPressButtonItemClass("Shoes"); });
-        buttonBoots.onClick.AddListener(delegate {OnPressButtonItemClass("Boots"); });
-        buttonGloves.onClick.AddListener(delegate {OnPressButtonItemClass("Gloves"); });
-        buttonGauntlets.onClick.AddListener(delegate {OnPressButtonItemClass("Gauntlets"); });
-        buttonHeadgear.onClick.AddListener(delegate {OnPressButtonItemClass("Headgear"); });
-        buttonHat.onClick.AddListener(delegate {OnPressButtonItemClass("Hat"); });
-        buttonHelmet.onClick.AddListener(delegate {OnPressButtonItemClass("Helmet"); });
-        buttonClothing.onClick.AddListener(delegate {OnPressButtonItemClass("Clothing"); });
-        buttonLightArmor.onClick.AddListener(delegate {OnPressButtonItemClass("Light Armor"); });
-        buttonHeavyArmor.onClick.AddListener(delegate {OnPressButtonItemClass("Heavy Armor"); });
-
-        buttonRing.onClick.AddListener(delegate {OnPressButtonItemClass("Ring"); });
-        buttonAmulet.onClick.AddListener(delegate {OnPressButtonItemClass("Amulet"); });
-        buttonRunestone.onClick.AddListener(delegate {OnPressButtonItemClass("Runestone"); });
-        buttonEnchantment.onClick.AddListener(delegate {OnPressButtonItemClass("Enchantment"); });
-        buttonSpirit.onClick.AddListener(delegate {OnPressButtonItemClass("Spirit"); });
-        buttonMedicine.onClick.AddListener(delegate {OnPressButtonItemClass("Medicine"); });
-        buttonPotion.onClick.AddListener(delegate {OnPressButtonItemClass("Potion"); });
-        buttonMagic.onClick.AddListener(delegate {OnPressButtonItemClass("Magic"); });
-
-    }
-
+    // Helpers
     public void SetPanelResources(Item item, GameObject panelResource)
     {
         int currentIndexPanelResources = 0;
