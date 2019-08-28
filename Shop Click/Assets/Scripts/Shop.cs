@@ -30,9 +30,10 @@ public class Shop : MonoBehaviour
     public void UpdateTMProStock(){ tMProStock.text = currentItem.GetStock().ToString(); }
 
     // Need to bring buttons in to disable them.
-    [SerializeField] public Button buttonRebate;
-    [SerializeField] public Button buttonUpcharge;
-    [SerializeField] public Button buttonSuggest;
+    [SerializeField] public GameObject panelRefuse;
+    [SerializeField] public GameObject panelRebate;
+    [SerializeField] public GameObject PanelUpcharge;
+    [SerializeField] public GameObject panelSuggest;
 
     private int chakraSuggestCost; private int chakraRebateGain; private int chakraUpchargeCost; 
     [SerializeField] public TextMeshProUGUI tMProSuggest, tMProRebate, tMProUpcharge;
@@ -75,6 +76,7 @@ public class Shop : MonoBehaviour
     public void UpdateSpriteItem(){ 
         imageItem.sprite = Resources.Load<Sprite>(currentItem.filepathImage); 
         imageItem.SetNativeSize();
+
     }
 
     [SerializeField] public Image imageCharacter;
@@ -86,7 +88,7 @@ public class Shop : MonoBehaviour
 
     [SerializeField] public TextMeshProUGUI tMProDialog;
     public void UpdateTMProDialog(){ tMProDialog.text = currentCharacter.name + ": I would like to buy a " + currentItem.name + "."; }
-
+    //public void UpdateTMProDialog(string dialog){ tMProDialog.text = ":" }
     void Awake()
     {
         // Lifetime stats, should be put somewhere else when implementing save game.
@@ -104,7 +106,11 @@ public class Shop : MonoBehaviour
         panelShopDialog.SetActive(false);
 
         // First customer.
-        NextCustomer();
+        if(Global.instance.GetMODE_TUTORIAL()){
+            TutorialFirstCustomer();
+        }else{
+            NextCustomer("Random");
+        }
     }
     // Update is called once per frame
     void Update()
@@ -114,22 +120,8 @@ public class Shop : MonoBehaviour
         UpdateTMProStock();
 
     }
-    public void NextCustomer(){
-
-        if(Global.instance.GetResources()["Queue"].GetAmount() > 0)
-        {
-            Debug.Log("Next customer...");
-
-            // Pick random item from inventory.
-            currentItem = Global.instance.RandomItem();
-            //Debug.Log(currentItem.name);
-            // Update Item Sprite.
-            UpdateSpriteItem();
-
-            currentCharacter = Global.instance.RandomCharacter();
-            UpdateSpriteCharacter();
-
-
+    public void UpdateAllButtons()
+    {
             // Update values on all buttons.
             UpdateTMProSellChakra();
             UpdateTMProSuggest();
@@ -137,17 +129,44 @@ public class Shop : MonoBehaviour
             UpdateTMProUpcharge();
             ResetChakraRefuse();
 
-
-            // Reset buttons.
-            Helper.ButtonEnable(buttonRebate);
-            Helper.ButtonEnable(buttonUpcharge);
-            Helper.ButtonEnable(buttonSuggest);
-
             // Check Stock.
             UpdateTMProStock();
 
             // Update customer dialog.
             UpdateTMProDialog();
+
+            // Reset buttons.
+            Helper.ButtonEnable(panelRebate.transform.GetChild(0).gameObject.GetComponent<Button>());
+            Helper.ButtonEnable(PanelUpcharge.transform.GetChild(0).gameObject.GetComponent<Button>());
+            Helper.ButtonEnable(panelSuggest.transform.GetChild(0).gameObject.GetComponent<Button>());
+    }
+
+    public void NextCustomer(string itemName){
+
+        if(Global.instance.GetResources()["Queue"].GetAmount() > 0)
+        {
+            
+            if(itemName == "Random")
+            {
+                Debug.Log("Next random customer...");
+                // Pick random item from inventory.
+                currentItem = Global.instance.RandomItem();
+            }
+            else
+            {
+                Debug.Log("Next customer specifically wanting: " + itemName);
+                // Specific item to sell (e.g. Use for tutorial)
+                currentItem = Global.instance.GetInventory()[itemName];
+            }
+
+            //Debug.Log(currentItem.name);
+            // Update Item Sprite.
+            UpdateSpriteItem();
+
+            currentCharacter = Global.instance.RandomCharacter();
+            UpdateSpriteCharacter();
+
+            UpdateAllButtons();
 
             // Set value for this transaction.
             SetSellGainCoins(currentItem.value);
@@ -157,11 +176,57 @@ public class Shop : MonoBehaviour
             panelShopDialog.SetActive(false);
         }
 
-
-        // TODO: Need to think about where to add queue check/close panel, etc. when there are currently no customers.
-
-        
     }
+
+    public void TutorialFirstCustomer()
+    {
+        Debug.Log("First tutorial customer.");
+        currentItem = Global.instance.GetInventory()["Long Bow"];
+
+        // Update Item Sprite.
+        UpdateSpriteItem();
+
+        currentCharacter = Global.instance.RandomCharacter();
+        UpdateSpriteCharacter();
+
+        UpdateAllButtons();
+
+        // Hide these for now
+        panelRefuse.SetActive(false);
+        panelRebate.SetActive(false);
+        PanelUpcharge.SetActive(false);
+        panelSuggest.SetActive(false);
+
+        // Set value for this transaction.
+        SetSellGainCoins(currentItem.value);
+    }
+    public void TutorialSecondCustomer()
+    {
+        Debug.Log("Second tutorial customer.");
+        currentItem = Global.instance.GetInventory()["Javelin"];
+
+        // Update Item Sprite.
+        UpdateSpriteItem();
+
+        currentCharacter = Global.instance.RandomCharacter();
+        UpdateSpriteCharacter();
+
+        UpdateAllButtons();
+
+        // Hide these for now
+        panelRefuse.SetActive(false);
+        panelRebate.SetActive(false);
+        PanelUpcharge.SetActive(true);
+        panelSuggest.SetActive(false);
+
+        // Set value for this transaction.
+        SetSellGainCoins(currentItem.value);
+    }
+
+
+
+
+
     public void OnPressSuggest()
     {
         //Debug.Log("Pressed Suggest...");
@@ -169,7 +234,7 @@ public class Shop : MonoBehaviour
             Global.instance.GetStats()["Chakra"].RemoveAmount((ulong)chakraSuggestCost);
             
             // Disable buttons.
-            Helper.ButtonDisable(buttonSuggest);
+            Helper.ButtonDisable(panelSuggest.transform.GetChild(0).gameObject.GetComponent<Button>());
 
             // Change chakra cost for refusing
             AddChakraRefuse(chakraSuggestCost);
@@ -186,9 +251,9 @@ public class Shop : MonoBehaviour
         RebateSellGainCoins();
 
         // Disable buttons.
-        Helper.ButtonDisable(buttonRebate);
-        Helper.ButtonDisable(buttonUpcharge);
-        Helper.ButtonDisable(buttonSuggest);
+        Helper.ButtonDisable(panelRebate.transform.GetChild(0).gameObject.GetComponent<Button>());
+        Helper.ButtonDisable(PanelUpcharge.transform.GetChild(0).gameObject.GetComponent<Button>());
+        Helper.ButtonDisable(panelSuggest.transform.GetChild(0).gameObject.GetComponent<Button>());
 
         // Change chakra cost for refusing
         RemoveChakraRefuse(chakraRebateGain);
@@ -201,9 +266,9 @@ public class Shop : MonoBehaviour
             UpchargeSellGainCoins();
 
             // Disable buttons.
-            Helper.ButtonDisable(buttonRebate);
-            Helper.ButtonDisable(buttonUpcharge);
-            Helper.ButtonDisable(buttonSuggest);
+            Helper.ButtonDisable(panelRebate.transform.GetChild(0).gameObject.GetComponent<Button>());
+            Helper.ButtonDisable(PanelUpcharge.transform.GetChild(0).gameObject.GetComponent<Button>());
+            Helper.ButtonDisable(panelSuggest.transform.GetChild(0).gameObject.GetComponent<Button>());
 
             // Change chakra cost for refusing
             AddChakraRefuse(chakraUpchargeCost);
@@ -230,7 +295,16 @@ public class Shop : MonoBehaviour
 
             Global.instance.GetResources()["Queue"].DecrementAmount();
             UpdateTMProQueue();
-            NextCustomer();
+
+            if(!Global.instance.GetMODE_TUTORIAL())
+            {
+                NextCustomer("Random");
+            }
+            else
+            {
+                TutorialSecondCustomer();
+            }
+
         }
     }
     public void OnPressRefuse(){
@@ -254,7 +328,7 @@ public class Shop : MonoBehaviour
 
         Global.instance.GetResources()["Queue"].DecrementAmount();
         UpdateTMProQueue();
-        NextCustomer();
+        NextCustomer("Random");
     }
 
 }

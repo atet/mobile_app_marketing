@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Global : MonoBehaviour
 {
-
+    private bool MODE_TUTORIAL = true; public bool GetMODE_TUTORIAL(){ return(MODE_TUTORIAL); } public void SetMODE_TUTORIAL(bool MODE_TUTORIAL){ this.MODE_TUTORIAL = MODE_TUTORIAL; }
     private const bool MODE_DEBUG = false; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
 
     // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
@@ -151,10 +151,10 @@ public class Global : MonoBehaviour
         }
         else
         {
-            inventory["Wood Axe"].SetIsAvailable(true); inventory["Wood Axe"].SetStock(1);
+            inventory["Wood Axe"].SetIsAvailable(true); inventory["Wood Axe"].SetStock(0);
             inventory["Dirk"].SetIsAvailable(true); inventory["Dirk"].SetStock(0);
-            inventory["Javelin"].SetIsAvailable(true); inventory["Javelin"].SetStock(0);
-            inventory["Long Bow"].SetIsAvailable(true); inventory["Long Bow"].SetStock(0);
+            inventory["Javelin"].SetIsAvailable(true); inventory["Javelin"].SetStock(1);
+            inventory["Long Bow"].SetIsAvailable(true); inventory["Long Bow"].SetStock(1);
             inventory["Breastplate"].SetIsAvailable(true); inventory["Breastplate"].SetStock(0);
             inventory["Leather Armor"].SetIsAvailable(true); inventory["Leather Armor"].SetStock(0);
             inventory["Wooden Dome"].SetIsAvailable(true); inventory["Wooden Dome"].SetStock(0);
