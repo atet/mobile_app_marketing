@@ -250,6 +250,9 @@ public class Shop : MonoBehaviour
             // Increment sales count.
             IncrementCountSales();
 
+            // Decrement Global stock count.
+            Global.instance.GetStats()["Stock"].DecrementAmount();
+
             Global.instance.GetResources()["Queue"].DecrementAmount();
             UpdateTMProQueue();
 

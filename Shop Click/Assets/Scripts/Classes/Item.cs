@@ -61,9 +61,9 @@ using UnityEngine;
     public void SetIsAvailable(bool isAvailable){ this.isAvailable = isAvailable; }
     private int stock;
     public int GetStock(){ return(stock); }
-    public void SetStock(int stock){ this.stock = stock; }
+    public void SetStock(int stock){ this.stock = stock; Global.instance.GetStats()["Stock"].AddAmount((ulong)stock); }
     public bool CheckStock(int stock){ if(stock <= this.stock){ return(true); } else { return(false); }}
-    public void AddStock(int stock){ this.stock += stock; }
+    public void AddStock(int stock){ this.stock += stock; Global.instance.GetStats()["Stock"].AddAmount(System.Convert.ToUInt64(stock)); }
     public int lifetimeCrafted;
 
     public void AcquireResources()
@@ -82,7 +82,8 @@ using UnityEngine;
     {
         Debug.Log(name + " has been crafted.");
         stock += 1; lifetimeCrafted += 1;
-        
+        // Now increment Global stock
+        Global.instance.GetStats()["Stock"].IncrementAmount();
     }
     public int lifetimeSold;
     public void SoldItem(){ stock -= 1; lifetimeSold += 1; }
@@ -108,7 +109,8 @@ using UnityEngine;
             (Global.instance.GetResources()["Titanium"].CheckAmount(costTitanium)) &&
             (Global.instance.GetResources()["Electricity"].CheckAmount(costElectricity)) &&
             (Global.instance.GetResources()["Oil"].CheckAmount(costOil))
-        ){
+            )
+        {
             //Debug.Log("CheckResource() = true");
             return(true);
         }

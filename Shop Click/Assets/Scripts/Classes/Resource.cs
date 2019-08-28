@@ -62,6 +62,18 @@ public class Resource
 
     public string ToStringAmount(){ return(amount.ToString("N0")); }
 
+    public bool CheckCapacity()
+    {
+        if(amount < cap)
+        {
+            return(true);
+        }
+        else
+        {
+            return(false);
+        }
+    }
+
 
     // Not implemented yet, placeholder.
     // private ulong[] levelThresholds; public void SetLevelThresholds(ulong[] setLevelThresholds){ levelThresholds = setLevelThresholds; } public ulong[] GetLevelThresholds(){ return(levelThresholds); }

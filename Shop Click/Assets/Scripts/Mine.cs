@@ -13,7 +13,11 @@ public class Mine : MonoBehaviour
 
     private void CraftingItem(string itemName){
         // Different from CraftItem(), this waits a certain amount of time before CraftItem()
-        if(Global.instance.GetInventory()[itemName].CheckResource() && CraftingItemSlotOpen()){
+        if(
+            Global.instance.GetInventory()[itemName].CheckResource() && 
+            CraftingItemSlotOpen()
+          )
+        {
             Debug.Log("CraftingItem(" + itemName + ")");
 
             // Subtract resources.
@@ -30,7 +34,18 @@ public class Mine : MonoBehaviour
             currentSlot.transform.GetChild(0).GetComponent<Button>().interactable = false;
 
             // Link the slot/button to increment the item when time is over and button is clicked
-            currentSlot.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { Global.instance.GetInventory()[itemName].CraftItem(); });
+            currentSlot.transform.GetChild(0).GetComponent<Button>().onClick.RemoveAllListeners();
+            currentSlot.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { 
+                if(Global.instance.GetStats()["Stock"].CheckCapacity())
+                {
+                    Global.instance.GetInventory()[itemName].CraftItem();
+                    currentSlot.SetActive(false);
+                }
+                else
+                {
+                    Debug.Log("Stock at capacity!");
+                }
+            });
 
             // Make slot's panel active.
             currentSlot.SetActive(true);
@@ -107,6 +122,13 @@ public class Mine : MonoBehaviour
         }
     }
 
+    [SerializeField] public Button buttonStock;
+
+    public void UpdateButtonStock()
+    {
+        buttonStock.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Global.instance.GetStats()["Stock"].GetAmount().ToString();
+        buttonStock.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = Global.instance.GetStats()["Stock"].GetCap().ToString();
+    }
 
 
     [SerializeField] public GameObject panelCraftWindow;
@@ -196,6 +218,7 @@ public class Mine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateButtonStock();
         CraftingItemUpdateTimeAll();
     }
 
