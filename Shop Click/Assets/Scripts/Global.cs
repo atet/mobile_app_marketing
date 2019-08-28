@@ -5,6 +5,7 @@ using UnityEngine;
 public class Global : MonoBehaviour
 {
     private bool MODE_TUTORIAL = true; public bool GetMODE_TUTORIAL(){ return(MODE_TUTORIAL); } public void SetMODE_TUTORIAL(bool MODE_TUTORIAL){ this.MODE_TUTORIAL = MODE_TUTORIAL; }
+    private int ID_TUTORIAL_EVENT = 0; public int GetID_TUTORIAL_EVENT(){ return(ID_TUTORIAL_EVENT); } public void IncrementID_TUTORIAL_EVENT(){ ID_TUTORIAL_EVENT++; }
     private const bool MODE_DEBUG = false; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
 
     // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
@@ -56,10 +57,10 @@ public class Global : MonoBehaviour
     {
         stats = new Dictionary<string, Resource>();
 
-        stats.Add("Level", new Resource("Level", 1, 0, System.UInt64.MaxValue, 1));
-        stats.Add("Coins", new Resource("Coins", 1, 0, System.UInt64.MaxValue, 0));
-        stats.Add("Chakra", new Resource("Chakra", 1, 0, 100, 39));
-        stats.Add("Gems", new Resource("Gems", 1, 0, System.UInt64.MaxValue, 5));
+        stats.Add("Level",  new Resource("Level",  1, 0, System.UInt64.MaxValue,  1));
+        stats.Add("Coins",  new Resource("Coins",  1, 0, System.UInt64.MaxValue,  0));
+        stats.Add("Chakra", new Resource("Chakra", 1, 0,                    100, 18));
+        stats.Add("Gems",   new Resource("Gems",   1, 0, System.UInt64.MaxValue,  5));
     }
 
     public void InitResources()
@@ -156,7 +157,7 @@ public class Global : MonoBehaviour
             inventory["Javelin"].SetIsAvailable(true); inventory["Javelin"].SetStock(1);
             inventory["Long Bow"].SetIsAvailable(true); inventory["Long Bow"].SetStock(1);
             inventory["Breastplate"].SetIsAvailable(true); inventory["Breastplate"].SetStock(0);
-            inventory["Leather Armor"].SetIsAvailable(true); inventory["Leather Armor"].SetStock(0);
+            inventory["Leather Armor"].SetIsAvailable(true); inventory["Leather Armor"].SetStock(1);
             inventory["Wooden Dome"].SetIsAvailable(true); inventory["Wooden Dome"].SetStock(0);
             inventory["Leather Cap"].SetIsAvailable(true); inventory["Leather Cap"].SetStock(0);
             inventory["Stitched Cone"].SetIsAvailable(true); inventory["Stitched Cone"].SetStock(0);

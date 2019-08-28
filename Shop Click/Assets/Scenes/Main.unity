@@ -7707,14 +7707,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -64905,6 +64905,7 @@ MonoBehaviour:
   panelShopDialog: {fileID: 1431167923}
   buttonQueue: {fileID: 1932249803}
   tMProStock: {fileID: 1160166458}
+  panelRefuse: {fileID: 1964875261}
   panelRebate: {fileID: 100432275}
   PanelUpcharge: {fileID: 975675597}
   panelSuggest: {fileID: 1518121272}

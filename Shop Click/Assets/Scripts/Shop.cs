@@ -178,50 +178,7 @@ public class Shop : MonoBehaviour
 
     }
 
-    public void TutorialFirstCustomer()
-    {
-        Debug.Log("First tutorial customer.");
-        currentItem = Global.instance.GetInventory()["Long Bow"];
 
-        // Update Item Sprite.
-        UpdateSpriteItem();
-
-        currentCharacter = Global.instance.RandomCharacter();
-        UpdateSpriteCharacter();
-
-        UpdateAllButtons();
-
-        // Hide these for now
-        panelRefuse.SetActive(false);
-        panelRebate.SetActive(false);
-        PanelUpcharge.SetActive(false);
-        panelSuggest.SetActive(false);
-
-        // Set value for this transaction.
-        SetSellGainCoins(currentItem.value);
-    }
-    public void TutorialSecondCustomer()
-    {
-        Debug.Log("Second tutorial customer.");
-        currentItem = Global.instance.GetInventory()["Javelin"];
-
-        // Update Item Sprite.
-        UpdateSpriteItem();
-
-        currentCharacter = Global.instance.RandomCharacter();
-        UpdateSpriteCharacter();
-
-        UpdateAllButtons();
-
-        // Hide these for now
-        panelRefuse.SetActive(false);
-        panelRebate.SetActive(false);
-        PanelUpcharge.SetActive(true);
-        panelSuggest.SetActive(false);
-
-        // Set value for this transaction.
-        SetSellGainCoins(currentItem.value);
-    }
 
 
 
@@ -296,15 +253,7 @@ public class Shop : MonoBehaviour
             Global.instance.GetResources()["Queue"].DecrementAmount();
             UpdateTMProQueue();
 
-            if(!Global.instance.GetMODE_TUTORIAL())
-            {
-                NextCustomer("Random");
-            }
-            else
-            {
-                TutorialSecondCustomer();
-            }
-
+            NextTransaction();
         }
     }
     public void OnPressRefuse(){
@@ -328,7 +277,190 @@ public class Shop : MonoBehaviour
 
         Global.instance.GetResources()["Queue"].DecrementAmount();
         UpdateTMProQueue();
-        NextCustomer("Random");
+
+        NextTransaction();
+
+    }
+
+
+    public void NextTransaction()
+    {
+        if(!Global.instance.GetMODE_TUTORIAL())
+        {
+            NextCustomer("Random");
+        }
+        else
+        {
+            switch(Global.instance.GetID_TUTORIAL_EVENT())
+            {
+                case 1:
+                    TutorialSecondCustomer();
+                    break;
+                case 2:
+                    TutorialThirdCustomer();
+                    break;
+                case 3:
+                    TutorialFourthCustomer();
+                    break;
+                case 4:
+                    TutorialFifthCustomer();
+                    break;
+                default:
+                    NextCustomer("Random");
+                    break;
+            }
+        }
+    }
+
+
+
+
+    // TUTORIAL EVENTS
+    // Before anything starts, point out the customer queue.
+
+    public void TutorialFirstCustomer()
+    {
+        Debug.Log("First tutorial customer: Selling an item.");
+        currentItem = Global.instance.GetInventory()["Long Bow"];
+
+        // Update Item Sprite.
+        UpdateSpriteItem();
+
+        currentCharacter = Global.instance.RandomCharacter();
+        UpdateSpriteCharacter();
+
+        UpdateAllButtons();
+
+        // Hide these for now
+        panelRefuse.SetActive(false);
+        panelRebate.SetActive(false);
+        PanelUpcharge.SetActive(false);
+        panelSuggest.SetActive(false);
+
+        // Set value for this transaction.
+        SetSellGainCoins(currentItem.value);
+
+        // Custom character picture and text.
+        imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
+        tMProDialog.text = "Biggs: Sell me this item for some coins.";
+
+        Global.instance.IncrementID_TUTORIAL_EVENT();
+    }
+    public void TutorialSecondCustomer()
+    {
+        Debug.Log("Second tutorial customer: Rebating an item to get energy.");
+        currentItem = Global.instance.GetInventory()["Javelin"];
+
+        // Update Item Sprite.
+        UpdateSpriteItem();
+
+        currentCharacter = Global.instance.RandomCharacter();
+        UpdateSpriteCharacter();
+
+        UpdateAllButtons();
+
+        // Hide these for now
+        panelRefuse.SetActive(false);
+        panelRebate.SetActive(true);
+        PanelUpcharge.SetActive(false);
+        panelSuggest.SetActive(false);
+
+        // Set value for this transaction.
+        SetSellGainCoins(currentItem.value);
+
+        // Custom character picture and text.
+        imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
+        tMProDialog.text = "Biggs: Save up energy by rebating.";
+
+        Global.instance.IncrementID_TUTORIAL_EVENT();
+    }
+
+    public void TutorialThirdCustomer()
+    {
+        Debug.Log("Third tutorial customer: Spending energy to upcharge");
+        currentItem = Global.instance.GetInventory()["Leather Armor"];
+
+        // Update Item Sprite.
+        UpdateSpriteItem();
+
+        currentCharacter = Global.instance.RandomCharacter();
+        UpdateSpriteCharacter();
+
+        UpdateAllButtons();
+
+        // Hide these for now
+        panelRefuse.SetActive(false);
+        panelRebate.SetActive(false);
+        PanelUpcharge.SetActive(true);
+        panelSuggest.SetActive(false);
+
+        // Set value for this transaction.
+        SetSellGainCoins(currentItem.value);
+
+        // Custom character picture and text.
+        imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
+        tMProDialog.text = "Biggs: Spend that energy to upcharge!";
+
+        Global.instance.IncrementID_TUTORIAL_EVENT();
+    }
+
+    public void TutorialFourthCustomer()
+    {
+        Debug.Log("Fourth tutorial customer: We don't know how to even make this item... yet. Refuse.");
+        currentItem = Global.instance.GetInventory()["Angel Stone"];
+
+        // Update Item Sprite.
+        UpdateSpriteItem();
+
+        currentCharacter = Global.instance.RandomCharacter();
+        UpdateSpriteCharacter();
+
+        UpdateAllButtons();
+
+        // Hide these for now
+        panelRefuse.SetActive(true);
+        panelRebate.SetActive(false);
+        PanelUpcharge.SetActive(false);
+        panelSuggest.SetActive(false);
+
+        // Set value for this transaction.
+        SetSellGainCoins(currentItem.value);
+
+        // Custom character picture and text.
+        imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
+        tMProDialog.text = "Biggs: Can't make this yet, Refuse sale.";
+
+
+        Global.instance.IncrementID_TUTORIAL_EVENT();
+    }
+
+    public void TutorialFifthCustomer()
+    {
+        Debug.Log("Fifth tutorial customer: We don't have but we can make, go to Mine.");
+        currentItem = Global.instance.GetInventory()["Dirk"];
+
+        // Update Item Sprite.
+        UpdateSpriteItem();
+
+        currentCharacter = Global.instance.RandomCharacter();
+        UpdateSpriteCharacter();
+
+        UpdateAllButtons();
+
+        // Hide these for now
+        panelRefuse.SetActive(false);
+        panelRebate.SetActive(false);
+        PanelUpcharge.SetActive(false);
+        panelSuggest.SetActive(false);
+
+        // Set value for this transaction.
+        SetSellGainCoins(currentItem.value);
+
+        // Custom character picture and text.
+        imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
+        tMProDialog.text = "Biggs: Not in stock, but we can make it.";
+
+        Global.instance.IncrementID_TUTORIAL_EVENT();
     }
 
 }

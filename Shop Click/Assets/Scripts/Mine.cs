@@ -29,6 +29,9 @@ public class Mine : MonoBehaviour
             // Disable the panel's button for now, do this before making the panel active.
             currentSlot.transform.GetChild(0).GetComponent<Button>().interactable = false;
 
+            // Link the slot/button to increment the item when time is over and button is clicked
+            currentSlot.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { Global.instance.GetInventory()[itemName].CraftItem(); });
+
             // Make slot's panel active.
             currentSlot.SetActive(true);
 
@@ -42,6 +45,7 @@ public class Mine : MonoBehaviour
 
             // Set text on slot to reflect countdown time.
             CraftingItemUpdateTime(currentIndex);
+
         }
     }
     private bool CraftingItemSlotOpen()
@@ -93,6 +97,7 @@ public class Mine : MonoBehaviour
             {
                 // Countdown done.
                 // Enable button.
+
                 panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).GetComponent<Button>().interactable = true;
 
                 countdownQueue[index] = -999;
@@ -154,9 +159,6 @@ public class Mine : MonoBehaviour
                 for(int j = 0; j < 6; j++){ currentPanelResource.transform.GetChild(j).gameObject.SetActive(false); }
 
                 SetPanelResources(currentItem, currentPanelResource);
-
-
-
 
                 // Link button to function to craft said item.
                 currentButton.onClick.RemoveAllListeners(); // Remove any previous listeners.
