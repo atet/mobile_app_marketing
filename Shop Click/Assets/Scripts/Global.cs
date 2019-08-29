@@ -146,10 +146,11 @@ public class Global : MonoBehaviour
     public void InitInventoryStarting()
     {
         if(MODE_DEBUG){
-            // Everything is available to craft
+            // Everything is available to craft and only takes 10 seconds.
             foreach (var kvp in inventory)
             {
-                kvp.Value.SetIsAvailable(true);    
+                kvp.Value.SetIsAvailable(true);
+                kvp.Value.timeCrafting = 10;
             }
         }
         else
