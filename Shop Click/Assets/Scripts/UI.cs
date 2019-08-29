@@ -7,7 +7,6 @@ public class UI : MonoBehaviour
 {
     // [SerializeField] public TextMeshProUGUI level, coins, chakra, gems, iron, hide, wood, herbs, steel, oil, electricity, titanium;
 
-
     // UI Overlay: Shown on all screens.
     [SerializeField] public TextMeshProUGUI uIOverlayLevel;
     public void UpdateUIOverlayLevel(){ uIOverlayLevel.text = Global.instance.GetStats()["Level"].ToStringAmount(); }

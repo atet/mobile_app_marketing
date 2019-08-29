@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
+    private bool swipeEnabled = true;
     Vector3 touchStart;
 
     // For Swipe()
@@ -11,11 +12,13 @@ public class CameraControl : MonoBehaviour
     Vector2 secondPressPos;
     Vector2 currentSwipe;
 
+    Vector2 currentScreen;
+
     private const float currentSwipeMagnitudeThreshold = 10;
 
     // Current camera position
     Vector2 cameraPositionShop = new Vector2(0f, 0f);
-    Vector2 cameraPositionColosseum = new Vector2(5.67f, 0f);
+    Vector2 cameraPositionColosseum = new Vector2(5.65f, 0f);
     Vector2 cameraPositionMine = new Vector2(-5.65f, 0f);
     Vector2 cameraPositionMenu = new Vector2(0f, 10f);
     Vector2 cameraPositionTown = new Vector2(0f, -10f);
@@ -23,19 +26,31 @@ public class CameraControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Camera.main.transform.position = cameraPositionShop;
-        Debug.Log("Start camera position is the shop: x = " +  Camera.main.transform.position.x.ToString() + ": y = " +  Camera.main.transform.position.y.ToString());
+        Camera.main.transform.position = currentScreen = cameraPositionShop;
+        currentScreen = Camera.main.transform.position;
+        //Debug.Log("Start camera position is the shop: x = " +  Camera.main.transform.position.x.ToString() + ": y = " +  Camera.main.transform.position.y.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
         //CameraPan();
-        Swipe();
+        if(swipeEnabled)
+        {
+            Swipe();
+        }
+
     }
 
-
-
+    public void EnableSwipe()
+    {
+        swipeEnabled = true;
+        //Camera.main.transform.position = currentScreen;
+    }
+    public void DisableSwipe()
+    {
+        swipeEnabled = false;
+    }
     public void Swipe()
     {
         if(Input.GetMouseButtonDown(0))
@@ -86,11 +101,15 @@ public class CameraControl : MonoBehaviour
             if(cameraPositionShop.Equals(Camera.main.transform.position)){
                 //Debug.Log("At Shop, going down to Town");
                 Camera.main.transform.position = cameraPositionTown;
+                currentScreen = cameraPositionTown;
+                Debug.Log("currentScreen = Town");
             }
             else if(cameraPositionMenu.Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Menu, going down to Shop");
                 Camera.main.transform.position = cameraPositionShop;
+                currentScreen = cameraPositionShop;
+                Debug.Log("currentScreen = Shop");
             }
         }
         if(direction == "up")
@@ -99,11 +118,15 @@ public class CameraControl : MonoBehaviour
             if(cameraPositionShop.Equals(Camera.main.transform.position)){
                 //Debug.Log("At Shop, going up to Menu");
                 Camera.main.transform.position = cameraPositionMenu;
+                currentScreen = cameraPositionMenu;
+                Debug.Log("currentScreen = Menu");
             }
             else if(cameraPositionTown.Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Town, going up to Shop");
                 Camera.main.transform.position = cameraPositionShop;
+                currentScreen = cameraPositionShop;
+                Debug.Log("currentScreen = Shop");
             }
         }
         if(direction == "right")
@@ -112,11 +135,15 @@ public class CameraControl : MonoBehaviour
             if(cameraPositionShop.Equals(Camera.main.transform.position)){
                 //Debug.Log("At Shop, going right to Colosseum");
                 Camera.main.transform.position = cameraPositionColosseum;
+                currentScreen = cameraPositionColosseum;
+                Debug.Log("currentScreen = Colosseum");
             }
             else if(cameraPositionMine.Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Mine, going right to Shop");
                 Camera.main.transform.position = cameraPositionShop;
+                currentScreen = cameraPositionShop;
+                Debug.Log("currentScreen = Shop");
             }
         }
         if(direction == "left")
@@ -125,11 +152,15 @@ public class CameraControl : MonoBehaviour
             if(cameraPositionShop.Equals(Camera.main.transform.position)){
                 //Debug.Log("At Shop, going left to Mine");
                 Camera.main.transform.position = cameraPositionMine;
+                currentScreen = cameraPositionMine;
+                Debug.Log("currentScreen = Mine");
             }
             else if(cameraPositionColosseum.Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Colosseum, going left to Shop");
                 Camera.main.transform.position = cameraPositionShop;
+                currentScreen = cameraPositionShop;
+                Debug.Log("currentScreen = Shop");
             }
         }
     }
