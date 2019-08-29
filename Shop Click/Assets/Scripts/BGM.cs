@@ -11,8 +11,8 @@ using TMPro;
 public class BGM : MonoBehaviour
 {
     private bool globalBGMMute = false;
-    [SerializeField] private AudioClip bGM1, bGM2, bGM3, bGM4; // The music clip you want to play. The [SerializeField] tag specifies that this variable is viewable in Unity's inspector. I prefer not to use public variables if I can get away with using private ones.
-    [SerializeField] private Button buttonBGM1, buttonBGM2, buttonBGM3, buttonBGM4, buttonMusicSetting;
+    [SerializeField] public AudioClip bGM1, bGM2, bGM3, bGM4; // The music clip you want to play. The [SerializeField] tag specifies that this variable is viewable in Unity's inspector. I prefer not to use public variables if I can get away with using private ones.
+    [SerializeField] public Button buttonBGM1, buttonBGM2, buttonBGM3, buttonBGM4, buttonBGMSetting;
     private AudioSource _audio; // The reference to my AudioSource (look in the Start() function for more details)
  
     public void OnClickBGM1()
@@ -77,19 +77,19 @@ public class BGM : MonoBehaviour
         if(!globalBGMMute){ PlayMusic(); }
     }
 
-    public void OnClickMusicSetting()
+    public void OnClickBGMSetting()
     {
         if(_audio.isPlaying)
         {
             globalBGMMute = true;
             _audio.Stop();
-            buttonMusicSetting.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Music: Off";
+            buttonBGMSetting.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Music: Off";
         }
         else
         {
             globalBGMMute = false;
             _audio.Play();
-            buttonMusicSetting.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Music: On";
+            buttonBGMSetting.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Music: On";
         }
     }
 
@@ -103,7 +103,7 @@ public class BGM : MonoBehaviour
         buttonBGM2.onClick.AddListener( delegate{ OnClickBGM2(); } );
         buttonBGM3.onClick.AddListener( delegate{ OnClickBGM3(); } );
         buttonBGM4.onClick.AddListener( delegate{ OnClickBGM4(); } );
-        buttonMusicSetting.onClick.AddListener( delegate{ OnClickMusicSetting(); } );
+        buttonBGMSetting.onClick.AddListener( delegate{ OnClickBGMSetting(); } );
     }
     protected void Start()
     {
