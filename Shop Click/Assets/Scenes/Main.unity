@@ -13346,11 +13346,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 4 Dispensary
-=======
-      value: Panel Town Worker (2)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -13390,11 +13386,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 3
-=======
-      value: 2
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -13473,14 +13465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -13489,7 +13478,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -13556,30 +13544,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 10
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 12
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-<<<<<<< HEAD
       value: 0
-=======
-      value: 1
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 2
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -13611,14 +13585,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: Dispensary
       objectReference: {fileID: 0}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -21915,7 +21886,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1198315276}
-<<<<<<< HEAD
   - {fileID: 1288056518}
   - {fileID: 628559588}
   - {fileID: 1989363775}
@@ -21923,15 +21893,6 @@ RectTransform:
   - {fileID: 149852006}
   - {fileID: 1715964174}
   - {fileID: 1077097588}
-=======
-  - {fileID: 628559588}
-  - {fileID: 1989363775}
-  - {fileID: 1288056518}
-  - {fileID: 1413328258}
-  - {fileID: 149852006}
-  - {fileID: 1077097588}
-  - {fileID: 1715964174}
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
   - {fileID: 1190124716}
   - {fileID: 170650655}
   - {fileID: 917826788}
@@ -22848,11 +22809,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 11 Colosseum
-=======
-      value: Panel Town Worker (10)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -22971,14 +22928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -22987,7 +22941,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -23048,30 +23001,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 9
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 12
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-<<<<<<< HEAD
       value: 0
-=======
-      value: 1
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 2
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -23103,14 +23042,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: Colosseum
       objectReference: {fileID: 0}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -34337,7 +34273,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912432300}
   m_CullTransparentMesh: 0
-<<<<<<< HEAD
 --- !u!114 &915781837 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
@@ -34350,8 +34285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
 --- !u!1 &917826787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
@@ -39096,11 +39029,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 7 Laboratory
-=======
-      value: Panel Town Worker (7)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -39140,11 +39069,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 6
-=======
-      value: 7
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -39223,14 +39148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -39239,7 +39161,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -39306,12 +39227,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 10
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -39321,34 +39236,22 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.lineCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.pageCount
-<<<<<<< HEAD
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: Laboratory
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -39397,7 +39300,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3a9b220cc1136844b74a9fa692fba81, type: 3}
-<<<<<<< HEAD
 --- !u!114 &1023366992 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
@@ -39410,8 +39312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
 --- !u!1 &1026809512
 GameObject:
   m_ObjectHideFlags: 0
@@ -43254,11 +43154,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 10 Lodge
-=======
-      value: Panel Town Worker (9)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -43377,14 +43273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -43393,7 +43286,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -43454,30 +43346,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 5
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 12
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-<<<<<<< HEAD
       value: 0
-=======
-      value: 1
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 2
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -43509,14 +43387,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: Lodge
       objectReference: {fileID: 0}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -47511,11 +47386,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 8 University
-=======
-      value: Panel Town Worker (6)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -47555,11 +47426,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 7
-=======
-      value: 6
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -47638,14 +47505,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -47654,7 +47518,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -47721,12 +47584,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 10
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -47736,34 +47593,22 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.lineCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.pageCount
-<<<<<<< HEAD
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: University
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -47980,11 +47825,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 12 Palace
-=======
-      value: Panel Town Worker (11)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -48103,14 +47944,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -48119,7 +47957,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -48180,30 +48017,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 6
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 12
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-<<<<<<< HEAD
       value: 0
-=======
-      value: 1
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 2
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -48235,14 +48058,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: Palace
       objectReference: {fileID: 0}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -50221,11 +50041,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 5 Forge
-=======
-      value: Panel Town Worker (4)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -50344,14 +50160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -50360,7 +50173,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -50427,12 +50239,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 5
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -50442,34 +50248,22 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.lineCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.pageCount
-<<<<<<< HEAD
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: Forge
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -59221,7 +59015,6 @@ CanvasRenderer:
   m_GameObject: {fileID: 1532490521}
   m_CullTransparentMesh: 0
 --- !u!1 &1537998358
-<<<<<<< HEAD
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59380,8 +59173,6 @@ CanvasRenderer:
   m_GameObject: {fileID: 1537998358}
   m_CullTransparentMesh: 0
 --- !u!1 &1540441352
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61783,11 +61574,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 2 Guild
-=======
-      value: Panel Town Worker (3)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -61827,11 +61614,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 1
-=======
-      value: 3
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -61910,14 +61693,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -61926,7 +61706,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -61993,30 +61772,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 5
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 12
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-<<<<<<< HEAD
       value: 0
-=======
-      value: 1
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 2
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -62048,14 +61813,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: Guild
       objectReference: {fileID: 0}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -66698,11 +66460,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 6 Restaurant
-=======
-      value: Panel Town Worker (5)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -66821,14 +66579,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -66837,7 +66592,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -66904,12 +66658,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 10
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -66919,34 +66667,22 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.lineCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.pageCount
-<<<<<<< HEAD
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: Restaurant
-=======
-      value: 0
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -72221,11 +71957,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 3 Saw Mill
-=======
-      value: Panel Town Worker (1)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -72265,11 +71997,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 2
-=======
-      value: 1
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -72348,14 +72076,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -72364,7 +72089,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -72431,12 +72155,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 8
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 12
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -72478,14 +72196,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: Saw Mill
       objectReference: {fileID: 0}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -73278,11 +72993,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 9 Pub
-=======
-      value: Panel Town Worker (8)
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -73401,14 +73112,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 890723879}
@@ -73417,7 +73125,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 612851956}
-<<<<<<< HEAD
     - target: {fileID: 1147682790281008503, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -73478,30 +73185,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 3
-=======
-    - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 12
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-<<<<<<< HEAD
       value: 0
-=======
-      value: 1
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-<<<<<<< HEAD
       value: 1
-=======
-      value: 2
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -73533,14 +73226,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
       value: Pub
       objectReference: {fileID: 0}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -80295,11 +79985,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Panel Town Worker 1 Workshop
-=======
-      value: Panel Town Worker
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -80486,7 +80172,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1147682789872564594, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Sprite
@@ -80499,8 +80184,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8204755fbeeee834d81cd23e0f6d4bfd,
         type: 3}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_fontColor.r
@@ -80521,7 +80204,6 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
@@ -80542,8 +80224,6 @@ PrefabInstance:
       propertyPath: m_textInfo.wordCount
       value: 1
       objectReference: {fileID: 0}
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_fontColor.r

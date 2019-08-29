@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-<<<<<<< HEAD
     public static CameraControl instance;
-=======
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     private bool swipeEnabled = true;
     Vector3 touchStart;
 
@@ -24,7 +21,6 @@ public class CameraControl : MonoBehaviour
     private const float currentSwipeTimeThreshold = 2; // Time in second
 
     // Current camera position
-<<<<<<< HEAD
     Dictionary<string, Vector2> cameraPositions = new Dictionary<string, Vector2>()
     {
         { "Shop", new Vector2(0f, 0f) },
@@ -33,30 +29,17 @@ public class CameraControl : MonoBehaviour
         { "Menu", new Vector2(0f, 10f) },
         { "Town", new Vector2(0f, -10f) }
     };
-    Vector2 currentScreen;
 
     void Awake()
     {
         instance = this;
     }
-=======
-    Vector2 cameraPositionShop = new Vector2(0f, 0f);
-    Vector2 cameraPositionColosseum = new Vector2(5.65f, 0f);
-    Vector2 cameraPositionMine = new Vector2(-5.65f, 0f);
-    Vector2 cameraPositionMenu = new Vector2(0f, 10f);
-    Vector2 cameraPositionTown = new Vector2(0f, -10f);
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
 
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
         Camera.main.transform.position = cameraPositions["Shop"];
-        currentScreen = cameraPositions["Shop"];
-=======
-        Camera.main.transform.position = currentScreen = cameraPositionShop;
-        currentScreen = Camera.main.transform.position;
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
+        //currentScreen = cameraPositions["Shop"];
         //Debug.Log("Start camera position is the shop: x = " +  Camera.main.transform.position.x.ToString() + ": y = " +  Camera.main.transform.position.y.ToString());
     }
 
@@ -68,7 +51,6 @@ public class CameraControl : MonoBehaviour
         {
             Swipe();
         }
-<<<<<<< HEAD
     }
 
     public void EnableSwipe()
@@ -86,20 +68,6 @@ public class CameraControl : MonoBehaviour
         //currentScreen = Camera.main.transform.position;
 
     }
-=======
-
-    }
-
-    public void EnableSwipe()
-    {
-        swipeEnabled = true;
-        //Camera.main.transform.position = currentScreen;
-    }
-    public void DisableSwipe()
-    {
-        swipeEnabled = false;
-    }
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
     public void Swipe()
     {
         if(Input.GetMouseButtonDown(0))
@@ -158,28 +126,16 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped up, going down");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position)){
                 //Debug.Log("At Shop, going down to Town");
-<<<<<<< HEAD
                 Camera.main.transform.position = cameraPositions["Town"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Town", cameraPositions["Town"]} };
                 //Debug.Log("currentScreen = Town");
-=======
-                Camera.main.transform.position = cameraPositionTown;
-                currentScreen = cameraPositionTown;
-                Debug.Log("currentScreen = Town");
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
             }
             else if(cameraPositions["Menu"].Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Menu, going down to Shop");
-<<<<<<< HEAD
                 Camera.main.transform.position = cameraPositions["Shop"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Shop", cameraPositions["Shop"]} };
                 //Debug.Log("currentScreen = Shop");
-=======
-                Camera.main.transform.position = cameraPositionShop;
-                currentScreen = cameraPositionShop;
-                Debug.Log("currentScreen = Shop");
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
             }
         }
         if(direction == "up")
@@ -187,28 +143,16 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped down, going up");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position)){
                 //Debug.Log("At Shop, going up to Menu");
-<<<<<<< HEAD
                 Camera.main.transform.position = cameraPositions["Menu"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Menu", cameraPositions["Menu"]} };
                 //Debug.Log("currentScreen = Menu");
-=======
-                Camera.main.transform.position = cameraPositionMenu;
-                currentScreen = cameraPositionMenu;
-                Debug.Log("currentScreen = Menu");
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
             }
             else if(cameraPositions["Town"].Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Town, going up to Shop");
-<<<<<<< HEAD
                 Camera.main.transform.position = cameraPositions["Shop"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Shop", cameraPositions["Shop"]} };
                 //Debug.Log("currentScreen = Shop");
-=======
-                Camera.main.transform.position = cameraPositionShop;
-                currentScreen = cameraPositionShop;
-                Debug.Log("currentScreen = Shop");
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
             }
         }
         if(direction == "right")
@@ -216,28 +160,16 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped left, going right");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position)){
                 //Debug.Log("At Shop, going right to Colosseum");
-<<<<<<< HEAD
                 Camera.main.transform.position = cameraPositions["Colosseum"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Colosseum", cameraPositions["Colosseum"]} };
                 //Debug.Log("currentScreen = Colosseum");
-=======
-                Camera.main.transform.position = cameraPositionColosseum;
-                currentScreen = cameraPositionColosseum;
-                Debug.Log("currentScreen = Colosseum");
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
             }
             else if(cameraPositions["Mine"].Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Mine, going right to Shop");
-<<<<<<< HEAD
                 Camera.main.transform.position = cameraPositions["Shop"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Shop", cameraPositions["Shop"]} };
                 //Debug.Log("currentScreen = Shop");
-=======
-                Camera.main.transform.position = cameraPositionShop;
-                currentScreen = cameraPositionShop;
-                Debug.Log("currentScreen = Shop");
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
             }
         }
         if(direction == "left")
@@ -245,28 +177,16 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped right, going left");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position)){
                 //Debug.Log("At Shop, going left to Mine");
-<<<<<<< HEAD
                 Camera.main.transform.position = cameraPositions["Mine"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Mine", cameraPositions["Mine"]} };
                 //Debug.Log("currentScreen = Mine");
-=======
-                Camera.main.transform.position = cameraPositionMine;
-                currentScreen = cameraPositionMine;
-                Debug.Log("currentScreen = Mine");
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
             }
             else if(cameraPositions["Colosseum"].Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Colosseum, going left to Shop");
-<<<<<<< HEAD
                 Camera.main.transform.position = cameraPositions["Shop"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Shop", cameraPositions["Shop"]} };
                 //Debug.Log("currentScreen = Shop");
-=======
-                Camera.main.transform.position = cameraPositionShop;
-                currentScreen = cameraPositionShop;
-                Debug.Log("currentScreen = Shop");
->>>>>>> b2c77b4453039f460cb0e921e638927b7d857e6d
             }
         }
     }
