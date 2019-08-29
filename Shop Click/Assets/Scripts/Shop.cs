@@ -308,7 +308,11 @@ public class Shop : MonoBehaviour
                 case 4:
                     TutorialFifthCustomer();
                     break;
+                case 5:
+                    TutorialSixthCustomer();
+                    break;
                 default:
+                    TutorialDone();
                     NextCustomer("Random");
                     break;
             }
@@ -320,7 +324,14 @@ public class Shop : MonoBehaviour
 
     // TUTORIAL EVENTS
     // Before anything starts, point out the customer queue.
-
+    public void TutorialDone(){
+        Debug.Log("Tutorial done.");
+        Global.instance.SetMODE_TUTORIAL(false);
+        panelRefuse.SetActive(true);
+        panelRebate.SetActive(true);
+        PanelUpcharge.SetActive(true);
+        panelSuggest.SetActive(true);
+    }
     public void TutorialFirstCustomer()
     {
         Debug.Log("First tutorial customer: Selling an item.");
@@ -462,6 +473,35 @@ public class Shop : MonoBehaviour
         // Custom character picture and text.
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
         tMProDialog.text = "Biggs: Not in stock, but we can make it.";
+
+        Global.instance.IncrementID_TUTORIAL_EVENT();
+    }
+
+    public void TutorialSixthCustomer()
+    {
+        Debug.Log("Sixth tutorial customer: Suggest something else.");
+        currentItem = Global.instance.GetInventory()["Dirk"];
+
+        // Update Item Sprite.
+        UpdateSpriteItem();
+
+        currentCharacter = Global.instance.RandomCharacter();
+        UpdateSpriteCharacter();
+
+        UpdateAllButtons();
+
+        // Hide these for now
+        panelRefuse.SetActive(false);
+        panelRebate.SetActive(false);
+        PanelUpcharge.SetActive(false);
+        panelSuggest.SetActive(true);
+
+        // Set value for this transaction.
+        SetSellGainCoins(currentItem.value);
+
+        // Custom character picture and text.
+        imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
+        tMProDialog.text = "Biggs: Let's suggest something else.";
 
         Global.instance.IncrementID_TUTORIAL_EVENT();
     }

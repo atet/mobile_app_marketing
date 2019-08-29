@@ -56,12 +56,23 @@ public class Global : MonoBehaviour
     public void InitStats()
     {
         stats = new Dictionary<string, Resource>();
+        if(MODE_DEBUG)
+        {
+            stats.Add("Level",  new Resource("Level",  1, 0, System.UInt64.MaxValue,   1));
+            stats.Add("Coins",  new Resource("Coins",  1, 0, System.UInt64.MaxValue,   0));
+            stats.Add("Chakra", new Resource("Chakra", 1, 0,                    999, 999));
+            stats.Add("Gems",   new Resource("Gems",   1, 0, System.UInt64.MaxValue,   5));
+            stats.Add("Stock",  new Resource("Stock",  1, 0,                    999,   0));
+        }
+        else
+        {
+            stats.Add("Level",  new Resource("Level",  1, 0, System.UInt64.MaxValue,  1));
+            stats.Add("Coins",  new Resource("Coins",  1, 0, System.UInt64.MaxValue,  0));
+            stats.Add("Chakra", new Resource("Chakra", 1, 0,                    100, 18));
+            stats.Add("Gems",   new Resource("Gems",   1, 0, System.UInt64.MaxValue,  5));
+            stats.Add("Stock",  new Resource("Stock",  1, 0,                     15,  0));
+        }
 
-        stats.Add("Level",  new Resource("Level",  1, 0, System.UInt64.MaxValue,  1));
-        stats.Add("Coins",  new Resource("Coins",  1, 0, System.UInt64.MaxValue,  0));
-        stats.Add("Chakra", new Resource("Chakra", 1, 0,                    100, 18));
-        stats.Add("Gems",   new Resource("Gems",   1, 0, System.UInt64.MaxValue,  5));
-        stats.Add("Stock",  new Resource("Stock",  1, 0,                     15,  0));
     }
 
     public void InitResources()
@@ -150,7 +161,7 @@ public class Global : MonoBehaviour
             foreach (var kvp in inventory)
             {
                 kvp.Value.SetIsAvailable(true);
-                kvp.Value.timeCrafting = 10;
+                kvp.Value.timeCrafting = 2;
             }
         }
         else

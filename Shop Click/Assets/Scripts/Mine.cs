@@ -12,6 +12,38 @@ public class Mine : MonoBehaviour
         buttonStock.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Global.instance.GetStats()["Stock"].GetAmount().ToString();
         buttonStock.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = Global.instance.GetStats()["Stock"].GetCap().ToString();
     }
+    [SerializeField] public GameObject panelStockDetailVLG;
+    [SerializeField] public GameObject prefabStockDetailVLGElement;
+
+    public void LinkButtonStock()
+    {
+        // Setup onClick events through code
+        buttonStock.onClick.AddListener(delegate { PopulateStockDetail(); });
+    }
+    public void PopulateStockDetail()
+    {
+        DepopulateStockDetail();
+
+        foreach(var kvp in Global.instance.GetInventory())
+        {
+            if(kvp.Value.GetStock() > 0)
+            {
+                UnityEngine.Object prefab = Resources.Load("PreFabs/Panel Mine Stock Detail VLG Element"); // Don't add file extension
+                GameObject child = (GameObject)Instantiate(prefab, panelStockDetailVLG.transform);
+                // Now to access that child
+                child.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = kvp.Value.name;
+                child.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(kvp.Value.filepathImage);
+                child.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "x" + kvp.Value.GetStock().ToString();
+            }    
+        }
+    }
+    public void DepopulateStockDetail()
+    {
+        foreach (Transform child in panelStockDetailVLG.transform) {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
+
 
     [SerializeField] public GameObject panelMineCraftQueue;
     private void CraftingItem(string itemName){
@@ -369,8 +401,12 @@ public class Mine : MonoBehaviour
 
         LinkButtonsCategory();
 
+        LinkButtonStock();
         LinkButtonCraftRecent();
         LinkButtonCraftFavorites();
+
+
+        //TestInstantiate();
     }
     // Update is called once per frame
     void Update()
