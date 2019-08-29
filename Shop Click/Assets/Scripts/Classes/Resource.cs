@@ -62,6 +62,8 @@ public class Resource
 
     public string ToStringAmount(){ return(amount.ToString("N0")); }
 
+    public string ToStringRate(){ return(System.Math.Round(60 / rate, 1).ToString() + "/min."); }
+
     public bool CheckCapacity()
     {
         if(amount < cap)
