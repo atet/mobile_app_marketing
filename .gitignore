@@ -36,4 +36,4 @@ sysinfo.txt
 *.unitypackage
 
 # AdMob IDs
-Assets/Resources/Data/
+AdMob.json
