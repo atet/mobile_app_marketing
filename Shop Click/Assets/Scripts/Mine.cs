@@ -323,7 +323,7 @@ public class Mine : MonoBehaviour
         {
             for(int i = 0; i < itemsRecent.Count; i++)
             {
-                if(itemsRecent[i].name == itemIDRecent)
+                if(itemsRecent[i].id == itemIDRecent)
                 {
                     Debug.Log("Already have a " + itemIDRecent + " in Recent list.");
                     itemsRecent.RemoveAt(i);
