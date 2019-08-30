@@ -162,6 +162,11 @@ public class Global : MonoBehaviour
                 kvp.Value.SetIsAvailable(true);
                 kvp.Value.timeCrafting = 2;
             }
+
+            // FOr the tutorial
+            inventory["Javelin"].SetStock(1);
+            inventory["Long Bow"].SetStock(1);
+            inventory["Leather Armor"].SetStock(1);
         }
         else
         {

@@ -13348,6 +13348,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 4 Dispensary
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13589,51 +13634,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Dispensary
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -21991,6 +21991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 615281323}
   - component: {fileID: 615281324}
+  - component: {fileID: 615281325}
   m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
@@ -22024,7 +22025,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be516ae88523e84e8d4dcc848764c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sFXClick: {fileID: 8300000, guid: 4065d31b8e214ed459e1cb792205dd6d, type: 3}
+  sFXSale: {fileID: 8300000, guid: a51fefecfd13e564fbfd3e7c859ee419, type: 3}
+  sFXUpcharge: {fileID: 8300000, guid: 9e0731e3e3e33e04d80c22ccf1eca4f4, type: 3}
+  sFXRebate: {fileID: 8300000, guid: 41591bc703369c9419584f7cec26623c, type: 3}
+  sFXSuggest: {fileID: 8300000, guid: 1350552aa057eee4ab06582edafced45, type: 3}
+  sFXRefuse: {fileID: 8300000, guid: 11fcd6d8d1c141a4d928e0d285bf60ce, type: 3}
+  sFXNoGo: {fileID: 8300000, guid: 11fcd6d8d1c141a4d928e0d285bf60ce, type: 3}
+  sFXLevelUp: {fileID: 8300000, guid: 18ff81454fa52444f969b585ce57b68c, type: 3}
   buttonSFXSetting: {fileID: 1268761438}
+--- !u!82 &615281325
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615281322}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &619075522
 GameObject:
   m_ObjectHideFlags: 0
@@ -22811,6 +22916,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 11 Colosseum
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23046,51 +23196,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Colosseum
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -39031,6 +39136,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 7 Laboratory
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39252,31 +39382,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Laboratory
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -43156,6 +43261,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 10 Lodge
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43391,51 +43541,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Lodge
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -47388,6 +47493,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 8 University
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47610,31 +47740,6 @@ PrefabInstance:
       propertyPath: m_text
       value: University
       objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -47826,6 +47931,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Panel Town Worker 12 Palace
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -48062,51 +48212,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Palace
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -50043,6 +50148,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 5 Forge
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50264,31 +50394,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Forge
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -61576,6 +61681,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 2 Guild
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61817,51 +61967,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Guild
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -66462,6 +66567,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 6 Restaurant
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66683,31 +66813,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Restaurant
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -71959,6 +72064,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 3 Saw Mill
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72200,51 +72350,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Saw Mill
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -72995,6 +73100,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 9 Pub
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -73230,51 +73380,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Pub
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -79987,6 +80092,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Town Worker 1 Workshop
       objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -80223,26 +80348,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}

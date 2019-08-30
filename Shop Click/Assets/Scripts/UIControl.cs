@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIControl : MonoBehaviour
 {
+    public static UIControl instance;
     [SerializeField] public Button buttonCoinsDetail;
     [SerializeField] public Button buttonLevelDetail;
     [SerializeField] public Button buttonChakraDetail;
@@ -26,6 +27,10 @@ public class UIControl : MonoBehaviour
         buttonGemsDetail.interactable = false;
     }
 
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         

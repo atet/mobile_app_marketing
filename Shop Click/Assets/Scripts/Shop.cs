@@ -198,6 +198,14 @@ public class Shop : MonoBehaviour
             
             // Go to different item, same person
             // TODO
+
+            // Play SFX
+            SFX.instance.PlaySFXSuggest();
+        }
+        else
+        {
+            // Play SFX
+            SFX.instance.PlaySFXRefuse();
         }
     }
     public void OnPressRebate()
@@ -214,6 +222,9 @@ public class Shop : MonoBehaviour
 
         // Change chakra cost for refusing
         RemoveChakraRefuse(chakraRebateGain);
+
+        // Play SFX
+        SFX.instance.PlaySFXRebate();
     }
     public void OnPressUpcharge()
     {
@@ -229,6 +240,14 @@ public class Shop : MonoBehaviour
 
             // Change chakra cost for refusing
             AddChakraRefuse(chakraUpchargeCost);
+
+            // Play SFX
+            SFX.instance.PlaySFXUpcharge();
+        }
+        else
+        {
+            // Play SFX
+            SFX.instance.PlaySFXNoGo();
         }
     }
     public void OnPressSell()
@@ -257,6 +276,14 @@ public class Shop : MonoBehaviour
             UpdateTMProQueue();
 
             NextTransaction();
+
+            // Play SFX
+            SFX.instance.PlaySFXSale();
+        }
+        else
+        {
+             // Play SFX
+            SFX.instance.PlaySFXNoGo();           
         }
     }
     public void OnPressRefuse(){
@@ -283,6 +310,8 @@ public class Shop : MonoBehaviour
 
         NextTransaction();
 
+        // Play SFX
+        SFX.instance.PlaySFXRefuse();
     }
 
 
