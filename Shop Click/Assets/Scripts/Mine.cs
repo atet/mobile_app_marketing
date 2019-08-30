@@ -102,6 +102,11 @@ public class Mine : MonoBehaviour
             Debug.Log("Adding item to Recent");
             PopulateCraftRecentWindow(itemID);
 
+            // Panel Craft Window is not directly related to Panel Craft Recent and Favorites.
+            // When you close Panel Craft Window, the invisible Recent and Favorites close button still exists.
+            panelCraftRecent.SetActive(false);
+            panelCraftFavorites.SetActive(false);
+
             SFX.instance.PlaySFXCraftItem();
         }
     }
@@ -199,7 +204,7 @@ public class Mine : MonoBehaviour
         }
     }
 
-    [SerializeField] public GameObject panelCraftWindow;
+    [SerializeField] public GameObject panelCraftWindow, panelCraftRecent, panelCraftFavorites;
     [SerializeField] public List<GameObject> panelsCraft;
     public void OnClickCraftWindow(List<Item> items)
     {
