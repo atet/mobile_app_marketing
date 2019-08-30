@@ -4,6 +4,8 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Assets/Resources/Data/
+Shop\ Click/Assets/Resources/Data
 
 # Visual Studio cache directory
 .vs/
@@ -37,3 +39,4 @@ sysinfo.txt
 
 # AdMob IDs
 AdMob.json
+AdMob.json.meta
