@@ -14,7 +14,7 @@ public class Global : MonoBehaviour
     private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190829";
     private const string filepathCharactersJSON = "Data/shop_click_characters";
     
-    private const string filepathSecretJSON = "Data/AdMob"; private Secret secret;
+    private const string filepathSecretJSON = "Data/AdMob"; private Secret secret; public Secret GetSecret(){ return(secret); }
     public void InitSecret()
     {
         TextAsset jsonTextFile = Resources.Load<TextAsset>(filepathSecretJSON);
