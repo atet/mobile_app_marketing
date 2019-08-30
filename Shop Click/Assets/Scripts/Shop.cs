@@ -364,7 +364,7 @@ public class Shop : MonoBehaviour
     public void TutorialFirstCustomer()
     {
         Debug.Log("First tutorial customer: Selling an item.");
-        currentItem = Global.instance.GetInventory()["Long Bow"];
+        currentItem = Global.instance.GetInventory()["bow_1"];
 
         // Update Item Sprite.
         UpdateSpriteItem();
@@ -392,7 +392,7 @@ public class Shop : MonoBehaviour
     public void TutorialSecondCustomer()
     {
         Debug.Log("Second tutorial customer: Rebating an item to get energy.");
-        currentItem = Global.instance.GetInventory()["Javelin"];
+        currentItem = Global.instance.GetInventory()["spear_1"];
 
         // Update Item Sprite.
         UpdateSpriteItem();
@@ -421,7 +421,7 @@ public class Shop : MonoBehaviour
     public void TutorialThirdCustomer()
     {
         Debug.Log("Third tutorial customer: Spending energy to upcharge");
-        currentItem = Global.instance.GetInventory()["Leather Armor"];
+        currentItem = Global.instance.GetInventory()["larmor_1"];
 
         // Update Item Sprite.
         UpdateSpriteItem();
@@ -450,7 +450,7 @@ public class Shop : MonoBehaviour
     public void TutorialFourthCustomer()
     {
         Debug.Log("Fourth tutorial customer: We don't know how to even make this item... yet. Refuse.");
-        currentItem = Global.instance.GetInventory()["Angel Stone"];
+        currentItem = Global.instance.GetInventory()["ring_7"];
 
         // Update Item Sprite.
         UpdateSpriteItem();
@@ -480,7 +480,7 @@ public class Shop : MonoBehaviour
     public void TutorialFifthCustomer()
     {
         Debug.Log("Fifth tutorial customer: We don't have but we can make, go to Mine.");
-        currentItem = Global.instance.GetInventory()["Dirk"];
+        currentItem = Global.instance.GetInventory()["dagger_1"];
 
         // Update Item Sprite.
         UpdateSpriteItem();
@@ -509,7 +509,7 @@ public class Shop : MonoBehaviour
     public void TutorialSixthCustomer()
     {
         Debug.Log("Sixth tutorial customer: Suggest something else.");
-        currentItem = Global.instance.GetInventory()["Dirk"];
+        currentItem = Global.instance.GetInventory()["dagger_1"];
 
         // Update Item Sprite.
         UpdateSpriteItem();

@@ -11,7 +11,7 @@ public class Global : MonoBehaviour
     // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
     private const float globalMultiplier = 20; public float GetGlobalMultiplier(){ return(globalMultiplier); }
 
-    private const string filepathInventoryJSON = "Data/shop_click_values_20190827";
+    private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190829";
     private const string filepathCharactersJSON = "Data/shop_click_characters";
 
     public Random rnd = new Random();
@@ -148,8 +148,8 @@ public class Global : MonoBehaviour
 
         for (int i = 0; i < items.Length; i++)
         {
-            inventory.Add(items[i].name, items[i]);
-            inventory[items[i].name].timeCrafting = (ulong)(inventory[items[i].name].timeCrafting * (1 / Global.instance.GetGlobalMultiplier()));
+            inventory.Add(items[i].id, items[i]);
+            inventory[items[i].id].timeCrafting = (ulong)(inventory[items[i].id].timeCrafting * (1 / Global.instance.GetGlobalMultiplier()));
             // Debug.Log(items[i].name);
         }
     }
@@ -164,25 +164,25 @@ public class Global : MonoBehaviour
             }
 
             // FOr the tutorial
-            inventory["Javelin"].SetStock(1);
-            inventory["Long Bow"].SetStock(1);
-            inventory["Leather Armor"].SetStock(1);
+            inventory["spear_1"].SetStock(1);
+            inventory["bow_1"].SetStock(1);
+            inventory["larmor_1"].SetStock(1);
         }
         else
         {
-            inventory["Wood Axe"].SetIsAvailable(true); inventory["Wood Axe"].SetStock(0);
-            inventory["Dirk"].SetIsAvailable(true); inventory["Dirk"].SetStock(0);
-            inventory["Javelin"].SetIsAvailable(true); inventory["Javelin"].SetStock(1);
-            inventory["Long Bow"].SetIsAvailable(true); inventory["Long Bow"].SetStock(1);
-            inventory["Breastplate"].SetIsAvailable(true); inventory["Breastplate"].SetStock(0);
-            inventory["Leather Armor"].SetIsAvailable(true); inventory["Leather Armor"].SetStock(1);
-            inventory["Wooden Dome"].SetIsAvailable(true); inventory["Wooden Dome"].SetStock(0);
-            inventory["Leather Cap"].SetIsAvailable(true); inventory["Leather Cap"].SetStock(0);
-            inventory["Stitched Cone"].SetIsAvailable(true); inventory["Stitched Cone"].SetStock(0);
-            inventory["Iron Armguards"].SetIsAvailable(true); inventory["Iron Armguards"].SetStock(0);
-            inventory["Shin Guards"].SetIsAvailable(true); inventory["Shin Guards"].SetStock(0);
-            inventory["Escutcheon"].SetIsAvailable(true); inventory["Escutcheon"].SetStock(0);
-            inventory["Warm Tea"].SetIsAvailable(true); inventory["Warm Tea"].SetStock(0);
+            inventory["axe_1"].SetIsAvailable(true); inventory["Wood Axe"].SetStock(0);
+            inventory["dagger_1"].SetIsAvailable(true); inventory["Dirk"].SetStock(0);
+            inventory["spear_1"].SetIsAvailable(true); inventory["Javelin"].SetStock(1);
+            inventory["bow_1"].SetIsAvailable(true); inventory["Long Bow"].SetStock(1);
+            inventory["harmor_1"].SetIsAvailable(true); inventory["Breastplate"].SetStock(0);
+            inventory["larmor_1"].SetIsAvailable(true); inventory["Leather Armor"].SetStock(1);
+            inventory["helmet_1"].SetIsAvailable(true); inventory["Wooden Dome"].SetStock(0);
+            inventory["headgear_1"].SetIsAvailable(true); inventory["Leather Cap"].SetStock(0);
+            inventory["hat_1"].SetIsAvailable(true); inventory["Stitched Cone"].SetStock(0);
+            inventory["gauntlets_1"].SetIsAvailable(true); inventory["Iron Armguards"].SetStock(0);
+            inventory["boots_1"].SetIsAvailable(true); inventory["Shin Guards"].SetStock(0);
+            inventory["shield_1"].SetIsAvailable(true); inventory["Escutcheon"].SetStock(0);
+            inventory["potion_1"].SetIsAvailable(true); inventory["Warm Tea"].SetStock(0);
         }
     }
 

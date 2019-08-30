@@ -46,17 +46,17 @@ public class Mine : MonoBehaviour
 
 
     [SerializeField] public GameObject panelMineCraftQueue;
-    private void CraftingItem(string itemName){
+    private void CraftingItem(string itemID){
         // Different from CraftItem(), this waits a certain amount of time before CraftItem()
         if(
-            Global.instance.GetInventory()[itemName].CheckResource() && 
+            Global.instance.GetInventory()[itemID].CheckResource() && 
             CraftingItemSlotOpen()
           )
         {
-            Debug.Log("CraftingItem(" + itemName + ")");
+            Debug.Log("CraftingItem(" + itemID + ")");
 
             // Subtract resources.
-            Global.instance.GetInventory()[itemName].AcquireResources();
+            Global.instance.GetInventory()[itemID].AcquireResources();
 
             // Close panelCraftWindow.
             panelCraftWindow.SetActive(false);
@@ -73,7 +73,7 @@ public class Mine : MonoBehaviour
             currentSlot.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { 
                 if(Global.instance.GetStats()["Stock"].CheckCapacity())
                 {
-                    Global.instance.GetInventory()[itemName].CraftItem();
+                    Global.instance.GetInventory()[itemID].CraftItem();
                     currentSlot.SetActive(false);
                 }
                 else
@@ -87,18 +87,18 @@ public class Mine : MonoBehaviour
 
             // Set image
             currentSlot.transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<Image>().sprite = 
-            Resources.Load<Sprite>(Global.instance.GetInventory()[itemName].filepathImage);
+            Resources.Load<Sprite>(Global.instance.GetInventory()[itemID].filepathImage);
             currentSlot.transform.GetChild(0).gameObject.transform.GetChild(1).GetComponent<Image>().SetNativeSize();
 
             // Set countdown to Item's craft time.
-            countdownQueue[currentIndex] = Global.instance.GetInventory()[itemName].timeCrafting;
+            countdownQueue[currentIndex] = Global.instance.GetInventory()[itemID].timeCrafting;
 
             // Set text on slot to reflect countdown time.
             CraftingItemUpdateTime(currentIndex);
 
             // Add item to Recent (ly crafted items list)
             Debug.Log("Adding item to Recent");
-            PopulateCraftRecentWindow(itemName);
+            PopulateCraftRecentWindow(itemID);
 
         }
     }
@@ -214,7 +214,7 @@ public class Mine : MonoBehaviour
 
                 // Link button to function to craft said item.
                 currentButtonCraft.onClick.RemoveAllListeners(); // Remove any previous listeners.
-                currentButtonCraft.onClick.AddListener(delegate { CraftingItem(currentItem.name); });
+                currentButtonCraft.onClick.AddListener(delegate { CraftingItem(currentItem.id); });
                 
                 // Show the button
                 panelsCraft[i].SetActive(true);
@@ -278,7 +278,7 @@ public class Mine : MonoBehaviour
 
     [SerializeField] public Button buttonCraftRecent;
     private List<Item> itemsRecent = new List<Item>();
-    public void PopulateCraftRecentWindow(string itemNameRecent)
+    public void PopulateCraftRecentWindow(string itemIDRecent)
     {
         // This function will get called everytime an item is crafted
 
@@ -287,9 +287,9 @@ public class Mine : MonoBehaviour
         {
             for(int i = 0; i < itemsRecent.Count; i++)
             {
-                if(itemsRecent[i].name == itemNameRecent)
+                if(itemsRecent[i].name == itemIDRecent)
                 {
-                    Debug.Log("Already have a " + itemNameRecent + " in Recent list.");
+                    Debug.Log("Already have a " + itemIDRecent + " in Recent list.");
                     itemsRecent.RemoveAt(i);
                     break;
                 }
@@ -297,7 +297,7 @@ public class Mine : MonoBehaviour
         }
 
         // Add Item to itemsRecent
-        itemsRecent.Add(Global.instance.GetInventory()[itemNameRecent]);
+        itemsRecent.Add(Global.instance.GetInventory()[itemIDRecent]);
 
         // Remove oldest item if list gets over panelsCraft.Count, currently max of 7 slots
         if(itemsRecent.Count > panelsCraft.Count)
