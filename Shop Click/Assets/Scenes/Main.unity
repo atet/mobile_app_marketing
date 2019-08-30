@@ -22037,6 +22037,9 @@ MonoBehaviour:
   sFXUnfavorite: {fileID: 8300000, guid: b92fcaa84b730f642bfa70a0ae39db2c, type: 3}
   sFXCraftItem: {fileID: 8300000, guid: 3a64d9543bd9fa74b9ad7651f3823f4e, type: 3}
   sFXStockItem: {fileID: 8300000, guid: ff67d1a98e37dca4da37d95ad35d774c, type: 3}
+  sFXAlertLow: {fileID: 8300000, guid: 968914feb58bab34db59b25dd6023f9a, type: 3}
+  sFXAlertHigh: {fileID: 8300000, guid: b55bb8f0ac1116d4cbbf9b6ccebf2c68, type: 3}
+  sFXTrash: {fileID: 8300000, guid: 416ef31f4175266488721e032f62b8c0, type: 3}
   buttonSFXSetting: {fileID: 1268761438}
 --- !u!82 &615281325
 AudioSource:

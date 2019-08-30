@@ -19,6 +19,8 @@ public class SFX : MonoBehaviour
 
     [SerializeField] public AudioClip sFXFavorite, sFXUnfavorite, sFXCraftItem, sFXStockItem;
 
+    [SerializeField] public AudioClip sFXAlertLow, sFXAlertHigh, sFXTrash;
+
     public void PlaySFXDone(){ if(!globalSFXMute){ PlayOneShot(sFXDone); } }
     public void PlaySFXClick(){ if(!globalSFXMute){ PlayOneShot(sFXClick); } }
     public void PlaySFXSale(){ if(!globalSFXMute){ PlayOneShot(sFXSale); } }
@@ -33,6 +35,9 @@ public class SFX : MonoBehaviour
     public void PlaySFXUnfavorite(){ if(!globalSFXMute){ PlayOneShot(sFXUnfavorite); } }
     public void PlaySFXCraftItem(){ if(!globalSFXMute){ PlayOneShot(sFXCraftItem); } }
     public void PlaySFXStockItem(){ if(!globalSFXMute){ PlayOneShot(sFXStockItem); } }
+    public void PlaySFXAlertHigh(){ if(!globalSFXMute){ PlayOneShot(sFXAlertHigh); } }
+    public void PlaySFXAlertLow(){ if(!globalSFXMute){ PlayOneShot(sFXAlertLow); } }
+    public void PlaySFXTrash(){ if(!globalSFXMute){ PlayOneShot(sFXTrash); } }
 
     [SerializeField] public Button buttonSFXSetting;
 

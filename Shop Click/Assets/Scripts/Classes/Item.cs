@@ -43,6 +43,8 @@ using UnityEngine;
     public void SetStock(int stock){ this.stock = stock; Global.instance.GetStats()["Stock"].AddAmount((ulong)stock); }
     public bool CheckStock(int stock){ if(stock <= this.stock){ return(true); } else { return(false); }}
     public void AddStock(int stock){ this.stock += stock; Global.instance.GetStats()["Stock"].AddAmount(System.Convert.ToUInt64(stock)); }
+    public void RemoveStock(int stock){ this.stock -= stock; Global.instance.GetStats()["Stock"].RemoveAmount(System.Convert.ToUInt64(stock)); }
+    
     public int lifetimeCrafted;
 
     public void AcquireResources()

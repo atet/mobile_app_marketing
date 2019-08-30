@@ -34,6 +34,14 @@ public class Mine : MonoBehaviour
                 child.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = kvp.Value.name;
                 child.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(kvp.Value.filepathImage);
                 child.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "x" + kvp.Value.GetStock().ToString();
+
+                // Trash item
+                child.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate
+                {
+                    SFX.instance.PlaySFXTrash();
+                    kvp.Value.RemoveStock(1);
+                    PopulateStockDetail();
+                });
             }    
         }
     }
@@ -70,7 +78,8 @@ public class Mine : MonoBehaviour
 
             // Link the slot/button to increment the item when time is over and button is clicked
             currentSlot.transform.GetChild(0).GetComponent<Button>().onClick.RemoveAllListeners();
-            currentSlot.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { 
+            currentSlot.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate
+            { 
                 if(Global.instance.GetStats()["Stock"].CheckCapacity())
                 {
                     Global.instance.GetInventory()[itemID].CraftItem();
