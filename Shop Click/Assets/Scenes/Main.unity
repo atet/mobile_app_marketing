@@ -22025,6 +22025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be516ae88523e84e8d4dcc848764c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sFXDone: {fileID: 8300000, guid: 4f730e868f6d86b42afed1d373309ca2, type: 3}
   sFXClick: {fileID: 8300000, guid: 4065d31b8e214ed459e1cb792205dd6d, type: 3}
   sFXSale: {fileID: 8300000, guid: a51fefecfd13e564fbfd3e7c859ee419, type: 3}
   sFXUpcharge: {fileID: 8300000, guid: 9e0731e3e3e33e04d80c22ccf1eca4f4, type: 3}
@@ -22033,6 +22034,10 @@ MonoBehaviour:
   sFXRefuse: {fileID: 8300000, guid: 11fcd6d8d1c141a4d928e0d285bf60ce, type: 3}
   sFXNoGo: {fileID: 8300000, guid: 11fcd6d8d1c141a4d928e0d285bf60ce, type: 3}
   sFXLevelUp: {fileID: 8300000, guid: 18ff81454fa52444f969b585ce57b68c, type: 3}
+  sFXFavorite: {fileID: 8300000, guid: 16f117a1ede3b3b45b2a456915df0f6b, type: 3}
+  sFXUnfavorite: {fileID: 8300000, guid: b92fcaa84b730f642bfa70a0ae39db2c, type: 3}
+  sFXCraftItem: {fileID: 8300000, guid: 3a64d9543bd9fa74b9ad7651f3823f4e, type: 3}
+  sFXStockItem: {fileID: 8300000, guid: ff67d1a98e37dca4da37d95ad35d774c, type: 3}
   buttonSFXSetting: {fileID: 1268761438}
 --- !u!82 &615281325
 AudioSource:

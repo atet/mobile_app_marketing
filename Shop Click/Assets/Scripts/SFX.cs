@@ -13,8 +13,13 @@ public class SFX : MonoBehaviour
     public static SFX instance;
     private bool globalSFXMute = false;
 
+    [SerializeField] public AudioClip sFXDone;
+
     [SerializeField] public AudioClip sFXClick, sFXSale, sFXUpcharge, sFXRebate, sFXSuggest, sFXRefuse, sFXNoGo, sFXLevelUp;
 
+    [SerializeField] public AudioClip sFXFavorite, sFXUnfavorite, sFXCraftItem, sFXStockItem;
+
+    public void PlaySFXDone(){ if(!globalSFXMute){ PlayOneShot(sFXDone); } }
     public void PlaySFXClick(){ if(!globalSFXMute){ PlayOneShot(sFXClick); } }
     public void PlaySFXSale(){ if(!globalSFXMute){ PlayOneShot(sFXSale); } }
     public void PlaySFXUpcharge(){ if(!globalSFXMute){ PlayOneShot(sFXUpcharge); } }
@@ -23,6 +28,11 @@ public class SFX : MonoBehaviour
     public void PlaySFXRefuse(){ if(!globalSFXMute){ PlayOneShot(sFXRefuse); } }
     public void PlaySFXNoGo(){ if(!globalSFXMute){ PlayOneShot(sFXNoGo); } }
     public void PlaySFXLevelUp(){ if(!globalSFXMute){ PlayOneShot(sFXLevelUp); } }
+
+    public void PlaySFXFavorite(){ if(!globalSFXMute){ PlayOneShot(sFXFavorite); } }
+    public void PlaySFXUnfavorite(){ if(!globalSFXMute){ PlayOneShot(sFXUnfavorite); } }
+    public void PlaySFXCraftItem(){ if(!globalSFXMute){ PlayOneShot(sFXCraftItem); } }
+    public void PlaySFXStockItem(){ if(!globalSFXMute){ PlayOneShot(sFXStockItem); } }
 
     [SerializeField] public Button buttonSFXSetting;
 

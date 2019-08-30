@@ -75,6 +75,8 @@ public class Mine : MonoBehaviour
                 {
                     Global.instance.GetInventory()[itemID].CraftItem();
                     currentSlot.SetActive(false);
+
+                    SFX.instance.PlaySFXStockItem();
                 }
                 else
                 {
@@ -100,6 +102,7 @@ public class Mine : MonoBehaviour
             Debug.Log("Adding item to Recent");
             PopulateCraftRecentWindow(itemID);
 
+            SFX.instance.PlaySFXCraftItem();
         }
     }
     private bool CraftingItemSlotOpen()
@@ -158,6 +161,8 @@ public class Mine : MonoBehaviour
 
                 // Change button text to "Finished"
                 panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Finished";
+
+                //SFX.instance.PlaySFXDone();
             }
 
         }
@@ -324,6 +329,7 @@ public class Mine : MonoBehaviour
             currentItem.SetIsFavorite(false);
             imageFilepath = "Images/UI/heart_black_transparent";
             DepopulateCraftFavoritesWindow(currentItem);
+            SFX.instance.PlaySFXUnfavorite();
         }
         else
         {
@@ -331,6 +337,7 @@ public class Mine : MonoBehaviour
             currentItem.SetIsFavorite(true);
             imageFilepath = "Images/UI/heart_red_transparent";
             PopulateCraftFavoritesWindow(currentItem);
+            SFX.instance.PlaySFXFavorite();
         }
         SetImageCraftFavorites(currentButton, imageFilepath);
     }
