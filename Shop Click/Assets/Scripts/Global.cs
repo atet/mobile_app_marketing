@@ -13,6 +13,15 @@ public class Global : MonoBehaviour
 
     private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190829";
     private const string filepathCharactersJSON = "Data/shop_click_characters";
+    
+    private const string filepathSecretJSON = "Data/AdMob"; private Secret secret;
+    public void InitSecret()
+    {
+        TextAsset jsonTextFile = Resources.Load<TextAsset>(filepathSecretJSON);
+        //Debug.Log("jsonTextFile.ToString(): " + jsonTextFile.ToString());
+        secret = Helper.FromJson<Secret>(jsonTextFile.ToString())[0];
+        Debug.Log("Secrets read: " + secret.iDAdMobApp + ", " + secret.iDAdMobAdBanner + ", " + secret.iDAdMobAdInterstitial);
+    }
 
     public Random rnd = new Random();
 
@@ -30,7 +39,7 @@ public class Global : MonoBehaviour
         InitCharacters(); // This has to be run before inventory?
         InitInventory();
         InitInventoryStarting();
-
+        InitSecret();
 
 
 
@@ -41,9 +50,6 @@ public class Global : MonoBehaviour
 
     void Start()
     {
-        //Debug.Log(Helper.TimeFormatter(101));
-
-        
     }
 
     void Update()

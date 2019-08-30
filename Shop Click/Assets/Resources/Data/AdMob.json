@@ -1,0 +1,10 @@
+{ 
+   "Items":
+   [
+      {
+         "iDAdMobApp":"Testing:iDAdMobApp",
+         "iDAdMobAdBanner":"Testing:iDAdMobAdBanner",
+         "iDAdMobAdInterstitial":"Testing:iDAdMobAdInterstitial"
+      }
+   ]
+}
