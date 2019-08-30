@@ -133,8 +133,38 @@ public class Mine : MonoBehaviour
     }
     
     private float[] countdownQueue;
+
+    private List<TextMeshProUGUI> tMProMineCraftQueue;
+    private List<Button> buttonMineCraftQueue;
+    public void LinkCraftQueue(){
+        tMProMineCraftQueue = new List<TextMeshProUGUI>
+        {
+            panelMineCraftQueue.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>(),
+            panelMineCraftQueue.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>(),
+            panelMineCraftQueue.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>(),
+            panelMineCraftQueue.transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>(),
+            panelMineCraftQueue.transform.GetChild(4).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>(),
+            panelMineCraftQueue.transform.GetChild(5).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>(),
+            panelMineCraftQueue.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>(),
+            panelMineCraftQueue.transform.GetChild(7).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>(),
+            panelMineCraftQueue.transform.GetChild(8).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>()
+        };
+        buttonMineCraftQueue = new List<Button>
+        {
+            panelMineCraftQueue.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Button>(),
+            panelMineCraftQueue.transform.GetChild(1).gameObject.transform.GetChild(0).GetComponent<Button>(),
+            panelMineCraftQueue.transform.GetChild(2).gameObject.transform.GetChild(0).GetComponent<Button>(),
+            panelMineCraftQueue.transform.GetChild(3).gameObject.transform.GetChild(0).GetComponent<Button>(),
+            panelMineCraftQueue.transform.GetChild(4).gameObject.transform.GetChild(0).GetComponent<Button>(),
+            panelMineCraftQueue.transform.GetChild(5).gameObject.transform.GetChild(0).GetComponent<Button>(),
+            panelMineCraftQueue.transform.GetChild(6).gameObject.transform.GetChild(0).GetComponent<Button>(),
+            panelMineCraftQueue.transform.GetChild(7).gameObject.transform.GetChild(0).GetComponent<Button>(),
+            panelMineCraftQueue.transform.GetChild(8).gameObject.transform.GetChild(0).GetComponent<Button>()
+        };
+    }
     private void CraftingItemUpdateTimeAll()
     {
+        // There's only a finite amount of slots:
         // Will update time on all slots.
         for(int i = 0; i < panelMineCraftQueue.transform.childCount; i++)
         {
@@ -148,21 +178,22 @@ public class Mine : MonoBehaviour
             if(countdownQueue[index] > 0)
             {
                 countdownQueue[index] -= Time.deltaTime;
-                panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Helper.TimeFormatter(countdownQueue[index]);
+                //panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Helper.TimeFormatter(countdownQueue[index]);
+                tMProMineCraftQueue[index].text = Helper.TimeFormatter(countdownQueue[index]);
             }
             else
             {
                 // Countdown done.
                 // Enable button.
-                panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).GetComponent<Button>().interactable = true;
-
+                //panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).GetComponent<Button>().interactable = true;
+                buttonMineCraftQueue[index].interactable = true;
                 // Set countdown to -999 to denote this slot is no longer being used
                 countdownQueue[index] = -999;
 
                 // Change button text to "Finished"
-                panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Finished";
-
-                //SFX.instance.PlaySFXDone();
+                //panelMineCraftQueue.transform.GetChild(index).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Finished";
+                tMProMineCraftQueue[index].text = "Finished";
+                SFX.instance.PlaySFXDone();
             }
 
         }
@@ -411,7 +442,7 @@ public class Mine : MonoBehaviour
         LinkButtonStock();
         LinkButtonCraftRecent();
         LinkButtonCraftFavorites();
-
+        LinkCraftQueue();
 
         //TestInstantiate();
     }
