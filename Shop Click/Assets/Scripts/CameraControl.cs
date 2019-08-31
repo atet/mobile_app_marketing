@@ -17,7 +17,7 @@ public class CameraControl : MonoBehaviour
 
     Vector2 currentScreen;
 
-    private const float currentSwipeMagnitudeThreshold = 10;
+    private const float currentSwipeMagnitudeThreshold = 100;
     private const float currentSwipeTimeThreshold = 2; // Time in second
 
     // Current camera position

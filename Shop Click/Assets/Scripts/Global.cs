@@ -65,7 +65,7 @@ public class Global : MonoBehaviour
         {
             stats.Add("Level",  new Resource("Level",  1, 0, System.UInt64.MaxValue,   1));
             stats.Add("Coins",  new Resource("Coins",  1, 0, System.UInt64.MaxValue,   0));
-            stats.Add("Chakra", new Resource("Chakra", 1, 0,                    999, 999));
+            stats.Add("Chakra", new Resource("Chakra", 1, 0,                    999, 100));
             stats.Add("Gems",   new Resource("Gems",   1, 0, System.UInt64.MaxValue,   5));
             stats.Add("Stock",  new Resource("Stock",  1, 0,                    999,   0));
         }
