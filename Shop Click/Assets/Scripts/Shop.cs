@@ -150,7 +150,7 @@ public class Shop : MonoBehaviour
             {
                 Debug.Log("Next random customer...");
                 // Pick random item from inventory.
-                currentItem = Global.instance.RandomItem();
+                currentItem = Global.instance.RandomItem(false);
             }
             else
             {
@@ -176,37 +176,6 @@ public class Shop : MonoBehaviour
             panelShopDialog.SetActive(false);
         }
 
-    }
-
-
-
-
-
-
-
-    public void OnPressSuggest()
-    {
-        //Debug.Log("Pressed Suggest...");
-        if(Global.instance.GetStats()["Chakra"].CheckAmount((ulong)chakraSuggestCost)){
-            Global.instance.GetStats()["Chakra"].RemoveAmount((ulong)chakraSuggestCost);
-            
-            // Disable buttons.
-            Helper.ButtonDisable(panelSuggest.transform.GetChild(0).gameObject.GetComponent<Button>());
-
-            // Change chakra cost for refusing
-            AddChakraRefuse(chakraSuggestCost);
-            
-            // Go to different item, same person
-            // TODO
-
-            // Play SFX
-            SFX.instance.PlaySFXSuggest();
-        }
-        else
-        {
-            // Play SFX
-            SFX.instance.PlaySFXRefuse();
-        }
     }
     public void OnPressRebate()
     {
@@ -243,6 +212,39 @@ public class Shop : MonoBehaviour
 
             // Play SFX
             SFX.instance.PlaySFXUpcharge();
+        }
+        else
+        {
+            // Play SFX
+            SFX.instance.PlaySFXNoGo();
+        }
+    }
+    public void OnPressSuggest()
+    {
+        //Debug.Log("Pressed Suggest...");
+        if(
+            Global.instance.GetStats()["Chakra"].CheckAmount((ulong)chakraSuggestCost) &&
+            Global.instance.GetStats()["Stock"].CheckAmount(1) // Have at least something else in stock
+          )
+        {
+            Global.instance.GetStats()["Chakra"].RemoveAmount((ulong)chakraSuggestCost);
+            
+            // Disable buttons.
+            Helper.ButtonDisable(panelSuggest.transform.GetChild(0).gameObject.GetComponent<Button>());
+
+            // Change chakra cost for refusing
+            AddChakraRefuse(chakraSuggestCost);
+            
+            // Go to different item, same person
+            // TODO: No window selection, just go to random new item in stock
+            currentItem = Global.instance.RandomItem(true);
+            Debug.Log("Suggested item is: " + currentItem.name);
+            UpdateSpriteItem();
+            //UpdateSpriteCharacter();
+            SetSellGainCoins(currentItem.value);
+
+            // Play SFX
+            SFX.instance.PlaySFXSuggest();
         }
         else
         {

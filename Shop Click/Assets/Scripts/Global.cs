@@ -39,12 +39,7 @@ public class Global : MonoBehaviour
         InitCharacters(); // This has to be run before inventory?
         InitInventory();
         InitInventoryStarting();
-        InitSecret();
-
-
-
-
-        
+        InitSecret();        
     }
 
 
@@ -173,26 +168,27 @@ public class Global : MonoBehaviour
             inventory["spear_1"].SetStock(1);
             inventory["bow_1"].SetStock(1);
             inventory["larmor_1"].SetStock(1);
+            inventory["hat_1"].SetStock(1);
         }
         else
         {
-            inventory["axe_1"].SetIsAvailable(true); inventory["Wood Axe"].SetStock(0);
-            inventory["dagger_1"].SetIsAvailable(true); inventory["Dirk"].SetStock(0);
-            inventory["spear_1"].SetIsAvailable(true); inventory["Javelin"].SetStock(1);
-            inventory["bow_1"].SetIsAvailable(true); inventory["Long Bow"].SetStock(1);
-            inventory["harmor_1"].SetIsAvailable(true); inventory["Breastplate"].SetStock(0);
-            inventory["larmor_1"].SetIsAvailable(true); inventory["Leather Armor"].SetStock(1);
-            inventory["helmet_1"].SetIsAvailable(true); inventory["Wooden Dome"].SetStock(0);
-            inventory["headgear_1"].SetIsAvailable(true); inventory["Leather Cap"].SetStock(0);
-            inventory["hat_1"].SetIsAvailable(true); inventory["Stitched Cone"].SetStock(0);
-            inventory["gauntlets_1"].SetIsAvailable(true); inventory["Iron Armguards"].SetStock(0);
-            inventory["boots_1"].SetIsAvailable(true); inventory["Shin Guards"].SetStock(0);
-            inventory["shield_1"].SetIsAvailable(true); inventory["Escutcheon"].SetStock(0);
-            inventory["potion_1"].SetIsAvailable(true); inventory["Warm Tea"].SetStock(0);
+            inventory["axe_1"].SetIsAvailable(true); inventory["axe_1"].SetStock(0);
+            inventory["dagger_1"].SetIsAvailable(true); inventory["dagger_1"].SetStock(0);
+            inventory["spear_1"].SetIsAvailable(true); inventory["spear_1"].SetStock(1);
+            inventory["bow_1"].SetIsAvailable(true); inventory["bow_1"].SetStock(1);
+            inventory["harmor_1"].SetIsAvailable(true); inventory["harmor_1"].SetStock(0);
+            inventory["larmor_1"].SetIsAvailable(true); inventory["larmor_1"].SetStock(1);
+            inventory["helmet_1"].SetIsAvailable(true); inventory["helmet_1"].SetStock(0);
+            inventory["headgear_1"].SetIsAvailable(true); inventory["headgear_1"].SetStock(0);
+            inventory["hat_1"].SetIsAvailable(true); inventory["hat_1"].SetStock(0);
+            inventory["gauntlets_1"].SetIsAvailable(true); inventory["gauntlets_1"].SetStock(0);
+            inventory["boots_1"].SetIsAvailable(true); inventory["boots_1"].SetStock(0);
+            inventory["shield_1"].SetIsAvailable(true); inventory["shield_1"].SetStock(0);
+            inventory["potion_1"].SetIsAvailable(true); inventory["potion_1"].SetStock(0);
         }
     }
 
-    public Item RandomItem()
+    public Item RandomItem(bool isStocked)
     {
         // Returns a random item from the inventory.
         // Will make this more elaborate later (only return things in stock or mixed, etc.).
@@ -202,8 +198,17 @@ public class Global : MonoBehaviour
         // Iterate through dictionary
         foreach(KeyValuePair<string, Item> entry in inventory)
         {
-            if(entry.Value.GetIsAvailable()){
-                keyList.Add(entry.Key);
+            if(isStocked)
+            {
+                if(entry.Value.GetStock() > 0){
+                    keyList.Add(entry.Key);
+                }
+            }
+            else
+            {
+                if(entry.Value.GetIsAvailable()){
+                    keyList.Add(entry.Key);
+                }
             }
         }
 
