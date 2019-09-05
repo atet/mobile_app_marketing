@@ -89,6 +89,7 @@ public class Mine : MonoBehaviour
                 }
                 else
                 {
+                    SFX.instance.PlaySFXNoGo();
                     Debug.Log("Stock at capacity!");
                 }
             });
@@ -472,66 +473,66 @@ public class Mine : MonoBehaviour
     public void SetPanelResources(Item item, GameObject panelResource)
     {
         int currentIndexPanelResources = 0;
-        if(item.costIron > 0)
+        if(item.costResource1 > 0)
         {
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/iron");
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costIron.ToString();
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_1"].GetFilepathImage());
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource1.ToString();
             // Set panel active
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;
         }
-        if(item.costHide > 0)
+        if(item.costResource3 > 0)
         {
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/hide");
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costHide.ToString();
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_2"].GetFilepathImage());
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource3.ToString();
             // Set panel active
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;
         }
-        if(item.costWood > 0)
+        if(item.costResource2 > 0)
         {
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/wood");
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costWood.ToString();
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_3"].GetFilepathImage());
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource2.ToString();
             // Set panel active
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;
         }
-        if(item.costHerbs > 0)
+        if(item.costResource4 > 0)
         {
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/herbs");
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costHerbs.ToString();
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_4"].GetFilepathImage());
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource4.ToString();
             // Set panel active
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;
         }
-        if(item.costSteel > 0)
+        if(item.costResource5 > 0)
         {
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/steel");
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costSteel.ToString();
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_5"].GetFilepathImage());
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource5.ToString();
             // Set panel active
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;
         }
-        if(item.costOil > 0)
+        if(item.costResource6 > 0)
         {
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/oil");
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costOil.ToString();
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_8"].GetFilepathImage());
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource6.ToString();
             // Set panel active
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;
         }
-        if(item.costElectricity > 0)
+        if(item.costResource7 > 0)
         {
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/electricity");
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costElectricity.ToString();
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_7"].GetFilepathImage());
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource7.ToString();
             // Set panel active
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;
         }
-        if(item.costTitanium > 0)
+        if(item.costResource8 > 0)
         {
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/UI/titanium");
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costTitanium.ToString();
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_6"].GetFilepathImage());
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource8.ToString();
             // Set panel active
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;

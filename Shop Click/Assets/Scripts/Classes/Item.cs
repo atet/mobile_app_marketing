@@ -12,7 +12,7 @@ using UnityEngine;
     public ulong prerequisiteWorker1Level;
     public string prerequisiteWorker2;
     public ulong prerequisiteWorker2Level;
-    public ulong costIron, costWood, costHide, costHerbs, costSteel, costTitanium, costElectricity, costOil;
+    public ulong costResource1, costResource2, costResource3, costResource4, costResource5, costResource6, costResource7, costResource8;
     public string costComponent1Name, costComponent1Quality; 
     public ulong costComponent1; 
     public string costComponent2Name, costComponent2Quality; 
@@ -49,15 +49,24 @@ using UnityEngine;
 
     public void AcquireResources()
     {
+        // resources
+        // 1 iron
+        // 2 wood
+        // 3 hide
+        // 4 herbs
+        // 5 steel
+        // 6 titanium
+        // 7 electricity
+        // 8 oil
         //Debug.Log("Acquiring resources for " + name + ".");
-        Global.instance.GetResources()["Iron"].RemoveAmount(costIron);
-        Global.instance.GetResources()["Wood"].RemoveAmount(costWood);
-        Global.instance.GetResources()["Hide"].RemoveAmount(costHide);
-        Global.instance.GetResources()["Herbs"].RemoveAmount(costHerbs);
-        Global.instance.GetResources()["Steel"].RemoveAmount(costSteel);
-        Global.instance.GetResources()["Titanium"].RemoveAmount(costTitanium);
-        Global.instance.GetResources()["Electricity"].RemoveAmount(costElectricity);
-        Global.instance.GetResources()["Oil"].RemoveAmount(costOil);
+        Global.instance.GetResources()["resource_1"].RemoveAmount(costResource1);
+        Global.instance.GetResources()["resource_2"].RemoveAmount(costResource2);
+        Global.instance.GetResources()["resource_3"].RemoveAmount(costResource3);
+        Global.instance.GetResources()["resource_4"].RemoveAmount(costResource4);
+        Global.instance.GetResources()["resource_5"].RemoveAmount(costResource5);
+        Global.instance.GetResources()["resource_6"].RemoveAmount(costResource6);
+        Global.instance.GetResources()["resource_7"].RemoveAmount(costResource7);
+        Global.instance.GetResources()["resource_8"].RemoveAmount(costResource8);
     }
     public void CraftItem()
     {
@@ -82,14 +91,14 @@ using UnityEngine;
 
 
         if(
-            (Global.instance.GetResources()["Iron"].CheckAmount(costIron)) &&
-            (Global.instance.GetResources()["Wood"].CheckAmount(costWood)) &&
-            (Global.instance.GetResources()["Hide"].CheckAmount(costHide)) &&
-            (Global.instance.GetResources()["Herbs"].CheckAmount(costHerbs)) &&
-            (Global.instance.GetResources()["Steel"].CheckAmount(costSteel)) &&
-            (Global.instance.GetResources()["Titanium"].CheckAmount(costTitanium)) &&
-            (Global.instance.GetResources()["Electricity"].CheckAmount(costElectricity)) &&
-            (Global.instance.GetResources()["Oil"].CheckAmount(costOil))
+            (Global.instance.GetResources()["resource_1"].CheckAmount(costResource1)) &&
+            (Global.instance.GetResources()["resource_2"].CheckAmount(costResource2)) &&
+            (Global.instance.GetResources()["resource_3"].CheckAmount(costResource3)) &&
+            (Global.instance.GetResources()["resource_4"].CheckAmount(costResource4)) &&
+            (Global.instance.GetResources()["resource_5"].CheckAmount(costResource5)) &&
+            (Global.instance.GetResources()["resource_6"].CheckAmount(costResource6)) &&
+            (Global.instance.GetResources()["resource_7"].CheckAmount(costResource7)) &&
+            (Global.instance.GetResources()["resource_8"].CheckAmount(costResource8))
             )
         {
             //Debug.Log("CheckResource() = true");

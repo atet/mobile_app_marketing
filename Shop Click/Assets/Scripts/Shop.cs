@@ -10,7 +10,7 @@ public class Shop : MonoBehaviour
     private Character currentCharacter;
 
     [SerializeField] public TextMeshProUGUI tMProQueue;
-    public void UpdateTMProQueue() { tMProQueue.text = Global.instance.GetResources()["Queue"].ToStringAmount(); }
+    public void UpdateTMProQueue() { tMProQueue.text = Global.instance.GetResources()["resource_0"].ToStringAmount(); }
 
     [SerializeField] public GameObject panelShopDialog;
     
@@ -18,7 +18,7 @@ public class Shop : MonoBehaviour
 
     public void OnPressQueue()
     {
-        if(Global.instance.GetResources()["Queue"].GetAmount() > 0){
+        if(Global.instance.GetResources()["resource_0"].GetAmount() > 0){
             panelShopDialog.SetActive(true);
         }else{
             panelShopDialog.SetActive(false);
@@ -143,7 +143,7 @@ public class Shop : MonoBehaviour
 
     public void NextCustomer(string itemName){
 
-        if(Global.instance.GetResources()["Queue"].GetAmount() > 0)
+        if(Global.instance.GetResources()["resource_0"].GetAmount() > 0)
         {
             
             if(itemName == "Random")
@@ -274,7 +274,7 @@ public class Shop : MonoBehaviour
             // Decrement Global stock count.
             Global.instance.GetStats()["Stock"].DecrementAmount();
 
-            Global.instance.GetResources()["Queue"].DecrementAmount();
+            Global.instance.GetResources()["resource_0"].DecrementAmount();
             UpdateTMProQueue();
 
             NextTransaction();
@@ -307,7 +307,7 @@ public class Shop : MonoBehaviour
         // Increment refusal count.
         IncrementCountRefusals();
 
-        Global.instance.GetResources()["Queue"].DecrementAmount();
+        Global.instance.GetResources()["resource_0"].DecrementAmount();
         UpdateTMProQueue();
 
         NextTransaction();

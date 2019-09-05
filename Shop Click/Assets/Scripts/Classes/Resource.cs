@@ -5,6 +5,7 @@ using UnityEngine;
 public class Resource
 {   
     private string label; public void SetLabel(string label){ this.label = label; } public string GetLabel(){ return(label); }
+    private string filepathImage; public void SetFilepathImage(string filepathImage){ this.filepathImage = filepathImage; } public string GetFilepathImage(){ return(filepathImage); }
     private int level; public void SetLevel(int level){ this.level = level; } public int GetLevel(){ return(level); }
     private float rate; public void SetRate(float rate){ this.rate = rate; } public float GetRate(){ return(rate); }
 
@@ -85,9 +86,10 @@ public class Resource
     // private ulong[] levelThresholds; public void SetLevelThresholds(ulong[] setLevelThresholds){ levelThresholds = setLevelThresholds; } public ulong[] GetLevelThresholds(){ return(levelThresholds); }
 
     // Use this for initialization
-    public Resource(string label, int level, float rate, ulong cap, ulong amount)
+    public Resource(string label, string filepathImage, int level, float rate, ulong cap, ulong amount)
     {
         this.label = label;
+        this.filepathImage = filepathImage;
         this.level = level;
         this.rate = rate * (1 / Global.instance.GetGlobalMultiplier());
         timeRemaining = this.rate; // Initial set

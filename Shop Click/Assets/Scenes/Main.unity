@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 4302323}
   - component: {fileID: 4302322}
   m_Layer: 0
-  m_Name: Image Mine Resource Titanium
+  m_Name: Image Mine Resource 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5512000a09b331a40b756903e3061f9b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -909,18 +909,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13694900}
   m_CullTransparentMesh: 0
---- !u!114 &15423968 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1147682789619546061}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &17508831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,7 +2310,7 @@ GameObject:
   - component: {fileID: 42264256}
   - component: {fileID: 42264255}
   m_Layer: 0
-  m_Name: Panel Mine Resource Electricity
+  m_Name: Panel Mine Resource 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2577,7 +2565,7 @@ GameObject:
   - component: {fileID: 43576309}
   - component: {fileID: 43576308}
   m_Layer: 0
-  m_Name: Image Mine Resource Detail Iron
+  m_Name: Image Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2622,7 +2610,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8204755fbeeee834d81cd23e0f6d4bfd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2774,18 +2762,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46214731}
   m_CullTransparentMesh: 0
---- !u!114 &47239306 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1590881085}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &48969328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,7 +2774,7 @@ GameObject:
   - component: {fileID: 48969331}
   - component: {fileID: 48969330}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Oil Label
+  m_Name: TMPro Mine Resource Detail Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2843,7 +2819,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Oil
+  m_text: resource_6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -2872,8 +2848,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2913,10 +2889,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 48969330}
-    characterCount: 3
+    characterCount: 10
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -3215,8 +3191,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1716359871}
-  - {fileID: 1368393686}
   - {fileID: 910157993}
+  - {fileID: 1368393686}
   m_Father: {fileID: 257182451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7162,7 +7138,7 @@ GameObject:
   - component: {fileID: 180242951}
   - component: {fileID: 180242950}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Hide Rate
+  m_Name: TMPro Mine Resource Detail Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9076,7 +9052,7 @@ GameObject:
   - component: {fileID: 239463188}
   - component: {fileID: 239463187}
   m_Layer: 0
-  m_Name: Button Mine Resource Detail Electricity
+  m_Name: Button Mine Resource 7 Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9620,7 +9596,7 @@ GameObject:
   - component: {fileID: 248208943}
   - component: {fileID: 248208942}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Titanium Rate
+  m_Name: TMPro Mine Resource Detail Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10257,7 +10233,7 @@ GameObject:
   - component: {fileID: 270646542}
   - component: {fileID: 270646541}
   m_Layer: 0
-  m_Name: Image Mine Resource Wood
+  m_Name: Image Mine Resource 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10302,7 +10278,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 16688bb335fa22d428d8a5b945c411d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10845,7 +10821,7 @@ GameObject:
   - component: {fileID: 286168056}
   - component: {fileID: 286168055}
   m_Layer: 0
-  m_Name: Button Mine Resource Detail Hide
+  m_Name: Button Mine Resource 2 Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12722,7 +12698,7 @@ GameObject:
   - component: {fileID: 329287145}
   - component: {fileID: 329287144}
   m_Layer: 0
-  m_Name: Image Mine Resource Detail Titanium
+  m_Name: Image Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12767,7 +12743,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5512000a09b331a40b756903e3061f9b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13166,7 +13142,7 @@ GameObject:
   - component: {fileID: 337877567}
   - component: {fileID: 337877566}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Wood Cap
+  m_Name: TMPro Mine Resource Detail Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13847,7 +13823,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-      value: Panel Town Worker 4 Dispensary
+      value: Panel Town Worker 4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -14078,18 +14054,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f25d0f9adf9d9634ab6fc7edfdb31876,
+      objectReference: {fileID: 21300000, guid: e595c4107136af84ca3b98c93b8a4f05,
         type: 3}
     - target: {fileID: 1147682790619832369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0c783739f57b8ef43a0287acf1359cfe,
+      objectReference: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899,
         type: 3}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -14134,7 +14110,7 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
-      value: Dispensary
+      value: worker_4
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -14323,7 +14299,7 @@ GameObject:
   - component: {fileID: 352872390}
   - component: {fileID: 352872389}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Steel
+  m_Name: TMPro Mine Resource 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14640,7 +14616,7 @@ GameObject:
   - component: {fileID: 357809733}
   - component: {fileID: 357809732}
   m_Layer: 0
-  m_Name: Panel Mine Resource Oil
+  m_Name: Panel Mine Resource 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15206,7 +15182,7 @@ GameObject:
   - component: {fileID: 365369334}
   - component: {fileID: 365369333}
   m_Layer: 0
-  m_Name: Image Mine Resource Electricity
+  m_Name: Image Mine Resource 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15251,7 +15227,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b486bc343314f1a47a85dfcbd71e3012, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15580,18 +15556,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370667909}
   m_CullTransparentMesh: 0
---- !u!114 &371419137 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 346660089}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &382780762
 GameObject:
   m_ObjectHideFlags: 0
@@ -15757,7 +15721,7 @@ GameObject:
   - component: {fileID: 391170817}
   - component: {fileID: 391170816}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Oil Cap
+  m_Name: TMPro Mine Resource Detail Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16122,7 +16086,7 @@ GameObject:
   - component: {fileID: 396435199}
   - component: {fileID: 396435198}
   m_Layer: 0
-  m_Name: Image Mine Resource Oil
+  m_Name: Image Mine Resource 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16167,7 +16131,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a6529792ed3a22f418a13c71c5067fda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16569,7 +16533,7 @@ GameObject:
   - component: {fileID: 403988684}
   - component: {fileID: 403988683}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Oil Rate
+  m_Name: TMPro Mine Resource Detail Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17537,18 +17501,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425250957}
   m_CullTransparentMesh: 0
---- !u!114 &429395774 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1751190584}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &436870389
 GameObject:
   m_ObjectHideFlags: 0
@@ -18126,7 +18078,7 @@ GameObject:
   - component: {fileID: 456710909}
   - component: {fileID: 456710908}
   m_Layer: 0
-  m_Name: Button Mine Resource Detail Steel
+  m_Name: Button Mine Resource 5 Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18407,7 +18359,7 @@ GameObject:
   - component: {fileID: 474744155}
   - component: {fileID: 474744154}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Hide Label
+  m_Name: TMPro Mine Resource Detail Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18452,7 +18404,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Hide
+  m_text: resource_2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -18481,8 +18433,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18522,10 +18474,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 474744154}
-    characterCount: 4
+    characterCount: 10
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -18623,7 +18575,7 @@ GameObject:
   - component: {fileID: 495477031}
   - component: {fileID: 495477030}
   m_Layer: 0
-  m_Name: Image Mine Resource Detail Wood
+  m_Name: Image Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18668,7 +18620,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 16688bb335fa22d428d8a5b945c411d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19042,7 +18994,7 @@ GameObject:
   - component: {fileID: 514351708}
   - component: {fileID: 514351707}
   m_Layer: 0
-  m_Name: Image Mine Resource Detail Hide
+  m_Name: Image Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19087,7 +19039,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7eaffdd2bdc753e40b78f88e42f88dbf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21169,59 +21121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0354ac4af37c61b4c870d831b8ceee7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIOverlayLevel: {fileID: 910157994}
-  uIOverlayCoins: {fileID: 1044299088}
-  uIOverlayChakra: {fileID: 2024171172}
-  uIOverlayGems: {fileID: 1365969297}
-  uIShopQueue: {fileID: 1752453966}
-  uIMineIron: {fileID: 1662307384}
-  uIMineIronDetailLevel: {fileID: 1162668163}
-  uIMineIronDetailRate: {fileID: 955587121}
-  uIMineIronDetailCap: {fileID: 944200864}
-  uITownIronDetailLevel: {fileID: 15423968}
-  uITownIronDetailRate: {fileID: 1393786008}
-  uIMineHide: {fileID: 1222975873}
-  uIMineHideDetailLevel: {fileID: 709881905}
-  uIMineHideDetailRate: {fileID: 180242950}
-  uIMineHideDetailCap: {fileID: 1405416701}
-  uITownHideDetailLevel: {fileID: 47239306}
-  uITownHideDetailRate: {fileID: 1638771933}
-  uIMineWood: {fileID: 1790790614}
-  uIMineWoodDetailLevel: {fileID: 894793881}
-  uIMineWoodDetailRate: {fileID: 2033401355}
-  uIMineWoodDetailCap: {fileID: 337877566}
-  uITownWoodDetailLevel: {fileID: 1023366992}
-  uITownWoodDetailRate: {fileID: 1071537633}
-  uIMineHerbs: {fileID: 745224688}
-  uIMineHerbsDetailLevel: {fileID: 1631254069}
-  uIMineHerbsDetailRate: {fileID: 1850390121}
-  uIMineHerbsDetailCap: {fileID: 1638440096}
-  uITownHerbsDetailLevel: {fileID: 371419137}
-  uITownHerbsDetailRate: {fileID: 796440975}
-  uIMineSteel: {fileID: 352872389}
-  uIMineSteelDetailLevel: {fileID: 1751108808}
-  uIMineSteelDetailRate: {fileID: 1433964597}
-  uIMineSteelDetailCap: {fileID: 606966854}
-  uITownSteelDetailLevel: {fileID: 915781837}
-  uITownSteelDetailRate: {fileID: 1922585710}
-  uIMineOil: {fileID: 864220901}
-  uIMineOilDetailLevel: {fileID: 1088360151}
-  uIMineOilDetailRate: {fileID: 403988683}
-  uIMineOilDetailCap: {fileID: 391170816}
-  uITownOilDetailLevel: {fileID: 429395774}
-  uITownOilDetailRate: {fileID: 1789181034}
-  uIMineElectricity: {fileID: 1681258623}
-  uIMineElectricityDetailLevel: {fileID: 619075524}
-  uIMineElectricityDetailRate: {fileID: 1925522631}
-  uIMineElectricityDetailCap: {fileID: 682950596}
-  uITownElectricityDetailLevel: {fileID: 718069885}
-  uITownElectricityDetailRate: {fileID: 2091345506}
-  uIMineTitanium: {fileID: 1666637053}
-  uIMineTitaniumDetailLevel: {fileID: 628692021}
-  uIMineTitaniumDetailRate: {fileID: 248208942}
-  uIMineTitaniumDetailCap: {fileID: 1447603865}
-  uITownTitaniumDetailLevel: {fileID: 815989263}
-  uITownTitaniumDetailRate: {fileID: 827775907}
+  panelUIOverlayStats: {fileID: 2032230207}
+  panelShop: {fileID: 2058420991}
+  panelMineResource: {fileID: 575628285}
+  panelMineResourceDetail: {fileID: 224295477}
+  panelTownWorkers: {fileID: 612851956}
 --- !u!1 &576897985
 GameObject:
   m_ObjectHideFlags: 0
@@ -21235,7 +21139,7 @@ GameObject:
   - component: {fileID: 576897988}
   - component: {fileID: 576897987}
   m_Layer: 0
-  m_Name: Panel Mine Resource Detail Oil
+  m_Name: Panel Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21973,7 +21877,7 @@ GameObject:
   - component: {fileID: 606966855}
   - component: {fileID: 606966854}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Steel Cap
+  m_Name: TMPro Mine Resource Detail Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22384,13 +22288,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1198315276}
-  - {fileID: 1288056518}
   - {fileID: 628559588}
+  - {fileID: 1288056518}
   - {fileID: 1989363775}
   - {fileID: 1413328258}
-  - {fileID: 149852006}
-  - {fileID: 1715964174}
   - {fileID: 1077097588}
+  - {fileID: 1715964174}
+  - {fileID: 149852006}
   - {fileID: 1190124716}
   - {fileID: 170650655}
   - {fileID: 917826788}
@@ -22648,7 +22552,7 @@ GameObject:
   - component: {fileID: 619075525}
   - component: {fileID: 619075524}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Electricity Level
+  m_Name: TMPro Mine Resource Detail Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23264,7 +23168,7 @@ GameObject:
   - component: {fileID: 628692022}
   - component: {fileID: 628692021}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Titanium Level
+  m_Name: TMPro Mine Resource Detail Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23758,7 +23662,7 @@ GameObject:
   - component: {fileID: 630681963}
   - component: {fileID: 630681962}
   m_Layer: 0
-  m_Name: Panel Mine Resource Detail Steel
+  m_Name: Panel Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25956,7 +25860,7 @@ GameObject:
   - component: {fileID: 682950597}
   - component: {fileID: 682950596}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Electricity Cap
+  m_Name: TMPro Mine Resource Detail Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26979,7 +26883,7 @@ GameObject:
   - component: {fileID: 709881906}
   - component: {fileID: 709881905}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Hide Level
+  m_Name: TMPro Mine Resource Detail Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27344,18 +27248,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716100052}
   m_CullTransparentMesh: 0
---- !u!114 &718069885 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1023040379}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &725447428
 GameObject:
   m_ObjectHideFlags: 0
@@ -27704,7 +27596,7 @@ GameObject:
   - component: {fileID: 727637398}
   - component: {fileID: 727637397}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Herbs Label
+  m_Name: TMPro Mine Resource Detail Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27749,7 +27641,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Herbs
+  m_text: resource_4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -27778,8 +27670,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -27819,10 +27711,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 727637397}
-    characterCount: 5
+    characterCount: 10
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -29171,7 +29063,7 @@ GameObject:
   - component: {fileID: 745224689}
   - component: {fileID: 745224688}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Herbs
+  m_Name: TMPro Mine Resource 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30723,18 +30615,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796047216}
   m_CullTransparentMesh: 0
---- !u!114 &796440975 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 346660089}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &802119224
 GameObject:
   m_ObjectHideFlags: 0
@@ -31012,7 +30892,7 @@ GameObject:
   - component: {fileID: 814141009}
   - component: {fileID: 814141008}
   m_Layer: 0
-  m_Name: Panel Mine Resource Detail Iron
+  m_Name: Panel Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31103,18 +30983,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814141006}
   m_CullTransparentMesh: 0
---- !u!114 &815989263 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1218263074}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &818629573
 GameObject:
   m_ObjectHideFlags: 0
@@ -31639,18 +31507,6 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
---- !u!114 &827775907 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1218263074}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &829599515
 GameObject:
   m_ObjectHideFlags: 0
@@ -32493,7 +32349,7 @@ GameObject:
   - component: {fileID: 864220902}
   - component: {fileID: 864220901}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Oil
+  m_Name: TMPro Mine Resource 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33827,7 +33683,7 @@ GameObject:
   - component: {fileID: 894793882}
   - component: {fileID: 894793881}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Wood Level
+  m_Name: TMPro Mine Resource Detail Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34797,7 +34653,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 56324253}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -34938,7 +34794,7 @@ GameObject:
   - component: {fileID: 912432303}
   - component: {fileID: 912432302}
   m_Layer: 0
-  m_Name: Button Mine Resource Detail Herbs
+  m_Name: Button Mine Resource 4 Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35048,18 +34904,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912432300}
   m_CullTransparentMesh: 0
---- !u!114 &915781837 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1302327727}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &917826787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
@@ -35853,7 +35697,7 @@ GameObject:
   - component: {fileID: 927192205}
   - component: {fileID: 927192204}
   m_Layer: 0
-  m_Name: Panel Mine Resource Detail Titanium
+  m_Name: Panel Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35957,7 +35801,7 @@ GameObject:
   - component: {fileID: 928996764}
   - component: {fileID: 928996763}
   m_Layer: 0
-  m_Name: Panel Mine Resource Iron
+  m_Name: Panel Mine Resource 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36766,7 +36610,7 @@ GameObject:
   - component: {fileID: 944200865}
   - component: {fileID: 944200864}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Iron Cap
+  m_Name: TMPro Mine Resource Detail Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37057,7 +36901,7 @@ GameObject:
   - component: {fileID: 955587122}
   - component: {fileID: 955587121}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Iron Rate
+  m_Name: TMPro Mine Resource Detail Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38030,7 +37874,7 @@ GameObject:
   - component: {fileID: 982756348}
   - component: {fileID: 982756347}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Iron Label
+  m_Name: TMPro Mine Resource Detail Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38075,7 +37919,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Iron
+  m_text: resource_1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -38104,8 +37948,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -38145,10 +37989,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 982756347}
-    characterCount: 4
+    characterCount: 10
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -39648,7 +39492,7 @@ GameObject:
   - component: {fileID: 1022927207}
   - component: {fileID: 1022927206}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Wood Label
+  m_Name: TMPro Mine Resource Detail Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39693,7 +39537,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Wood
+  m_text: resource_3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -39722,8 +39566,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -39763,10 +39607,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1022927206}
-    characterCount: 4
+    characterCount: 10
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -39804,7 +39648,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-      value: Panel Town Worker 7 Laboratory
+      value: Panel Town Worker 7
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -40015,18 +39859,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6096a4f0a1f94024c88625dbb0c2b3ea,
+      objectReference: {fileID: 21300000, guid: e595c4107136af84ca3b98c93b8a4f05,
         type: 3}
     - target: {fileID: 1147682790619832369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b486bc343314f1a47a85dfcbd71e3012,
+      objectReference: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899,
         type: 3}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -40051,7 +39895,7 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
-      value: Laboratory
+      value: worker_7
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -40075,18 +39919,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3a9b220cc1136844b74a9fa692fba81, type: 3}
---- !u!114 &1023366992 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1920396147}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1026809512
 GameObject:
   m_ObjectHideFlags: 0
@@ -41167,7 +40999,7 @@ GameObject:
   - component: {fileID: 1050308383}
   - component: {fileID: 1050308382}
   m_Layer: 0
-  m_Name: Image Mine Resource Steel
+  m_Name: Image Mine Resource 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41212,7 +41044,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e0e76fd981b65c440b80baf259a9c2de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -41363,18 +41195,6 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
---- !u!114 &1071537633 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1920396147}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1072566359
 GameObject:
   m_ObjectHideFlags: 0
@@ -42170,7 +41990,7 @@ GameObject:
   - component: {fileID: 1088360152}
   - component: {fileID: 1088360151}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Oil Level
+  m_Name: TMPro Mine Resource Detail Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44959,7 +44779,7 @@ GameObject:
   - component: {fileID: 1156804459}
   - component: {fileID: 1156804458}
   m_Layer: 0
-  m_Name: Image Mine Resource Iron
+  m_Name: Image Mine Resource 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45004,7 +44824,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8204755fbeeee834d81cd23e0f6d4bfd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -45372,7 +45192,7 @@ GameObject:
   - component: {fileID: 1162668164}
   - component: {fileID: 1162668163}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Iron Level
+  m_Name: TMPro Mine Resource Detail Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47188,7 +47008,7 @@ GameObject:
   - component: {fileID: 1192756303}
   - component: {fileID: 1192756302}
   m_Layer: 0
-  m_Name: Panel Mine Resource Detail Herbs
+  m_Name: Panel Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48480,7 +48300,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-      value: Panel Town Worker 8 University
+      value: Panel Town Worker 6
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -48545,7 +48365,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -48691,18 +48511,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f7dc3b2a13cf3774c85fc7b6b655f40a,
+      objectReference: {fileID: 21300000, guid: e595c4107136af84ca3b98c93b8a4f05,
         type: 3}
     - target: {fileID: 1147682790619832369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5512000a09b331a40b756903e3061f9b,
+      objectReference: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899,
         type: 3}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -48727,7 +48547,7 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
-      value: University
+      value: worker_6
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -48763,7 +48583,7 @@ GameObject:
   - component: {fileID: 1222975874}
   - component: {fileID: 1222975873}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Hide
+  m_Name: TMPro Mine Resource 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51135,7 +50955,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-      value: Panel Town Worker 5 Forge
+      value: Panel Town Worker 5
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -51346,18 +51166,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4b7f459c55ad4c64b9404438f597aae7,
+      objectReference: {fileID: 21300000, guid: e595c4107136af84ca3b98c93b8a4f05,
         type: 3}
     - target: {fileID: 1147682790619832369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e0e76fd981b65c440b80baf259a9c2de,
+      objectReference: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899,
         type: 3}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -51382,7 +51202,7 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
-      value: Forge
+      value: worker_5
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -52999,7 +52819,7 @@ GameObject:
   - component: {fileID: 1348587343}
   - component: {fileID: 1348587342}
   m_Layer: 0
-  m_Name: Image Mine Resource Hide
+  m_Name: Image Mine Resource 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53044,7 +52864,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7eaffdd2bdc753e40b78f88e42f88dbf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -53074,7 +52894,7 @@ GameObject:
   - component: {fileID: 1356330078}
   - component: {fileID: 1356330077}
   m_Layer: 0
-  m_Name: Image Mine Resource Detail Oil
+  m_Name: Image Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53119,7 +52939,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a6529792ed3a22f418a13c71c5067fda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -53888,7 +53708,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 56324253}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -54179,7 +53999,7 @@ GameObject:
   - component: {fileID: 1379206559}
   - component: {fileID: 1379206558}
   m_Layer: 0
-  m_Name: Panel Mine Resource Detail Hide
+  m_Name: Panel Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54957,18 +54777,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390200149}
   m_CullTransparentMesh: 0
---- !u!114 &1393786008 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1147682789619546061}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1400003117
 GameObject:
   m_ObjectHideFlags: 0
@@ -55214,7 +55022,7 @@ GameObject:
   - component: {fileID: 1405416702}
   - component: {fileID: 1405416701}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Hide Cap
+  m_Name: TMPro Mine Resource Detail Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55373,7 +55181,7 @@ GameObject:
   - component: {fileID: 1412269467}
   - component: {fileID: 1412269466}
   m_Layer: 0
-  m_Name: Button Mine Resource Detail Titanium
+  m_Name: Button Mine Resource 8 Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55901,7 +55709,7 @@ GameObject:
   - component: {fileID: 1415508675}
   - component: {fileID: 1415508674}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Steel Label
+  m_Name: TMPro Mine Resource Detail Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55946,7 +55754,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Steel
+  m_text: resource_5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -55975,8 +55783,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -56016,10 +55824,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1415508674}
-    characterCount: 5
+    characterCount: 10
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -56806,7 +56614,7 @@ GameObject:
   - component: {fileID: 1433964598}
   - component: {fileID: 1433964597}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Steel Rate
+  m_Name: TMPro Mine Resource Detail Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57538,7 +57346,7 @@ GameObject:
   - component: {fileID: 1447119553}
   - component: {fileID: 1447119552}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Electricity Label
+  m_Name: TMPro Mine Resource Detail Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57583,7 +57391,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Electricity
+  m_text: resource_7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -57653,10 +57461,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1447119552}
-    characterCount: 11
+    characterCount: 10
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -57696,7 +57504,7 @@ GameObject:
   - component: {fileID: 1447603866}
   - component: {fileID: 1447603865}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Titanium Cap
+  m_Name: TMPro Mine Resource Detail Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60791,7 +60599,7 @@ GameObject:
   - component: {fileID: 1544367387}
   - component: {fileID: 1544367386}
   m_Layer: 0
-  m_Name: Panel Mine Resource Titanium
+  m_Name: Panel Mine Resource 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61817,7 +61625,7 @@ GameObject:
   - component: {fileID: 1566899674}
   - component: {fileID: 1566899673}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Titanium Label
+  m_Name: TMPro Mine Resource Detail Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61862,7 +61670,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Titanium
+  m_text: resource_8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -61932,10 +61740,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1566899673}
-    characterCount: 8
+    characterCount: 10
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -62904,7 +62712,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-      value: Panel Town Worker 2 Guild
+      value: Panel Town Worker 3
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -62989,7 +62797,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -63135,18 +62943,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2296ed51e90c7e346a645398d8133da7,
+      objectReference: {fileID: 21300000, guid: e595c4107136af84ca3b98c93b8a4f05,
         type: 3}
     - target: {fileID: 1147682790619832369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7eaffdd2bdc753e40b78f88e42f88dbf,
+      objectReference: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899,
         type: 3}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -63191,7 +62999,7 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
-      value: Guild
+      value: worker_3
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -63864,7 +63672,7 @@ GameObject:
   - component: {fileID: 1620537366}
   - component: {fileID: 1620537365}
   m_Layer: 0
-  m_Name: Button Mine Resource Detail Oil
+  m_Name: Button Mine Resource 6 Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63987,7 +63795,7 @@ GameObject:
   - component: {fileID: 1621179341}
   - component: {fileID: 1621179340}
   m_Layer: 0
-  m_Name: Panel Mine Resource Detail Wood
+  m_Name: Panel Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64090,7 +63898,7 @@ GameObject:
   - component: {fileID: 1631254070}
   - component: {fileID: 1631254069}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Herbs Level
+  m_Name: TMPro Mine Resource Detail Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64586,7 +64394,7 @@ GameObject:
   - component: {fileID: 1638440097}
   - component: {fileID: 1638440096}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Herbs Cap
+  m_Name: TMPro Mine Resource Detail Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64732,18 +64540,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638440094}
   m_CullTransparentMesh: 0
---- !u!114 &1638771933 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1590881085}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1643001806
 GameObject:
   m_ObjectHideFlags: 0
@@ -65088,7 +64884,7 @@ GameObject:
   - component: {fileID: 1662307385}
   - component: {fileID: 1662307384}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Iron
+  m_Name: TMPro Mine Resource 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65321,7 +65117,7 @@ GameObject:
   - component: {fileID: 1666637054}
   - component: {fileID: 1666637053}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Titanium
+  m_Name: TMPro Mine Resource 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66128,7 +65924,7 @@ GameObject:
   - component: {fileID: 1681258624}
   - component: {fileID: 1681258623}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Electricity
+  m_Name: TMPro Mine Resource 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67712,7 +67508,7 @@ GameObject:
   - component: {fileID: 1751108809}
   - component: {fileID: 1751108808}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Steel Level
+  m_Name: TMPro Mine Resource Detail Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67868,7 +67664,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-      value: Panel Town Worker 6 Restaurant
+      value: Panel Town Worker 8
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -67933,7 +67729,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -68079,18 +67875,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5f487120192ee764aaa5b54d74cb47ed,
+      objectReference: {fileID: 21300000, guid: e595c4107136af84ca3b98c93b8a4f05,
         type: 3}
     - target: {fileID: 1147682790619832369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a6529792ed3a22f418a13c71c5067fda,
+      objectReference: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899,
         type: 3}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -68115,7 +67911,7 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
-      value: Restaurant
+      value: worker_8
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -68309,7 +68105,7 @@ GameObject:
   - component: {fileID: 1760784052}
   - component: {fileID: 1760784051}
   m_Layer: 0
-  m_Name: Image Mine Resource Detail Electricity
+  m_Name: Image Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68354,7 +68150,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b486bc343314f1a47a85dfcbd71e3012, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -68815,18 +68611,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788205104}
   m_CullTransparentMesh: 0
---- !u!114 &1789181034 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1751190584}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1790790613
 GameObject:
   m_ObjectHideFlags: 0
@@ -68839,7 +68623,7 @@ GameObject:
   - component: {fileID: 1790790615}
   - component: {fileID: 1790790614}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Wood
+  m_Name: TMPro Mine Resource 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69644,7 +69428,7 @@ GameObject:
   - component: {fileID: 1815827675}
   - component: {fileID: 1815827674}
   m_Layer: 0
-  m_Name: Panel Mine Resource Hide
+  m_Name: Panel Mine Resource 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69802,7 +69586,7 @@ GameObject:
   - component: {fileID: 1816859964}
   - component: {fileID: 1816859963}
   m_Layer: 0
-  m_Name: Panel Mine Resource Steel
+  m_Name: Panel Mine Resource 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70651,7 +70435,7 @@ GameObject:
   - component: {fileID: 1850390122}
   - component: {fileID: 1850390121}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Herbs Rate
+  m_Name: TMPro Mine Resource Detail Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71967,7 +71751,7 @@ GameObject:
   - component: {fileID: 1876727310}
   - component: {fileID: 1876727309}
   m_Layer: 0
-  m_Name: Panel Mine Resource Herbs
+  m_Name: Panel Mine Resource 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72064,7 +71848,7 @@ GameObject:
   - component: {fileID: 1876775465}
   - component: {fileID: 1876775464}
   m_Layer: 0
-  m_Name: Image Mine Resource Detail Herbs
+  m_Name: Image Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72109,7 +71893,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0c783739f57b8ef43a0287acf1359cfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -73446,7 +73230,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-      value: Panel Town Worker 3 Saw Mill
+      value: Panel Town Worker 2
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -73531,7 +73315,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790615474369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -73677,13 +73461,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 40d72f91b11a1784484722d433479657,
+      objectReference: {fileID: 21300000, guid: e595c4107136af84ca3b98c93b8a4f05,
         type: 3}
     - target: {fileID: 1147682790619832369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 16688bb335fa22d428d8a5b945c411d3,
+      objectReference: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899,
         type: 3}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -73693,12 +73477,12 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -73733,7 +73517,7 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
-      value: Saw Mill
+      value: worker_2
       objectReference: {fileID: 0}
     - target: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -73981,18 +73765,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921732405}
   m_CullTransparentMesh: 0
---- !u!114 &1922585710 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1302327727}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1925522629
 GameObject:
   m_ObjectHideFlags: 0
@@ -74005,7 +73777,7 @@ GameObject:
   - component: {fileID: 1925522632}
   - component: {fileID: 1925522631}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Electricity Rate
+  m_Name: TMPro Mine Resource Detail Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74970,7 +74742,7 @@ GameObject:
   - component: {fileID: 1944443482}
   - component: {fileID: 1944443481}
   m_Layer: 0
-  m_Name: Image Mine Resource Detail Steel
+  m_Name: Image Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75015,7 +74787,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e0e76fd981b65c440b80baf259a9c2de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -75211,7 +74983,7 @@ GameObject:
   - component: {fileID: 1948541709}
   - component: {fileID: 1948541708}
   m_Layer: 0
-  m_Name: Panel Mine Resource Detail Electricity
+  m_Name: Panel Mine Resource Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76365,7 +76137,7 @@ GameObject:
   - component: {fileID: 1997952102}
   - component: {fileID: 1997952101}
   m_Layer: 0
-  m_Name: Button Mine Resource Detail Iron
+  m_Name: Button Mine Resource 1 Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77644,7 +77416,7 @@ GameObject:
   - component: {fileID: 2031572300}
   - component: {fileID: 2031572299}
   m_Layer: 0
-  m_Name: Button Mine Resource Detail Wood
+  m_Name: Button Mine Resource 3 Detail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77805,7 +77577,7 @@ GameObject:
   - component: {fileID: 2033401356}
   - component: {fileID: 2033401355}
   m_Layer: 0
-  m_Name: TMPro Mine Resource Detail Wood Rate
+  m_Name: TMPro Mine Resource Detail Rate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78398,7 +78170,7 @@ GameObject:
   - component: {fileID: 2045289928}
   - component: {fileID: 2045289927}
   m_Layer: 0
-  m_Name: Image Mine Resource Herbs
+  m_Name: Image Mine Resource 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78443,7 +78215,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0c783739f57b8ef43a0287acf1359cfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -80131,18 +79903,6 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
---- !u!114 &2091345506 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147682790406966101, guid: c3a9b220cc1136844b74a9fa692fba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1023040379}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2094778816
 GameObject:
   m_ObjectHideFlags: 0
@@ -80790,7 +80550,7 @@ GameObject:
   - component: {fileID: 2117666568}
   - component: {fileID: 2117666567}
   m_Layer: 0
-  m_Name: Panel Mine Resource Wood
+  m_Name: Panel Mine Resource 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81558,7 +81318,7 @@ PrefabInstance:
     - target: {fileID: 1147682790615474374, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Name
-      value: Panel Town Worker 1 Workshop
+      value: Panel Town Worker 1
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789633650221, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -81769,13 +81529,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1a93dac2d3e370d4eba99bb02268e4ed,
+      objectReference: {fileID: 21300000, guid: e595c4107136af84ca3b98c93b8a4f05,
         type: 3}
     - target: {fileID: 1147682790619832369, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8204755fbeeee834d81cd23e0f6d4bfd,
+      objectReference: {fileID: 21300000, guid: db8725abdc9ea5b4aa334eb858195899,
         type: 3}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
@@ -81800,7 +81560,7 @@ PrefabInstance:
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
       propertyPath: m_text
-      value: Workshop
+      value: worker_1
       objectReference: {fileID: 0}
     - target: {fileID: 1147682789118044786, guid: c3a9b220cc1136844b74a9fa692fba81,
         type: 3}
