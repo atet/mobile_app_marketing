@@ -7,9 +7,9 @@ public class Global : MonoBehaviour
     public static Global instance;
     private bool MODE_TUTORIAL = true; public bool GetMODE_TUTORIAL(){ return(MODE_TUTORIAL); } public void SetMODE_TUTORIAL(bool MODE_TUTORIAL){ this.MODE_TUTORIAL = MODE_TUTORIAL; }
     private int ID_TUTORIAL_EVENT = 0; public int GetID_TUTORIAL_EVENT(){ return(ID_TUTORIAL_EVENT); } public void IncrementID_TUTORIAL_EVENT(){ ID_TUTORIAL_EVENT++; }
-    private const bool MODE_DEBUG = true; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
+    private const bool MODE_DEBUG = false; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
     // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
-    private const float globalMultiplier = 20; public float GetGlobalMultiplier(){ return(globalMultiplier); }
+    private const float globalMultiplier = 1; public float GetGlobalMultiplier(){ return(globalMultiplier); }
 
     private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190829";
     private const string filepathCharactersJSON = "Data/shop_click_characters";
@@ -25,9 +25,9 @@ public class Global : MonoBehaviour
 
     public Random rnd = new Random();
 
-    Dictionary<string, Resource> stats; public Dictionary<string, Resource> GetStats(){ return(stats); }
-    Dictionary<string, Resource> resources; public Dictionary<string, Resource> GetResources(){ return(resources); }
-    Dictionary<string, Item> inventory; public Dictionary<string, Item> GetInventory(){ return(inventory); }
+    Dictionary<string, Resource>  stats; public Dictionary<string, Resource> GetStats(){ return(stats); }
+    Dictionary<string, Resource>  resources; public Dictionary<string, Resource> GetResources(){ return(resources); }
+    Dictionary<string, Item>      inventory; public Dictionary<string, Item> GetInventory(){ return(inventory); }
     Dictionary<string, Character> characters; public Dictionary<string, Character> GetCharacters(){ return(characters); }
 
     void Awake()
@@ -72,6 +72,9 @@ public class Global : MonoBehaviour
             stats.Add("Gems",   new Resource("Gems",   1, 0, System.UInt64.MaxValue,  5));
             stats.Add("Stock",  new Resource("Stock",  1, 0,                     15,  0));
         }
+
+//{600, 900, 1400, 2100, 3100, 4500, 6400, 9100, 14300, 20500, 27800, 36400, 46600, 58600, 72800, 89500, 109300, 132600, 160100, 192600, 231000, 276300, 329800, 392900, 467400, 555300, 659100, 781600, 926100, 1096700, 1298100, 1535800, 1816300, 2147400, 2538200, 2999500, 3544000, 4186700, 4945300, 5840700, 6897500, 8144900, 9617200, 11355000, 13406200, 15827200, 18684800, 22057700, 26038800, 30737700, 36284000, 42830400, 50557200, 59677300, 70442000, 83147700, 98144500, 115845600, 136738600, 161399000, 190506200, 224862000, 265412900, 313275900, 369769600, 436450300, 515154900, 608051500, 717699300, 847118900, 999875500, 1180177300, 1392991200, 1644179800, 1940662900, 2290608100, 2703655600, 3191184100, 3766624000}
+
 
     }
 
@@ -180,7 +183,7 @@ public class Global : MonoBehaviour
             inventory["larmor_1"].SetIsAvailable(true); inventory["larmor_1"].SetStock(1);
             inventory["helmet_1"].SetIsAvailable(true); inventory["helmet_1"].SetStock(0);
             inventory["headgear_1"].SetIsAvailable(true); inventory["headgear_1"].SetStock(0);
-            inventory["hat_1"].SetIsAvailable(true); inventory["hat_1"].SetStock(0);
+            inventory["hat_1"].SetIsAvailable(true); inventory["hat_1"].SetStock(1);
             inventory["gauntlets_1"].SetIsAvailable(true); inventory["gauntlets_1"].SetStock(0);
             inventory["boots_1"].SetIsAvailable(true); inventory["boots_1"].SetStock(0);
             inventory["shield_1"].SetIsAvailable(true); inventory["shield_1"].SetStock(0);
@@ -198,7 +201,7 @@ public class Global : MonoBehaviour
         // Iterate through dictionary
         foreach(KeyValuePair<string, Item> entry in inventory)
         {
-            if(isStocked)
+            if(isStocked) // Could've purchased an item that you still can't make yet
             {
                 if(entry.Value.GetStock() > 0){
                     keyList.Add(entry.Key);

@@ -8,6 +8,10 @@ public class Resource
     private int level; public void SetLevel(int level){ this.level = level; } public int GetLevel(){ return(level); }
     private float rate; public void SetRate(float rate){ this.rate = rate; } public float GetRate(){ return(rate); }
 
+    //private ulong[] thresholds; public ulong[] GetThresholds{ return(thresholds); } public void SetThresholds(){ this.thresholds = thresholds; }
+    //private ulong[] thresholds_value; public ulong[] GetThresholdsValue{ return(thresholds_value); } public void SetThresholdsValues(){ this.thresholds_value = thresholds_value; }
+    //private string[] thresholds_type; public ulong[] GetThresholdsType{ return(thresholds_type); } public void SetThresholdsType(){ this.thresholds_type = thresholds_type; }
+
     private float timeRemaining;
     public void CheckTimeRemaining()
     {
