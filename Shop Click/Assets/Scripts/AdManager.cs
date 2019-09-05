@@ -44,7 +44,11 @@ public class AdManager : MonoBehaviour
     }
     public void Update()
     {
-        UpdateStatusAdRewardedVideo();
+        // Uncomment when building to device, this floods the console during Play in IDE
+        //UpdateStatusAdRewardedVideo();
+
+
+
         // UpdateStats();
     }
 

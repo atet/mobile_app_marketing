@@ -6,6 +6,9 @@ public class CameraControl : MonoBehaviour
 {
     public static CameraControl instance;
     private bool swipeEnabled = true;
+    private bool swipeEnabledTown = true;
+    private bool swipeEnabledMine = true;
+    private bool swipeEnabledColosseum = true;
     Vector3 touchStart;
 
     // For Swipe()
@@ -39,6 +42,10 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         Camera.main.transform.position = cameraPositions["Shop"];
+
+        DisableSwipeColosseum();
+        DisableSwipeMine();
+        DisableSwipeTown();
         //currentScreen = cameraPositions["Shop"];
         //Debug.Log("Start camera position is the shop: x = " +  Camera.main.transform.position.x.ToString() + ": y = " +  Camera.main.transform.position.y.ToString());
     }
@@ -56,18 +63,19 @@ public class CameraControl : MonoBehaviour
     public void EnableSwipe()
     {
         swipeEnabled = true;
+        //swipeEnabledTown = true;
+        //swipeEnabledColosseum = true;
+        //swipeEnabledMine = true;
         firstPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         // First click down registered as pressing the button to disable, then click down registered as what re-enabled
         // This may cause the camera to think this was a swipe.
         // Therefore resetting first click down as current position will result in the magnitude of 0.
         //Camera.main.transform.position = currentScreen;
     }
-    public void DisableSwipe()
-    {
-        swipeEnabled = false;
-        //currentScreen = Camera.main.transform.position;
-
-    }
+    public void DisableSwipe(){ swipeEnabled = false; }
+    public void DisableSwipeColosseum(){ swipeEnabledColosseum = false; } public void EnableSwipeColosseum(){ swipeEnabledColosseum = true; }
+    public void DisableSwipeTown(){ swipeEnabledTown = false; } public void EnableSwipeTown(){ swipeEnabledTown = true; }
+    public void DisableSwipeMine(){ swipeEnabledMine = false; } public void EnableSwipeMine(){ swipeEnabledMine = true; }
     public void Swipe()
     {
         if(Input.GetMouseButtonDown(0))
@@ -124,7 +132,7 @@ public class CameraControl : MonoBehaviour
         if(direction == "down")
         {
             //Debug.Log("Swiped up, going down");
-            if(cameraPositions["Shop"].Equals(Camera.main.transform.position)){
+            if(cameraPositions["Shop"].Equals(Camera.main.transform.position) & swipeEnabledTown){
                 //Debug.Log("At Shop, going down to Town");
                 Camera.main.transform.position = cameraPositions["Town"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Town", cameraPositions["Town"]} };
@@ -158,7 +166,7 @@ public class CameraControl : MonoBehaviour
         if(direction == "right")
         {
             //Debug.Log("Swiped left, going right");
-            if(cameraPositions["Shop"].Equals(Camera.main.transform.position)){
+            if(cameraPositions["Shop"].Equals(Camera.main.transform.position) & swipeEnabledColosseum){
                 //Debug.Log("At Shop, going right to Colosseum");
                 Camera.main.transform.position = cameraPositions["Colosseum"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Colosseum", cameraPositions["Colosseum"]} };
@@ -175,7 +183,7 @@ public class CameraControl : MonoBehaviour
         if(direction == "left")
         {
             //Debug.Log("Swiped right, going left");
-            if(cameraPositions["Shop"].Equals(Camera.main.transform.position)){
+            if(cameraPositions["Shop"].Equals(Camera.main.transform.position) & swipeEnabledMine){
                 //Debug.Log("At Shop, going left to Mine");
                 Camera.main.transform.position = cameraPositions["Mine"];
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Mine", cameraPositions["Mine"]} };

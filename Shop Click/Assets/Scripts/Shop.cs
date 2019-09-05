@@ -325,7 +325,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            switch(Global.instance.GetID_TUTORIAL_EVENT())
+            switch(Tutorial.instance.GetID_TUTORIAL_EVENT())
             {
                 case 1:
                     TutorialSecondCustomer();
@@ -362,6 +362,12 @@ public class Shop : MonoBehaviour
         panelRebate.SetActive(true);
         PanelUpcharge.SetActive(true);
         panelSuggest.SetActive(true);
+        CameraControl.instance.EnableSwipe();
+        CameraControl.instance.EnableSwipeMine();
+        CameraControl.instance.EnableSwipeTown();
+        CameraControl.instance.EnableSwipeColosseum();
+
+        Tutorial.instance.SummonUIOverlayTextBox("Shop Click", "You're ready to take over my shop.\n\nGood luck!\n\n- Biggs");
     }
     public void TutorialFirstCustomer()
     {
@@ -389,7 +395,7 @@ public class Shop : MonoBehaviour
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
         tMProDialog.text = "Biggs: Sell me this item for some coins.";
 
-        Global.instance.IncrementID_TUTORIAL_EVENT();
+        Tutorial.instance.IncrementID_TUTORIAL_EVENT();
     }
     public void TutorialSecondCustomer()
     {
@@ -417,7 +423,7 @@ public class Shop : MonoBehaviour
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
         tMProDialog.text = "Biggs: Save up energy by rebating.";
 
-        Global.instance.IncrementID_TUTORIAL_EVENT();
+        Tutorial.instance.IncrementID_TUTORIAL_EVENT();
     }
 
     public void TutorialThirdCustomer()
@@ -446,7 +452,7 @@ public class Shop : MonoBehaviour
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
         tMProDialog.text = "Biggs: Spend that energy to upcharge!";
 
-        Global.instance.IncrementID_TUTORIAL_EVENT();
+        Tutorial.instance.IncrementID_TUTORIAL_EVENT();
     }
 
     public void TutorialFourthCustomer()
@@ -476,7 +482,7 @@ public class Shop : MonoBehaviour
         tMProDialog.text = "Biggs: Can't make this yet, Refuse sale.";
 
 
-        Global.instance.IncrementID_TUTORIAL_EVENT();
+        Tutorial.instance.IncrementID_TUTORIAL_EVENT();
     }
 
     public void TutorialFifthCustomer()
@@ -505,7 +511,9 @@ public class Shop : MonoBehaviour
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
         tMProDialog.text = "Biggs: Not in stock, but we can make it.";
 
-        Global.instance.IncrementID_TUTORIAL_EVENT();
+        CameraControl.instance.EnableSwipeMine();
+
+        Tutorial.instance.IncrementID_TUTORIAL_EVENT();
     }
 
     public void TutorialSixthCustomer()
@@ -534,7 +542,7 @@ public class Shop : MonoBehaviour
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
         tMProDialog.text = "Biggs: Let's suggest something else.";
 
-        Global.instance.IncrementID_TUTORIAL_EVENT();
+        Tutorial.instance.IncrementID_TUTORIAL_EVENT();
     }
 
 }
