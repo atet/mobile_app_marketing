@@ -18,10 +18,24 @@ public class Shop : MonoBehaviour
 
     public void OnPressQueue()
     {
-        if(Global.instance.GetResources()["resource_0"].GetAmount() > 0){
+        if(
+            (panelShopDialog.activeSelf == false) &
+            (Global.instance.GetResources()["resource_0"].GetAmount() > 0)
+        )
+        {
             panelShopDialog.SetActive(true);
+            
+            if(!Global.instance.GetMODE_TUTORIAL())
+            {
+                NextCustomer("Random");
+            }
+            else
+            {
+                // First customer.
+                TutorialFirstCustomer();
+            }
         }else{
-            panelShopDialog.SetActive(false);
+            //panelShopDialog.SetActive(false);
         }
     }
 
@@ -98,19 +112,14 @@ public class Shop : MonoBehaviour
         chakraSuggestCost = 30;
         chakraRebateGain = 20;
         chakraUpchargeCost = 40;
+
+        currentItem = Global.instance.RandomItem(false); // Temporarily have an item at the beginning.
     }
     // Start is called before the first frame update
     void Start()
     {
         // Close shop window if opened during dev.
         panelShopDialog.SetActive(false);
-
-        // First customer.
-        if(Global.instance.GetMODE_TUTORIAL()){
-            TutorialFirstCustomer();
-        }else{
-            NextCustomer("Random");
-        }
     }
     // Update is called once per frame
     void Update()
@@ -262,7 +271,7 @@ public class Shop : MonoBehaviour
             // Get experience from sale.
             Global.instance.GetStats()["Level"].AddAmount(currentItem.xPMerchant);
             Debug.Log("XP from sale: " + currentItem.xPMerchant + "(Lifetime " + currentItem.lifetimeCrafted + ")");
-            
+
             // Remove stock.
             currentItem.SoldItem();
 
@@ -400,6 +409,8 @@ public class Shop : MonoBehaviour
         tMProDialog.text = "Biggs: Sell me this item for some coins.";
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
+
+        Tutorial.instance.SummonUIOverlayPointer(85f, -800f, 0f);
     }
     public void TutorialSecondCustomer()
     {
@@ -428,6 +439,8 @@ public class Shop : MonoBehaviour
         tMProDialog.text = "Biggs: Save up energy by rebating.";
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
+
+        Tutorial.instance.SummonUIOverlayPointer(-25, -600, 0);
     }
 
     public void TutorialThirdCustomer()
@@ -457,6 +470,8 @@ public class Shop : MonoBehaviour
         tMProDialog.text = "Biggs: Spend that energy to upcharge!";
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
+
+        Tutorial.instance.SummonUIOverlayPointer(375, -600, 0);
     }
 
     public void TutorialFourthCustomer()
@@ -487,6 +502,8 @@ public class Shop : MonoBehaviour
 
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
+
+        Tutorial.instance.SummonUIOverlayPointer(375, -395, 0);
     }
 
     public void TutorialFifthCustomer()
@@ -518,6 +535,8 @@ public class Shop : MonoBehaviour
         CameraControl.instance.EnableSwipeMine();
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
+
+        // Animation to swipe to go left
     }
 
     public void TutorialSixthCustomer()
@@ -547,6 +566,8 @@ public class Shop : MonoBehaviour
         tMProDialog.text = "Biggs: Let's suggest something else.";
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
+
+        Tutorial.instance.SummonUIOverlayPointer(-25, -395, 0);
     }
 
 }
