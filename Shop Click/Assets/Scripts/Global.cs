@@ -57,22 +57,30 @@ public class Global : MonoBehaviour
         stats = new Dictionary<string, Resource>();
         if(MODE_DEBUG)
         {
-            stats.Add("Level",  new Resource("Level",  "Images/UI/level", 1, 0, System.UInt64.MaxValue,   1));
-            stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins", 1, 0, System.UInt64.MaxValue,   0));
+            stats.Add("Level",  new Resource("Level",  "Images/UI/level" , 1, 0, System.UInt64.MaxValue,   1));
+            stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins" , 1, 0, System.UInt64.MaxValue,   0));
             stats.Add("Chakra", new Resource("Chakra", "Images/UI/chakra", 1, 0,                    999, 100));
-            stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems", 1, 0, System.UInt64.MaxValue,   5));
-            stats.Add("Stock",  new Resource("Stock",  "Images/UI/stock", 1, 0,                    999,   0));
+            stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems"  , 1, 0, System.UInt64.MaxValue,   5));
+            stats.Add("Stock",  new Resource("Stock",  "Images/UI/stock" , 1, 0,                    999,   0));
         }
         else
         {
-            stats.Add("Level",  new Resource("Level",  "Images/UI/level", 1, 0, System.UInt64.MaxValue,  1));
-            stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins", 1, 0, System.UInt64.MaxValue,  0));
+            stats.Add("Level",  new Resource("Level",  "Images/UI/level" , 1, 0, System.UInt64.MaxValue,  1));
+            stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins" , 1, 0, System.UInt64.MaxValue,  0));
             stats.Add("Chakra", new Resource("Chakra", "Images/UI/chakra", 1, 0,                    100, 46));
-            stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems", 1, 0, System.UInt64.MaxValue,  5));
-            stats.Add("Stock",  new Resource("Stock",  "Images/UI/stock", 1, 0,                     15,  0));
+            stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems"  , 1, 0, System.UInt64.MaxValue,  5));
+            stats.Add("Stock",  new Resource("Stock",  "Images/UI/stock" , 1, 0,                     15,  0));
         }
 
-//{600, 900, 1400, 2100, 3100, 4500, 6400, 9100, 14300, 20500, 27800, 36400, 46600, 58600, 72800, 89500, 109300, 132600, 160100, 192600, 231000, 276300, 329800, 392900, 467400, 555300, 659100, 781600, 926100, 1096700, 1298100, 1535800, 1816300, 2147400, 2538200, 2999500, 3544000, 4186700, 4945300, 5840700, 6897500, 8144900, 9617200, 11355000, 13406200, 15827200, 18684800, 22057700, 26038800, 30737700, 36284000, 42830400, 50557200, 59677300, 70442000, 83147700, 98144500, 115845600, 136738600, 161399000, 190506200, 224862000, 265412900, 313275900, 369769600, 436450300, 515154900, 608051500, 717699300, 847118900, 999875500, 1180177300, 1392991200, 1644179800, 1940662900, 2290608100, 2703655600, 3191184100, 3766624000}
+        stats["Level"].SetThresholdBool(true);
+        stats["Level"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81});
+        stats["Level"].SetThresholdValues(new List<ulong>(){600, 900, 1400, 2100, 3100, 4500, 6400, 9100, 14300, 20500, 27800, 36400, 46600, 58600, 72800, 89500, 109300, 132600, 160100, 192600, 231000, 276300, 329800, 392900, 467400, 555300, 659100, 781600, 926100, 1096700, 1298100, 1535800, 1816300, 2147400, 2538200, 2999500, 3544000, 4186700, 4945300, 5840700, 6897500, 8144900, 9617200, 11355000, 13406200, 15827200, 18684800, 22057700, 26038800, 30737700, 36284000, 42830400, 50557200, 59677300, 70442000, 83147700, 98144500, 115845600, 136738600, 161399000, 190506200, 224862000, 265412900, 313275900, 369769600, 436450300, 515154900, 608051500, 717699300, 847118900, 999875500, 1180177300, 1392991200, 1644179800, 1940662900, 2290608100, 2703655600, 3191184100, 3766624000});
+        stats["Level"].SetThresholdTypes(new List<string>(){"level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level","level"});
+        stats["Level"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!","Merchant level 21.","Merchant level 22.","Excitement is to be had, 23!","Excitement is to be had, 24!","Merchant level 25.","Merchant level 26.","You are on you way to the top, level 27.","You made it to 28!","Excitement is to be had, 29!","I had faith you'd make it to level 30.","You have ascended to level 31.","Niceness, 32!!!","Congrats!, level 33.","Here's a cake, level 34!","You made it to 35!","You made it to 36!","Here's a cake, level 37!","Niceness, 38!!!","I had faith you'd make it to level 39.","Niceness, 40!!!","You made it to 41!","I had faith you'd make it to level 42.","Excitement is to be had, 43!","There's more to go level 44.","Here's a cake, level 45!","Excitement is to be had, 46!","Look at you, you've made it to level 47!","I had faith you'd make it to level 48.","Excitement is to be had, 49!","There's more to go level 50.","Look at you, you've made it to level 51!","Here's a cake, level 52!","You made it to 53!","There's more to go level 54.","Congrats!, level 55.","You made it to 56!","Here's a cake, level 57!","Look at you, you've made it to level 58!","You are on you way to the top, level 59.","Cool beans, level 60.","You are on you way to the top, level 61.","Here's a cake, level 62!","Here's a cake, level 63!","You have ascended to level 64.","Congrats!, level 65.","Congrats!, level 66.","Look at you, you've made it to level 67!","Here's a cake, level 68!","There's more to go level 69.","I had faith you'd make it to level 70.","Here's a cake, level 71!","Look at you, you've made it to level 72!","There's more to go level 73.","Sweet!, 74!","You have ascended to level 75.","Niceness, 76!!!","Cool beans, level 77.","Look at you, you've made it to level 78!","Excitement is to be had, 79!","Excitement is to be had, 80!","There's more to go level 81."});
+
+
+    // Values from *.csv, just hard coding for now
+    //{600, 900, 1400, 2100, 3100, 4500, 6400, 9100, 14300, 20500, 27800, 36400, 46600, 58600, 72800, 89500, 109300, 132600, 160100, 192600, 231000, 276300, 329800, 392900, 467400, 555300, 659100, 781600, 926100, 1096700, 1298100, 1535800, 1816300, 2147400, 2538200, 2999500, 3544000, 4186700, 4945300, 5840700, 6897500, 8144900, 9617200, 11355000, 13406200, 15827200, 18684800, 22057700, 26038800, 30737700, 36284000, 42830400, 50557200, 59677300, 70442000, 83147700, 98144500, 115845600, 136738600, 161399000, 190506200, 224862000, 265412900, 313275900, 369769600, 436450300, 515154900, 608051500, 717699300, 847118900, 999875500, 1180177300, 1392991200, 1644179800, 1940662900, 2290608100, 2703655600, 3191184100, 3766624000}
 
 
     }
@@ -93,31 +101,27 @@ public class Global : MonoBehaviour
 
         if(MODE_DEBUG)
         {
-            // Customers coming in the store.
-            resources.Add("resource_0", new Resource("Queue", "Images/UI/queue", 1,  1, 999, 900));
-
-            resources.Add("resource_1", new Resource("Iron", "Images/UI/iron", 1,  1, 999, 900));
-            resources.Add("resource_2", new Resource("Wood", "Images/UI/wood", 1,  1, 999, 900));
-            resources.Add("resource_3", new Resource("Hide", "Images/UI/hide", 1,  1, 999, 900));
-            resources.Add("resource_4", new Resource("Herbs", "Images/UI/herbs", 1,  1, 999, 900));
-            resources.Add("resource_5", new Resource("Steel", "Images/UI/steel", 1,  1, 999, 900));
-            resources.Add("resource_6", new Resource("Titanium", "Images/UI/titanium", 1,  1, 999, 900));
+            resources.Add("resource_0", new Resource("Queue",       "Images/UI/queue",       1,  1, 999, 900));
+            resources.Add("resource_1", new Resource("Iron",        "Images/UI/iron",        1,  1, 999, 900));
+            resources.Add("resource_2", new Resource("Wood",        "Images/UI/wood",        1,  1, 999, 900));
+            resources.Add("resource_3", new Resource("Hide",        "Images/UI/hide",        1,  1, 999, 900));
+            resources.Add("resource_4", new Resource("Herbs",       "Images/UI/herbs",       1,  1, 999, 900));
+            resources.Add("resource_5", new Resource("Steel",       "Images/UI/steel",       1,  1, 999, 900));
+            resources.Add("resource_6", new Resource("Titanium",    "Images/UI/titanium",    1,  1, 999, 900));
             resources.Add("resource_7", new Resource("Electricity", "Images/UI/electricity", 1,  1, 999, 900));
-            resources.Add("resource_8", new Resource("Oil", "Images/UI/oil", 1,  1, 999, 900));
+            resources.Add("resource_8", new Resource("Oil",         "Images/UI/oil",         1,  1, 999, 900));
         }
         else
         {
-            // Customers coming in the store.
-            resources.Add("resource_0", new Resource("Queue", "Images/UI/queue", 1, 10,  5, 10));
-
-            resources.Add("resource_1", new Resource("Iron", "Images/UI/iron", 1, 10, 35,  5));
-            resources.Add("resource_2", new Resource("Wood", "Images/UI/wood", 1, 10, 35,  0));
-            resources.Add("resource_3", new Resource("Hide", "Images/UI/hide", 1, 10, 35,  0));
-            resources.Add("resource_4", new Resource("Herbs", "Images/UI/herbs", 1, 10, 35,  0));
-            resources.Add("resource_5", new Resource("Steel", "Images/UI/steel", 1, 45, 15,  0));
-            resources.Add("resource_6", new Resource("Titanium", "Images/UI/titanium", 1, 45, 15,  0));
+            resources.Add("resource_0", new Resource("Queue",       "Images/UI/queue",       1, 10,  5, 10));
+            resources.Add("resource_1", new Resource("Iron",        "Images/UI/iron",        1, 10, 35,  5));
+            resources.Add("resource_2", new Resource("Wood",        "Images/UI/wood",        1, 10, 35,  0));
+            resources.Add("resource_3", new Resource("Hide",        "Images/UI/hide",        1, 10, 35,  0));
+            resources.Add("resource_4", new Resource("Herbs",       "Images/UI/herbs",       1, 10, 35,  0));
+            resources.Add("resource_5", new Resource("Steel",       "Images/UI/steel",       1, 45, 15,  0));
+            resources.Add("resource_6", new Resource("Titanium",    "Images/UI/titanium",    1, 45, 15,  0));
             resources.Add("resource_7", new Resource("Electricity", "Images/UI/electricity", 1, 45, 15,  0));
-            resources.Add("resource_8", new Resource("Oil", "Images/UI/oil", 1, 45, 15,  0));
+            resources.Add("resource_8", new Resource("Oil",         "Images/UI/oil",         1, 45, 15,  0));
         }
 
 

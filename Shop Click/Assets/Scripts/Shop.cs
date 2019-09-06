@@ -259,6 +259,10 @@ public class Shop : MonoBehaviour
             // Get coins from sale.
             Global.instance.GetStats()["Coins"].AddAmount(sellGainCoins);
 
+            // Get experience from sale.
+            Global.instance.GetStats()["Level"].AddAmount(currentItem.xPMerchant);
+            Debug.Log("XP from sale: " + currentItem.xPMerchant + "(Lifetime " + currentItem.lifetimeCrafted + ")");
+            
             // Remove stock.
             currentItem.SoldItem();
 

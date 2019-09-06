@@ -22,7 +22,7 @@ public class UI : MonoBehaviour
     public void UpdateUIOverlay()
     {
         tMProUIOverlays[0].text = Global.instance.GetStats()["Coins"].ToStringAmount();
-        tMProUIOverlays[1].text = Global.instance.GetStats()["Level"].ToStringAmount();
+        tMProUIOverlays[1].text = Global.instance.GetStats()["Level"].GetLevel().ToString();
         tMProUIOverlays[2].text = Global.instance.GetStats()["Chakra"].ToStringAmount();
         tMProUIOverlays[3].text = Global.instance.GetStats()["Gems"].ToStringAmount();
     }
