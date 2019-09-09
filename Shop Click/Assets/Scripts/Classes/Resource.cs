@@ -13,9 +13,11 @@ public class Resource
     private int thresholdIndex;
     private List<int> thresholdKeys = new List<int>(); public List<int> GetThresholdKeys(){ return(thresholdKeys); } public void SetThresholdKeys(List<int> thresholdKeys){ this.thresholdKeys = thresholdKeys; }
     private List<ulong> thresholdValues = new List<ulong>(); public List<ulong> GetThresholdValues(){ return(thresholdValues); } public void SetThresholdValues(List<ulong> thresholdValues){ this.thresholdValues = thresholdValues; }
+    private List<float> thresholdRates = new List<float>(); public List<float> GetThresholdRates(){ return(thresholdRates); } public void SetThresholdRates(List<float> thresholdRates){ this.thresholdRates = thresholdRates; }
+    private List<ulong> thresholdIncrements = new List<ulong>(); public List<ulong> GetThresholdIncrements(){ return(thresholdIncrements); } public void SetThresholdIncrements(List<ulong> thresholdIncrements){ this.thresholdIncrements = thresholdIncrements; }
     private List<string> thresholdTypes = new List<string>(); public List<string> GetThresholdTypes(){ return(thresholdTypes); } public void SetThresholdTypes(List<string> thresholdTypes){ this.thresholdTypes = thresholdTypes; }
     private List<string> thresholdDescriptions = new List<string>(); public List<string> GetThresholdDescriptions(){ return(thresholdDescriptions); } public void SetThresholdDescriptions(List<string> thresholdDescriptions){ this.thresholdDescriptions = thresholdDescriptions; }
-
+    private List<bool> thresholdEventBools = new List<bool>();  public List<bool> GetThresholdEventBools(){ return(thresholdEventBools); } public void SetThresholdEventBools(List<bool> thresholdEventBools){ this.thresholdEventBools = thresholdEventBools; }
     private float timeRemaining;
     public void CheckTimeRemaining()
     {
@@ -68,27 +70,30 @@ public class Resource
         this.amountLifetimeGain += amountLifetimeGain;
         if(thresholdBool)
         {
-            CheckLevelUp();            
+            CheckLevelUp();
         }
     }
 
     public void CheckLevelUp()
     {
-        Debug.Log("Called CheckLevelUp()"); 
+        //Debug.Log("Called CheckLevelUp()"); 
         // TODO: Check where current amountLifetimeGain value is between to handle multiple levelups in a single call.
         if(amountLifetimeGain >= thresholdValues[thresholdIndex])
         {
-            Debug.Log("Level up triggered!");            
+            //Debug.Log("Level up triggered!");            
             LevelUp(thresholdIndex);
             thresholdIndex++;
         }
     }
     public void LevelUp(int index)
     {
-        Debug.Log("Called LevelUp()");
+        //Debug.Log("Called LevelUp()");
         level = thresholdKeys[index];
+        if(thresholdEventBools[index])
+        {
+            Tutorial.instance.SummonUIOverlayTextBox("Level Up!", thresholdDescriptions[index]);
+        }
 
-        Tutorial.instance.SummonUIOverlayTextBox("Level Up!", thresholdDescriptions[index]);
 
         // Make SFX sound
         SFX.instance.PlaySFXLevelUp();

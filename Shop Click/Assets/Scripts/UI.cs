@@ -112,65 +112,65 @@ public class UI : MonoBehaviour
 
 
 
-    [SerializeField] public GameObject panelTownWorkers;
-    private List<TextMeshProUGUI> uITownResourcesDetailsLevels = new List<TextMeshProUGUI>();
-    private List<TextMeshProUGUI> uITownResourcesDetailsRates = new List<TextMeshProUGUI>();
-    public void InitPanelTownWorkers()
-    {
-        panelTownWorkers.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/8");
-        panelTownWorkers.transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_1"].GetFilepathImage());
-        panelTownWorkers.transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Workshop";
+    // [SerializeField] public GameObject panelTownWorkers;
+    // private List<TextMeshProUGUI> uITownResourcesDetailsLevels = new List<TextMeshProUGUI>();
+    // private List<TextMeshProUGUI> uITownResourcesDetailsRates = new List<TextMeshProUGUI>();
+    // public void InitPanelTownWorkers()
+    // {
+    //     panelTownWorkers.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/8");
+    //     panelTownWorkers.transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_1"].GetFilepathImage());
+    //     panelTownWorkers.transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Workshop";
 
-        panelTownWorkers.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/17");
-        panelTownWorkers.transform.GetChild(1).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_2"].GetFilepathImage());
-        panelTownWorkers.transform.GetChild(1).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Saw Mill";
+    //     panelTownWorkers.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/17");
+    //     panelTownWorkers.transform.GetChild(1).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_2"].GetFilepathImage());
+    //     panelTownWorkers.transform.GetChild(1).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Saw Mill";
 
-        panelTownWorkers.transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/21");
-        panelTownWorkers.transform.GetChild(2).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_3"].GetFilepathImage());
-        panelTownWorkers.transform.GetChild(2).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Guild";
+    //     panelTownWorkers.transform.GetChild(2).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/21");
+    //     panelTownWorkers.transform.GetChild(2).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_3"].GetFilepathImage());
+    //     panelTownWorkers.transform.GetChild(2).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Guild";
 
-        panelTownWorkers.transform.GetChild(3).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/22");
-        panelTownWorkers.transform.GetChild(3).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_4"].GetFilepathImage());
-        panelTownWorkers.transform.GetChild(3).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Dispensary";
+    //     panelTownWorkers.transform.GetChild(3).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/22");
+    //     panelTownWorkers.transform.GetChild(3).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_4"].GetFilepathImage());
+    //     panelTownWorkers.transform.GetChild(3).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Dispensary";
 
-        panelTownWorkers.transform.GetChild(4).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/19");
-        panelTownWorkers.transform.GetChild(4).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_5"].GetFilepathImage());
-        panelTownWorkers.transform.GetChild(4).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Forge";
+    //     panelTownWorkers.transform.GetChild(4).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/19");
+    //     panelTownWorkers.transform.GetChild(4).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_5"].GetFilepathImage());
+    //     panelTownWorkers.transform.GetChild(4).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Forge";
 
-        panelTownWorkers.transform.GetChild(5).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/15");
-        panelTownWorkers.transform.GetChild(5).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_6"].GetFilepathImage());
-        panelTownWorkers.transform.GetChild(5).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "University";
+    //     panelTownWorkers.transform.GetChild(5).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/15");
+    //     panelTownWorkers.transform.GetChild(5).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_6"].GetFilepathImage());
+    //     panelTownWorkers.transform.GetChild(5).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "University";
 
-        panelTownWorkers.transform.GetChild(6).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/5");
-        panelTownWorkers.transform.GetChild(6).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_7"].GetFilepathImage());
-        panelTownWorkers.transform.GetChild(6).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Laboratory";
+    //     panelTownWorkers.transform.GetChild(6).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/5");
+    //     panelTownWorkers.transform.GetChild(6).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_7"].GetFilepathImage());
+    //     panelTownWorkers.transform.GetChild(6).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Laboratory";
 
-        panelTownWorkers.transform.GetChild(7).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/3");
-        panelTownWorkers.transform.GetChild(7).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_8"].GetFilepathImage());
-        panelTownWorkers.transform.GetChild(7).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Restaurant";
+    //     panelTownWorkers.transform.GetChild(7).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Characters/3");
+    //     panelTownWorkers.transform.GetChild(7).transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_8"].GetFilepathImage());
+    //     panelTownWorkers.transform.GetChild(7).transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Restaurant";
 
-        for(int i = 0; i < 8; i++) // TODO: First eight are the workers that deal with resources (for now)
-        {
-            uITownResourcesDetailsLevels.Add( panelTownWorkers.transform.GetChild(i).transform.GetChild(0).transform.GetChild(3).GetComponent<TextMeshProUGUI>() );
-            uITownResourcesDetailsRates.Add( panelTownWorkers.transform.GetChild(i).transform.GetChild(0).transform.GetChild(4).GetComponent<TextMeshProUGUI>() );
-        }
-    }
-    public void UpdatePanelTownWorker(int index, string resource)
-    {
-        uITownResourcesDetailsLevels[index].text = "Level " + Global.instance.GetResources()[resource].GetLevel().ToString();
-        uITownResourcesDetailsRates[index].text = Global.instance.GetResources()[resource].ToStringRate();
-    }
-    public void UpdatePanelTownWorkers()
-    {   
-        UpdatePanelTownWorker(0, "resource_1");
-        UpdatePanelTownWorker(1, "resource_2");
-        UpdatePanelTownWorker(2, "resource_3");
-        UpdatePanelTownWorker(3, "resource_4");
-        UpdatePanelTownWorker(4, "resource_5");
-        UpdatePanelTownWorker(5, "resource_6");
-        UpdatePanelTownWorker(6, "resource_7");
-        UpdatePanelTownWorker(7, "resource_8");
-    }
+    //     for(int i = 0; i < 8; i++) // TODO: First eight are the workers that deal with resources (for now)
+    //     {
+    //         uITownResourcesDetailsLevels.Add( panelTownWorkers.transform.GetChild(i).transform.GetChild(0).transform.GetChild(3).GetComponent<TextMeshProUGUI>() );
+    //         uITownResourcesDetailsRates.Add( panelTownWorkers.transform.GetChild(i).transform.GetChild(0).transform.GetChild(4).GetComponent<TextMeshProUGUI>() );
+    //     }
+    // }
+    // public void UpdatePanelTownWorker(int index, string resource)
+    // {
+    //     uITownResourcesDetailsLevels[index].text = "Level " + Global.instance.GetResources()[resource].GetLevel().ToString();
+    //     uITownResourcesDetailsRates[index].text = Global.instance.GetResources()[resource].ToStringRate();
+    // }
+    // public void UpdatePanelTownWorkers()
+    // {   
+    //     UpdatePanelTownWorker(0, "resource_1");
+    //     UpdatePanelTownWorker(1, "resource_2");
+    //     UpdatePanelTownWorker(2, "resource_3");
+    //     UpdatePanelTownWorker(3, "resource_4");
+    //     UpdatePanelTownWorker(4, "resource_5");
+    //     UpdatePanelTownWorker(5, "resource_6");
+    //     UpdatePanelTownWorker(6, "resource_7");
+    //     UpdatePanelTownWorker(7, "resource_8");
+    // }
 
 
     // Start is called before the first frame update
@@ -180,7 +180,7 @@ public class UI : MonoBehaviour
         InitPanelShop();
         InitPanelMineResources();
         InitPanelMineResourcesDetails();
-        InitPanelTownWorkers();
+        
     }
 
     // Update is called once per frame
@@ -190,7 +190,7 @@ public class UI : MonoBehaviour
         UpdatePanelShop();
         UpdatePanelMineResources();
         UpdatePanelMineResourcesDetails();
-        UpdatePanelTownWorkers();
+
     }
 
 

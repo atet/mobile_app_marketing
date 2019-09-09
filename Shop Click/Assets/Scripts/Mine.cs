@@ -481,18 +481,18 @@ public class Mine : MonoBehaviour
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;
         }
-        if(item.costResource3 > 0)
+        if(item.costResource2 > 0)
         {
             panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_2"].GetFilepathImage());
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource3.ToString();
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource2.ToString();
             // Set panel active
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;
         }
-        if(item.costResource2 > 0)
+        if(item.costResource3 > 0)
         {
             panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_3"].GetFilepathImage());
-            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource2.ToString();
+            panelResource.transform.GetChild(currentIndexPanelResources).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = item.costResource3.ToString();
             // Set panel active
             panelResource.transform.GetChild(currentIndexPanelResources).gameObject.SetActive(true);
             currentIndexPanelResources++;
