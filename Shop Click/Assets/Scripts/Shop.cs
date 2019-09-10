@@ -27,7 +27,7 @@ public class Shop : MonoBehaviour
             
             if(!Global.instance.GetMODE_TUTORIAL())
             {
-                NextCustomer("Random");
+                NextCustomer("Random"); //
             }
             else
             {
@@ -158,8 +158,8 @@ public class Shop : MonoBehaviour
             if(itemName == "Random")
             {
                 Debug.Log("Next random customer...");
-                // Pick random item from inventory.
-                currentItem = Global.instance.RandomItem(false);
+                // Pick random item from inventory that is in stock, if nothing in stock will be something that can be made
+                currentItem = Global.instance.RandomItem(true);
             }
             else
             {

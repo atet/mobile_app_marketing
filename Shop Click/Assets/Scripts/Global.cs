@@ -289,24 +289,28 @@ public class Global : MonoBehaviour
         // Returns a random item from the inventory.
         // Will make this more elaborate later (only return things in stock or mixed, etc.).
 
-        List<string> keyList = new List<string>();
+        List<string> keyList = new List<string>(); // This list contains Items that will be sampled from
 
         // Iterate through dictionary
         foreach(KeyValuePair<string, Item> entry in inventory)
         {
             if(isStocked) // Could've purchased an item that you still can't make yet
             {
-                if(entry.Value.GetStock() > 0){
-                    keyList.Add(entry.Key);
-                }
+                if(entry.Value.GetStock() > 0){ keyList.Add(entry.Key); }
             }
             else
             {
-                if(entry.Value.GetIsAvailable()){
-                    keyList.Add(entry.Key);
-                }
+                if(entry.Value.GetIsAvailable()){ keyList.Add(entry.Key); }
             }
         }
+        if(keyList.Count == 0) // If there's nothing in stock, then randomly pick from what can be made
+        {
+            foreach(KeyValuePair<string, Item> entry in inventory)
+            {
+                if(entry.Value.GetIsAvailable()){ keyList.Add(entry.Key); }
+            }
+        }
+
 
         int randomInt = Random.Range(0, keyList.Count);
         //Debug.Log("Random Int: " + randomInt);

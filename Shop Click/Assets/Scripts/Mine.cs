@@ -119,6 +119,10 @@ public class Mine : MonoBehaviour
 
             SFX.instance.PlaySFXCraftItem();
         }
+        else
+        {
+            SFX.instance.PlaySFXNoGo();
+        }
     }
     private bool CraftingItemSlotOpen()
     {

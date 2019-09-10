@@ -105,10 +105,10 @@ public class Resource
         // TODO: Check where current amountLifetimeGain value is between to handle multiple levelups in a single call.
         if(currentInvestmentValue >= currentThresholdValue)
         {
-            Debug.Log("CheckLevelUp2(): " + thresholdIndex);            
+            //Debug.Log("CheckLevelUp2(): " + thresholdIndex);            
             LevelUp(thresholdIndex);
             thresholdIndex++;
-            Debug.Log("CheckLevelUp2(): " + thresholdIndex);   
+            //Debug.Log("CheckLevelUp2(): " + thresholdIndex);   
             rate = thresholdRates[thresholdIndex] * (1 / Global.instance.GetGlobalMultiplier()); // New rate.
             currentThresholdValue = this.thresholdValues[thresholdIndex]; // New threshold
             currentThresholdIncrementCoins = this.thresholdIncrementsCoins[thresholdIndex]; // New increment amount
