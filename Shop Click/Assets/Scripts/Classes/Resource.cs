@@ -23,8 +23,12 @@ public class Resource
     private ulong currentThresholdValue; public ulong GetCurrentThresholdValue(){ return(thresholdValues[thresholdIndex]); } 
     private List<ulong> thresholdValues = new List<ulong>(); public List<ulong> GetThresholdValues(){ return(thresholdValues); } public void SetThresholdValues(List<ulong> thresholdValues){ this.thresholdValues = thresholdValues; currentThresholdValue = this.thresholdValues[thresholdIndex]; }
     private List<float> thresholdRates = new List<float>(); public List<float> GetThresholdRates(){ return(thresholdRates); } public void SetThresholdRates(List<float> thresholdRates){ this.thresholdRates = thresholdRates; }
-    private ulong currentThresholdIncrement; public ulong GetCurrentThresholdIncrement(){ return(thresholdIncrements[thresholdIndex]); }
-    private List<ulong> thresholdIncrements = new List<ulong>(); public List<ulong> GetThresholdIncrements(){ return(thresholdIncrements); } public void SetThresholdIncrements(List<ulong> thresholdIncrements){ this.thresholdIncrements = thresholdIncrements; currentThresholdIncrement = this.thresholdIncrements[thresholdIndex];  }
+    private ulong currentThresholdIncrementCoins; public ulong GetCurrentThresholdIncrementCoins(){ return(thresholdIncrementsCoins[thresholdIndex]); }
+    private List<ulong> thresholdIncrementsCoins = new List<ulong>(); public List<ulong> GetThresholdIncrementsCoins(){ return(thresholdIncrementsCoins); } public void SetThresholdIncrementsCoins(List<ulong> thresholdIncrementsCoins){ this.thresholdIncrementsCoins = thresholdIncrementsCoins; currentThresholdIncrementCoins = this.thresholdIncrementsCoins[thresholdIndex];  }
+    private ulong currentThresholdIncrementGems; public ulong GetCurrentThresholdIncrementGems(){ return(thresholdIncrementsGems[thresholdIndex]); }
+    private List<ulong> thresholdIncrementsGems = new List<ulong>(); public List<ulong> GetThresholdIncrementsGems(){ return(thresholdIncrementsGems); } public void SetThresholdIncrementsGems(List<ulong> thresholdIncrementsGems){ this.thresholdIncrementsGems = thresholdIncrementsGems; currentThresholdIncrementGems = this.thresholdIncrementsGems[thresholdIndex];  }
+
+    
     private List<string> thresholdTypes = new List<string>(); public List<string> GetThresholdTypes(){ return(thresholdTypes); } public void SetThresholdTypes(List<string> thresholdTypes){ this.thresholdTypes = thresholdTypes; }
     private List<string> thresholdDescriptions = new List<string>(); public List<string> GetThresholdDescriptions(){ return(thresholdDescriptions); } public void SetThresholdDescriptions(List<string> thresholdDescriptions){ this.thresholdDescriptions = thresholdDescriptions; }
     private List<bool> thresholdEventBools = new List<bool>();  public List<bool> GetThresholdEventBools(){ return(thresholdEventBools); } public void SetThresholdEventBools(List<bool> thresholdEventBools){ this.thresholdEventBools = thresholdEventBools; }
@@ -107,7 +111,7 @@ public class Resource
             Debug.Log("CheckLevelUp2(): " + thresholdIndex);   
             rate = thresholdRates[thresholdIndex] * (1 / Global.instance.GetGlobalMultiplier()); // New rate.
             currentThresholdValue = this.thresholdValues[thresholdIndex]; // New threshold
-            currentThresholdIncrement = this.thresholdIncrements[thresholdIndex]; // New increment amount
+            currentThresholdIncrementCoins = this.thresholdIncrementsCoins[thresholdIndex]; // New increment amount
         }
     }
     public void LevelUp(int index)
