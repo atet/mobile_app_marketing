@@ -324,9 +324,7 @@ public class Mine : MonoBehaviour
         buttonMedicine.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Medicine")); });
         buttonPotion.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Potion")); });
         buttonMagic.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Magic")); });
-
     }
-
     [SerializeField] public Button buttonCraftRecent;
     private List<Item> itemsRecent = new List<Item>();
     public void PopulateCraftRecentWindow(string itemIDRecent)

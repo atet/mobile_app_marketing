@@ -9,12 +9,22 @@ public class Resource
     private int level; public void SetLevel(int level){ this.level = level; } public int GetLevel(){ return(level); }
     private float rate; public void SetRate(float rate){ this.rate = rate; } public float GetRate(){ return(rate); }
 
+
+    private ulong currentInvestmentValue; // Coins invested in resource generation
+    public ulong GetCurrentInvestmentValue(){ return(currentInvestmentValue); } 
+    public void AddCurrentInvestmentValue(ulong currentInvestmentValue)
+    { 
+        this.currentInvestmentValue += currentInvestmentValue;
+        CheckLevelUp2(); // Check if enough to level up.
+    }
     private bool thresholdBool = false; public bool GetThresholdBool(){ return(thresholdBool); } public void SetThresholdBool(bool thresholdBool){ this.thresholdBool = thresholdBool; }
     private int thresholdIndex;
     private List<int> thresholdKeys = new List<int>(); public List<int> GetThresholdKeys(){ return(thresholdKeys); } public void SetThresholdKeys(List<int> thresholdKeys){ this.thresholdKeys = thresholdKeys; }
-    private List<ulong> thresholdValues = new List<ulong>(); public List<ulong> GetThresholdValues(){ return(thresholdValues); } public void SetThresholdValues(List<ulong> thresholdValues){ this.thresholdValues = thresholdValues; }
+    private ulong currentThresholdValue; public ulong GetCurrentThresholdValue(){ return(thresholdValues[thresholdIndex]); } 
+    private List<ulong> thresholdValues = new List<ulong>(); public List<ulong> GetThresholdValues(){ return(thresholdValues); } public void SetThresholdValues(List<ulong> thresholdValues){ this.thresholdValues = thresholdValues; currentThresholdValue = this.thresholdValues[thresholdIndex]; }
     private List<float> thresholdRates = new List<float>(); public List<float> GetThresholdRates(){ return(thresholdRates); } public void SetThresholdRates(List<float> thresholdRates){ this.thresholdRates = thresholdRates; }
-    private List<ulong> thresholdIncrements = new List<ulong>(); public List<ulong> GetThresholdIncrements(){ return(thresholdIncrements); } public void SetThresholdIncrements(List<ulong> thresholdIncrements){ this.thresholdIncrements = thresholdIncrements; }
+    private ulong currentThresholdIncrement; public ulong GetCurrentThresholdIncrement(){ return(thresholdIncrements[thresholdIndex]); }
+    private List<ulong> thresholdIncrements = new List<ulong>(); public List<ulong> GetThresholdIncrements(){ return(thresholdIncrements); } public void SetThresholdIncrements(List<ulong> thresholdIncrements){ this.thresholdIncrements = thresholdIncrements; currentThresholdIncrement = this.thresholdIncrements[thresholdIndex];  }
     private List<string> thresholdTypes = new List<string>(); public List<string> GetThresholdTypes(){ return(thresholdTypes); } public void SetThresholdTypes(List<string> thresholdTypes){ this.thresholdTypes = thresholdTypes; }
     private List<string> thresholdDescriptions = new List<string>(); public List<string> GetThresholdDescriptions(){ return(thresholdDescriptions); } public void SetThresholdDescriptions(List<string> thresholdDescriptions){ this.thresholdDescriptions = thresholdDescriptions; }
     private List<bool> thresholdEventBools = new List<bool>();  public List<bool> GetThresholdEventBools(){ return(thresholdEventBools); } public void SetThresholdEventBools(List<bool> thresholdEventBools){ this.thresholdEventBools = thresholdEventBools; }
@@ -85,6 +95,21 @@ public class Resource
             thresholdIndex++;
         }
     }
+    public void CheckLevelUp2()
+    {
+        //Debug.Log("Called CheckLevelUp()"); 
+        // TODO: Check where current amountLifetimeGain value is between to handle multiple levelups in a single call.
+        if(currentInvestmentValue >= currentThresholdValue)
+        {
+            Debug.Log("CheckLevelUp2(): " + thresholdIndex);            
+            LevelUp(thresholdIndex);
+            thresholdIndex++;
+            Debug.Log("CheckLevelUp2(): " + thresholdIndex);   
+            rate = thresholdRates[thresholdIndex] * (1 / Global.instance.GetGlobalMultiplier()); // New rate.
+            currentThresholdValue = this.thresholdValues[thresholdIndex]; // New threshold
+            currentThresholdIncrement = this.thresholdIncrements[thresholdIndex]; // New increment amount
+        }
+    }
     public void LevelUp(int index)
     {
         //Debug.Log("Called LevelUp()");
@@ -93,16 +118,15 @@ public class Resource
         {
             Tutorial.instance.SummonUIOverlayTextBox("Level Up!", thresholdDescriptions[index]);
         }
-
-
         // Make SFX sound
         SFX.instance.PlaySFXLevelUp();
     }
-
     public ulong GetToNextLevelValue()
     {
         return(thresholdValues[thresholdIndex] - amountLifetimeGain);
     }
+
+
 
     private ulong amountLifetimeSpend;
     public void SetAmountLifetimeSpend(ulong amountLifetimeSpend){ this.amountLifetimeSpend = amountLifetimeSpend; }
@@ -114,6 +138,7 @@ public class Resource
     public string ToStringAmount(){ return(amount.ToString("N0")); }
 
     public string ToStringRate(){ return(System.Math.Round(60 / rate, 1).ToString() + "/min."); }
+    public string ToStringNextRate(){ return(System.Math.Round(60 / (thresholdRates[thresholdIndex + 1] * (1 / Global.instance.GetGlobalMultiplier()) ), 1).ToString() + "/min."); }
 
     public bool CheckCapacity()
     {
@@ -136,7 +161,12 @@ public class Resource
     {
         amountLifetimeGain = 0;
         amountLifetimeSpend = 0;
+        
         thresholdIndex = 0;
+        currentInvestmentValue = 0;
+        //currentThresholdValue = thresholdValues[thresholdIndex];
+
+
         this.label = label;
         this.filepathImage = filepathImage;
         this.level = level;

@@ -33,7 +33,11 @@ public class UI : MonoBehaviour
     {
         tMProShopQueue = panelShop.transform.GetChild(0).transform.GetChild(1).GetComponent<TextMeshProUGUI>();
     }
-    public void UpdatePanelShop() { tMProShopQueue.text = Global.instance.GetResources()["resource_0"].ToStringAmount(); }
+    public void UpdatePanelShop()
+    { 
+        //Debug.Log("UpdatePanelShop(): " + Global.instance.GetResources()["resource_0"].ToStringAmount());
+        tMProShopQueue.text = Global.instance.GetResources()["resource_0"].ToStringAmount();
+    }
 
     [SerializeField] public GameObject panelMineResource;
     private List<TextMeshProUGUI> tMProMineResources = new List<TextMeshProUGUI>();

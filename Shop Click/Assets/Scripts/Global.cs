@@ -8,7 +8,7 @@ public class Global : MonoBehaviour
     private bool MODE_TUTORIAL = true; public bool GetMODE_TUTORIAL(){ return(MODE_TUTORIAL); } public void SetMODE_TUTORIAL(bool MODE_TUTORIAL){ this.MODE_TUTORIAL = MODE_TUTORIAL; }
     private const bool MODE_DEBUG = false; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
     // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
-    private const float globalMultiplier = 1; public float GetGlobalMultiplier(){ return(globalMultiplier); }
+    private const float globalMultiplier = 10; public float GetGlobalMultiplier(){ return(globalMultiplier); }
 
     private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190905";
     private const string filepathCharactersJSON = "Data/shop_click_characters";
@@ -66,7 +66,8 @@ public class Global : MonoBehaviour
         else
         {
             stats.Add("Level",  new Resource("Level",  "Images/UI/level" , 1, 0, System.UInt64.MaxValue,  1));
-            stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins" , 1, 0, System.UInt64.MaxValue,  0));
+            // stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins" , 1, 0, System.UInt64.MaxValue,  0));
+            stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins" , 1, 0, System.UInt64.MaxValue, 99999));
             stats.Add("Chakra", new Resource("Chakra", "Images/UI/chakra", 1, 0,                    100, 46));
             stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems"  , 1, 0, System.UInt64.MaxValue,  5));
             stats.Add("Stock",  new Resource("Stock",  "Images/UI/stock" , 1, 0,                     15,  0));
@@ -113,7 +114,7 @@ public class Global : MonoBehaviour
         }
         else
         {
-            resources.Add("resource_0", new Resource("Queue",       "Images/UI/queue",       1, 10,  5, 10));
+            resources.Add("resource_0", new Resource("Queue",       "Images/UI/queue",       1, 10, 10,  5));
             resources.Add("resource_1", new Resource("Iron",        "Images/UI/iron",        1, 10, 35,  5));
             resources.Add("resource_2", new Resource("Wood",        "Images/UI/wood",        1, 10, 35,  0));
             resources.Add("resource_3", new Resource("Hide",        "Images/UI/hide",        1, 10, 35,  0));
@@ -128,13 +129,73 @@ public class Global : MonoBehaviour
         resources["resource_1"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
         resources["resource_1"].SetThresholdIncrements(new List<ulong>(){100, 200, 400, 1000, 2200, 2800, 8000, 12000, 50000, 150000, 300000, 500000, 1000000, 2000000, 4000000, 10000000, 30000000, 50000000, 100000000});
         resources["resource_1"].SetThresholdValues(new List<ulong>(){1000, 4000, 12000, 60000, 198000, 300000, 1425000, 3200000, 19800000, 70000000, 220000000, 520000000, 1120000000, 3000000000, 6400000000, 17000000000, 54000000000, 95000000000, 200000000000});
+        resources["resource_1"].SetThresholdRates(new List<float>(){10f, 8.89f, 8f, 7.27f, 6.67f, 6.15f, 5.71f, 5.33f, 5f, 4.71f, 4.44f, 4.21f, 4f, 3.81f, 3.64f, 3.48f, 3.33f, 3.16f, 3f, 2.73f});
         resources["resource_1"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
         resources["resource_1"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
         resources["resource_1"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
 
+        resources["resource_2"].SetThresholdBool(true);
+        resources["resource_2"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
+        resources["resource_2"].SetThresholdIncrements(new List<ulong>(){100, 200, 400, 1000, 2200, 2800, 8000, 12000, 50000, 150000, 300000, 500000, 1000000, 2000000, 4000000, 10000000, 30000000, 50000000, 100000000});
+        resources["resource_2"].SetThresholdValues(new List<ulong>(){1000, 4000, 12000, 60000, 198000, 300000, 1425000, 3200000, 19800000, 70000000, 220000000, 520000000, 1120000000, 3000000000, 6400000000, 17000000000, 54000000000, 95000000000, 200000000000});
+        resources["resource_2"].SetThresholdRates(new List<float>(){10f, 8.89f, 8f, 7.27f, 6.67f, 6.15f, 5.71f, 5.33f, 5f, 4.71f, 4.44f, 4.21f, 4f, 3.81f, 3.64f, 3.48f, 3.33f, 3.16f, 3f, 2.73f});
+        resources["resource_2"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
+        resources["resource_2"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
+        resources["resource_2"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
 
+        resources["resource_3"].SetThresholdBool(true);
+        resources["resource_3"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
+        resources["resource_3"].SetThresholdIncrements(new List<ulong>(){100, 200, 400, 1000, 2200, 2800, 8000, 12000, 50000, 150000, 300000, 500000, 1000000, 2000000, 4000000, 10000000, 30000000, 50000000, 100000000});
+        resources["resource_3"].SetThresholdValues(new List<ulong>(){1000, 4000, 12000, 60000, 198000, 300000, 1425000, 3200000, 19800000, 70000000, 220000000, 520000000, 1120000000, 3000000000, 6400000000, 17000000000, 54000000000, 95000000000, 200000000000});
+        resources["resource_3"].SetThresholdRates(new List<float>(){10f, 8.89f, 8f, 7.27f, 6.67f, 6.15f, 5.71f, 5.33f, 5f, 4.71f, 4.44f, 4.21f, 4f, 3.81f, 3.64f, 3.48f, 3.33f, 3.16f, 3f, 2.73f});
+        resources["resource_3"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
+        resources["resource_3"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
+        resources["resource_3"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
 
+        resources["resource_4"].SetThresholdBool(true);
+        resources["resource_4"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
+        resources["resource_4"].SetThresholdIncrements(new List<ulong>(){100, 200, 400, 1000, 2200, 2800, 8000, 12000, 50000, 150000, 300000, 500000, 1000000, 2000000, 4000000, 10000000, 30000000, 50000000, 100000000});
+        resources["resource_4"].SetThresholdValues(new List<ulong>(){1000, 4000, 12000, 60000, 198000, 300000, 1425000, 3200000, 19800000, 70000000, 220000000, 520000000, 1120000000, 3000000000, 6400000000, 17000000000, 54000000000, 95000000000, 200000000000});
+        resources["resource_4"].SetThresholdRates(new List<float>(){10f, 8.89f, 8f, 7.27f, 6.67f, 6.15f, 5.71f, 5.33f, 5f, 4.71f, 4.44f, 4.21f, 4f, 3.81f, 3.64f, 3.48f, 3.33f, 3.16f, 3f, 2.73f});
+        resources["resource_4"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
+        resources["resource_4"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
+        resources["resource_4"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
 
+        resources["resource_5"].SetThresholdBool(true);
+        resources["resource_5"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
+        resources["resource_5"].SetThresholdIncrements(new List<ulong>(){300, 600, 1200, 3000, 6600, 8400, 24000, 36000, 150000, 450000, 900000, 1500000, 3000000, 6000000, 12000000, 30000000, 90000000, 150000000, 300000000});
+        resources["resource_5"].SetThresholdValues(new List<ulong>(){3000, 12000, 36000, 179000, 600000, 920000, 4200000, 9550000, 59500000, 210000000, 660000000, 1560000000, 3360000000, 9000000000, 19200000000, 51000000000, 162000000000, 285000000000, 600000000000});
+        resources["resource_5"].SetThresholdRates(new List<float>(){80f, 60f, 48f, 40f, 34.29f, 30f, 26.67f, 24f, 21.82f, 20f, 18.46f, 17.14f, 16f, 15f, 14.12f, 13.33f, 12.63f, 12f, 11.43f, 10.91f});
+        resources["resource_5"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
+        resources["resource_5"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
+        resources["resource_5"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+
+        resources["resource_6"].SetThresholdBool(true);
+        resources["resource_6"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
+        resources["resource_6"].SetThresholdIncrements(new List<ulong>(){300, 600, 1200, 3000, 6600, 8400, 24000, 36000, 150000, 450000, 900000, 1500000, 3000000, 6000000, 12000000, 30000000, 90000000, 150000000, 300000000});
+        resources["resource_6"].SetThresholdValues(new List<ulong>(){3000, 12000, 36000, 179000, 600000, 920000, 4200000, 9550000, 59500000, 210000000, 660000000, 1560000000, 3360000000, 9000000000, 19200000000, 51000000000, 162000000000, 285000000000, 600000000000});
+        resources["resource_6"].SetThresholdRates(new List<float>(){80f, 60f, 48f, 40f, 34.29f, 30f, 26.67f, 24f, 21.82f, 20f, 18.46f, 17.14f, 16f, 15f, 14.12f, 13.33f, 12.63f, 12f, 11.43f, 10.91f});
+        resources["resource_6"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
+        resources["resource_6"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
+        resources["resource_6"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+
+        resources["resource_7"].SetThresholdBool(true);
+        resources["resource_7"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
+        resources["resource_7"].SetThresholdIncrements(new List<ulong>(){300, 600, 1200, 3000, 6600, 8400, 24000, 36000, 150000, 450000, 900000, 1500000, 3000000, 6000000, 12000000, 30000000, 90000000, 150000000, 300000000});
+        resources["resource_7"].SetThresholdValues(new List<ulong>(){3000, 12000, 36000, 179000, 600000, 920000, 4200000, 9550000, 59500000, 210000000, 660000000, 1560000000, 3360000000, 9000000000, 19200000000, 51000000000, 162000000000, 285000000000, 600000000000});
+        resources["resource_7"].SetThresholdRates(new List<float>(){80f, 60f, 48f, 40f, 34.29f, 30f, 26.67f, 24f, 21.82f, 20f, 18.46f, 17.14f, 16f, 15f, 14.12f, 13.33f, 12.63f, 12f, 11.43f, 10.91f});
+        resources["resource_7"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
+        resources["resource_7"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
+        resources["resource_7"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+
+        resources["resource_8"].SetThresholdBool(true);
+        resources["resource_8"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
+        resources["resource_8"].SetThresholdIncrements(new List<ulong>(){300, 600, 1200, 3000, 6600, 8400, 24000, 36000, 150000, 450000, 900000, 1500000, 3000000, 6000000, 12000000, 30000000, 90000000, 150000000, 300000000});
+        resources["resource_8"].SetThresholdValues(new List<ulong>(){3000, 12000, 36000, 179000, 600000, 920000, 4200000, 9550000, 59500000, 210000000, 660000000, 1560000000, 3360000000, 9000000000, 19200000000, 51000000000, 162000000000, 285000000000, 600000000000});
+        resources["resource_8"].SetThresholdRates(new List<float>(){80f, 60f, 48f, 40f, 34.29f, 30f, 26.67f, 24f, 21.82f, 20f, 18.46f, 17.14f, 16f, 15f, 14.12f, 13.33f, 12.63f, 12f, 11.43f, 10.91f});
+        resources["resource_8"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
+        resources["resource_8"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
+        resources["resource_8"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
     }
 
     public void InitCharacters()
