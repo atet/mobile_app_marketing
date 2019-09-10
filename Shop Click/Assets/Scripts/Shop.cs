@@ -410,7 +410,7 @@ public class Shop : MonoBehaviour
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
-        Tutorial.instance.SummonUIOverlayPointer(85f, -800f, 0f);
+        Tutorial.instance.SummonUIOverlayPointer("ButtonSell");
     }
     public void TutorialSecondCustomer()
     {
@@ -440,7 +440,7 @@ public class Shop : MonoBehaviour
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
-        Tutorial.instance.SummonUIOverlayPointer(-25, -600, 0);
+        Tutorial.instance.SummonUIOverlayPointer("ButtonRebate");
     }
 
     public void TutorialThirdCustomer()
@@ -471,7 +471,7 @@ public class Shop : MonoBehaviour
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
-        Tutorial.instance.SummonUIOverlayPointer(375, -600, 0);
+        Tutorial.instance.SummonUIOverlayPointer("ButtonUpcharge");
     }
 
     public void TutorialFourthCustomer()
@@ -503,7 +503,7 @@ public class Shop : MonoBehaviour
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
-        Tutorial.instance.SummonUIOverlayPointer(375, -395, 0);
+        Tutorial.instance.SummonUIOverlayPointer("ButtonRefuse");
     }
 
     public void TutorialFifthCustomer()
@@ -567,7 +567,7 @@ public class Shop : MonoBehaviour
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
-        Tutorial.instance.SummonUIOverlayPointer(-25, -395, 0);
+        Tutorial.instance.SummonUIOverlayPointer("ButtonSuggest");
     }
 
 }

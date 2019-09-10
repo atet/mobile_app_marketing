@@ -14,35 +14,82 @@ public class Tutorial : MonoBehaviour
 
 
     [SerializeField] public GameObject uIOverlayPointer;
-    private bool activeUIOverlayPointer = false;
+    private bool activeUIOverlayPointer;
+    private Vector3 tutorialArea;
 
-    public void SummonUIOverlayPointer(float x, float y, float z)
+    public void SummonUIOverlayPointer(string coordLabel)
     { 
-        // Positions in UI for the following
-        // Queue Button: -170, 400, 0
-        // Sell Button: 85, -800, 0
-        // Rebate Button: -25, -600, 0
-        // Upcharge Button: 375, -600, 0
-        // Suggest Button: -25, -395, 0
-        // Refuse Button: 375, -395, 0
-        // Craft Button: -150, -900, 0
-        // Craft Weapon Button: -290, -750, 0
-        // Craft Weapon Daggers Button: 220, -800, 0
-        // Craft Dirk Button: 400, -750, 0
-        // Finish Craft Button: -170, 140, 0
 
-        Debug.Log("Calling SummonUIOverlayPointer(" + x + ", " + y + ", "+ z + ")");
+        // New positions after having pointer offset for area that's actually clicked (i.e. the fingertip)
+        // Queue Button: -350, 500, 0
+        Vector3 coordOverlayPointer;
+
+        switch (coordLabel)
+        {
+            case "ButtonQueue":
+                coordOverlayPointer = new Vector3(200, 1450, 0);
+                break;
+            case "ButtonSell":
+                coordOverlayPointer = new Vector3(530, 250, 0);
+                break;
+            case "ButtonRebate":
+                coordOverlayPointer = new Vector3(250, 450, 0);
+                break;
+            case "ButtonUpcharge":
+                coordOverlayPointer = new Vector3(825, 450, 0);
+                break;
+            case "ButtonSuggest":
+                coordOverlayPointer = new Vector3(250, 650, 0);
+                break;
+            case "ButtonRefuse":
+                coordOverlayPointer = new Vector3(825, 650, 0);
+                break;
+
+            case "ButtonCraft":
+                coordOverlayPointer = new Vector3(-250, 850, 0);
+                break;
+            case "ButtonCraftWeapon":
+                coordOverlayPointer = new Vector3(-350, 500, 0);
+                break;
+            case "ButtonCraftDaggers":
+                coordOverlayPointer = new Vector3(-350, 500, 0);
+                break;
+            case "ButtonCraftDirk":
+                coordOverlayPointer = new Vector3(-350, 500, 0);
+                break;
+            case "ButtonCraftFinish":
+                coordOverlayPointer = new Vector3(-350, 500, 0);
+                break;
+            default:
+                coordOverlayPointer = new Vector3(0, 0, 0);
+                break;
+        }
+
+        Debug.Log("Calling SummonUIOverlayPointer(" + coordOverlayPointer.x + ", " + coordOverlayPointer.y + ", "+ coordOverlayPointer.z + ")");
         uIOverlayPointer.SetActive(true);
-        
+
+        // Disable clicking anywhere outside of immediate area of pointer
+        CameraControl.instance.DisableSwipe();
+        CameraControl.instance.EnableRestrictOnClick();
+        int pixelRadius = 100;
+        Vector3 unrestrictedOnClickAreaTopLeft = new Vector3(coordOverlayPointer.x - pixelRadius, coordOverlayPointer.y + pixelRadius, 0);
+        Vector3 unrestrictedOnClickAreaBottomRight = new Vector3(coordOverlayPointer.x + pixelRadius, coordOverlayPointer.y - pixelRadius, 0);
+        CameraControl.instance.SetUnrestrictedOnClickArea(unrestrictedOnClickAreaTopLeft, unrestrictedOnClickAreaBottomRight);
+
+
         RectTransform animationPointer = uIOverlayPointer.transform.GetChild(0).GetComponent<RectTransform>();
-        animationPointer.localPosition = new Vector3(x, y, z);
+        animationPointer.localPosition = coordOverlayPointer;
 
         activeUIOverlayPointer = true;
     }
     public void RemoveUIOverlayPointer()
     { 
-        if(activeUIOverlayPointer & Input.GetMouseButtonDown(0))
+        if(activeUIOverlayPointer)
         { 
+            // Enable clicking anywhere outside of immediate area of pointer
+            CameraControl.instance.EnableSwipe();
+            CameraControl.instance.DisableRestrictOnClick();
+
             uIOverlayPointer.SetActive(false);
             Debug.Log("Calling RemoveUIOverlayPointer()");
             activeUIOverlayPointer = false;
@@ -64,11 +111,13 @@ public class Tutorial : MonoBehaviour
     }
     void Start()
     {
+        activeUIOverlayPointer = false;
+
         SummonUIOverlayTextBoxWithEvent("Almost...", "After years of being my apprentice, you're almost ready to take over my shop.\n\nToday will be your final test.\n\n- Biggs", 1);
     }
     void Update()
     {
-        RemoveUIOverlayPointer();
+        //RemoveUIOverlayPointer(); // Handled by CameraControl.CheckUnrestrictedOnClickArea() now.
     }
 
     public void SummonUIOverlayTextBox(string title, string body)
@@ -117,7 +166,7 @@ public class Tutorial : MonoBehaviour
                 {
                     case 1:
                         // Console.WriteLine("someInt = 1");
-                        SummonUIOverlayPointer(-170f, 400f, 0f);
+                        SummonUIOverlayPointer("ButtonQueue");
                         break;
                     case 2:
                         // Console.WriteLine("someInt = 2");

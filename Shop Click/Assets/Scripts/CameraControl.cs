@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
+    [SerializeField] public Camera cameraControl;
     public static CameraControl instance;
-    private bool swipeEnabled = true;
-    private bool swipeEnabledTown = true;
-    private bool swipeEnabledMine = true;
-    private bool swipeEnabledColosseum = true;
+    private bool inputEnabled;
+    private bool swipeEnabled;
+    private bool swipeEnabledTown;
+    private bool swipeEnabledMine;
+    private bool swipeEnabledColosseum;
     Vector3 touchStart;
 
     // For Swipe()
@@ -22,6 +24,59 @@ public class CameraControl : MonoBehaviour
 
     private const float currentSwipeMagnitudeThreshold = 100;
     private const float currentSwipeTimeThreshold = 2; // Time in second
+
+    // Tutorial controls
+    // TODO: Fix this, the actual input coordinates are different than the relative UI coordinates...
+    private bool restrictOnClick; public void EnableRestrictOnClick(){ restrictOnClick = true; } public void DisableRestrictOnClick(){ restrictOnClick = false; }
+    private Vector3 unrestrictedOnClickAreaTopLeft, unrestrictedOnClickAreaBottomRight;
+    public void SetUnrestrictedOnClickArea(Vector3 unrestrictedOnClickAreaTopLeft, Vector3 unrestrictedOnClickAreaBottomRight)
+    {
+        Debug.Log("Unrestricted area set as: Top-Left x,y = " + unrestrictedOnClickAreaTopLeft.x.ToString() + "," + unrestrictedOnClickAreaTopLeft.y.ToString() + 
+        " and Bottom-Right x,y = " + unrestrictedOnClickAreaBottomRight.x.ToString() + "," + unrestrictedOnClickAreaBottomRight.y.ToString());
+        this.unrestrictedOnClickAreaTopLeft = unrestrictedOnClickAreaTopLeft;
+        this.unrestrictedOnClickAreaBottomRight = unrestrictedOnClickAreaBottomRight;
+    }
+    public void CheckUnrestrictedOnClickArea()
+    {
+
+        // TODO: Fix this, the actual input coordinates are different than the relative UI coordinates...
+        if(Input.GetMouseButtonDown(0))
+        {
+            float scale = 5;
+            Vector3 absolutePosition = Input.mousePosition * scale;
+
+            if
+            (
+                (absolutePosition.x >= unrestrictedOnClickAreaTopLeft.x) &&
+                (absolutePosition.x <= unrestrictedOnClickAreaBottomRight.x) &&
+                (absolutePosition.y >= unrestrictedOnClickAreaBottomRight.y) &&
+                (absolutePosition.y <= unrestrictedOnClickAreaTopLeft.y)
+            )
+            {
+                // DO SOMETHING
+                // TODO: Allow clicking
+                Debug.Log("Inside unrestricted area: x = " + absolutePosition.x + ", y = " + absolutePosition.y);
+                Tutorial.instance.RemoveUIOverlayPointer();
+            }
+            else
+            {
+                // DO SOMETHING
+                // TODO: Don't allow clicking
+                Debug.Log("Outside unrestricted area: x = " + absolutePosition.x + ", y = " + absolutePosition.y); 
+            }
+        }
+    }
+
+    // public void CheckCoordinatesOnClick() // For debugging
+    // {
+    //     if(Input.GetMouseButtonDown(0))
+    //     {
+    //         float scale = 5;
+    //         Vector3 absolutePosition = Input.mousePosition * scale;
+    //         Debug.Log("Absolute Position (x,y) = (" + absolutePosition.x + "," + absolutePosition.y + ")");
+    //     }
+    // }
+
 
     // Current camera position
     Dictionary<string, Vector2> cameraPositions = new Dictionary<string, Vector2>()
@@ -41,6 +96,18 @@ public class CameraControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inputEnabled = true;
+        swipeEnabled = true;
+        swipeEnabledTown = true;
+        swipeEnabledMine = true;
+        swipeEnabledColosseum = true;
+
+
+
+        restrictOnClick = false;
+        unrestrictedOnClickAreaTopLeft = new Vector3(0,0,0);
+        unrestrictedOnClickAreaBottomRight = new Vector3(0,0,0);
+
         Camera.main.transform.position = cameraPositions["Shop"];
 
         DisableSwipeColosseum();
@@ -58,6 +125,11 @@ public class CameraControl : MonoBehaviour
         {
             Swipe();
         }
+        if(restrictOnClick)
+        {
+            CheckUnrestrictedOnClickArea();
+        }
+        //CheckCoordinatesOnClick(); // For debugging Input coordinates to UI coordinates
     }
 
     public void EnableSwipe()
