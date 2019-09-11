@@ -6,21 +6,21 @@ using TMPro;
 
 public class Town : MonoBehaviour
 {
+    public static Town instance;
+    [SerializeField] public GameObject panelTownWorker;
+    private List<GameObject> panelTownWorkers = new List<GameObject>(); // To activate/inactivate workers.
+    // private List<TextMeshProUGUI> uITownResourcesDetailsLevels = new List<TextMeshProUGUI>(); // Update UI.
+    // private List<TextMeshProUGUI> uITownResourcesDetailsRates = new List<TextMeshProUGUI>(); // Update UI.
+    [SerializeField] public GameObject panelTownDetailWindow; // This is the window with the details.
 
-[SerializeField] public GameObject panelTownWorker;
-private List<GameObject> panelTownWorkers = new List<GameObject>(); // To activate/inactivate workers.
-// private List<TextMeshProUGUI> uITownResourcesDetailsLevels = new List<TextMeshProUGUI>(); // Update UI.
-// private List<TextMeshProUGUI> uITownResourcesDetailsRates = new List<TextMeshProUGUI>(); // Update UI.
-[SerializeField] public GameObject panelTownDetailWindow; // This is the window with the details.
-
-// Only first eight workers for now
-string[] filepathImageCharacter = new string[]{"Images/Characters/8", "Images/Characters/17", "Images/Characters/21", "Images/Characters/22","Images/Characters/19", "Images/Characters/15", "Images/Characters/5", "Images/Characters/3"};
-string[] idResource = new string[]{"resource_1", "resource_2", "resource_3", "resource_4", "resource_5", "resource_6", "resource_7", "resource_8"};
-string[] idLabel = new string[]{"Workshop", "Saw Mill", "Guild", "Dispensary","Forge", "University", "Labortory", "Restaurant"};
+    // Only first eight workers for now
+    string[] filepathImageCharacter = new string[]{"Images/Characters/8", "Images/Characters/17", "Images/Characters/21", "Images/Characters/22","Images/Characters/19", "Images/Characters/15", "Images/Characters/5", "Images/Characters/3"};
+    string[] idResource = new string[]{"resource_1", "resource_2", "resource_3", "resource_4", "resource_5", "resource_6", "resource_7", "resource_8"};
+    string[] idLabel = new string[]{"Workshop", "Saw Mill", "Guild", "Dispensary","Forge", "University", "Labortory", "Restaurant"};
 
 
-private List<TextMeshProUGUI> tMProResourceLevels = new List<TextMeshProUGUI>();
-private List<TextMeshProUGUI> tMProResourceRates = new List<TextMeshProUGUI>();
+    private List<TextMeshProUGUI> tMProResourceLevels = new List<TextMeshProUGUI>();
+    private List<TextMeshProUGUI> tMProResourceRates = new List<TextMeshProUGUI>();
 
     public void InitPanelTownWorkers()
     {
@@ -75,6 +75,50 @@ private List<TextMeshProUGUI> tMProResourceRates = new List<TextMeshProUGUI>();
             }
         );
     }
+
+    public void FocusTownDetailWindow(string idResource) // Used in Mine Resource Detail, the individual resource detail button to navigate to Town and open the appropriate window
+    {
+        CameraControl.instance.CameraPosition("Town");
+        int index;
+        switch(idResource)
+        {
+            case "resource_1":
+                index = 0;
+                break;
+            case "resource_2":
+                index = 1;
+                break;
+            case "resource_3":
+                index = 2;
+                break;
+            case "resource_4":
+                index = 3;
+                break;
+            case "resource_5":
+                index = 4;
+                break;
+            case "resource_6":
+                index = 5;
+                break;
+            case "resource_7":
+                index = 6;
+                break;
+            case "resource_8":
+                index = 7;
+                break;
+            default:
+                index = 0;
+                break;
+        }
+        OnClickTownDetailWindow
+        (
+            Global.instance.GetResources()[this.idResource[index]],
+            idLabel[index],
+            Global.instance.GetResources()[this.idResource[index]].GetFilepathImage(),
+            filepathImageCharacter[index]
+        );
+    }
+
     public void OnClickTownDetailWindow(Resource currentResource, string idLabel, string filepathImageResource, string filepathImageCharacter)
     {
         // Panel Town Worker Detail is enabled
@@ -212,7 +256,7 @@ private List<TextMeshProUGUI> tMProResourceRates = new List<TextMeshProUGUI>();
 
     void Awake()
     {
-        
+        instance = this;
     }
 
     void Start()

@@ -82,7 +82,7 @@ public class CameraControl : MonoBehaviour
 
 
     // Current camera position
-    Dictionary<string, Vector2> cameraPositions = new Dictionary<string, Vector2>()
+    private Dictionary<string, Vector2> cameraPositions = new Dictionary<string, Vector2>()
     {
         { "Shop", new Vector2(0f, 0f) },
         { "Colosseum", new Vector2(5.65f, 0f) },
@@ -90,6 +90,10 @@ public class CameraControl : MonoBehaviour
         { "Menu", new Vector2(0f, 10f) },
         { "Town", new Vector2(0f, -10f) }
     };
+    public Dictionary<string, Vector2> GetCameraPositions()
+    {
+        return(cameraPositions);
+    }
 
     void Awake()
     {
@@ -209,14 +213,14 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped up, going down");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position) & swipeEnabledTown){
                 //Debug.Log("At Shop, going down to Town");
-                Camera.main.transform.position = cameraPositions["Town"];
+                CameraPosition("Town");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Town", cameraPositions["Town"]} };
                 //Debug.Log("currentScreen = Town");
             }
             else if(cameraPositions["Menu"].Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Menu, going down to Shop");
-                Camera.main.transform.position = cameraPositions["Shop"];
+                CameraPosition("Shop");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Shop", cameraPositions["Shop"]} };
                 //Debug.Log("currentScreen = Shop");
             }
@@ -226,14 +230,14 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped down, going up");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position)){
                 //Debug.Log("At Shop, going up to Menu");
-                Camera.main.transform.position = cameraPositions["Menu"];
+                CameraPosition("Menu");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Menu", cameraPositions["Menu"]} };
                 //Debug.Log("currentScreen = Menu");
             }
             else if(cameraPositions["Town"].Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Town, going up to Shop");
-                Camera.main.transform.position = cameraPositions["Shop"];
+                CameraPosition("Shop");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Shop", cameraPositions["Shop"]} };
                 //Debug.Log("currentScreen = Shop");
             }
@@ -243,14 +247,14 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped left, going right");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position) & swipeEnabledColosseum){
                 //Debug.Log("At Shop, going right to Colosseum");
-                Camera.main.transform.position = cameraPositions["Colosseum"];
+                CameraPosition("Colosseum");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Colosseum", cameraPositions["Colosseum"]} };
                 //Debug.Log("currentScreen = Colosseum");
             }
             else if(cameraPositions["Mine"].Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Mine, going right to Shop");
-                Camera.main.transform.position = cameraPositions["Shop"];
+                CameraPosition("Shop");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Shop", cameraPositions["Shop"]} };
                 //Debug.Log("currentScreen = Shop");
             }
@@ -260,20 +264,23 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped right, going left");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position) & swipeEnabledMine){
                 //Debug.Log("At Shop, going left to Mine");
-                Camera.main.transform.position = cameraPositions["Mine"];
+                CameraPosition("Mine");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Mine", cameraPositions["Mine"]} };
                 //Debug.Log("currentScreen = Mine");
             }
             else if(cameraPositions["Colosseum"].Equals(Camera.main.transform.position))
             {
                 //Debug.Log("At Colosseum, going left to Shop");
-                Camera.main.transform.position = cameraPositions["Shop"];
+                CameraPosition("Shop");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Shop", cameraPositions["Shop"]} };
                 //Debug.Log("currentScreen = Shop");
             }
         }
     }
-
+    public void CameraPosition(string screen)
+    {
+        Camera.main.transform.position = cameraPositions[screen];
+    }
     public void CameraPan()
     {
         if(Input.GetMouseButtonDown(0))

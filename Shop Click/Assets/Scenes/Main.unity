@@ -7614,7 +7614,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: x/min.
+  m_text: x.xx/min.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -7643,8 +7643,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8.5
+  m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7684,10 +7684,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 180242950}
-    characterCount: 6
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -10028,7 +10028,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: x/min.
+  m_text: x.xx/min.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -10057,8 +10057,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8.5
+  m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10098,10 +10098,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 248208942}
-    characterCount: 6
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -17176,7 +17176,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: x/min.
+  m_text: x.xx/min.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -17205,8 +17205,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8.5
+  m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -17246,10 +17246,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 403988683}
-    characterCount: 6
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -38305,7 +38305,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: x/min.
+  m_text: x.xx/min.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -38334,8 +38334,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8.5
+  m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -38375,10 +38375,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 955587121}
-    characterCount: 6
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -54428,7 +54428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1327728817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -59138,7 +59138,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: x/min.
+  m_text: x.xx/min.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -59167,8 +59167,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8.5
+  m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -59208,10 +59208,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1433964597}
-    characterCount: 6
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -73685,7 +73685,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: x/min.
+  m_text: x.xx/min.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -73714,8 +73714,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8.5
+  m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -73755,10 +73755,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1850390121}
-    characterCount: 6
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -77234,7 +77234,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: x/min.
+  m_text: x.xx/min.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -77263,8 +77263,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8.5
+  m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -77304,10 +77304,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1925522631}
-    characterCount: 6
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -81020,7 +81020,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: x/min.
+  m_text: x.xx/min.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -81049,8 +81049,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8.5
+  m_fontSizeBase: 8.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -81090,10 +81090,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2033401355}
-    characterCount: 6
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1

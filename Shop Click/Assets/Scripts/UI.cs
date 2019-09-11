@@ -69,6 +69,7 @@ public class UI : MonoBehaviour
     }
 
     [SerializeField] public GameObject panelMineResourceDetail;
+    private List<Button> buttonsMineResourceDetails = new List<Button>();
     private List<TextMeshProUGUI> tMProMineResourcesDetailsLabels = new List<TextMeshProUGUI>();
     private List<TextMeshProUGUI> tMProMineResourcesDetailsLevels = new List<TextMeshProUGUI>();
     private List<TextMeshProUGUI> tMProMineResourcesDetailsRates = new List<TextMeshProUGUI>();
@@ -96,6 +97,16 @@ public class UI : MonoBehaviour
             tMProMineResourcesDetailsRates.Add( panelMineResourceDetail.transform.GetChild(i).transform.GetChild(1).transform.GetChild(2).GetComponent<TextMeshProUGUI>() );
             tMProMineResourcesDetailsCaps.Add( panelMineResourceDetail.transform.GetChild(i).transform.GetChild(1).transform.GetChild(3).GetComponent<TextMeshProUGUI>() );
         }
+
+        // Resources button, link to Town.instance.FocusTownDetailWindow()
+        panelMineResourceDetail.transform.GetChild(0).GetComponent<Button>().onClick.AddListener( delegate{ Town.instance.FocusTownDetailWindow("resource_1"); } );
+        panelMineResourceDetail.transform.GetChild(1).GetComponent<Button>().onClick.AddListener( delegate{ Town.instance.FocusTownDetailWindow("resource_2"); } );
+        panelMineResourceDetail.transform.GetChild(2).GetComponent<Button>().onClick.AddListener( delegate{ Town.instance.FocusTownDetailWindow("resource_3"); } );
+        panelMineResourceDetail.transform.GetChild(3).GetComponent<Button>().onClick.AddListener( delegate{ Town.instance.FocusTownDetailWindow("resource_4"); } );
+        panelMineResourceDetail.transform.GetChild(4).GetComponent<Button>().onClick.AddListener( delegate{ Town.instance.FocusTownDetailWindow("resource_5"); } );
+        panelMineResourceDetail.transform.GetChild(5).GetComponent<Button>().onClick.AddListener( delegate{ Town.instance.FocusTownDetailWindow("resource_6"); } );
+        panelMineResourceDetail.transform.GetChild(6).GetComponent<Button>().onClick.AddListener( delegate{ Town.instance.FocusTownDetailWindow("resource_7"); } );
+        panelMineResourceDetail.transform.GetChild(7).GetComponent<Button>().onClick.AddListener( delegate{ Town.instance.FocusTownDetailWindow("resource_8"); } );
 
         // Components
         panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_1"].GetFilepathImage());
