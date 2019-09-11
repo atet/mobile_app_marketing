@@ -49,6 +49,11 @@ public class Shop : MonoBehaviour
     [SerializeField] public GameObject PanelUpcharge;
     [SerializeField] public GameObject panelSuggest;
 
+    // Bonus stuff.
+    [SerializeField] public GameObject panelBonusButton;
+    [SerializeField] public GameObject panelBonusDetail;
+    
+
     private int chakraSuggestCost; private int chakraRebateGain; private int chakraUpchargeCost; 
     [SerializeField] public TextMeshProUGUI tMProSuggest, tMProRebate, tMProUpcharge;
     public void UpdateTMProSuggest(){ tMProSuggest.text = "-" + chakraSuggestCost.ToString() + "%"; }
@@ -120,6 +125,8 @@ public class Shop : MonoBehaviour
     {
         // Close shop window if opened during dev.
         panelShopDialog.SetActive(false);
+
+        panelBonusButton.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -379,6 +386,9 @@ public class Shop : MonoBehaviour
         CameraControl.instance.EnableSwipeMine();
         CameraControl.instance.EnableSwipeTown();
         CameraControl.instance.EnableSwipeColosseum();
+
+
+        panelBonusButton.SetActive(true);
 
         Tutorial.instance.SummonUIOverlayTextBox("Shop Click", "You're ready to take over my shop.\n\nGood luck!\n\n- Biggs");
     }
