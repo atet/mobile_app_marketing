@@ -152,7 +152,6 @@ public class Mine : MonoBehaviour
     }
     
     private float[] countdownQueue;
-
     private List<TextMeshProUGUI> tMProMineCraftQueue;
     private List<Button> buttonMineCraftQueue;
     public void LinkCraftQueue(){
@@ -291,12 +290,16 @@ public class Mine : MonoBehaviour
     }
 
 
+    [SerializeField] public Button buttonCraftMenu;
+    [SerializeField] public Button buttonWeapon, buttonArmor, buttonAccessory;
     [SerializeField] public Button buttonDagger, buttonStaff, buttonBow, buttonMace, buttonAxe, buttonSpear, buttonSword, buttonWand, buttonCrossbow, buttonGun;
     [SerializeField] public Button buttonShield, buttonShoes, buttonBoots, buttonGloves, buttonGauntlets, buttonHeadgear, buttonHat, buttonHelmet, buttonClothing, buttonLightArmor, buttonHeavyArmor;
     [SerializeField] public Button buttonRing, buttonAmulet, buttonRunestone, buttonEnchantment, buttonSpirit, buttonMedicine, buttonPotion, buttonMagic;
     public void LinkButtonsCategory()
     {
         // Setup onClick events through code
+        buttonCraftMenu.onClick.AddListener(delegate { OnClickButtonCraftMenu(); });
+
         buttonDagger.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Dagger")); });
         buttonStaff.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Staff")); });
         buttonBow.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Bow")); });
@@ -328,7 +331,64 @@ public class Mine : MonoBehaviour
         buttonMedicine.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Medicine")); });
         buttonPotion.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Potion")); });
         buttonMagic.onClick.AddListener(delegate {OnClickCraftWindow(Global.instance.CheckItemsAvailable("Magic")); });
+    
+        // Start off all disabled
+        buttonWeapon.interactable = buttonArmor.interactable = buttonAccessory.interactable =
+        buttonDagger.interactable = buttonStaff.interactable = buttonBow.interactable = buttonMace.interactable = buttonAxe.interactable = buttonSpear.interactable = buttonSword.interactable = buttonWand.interactable = buttonCrossbow.interactable = buttonGun.interactable = 
+        buttonShield.interactable = buttonShoes.interactable = buttonBoots.interactable = buttonGloves.interactable = buttonGauntlets.interactable = buttonHeadgear.interactable = buttonHat.interactable = buttonHelmet.interactable = buttonClothing.interactable = buttonLightArmor.interactable = buttonHeavyArmor.interactable = 
+        buttonRing.interactable = buttonAmulet.interactable = buttonRunestone.interactable = buttonEnchantment.interactable = buttonSpirit.interactable = buttonMedicine.interactable = buttonPotion.interactable = buttonMagic.interactable =
+        false;
     }
+
+    public void OnClickButtonCraftMenu()
+    {
+        // Go through inventory and see what can be made
+        foreach(var kvp in Global.instance.GetInventory())
+        {
+            CheckCategoryAvailable(buttonWeapon, kvp, "Weapon");
+            CheckCategoryAvailable(buttonArmor, kvp, "Armor");
+            CheckCategoryAvailable(buttonAccessory, kvp, "Accessory");
+            CheckCategoryAvailable(buttonDagger, kvp, "Dagger");
+            CheckCategoryAvailable(buttonStaff, kvp, "Staff");
+            CheckCategoryAvailable(buttonBow, kvp, "Bow");
+            CheckCategoryAvailable(buttonMace, kvp, "Mace");
+            CheckCategoryAvailable(buttonAxe, kvp, "Axe");
+            CheckCategoryAvailable(buttonSpear, kvp, "Spear");
+            CheckCategoryAvailable(buttonSword, kvp, "Sword");
+            CheckCategoryAvailable(buttonWand, kvp, "Wand");
+            CheckCategoryAvailable(buttonCrossbow, kvp, "Crossbow");
+            CheckCategoryAvailable(buttonGun, kvp, "Gun");
+            CheckCategoryAvailable(buttonShield, kvp, "Shield");
+            CheckCategoryAvailable(buttonShoes, kvp, "Shoes");
+            CheckCategoryAvailable(buttonBoots, kvp, "Boots");
+            CheckCategoryAvailable(buttonGloves, kvp, "Gloves");
+            CheckCategoryAvailable(buttonGauntlets, kvp, "Gauntlets");
+            CheckCategoryAvailable(buttonHeadgear, kvp, "Headgear");
+            CheckCategoryAvailable(buttonHat, kvp, "Hat");
+            CheckCategoryAvailable(buttonHelmet, kvp, "Helmet");
+            CheckCategoryAvailable(buttonClothing, kvp, "Clothing");
+            CheckCategoryAvailable(buttonLightArmor, kvp, "LightArmor");
+            CheckCategoryAvailable(buttonHeavyArmor, kvp, "HeavyArmor");
+            CheckCategoryAvailable(buttonRing, kvp, "Ring");
+            CheckCategoryAvailable(buttonAmulet, kvp, "Amulet");
+            CheckCategoryAvailable(buttonRunestone, kvp, "Runestone");
+            CheckCategoryAvailable(buttonEnchantment, kvp, "Enchantment");
+            CheckCategoryAvailable(buttonSpirit, kvp, "Spirit");
+            CheckCategoryAvailable(buttonMedicine, kvp, "Medicine");
+            CheckCategoryAvailable(buttonPotion, kvp, "Potion");
+            CheckCategoryAvailable(buttonMagic, kvp, "Magic");
+        }
+    }
+    public void CheckCategoryAvailable(Button button, KeyValuePair<string, Item> kvp, string category)
+    {
+        if(!button.IsInteractable()){
+            if(kvp.Value.GetIsAvailable() && ((kvp.Value.category1 == category) || (kvp.Value.category2 == category)))
+            { 
+                button.interactable = true;
+            }
+        }
+    }
+
     [SerializeField] public Button buttonCraftRecent;
     private List<Item> itemsRecent = new List<Item>();
     public void PopulateCraftRecentWindow(string itemIDRecent)

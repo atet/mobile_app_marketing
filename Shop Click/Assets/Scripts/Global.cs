@@ -10,7 +10,7 @@ public class Global : MonoBehaviour
     // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
     private const float globalMultiplier = 10; public float GetGlobalMultiplier(){ return(globalMultiplier); }
 
-    private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190905";
+    private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190911";
     private const string filepathCharactersJSON = "Data/shop_click_characters";
     
     private const string filepathSecretJSON = "Data/AdMob"; private Secret secret; public Secret GetSecret(){ return(secret); }
@@ -251,7 +251,7 @@ public class Global : MonoBehaviour
     {
         if(MODE_DEBUG){
             // Everything is available to craft and only takes 10 seconds.
-            foreach (var kvp in inventory)
+            foreach(var kvp in inventory)
             {
                 kvp.Value.SetIsAvailable(true);
                 kvp.Value.timeCrafting = 2;
@@ -342,7 +342,7 @@ public class Global : MonoBehaviour
 
         foreach(KeyValuePair<string, Item> entry in inventory)
         {
-            if((entry.Value.category == itemCategory) && (entry.Value.GetIsAvailable())){
+            if((entry.Value.category2 == itemCategory) && (entry.Value.GetIsAvailable())){
                 //Debug.Log("Available " + itemCategory + ": " + entry.Value.name);
                 itemsAvailable.Add(entry.Value);
             }

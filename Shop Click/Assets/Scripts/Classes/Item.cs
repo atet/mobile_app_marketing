@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Serializable] public class Item
 {
-    public string id, name, category, filepathImage;
+    public string id, name, category1, category2, filepathImage;
     public string prerequsiteUnlock;
     public ulong prerequsiteUnlockCostResearchScrolls;
     public ulong tier, value, timeCrafting, xPMerchant, xPWorker;

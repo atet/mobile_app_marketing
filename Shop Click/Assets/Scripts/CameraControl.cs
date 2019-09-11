@@ -63,6 +63,9 @@ public class CameraControl : MonoBehaviour
                 // DO SOMETHING
                 // TODO: Don't allow clicking
                 Debug.Log("Outside unrestricted area: x = " + absolutePosition.x + ", y = " + absolutePosition.y); 
+
+                // WARNING: Weird issues with above not executing on phone, stuck on last tutorial with no navigation, disabling for now by also calling this outside of unrestricted area.
+                Tutorial.instance.RemoveUIOverlayPointer();
             }
         }
     }

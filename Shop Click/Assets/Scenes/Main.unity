@@ -82456,6 +82456,10 @@ MonoBehaviour:
   - {fileID: 1146735909}
   - {fileID: 943743874}
   - {fileID: 348432718}
+  buttonCraftMenu: {fileID: 2085613438}
+  buttonWeapon: {fileID: 1261028498}
+  buttonArmor: {fileID: 726169131}
+  buttonAccessory: {fileID: 1026809515}
   buttonDagger: {fileID: 1857980707}
   buttonStaff: {fileID: 291568361}
   buttonBow: {fileID: 759670999}
