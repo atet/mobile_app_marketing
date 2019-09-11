@@ -38,7 +38,7 @@ public class UI : MonoBehaviour
     }
 
     [SerializeField] public GameObject panelMineResource;
-    private List<TextMeshProUGUI> tMProMineResources = new List<TextMeshProUGUI>();
+    private List<TextMeshProUGUI> tMProMineResources = new List<TextMeshProUGUI>(); 
 
     public void InitPanelMineResources()
     {
@@ -69,14 +69,18 @@ public class UI : MonoBehaviour
     }
 
     [SerializeField] public GameObject panelMineResourceDetail;
-
-
     private List<TextMeshProUGUI> tMProMineResourcesDetailsLabels = new List<TextMeshProUGUI>();
     private List<TextMeshProUGUI> tMProMineResourcesDetailsLevels = new List<TextMeshProUGUI>();
     private List<TextMeshProUGUI> tMProMineResourcesDetailsRates = new List<TextMeshProUGUI>();
     private List<TextMeshProUGUI> tMProMineResourcesDetailsCaps = new List<TextMeshProUGUI>();
+
+    private List<TextMeshProUGUI> tMProMineComponentsDetailsLabels = new List<TextMeshProUGUI>();
+    private List<TextMeshProUGUI> tMProMineComponentsDetailsCaps = new List<TextMeshProUGUI>();
+
+
     public void InitPanelMineResourcesDetails()
     {
+        // Resources
         panelMineResourceDetail.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_1"].GetFilepathImage());
         panelMineResourceDetail.transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_2"].GetFilepathImage());
         panelMineResourceDetail.transform.GetChild(2).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_3"].GetFilepathImage());
@@ -85,12 +89,36 @@ public class UI : MonoBehaviour
         panelMineResourceDetail.transform.GetChild(5).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_6"].GetFilepathImage());
         panelMineResourceDetail.transform.GetChild(6).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_7"].GetFilepathImage());
         panelMineResourceDetail.transform.GetChild(7).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["resource_8"].GetFilepathImage());
-        for(int i = 0; i < panelMineResourceDetail.transform.childCount - 2; i++) // TODO: Components and close are the last indices, handle components later
+        for(int i = 0; i < panelMineResourceDetail.transform.childCount - 2; i++)
         {
             tMProMineResourcesDetailsLabels.Add( panelMineResourceDetail.transform.GetChild(i).transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>() );
             tMProMineResourcesDetailsLevels.Add( panelMineResourceDetail.transform.GetChild(i).transform.GetChild(1).transform.GetChild(1).GetComponent<TextMeshProUGUI>() );
             tMProMineResourcesDetailsRates.Add( panelMineResourceDetail.transform.GetChild(i).transform.GetChild(1).transform.GetChild(2).GetComponent<TextMeshProUGUI>() );
             tMProMineResourcesDetailsCaps.Add( panelMineResourceDetail.transform.GetChild(i).transform.GetChild(1).transform.GetChild(3).GetComponent<TextMeshProUGUI>() );
+        }
+
+        // Components
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_1"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_2"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(2).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_3"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(3).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_4"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(4).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_5"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(5).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_6"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(6).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_7"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(7).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_8"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(8).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_9"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(9).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_10"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(10).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_11"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(11).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_12"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(12).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_13"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(13).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_14"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(14).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_15"].GetFilepathImage());
+        panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(15).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_16"].GetFilepathImage());
+    
+        for(int i = 0; i < 16; i++)
+        {
+            tMProMineComponentsDetailsLabels.Add( panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(i).transform.GetChild(1).GetComponent<TextMeshProUGUI>() );
+            tMProMineComponentsDetailsCaps.Add( panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(i).transform.GetChild(2).GetComponent<TextMeshProUGUI>() );
         }
     }
     public void UpdatePanelMineResourcesDetail(int index, string resource)
@@ -99,6 +127,12 @@ public class UI : MonoBehaviour
         tMProMineResourcesDetailsLevels[index].text = "Lvl. " + Global.instance.GetResources()[resource].GetLevel().ToString();
         tMProMineResourcesDetailsRates[index].text = Global.instance.GetResources()[resource].ToStringRate();
         tMProMineResourcesDetailsCaps[index].text = Global.instance.GetResources()[resource].ToStringAmount() + "/" + Global.instance.GetResources()[resource].GetCap().ToString();
+    }
+    public void UpdatePanelMineComponentsDetail(int index, string resource)
+    {
+        tMProMineComponentsDetailsLabels[index].text = Global.instance.GetResources()[resource].GetLabel();
+        tMProMineComponentsDetailsCaps[index].text = Global.instance.GetResources()[resource].ToStringAmount() + "/" + Global.instance.GetResources()[resource].GetCap().ToString();
+        //Debug.Log(resource + " = " + Global.instance.GetResources()[resource].ToStringAmount());
     }
     public void UpdatePanelMineResourcesDetails()
     {
@@ -110,6 +144,23 @@ public class UI : MonoBehaviour
         UpdatePanelMineResourcesDetail(5, "resource_6");
         UpdatePanelMineResourcesDetail(6, "resource_7");
         UpdatePanelMineResourcesDetail(7, "resource_8");
+
+        UpdatePanelMineComponentsDetail(0, "component_1");
+        UpdatePanelMineComponentsDetail(1, "component_2");
+        UpdatePanelMineComponentsDetail(2, "component_3");
+        UpdatePanelMineComponentsDetail(3, "component_4");
+        UpdatePanelMineComponentsDetail(4, "component_5");
+        UpdatePanelMineComponentsDetail(5, "component_6");
+        UpdatePanelMineComponentsDetail(6, "component_7");
+        UpdatePanelMineComponentsDetail(7, "component_8");
+        UpdatePanelMineComponentsDetail(8, "component_9");
+        UpdatePanelMineComponentsDetail(9, "component_10");
+        UpdatePanelMineComponentsDetail(10, "component_11");
+        UpdatePanelMineComponentsDetail(11, "component_12");
+        UpdatePanelMineComponentsDetail(12, "component_13");
+        UpdatePanelMineComponentsDetail(13, "component_14");
+        UpdatePanelMineComponentsDetail(14, "component_15");
+        UpdatePanelMineComponentsDetail(15, "component_16");
     }
 
     // Start is called before the first frame update

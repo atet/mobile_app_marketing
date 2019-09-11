@@ -178,7 +178,7 @@ public class Resource
         timeRemaining = this.rate; // Initial set
         this.cap = cap;
         this.amount = amount;
-        // DebugLog();
+        //Debug.Log(label + " = " + amount);
     }
 
 }
