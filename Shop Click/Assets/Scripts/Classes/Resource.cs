@@ -17,6 +17,8 @@ public class Resource
         this.currentInvestmentValue += currentInvestmentValue;
         CheckLevelUp2(); // Check if enough to level up.
     }
+
+    // These values work for upgrading merchant experience OR incremental resource rate upgrades
     private bool thresholdBool = false; public bool GetThresholdBool(){ return(thresholdBool); } public void SetThresholdBool(bool thresholdBool){ this.thresholdBool = thresholdBool; }
     private int thresholdIndex;
     private List<int> thresholdKeys = new List<int>(); public List<int> GetThresholdKeys(){ return(thresholdKeys); } public void SetThresholdKeys(List<int> thresholdKeys){ this.thresholdKeys = thresholdKeys; }
@@ -26,12 +28,37 @@ public class Resource
     private ulong currentThresholdIncrementCoins; public ulong GetCurrentThresholdIncrementCoins(){ return(thresholdIncrementsCoins[thresholdIndex]); }
     private List<ulong> thresholdIncrementsCoins = new List<ulong>(); public List<ulong> GetThresholdIncrementsCoins(){ return(thresholdIncrementsCoins); } public void SetThresholdIncrementsCoins(List<ulong> thresholdIncrementsCoins){ this.thresholdIncrementsCoins = thresholdIncrementsCoins; currentThresholdIncrementCoins = this.thresholdIncrementsCoins[thresholdIndex];  }
     private ulong currentThresholdIncrementGems; public ulong GetCurrentThresholdIncrementGems(){ return(thresholdIncrementsGems[thresholdIndex]); }
-    private List<ulong> thresholdIncrementsGems = new List<ulong>(); public List<ulong> GetThresholdIncrementsGems(){ return(thresholdIncrementsGems); } public void SetThresholdIncrementsGems(List<ulong> thresholdIncrementsGems){ this.thresholdIncrementsGems = thresholdIncrementsGems; currentThresholdIncrementGems = this.thresholdIncrementsGems[thresholdIndex];  }
-
-    
+    private List<ulong> thresholdIncrementsGems = new List<ulong>(); public List<ulong> GetThresholdIncrementsGems(){ return(thresholdIncrementsGems); } public void SetThresholdIncrementsGems(List<ulong> thresholdIncrementsGems){ this.thresholdIncrementsGems = thresholdIncrementsGems; currentThresholdIncrementGems = this.thresholdIncrementsGems[thresholdIndex];  }    
     private List<string> thresholdTypes = new List<string>(); public List<string> GetThresholdTypes(){ return(thresholdTypes); } public void SetThresholdTypes(List<string> thresholdTypes){ this.thresholdTypes = thresholdTypes; }
     private List<string> thresholdDescriptions = new List<string>(); public List<string> GetThresholdDescriptions(){ return(thresholdDescriptions); } public void SetThresholdDescriptions(List<string> thresholdDescriptions){ this.thresholdDescriptions = thresholdDescriptions; }
     private List<bool> thresholdEventBools = new List<bool>();  public List<bool> GetThresholdEventBools(){ return(thresholdEventBools); } public void SetThresholdEventBools(List<bool> thresholdEventBools){ this.thresholdEventBools = thresholdEventBools; }
+
+
+    // For upgrading cap
+    private int thresholdCapIndex;
+    private List<ulong> thresholdCaps = new List<ulong>(); 
+    public string ToStringCap(){ return(cap.ToString("N0")); } public string ToStringNextCap(){ return(thresholdCaps[thresholdCapIndex + 1].ToString("N0")); }
+    public List<ulong> GetThresholdCaps(){ return(thresholdCaps); } 
+    public void SetThresholdCaps(List<ulong> thresholdCaps){ this.thresholdCaps = thresholdCaps; }
+    private List<ulong> thresholdCapCostsCoins = new List<ulong>(); 
+    public List<ulong> GetThresholdCapCostsCoins(){ return(thresholdCapCostsCoins); } 
+    public void SetThresholdCapCostCoins(List<ulong> thresholdCapCostsCoins)
+    {
+        this.thresholdCapCostsCoins = thresholdCapCostsCoins;
+        currentThresholdCapCostCoins = this.thresholdCapCostsCoins[thresholdCapIndex];
+    }
+    private ulong currentThresholdCapCostCoins; public ulong GetCurrentThresholdCapCostCoins(){ return(currentThresholdCapCostCoins); } 
+    private List<ulong> thresholdCapCostsGems = new List<ulong>(); 
+    public List<ulong> GetThresholdCapCostsGems(){ return(thresholdCapCostsGems); } 
+    public void SetThresholdCapCostGems(List<ulong> thresholdCapCostsGems)
+    {
+        this.thresholdCapCostsGems = thresholdCapCostsGems;
+        currentThresholdCapCostGems = this.thresholdCapCostsGems[thresholdCapIndex];
+    }
+    private ulong currentThresholdCapCostGems; public ulong GetCurrentThresholdCapCostGems(){ return(currentThresholdCapCostGems); } 
+
+
+
     private float timeRemaining;
     public void CheckTimeRemaining()
     {
@@ -88,7 +115,7 @@ public class Resource
         }
     }
 
-    public void CheckLevelUp()
+    public void CheckLevelUp() // This is for merchant experience, nothing but level goes up
     {
         //Debug.Log("Called CheckLevelUp()"); 
         // TODO: Check where current amountLifetimeGain value is between to handle multiple levelups in a single call.
@@ -99,9 +126,9 @@ public class Resource
             thresholdIndex++;
         }
     }
-    public void CheckLevelUp2()
+    public void CheckLevelUp2() // This is for incremental resource rates, resource rates goes up
     {
-        //Debug.Log("Called CheckLevelUp()"); 
+        //Debug.Log("Called CheckLevelUp()2"); 
         // TODO: Check where current amountLifetimeGain value is between to handle multiple levelups in a single call.
         if(currentInvestmentValue >= currentThresholdValue)
         {
@@ -114,6 +141,16 @@ public class Resource
             currentThresholdIncrementCoins = this.thresholdIncrementsCoins[thresholdIndex]; // New increment amount
         }
     }
+    public void CheckLevelUp3() // This is for resource caps, resource caps goes up
+    {
+        // No check here, check done in Town.cs
+        //Debug.Log("Called CheckLevelUp3()");    
+        LevelUp3(thresholdCapIndex);
+        thresholdCapIndex++;
+        cap = thresholdCaps[thresholdCapIndex]; // New cap.
+        currentThresholdCapCostCoins = this.thresholdCapCostsCoins[thresholdCapIndex]; // New threshold
+        currentThresholdCapCostGems = this.thresholdCapCostsGems[thresholdCapIndex];
+    }
     public void LevelUp(int index)
     {
         //Debug.Log("Called LevelUp()");
@@ -125,7 +162,11 @@ public class Resource
         // Make SFX sound
         SFX.instance.PlaySFXLevelUp();
     }
-    public ulong GetToNextLevelValue()
+    public void LevelUp3(int index)
+    {
+        SFX.instance.PlaySFXLevelUp();
+    }
+    public ulong GetToNextLevelValue() // To show amount of thresholdValues[thresholdIndex] needed for nest level
     {
         return(thresholdValues[thresholdIndex] - amountLifetimeGain);
     }
@@ -169,6 +210,8 @@ public class Resource
         thresholdIndex = 0;
         currentInvestmentValue = 0;
         //currentThresholdValue = thresholdValues[thresholdIndex];
+
+        thresholdCapIndex = 0;
 
 
         this.label = label;

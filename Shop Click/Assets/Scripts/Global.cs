@@ -114,13 +114,13 @@ public class Global : MonoBehaviour
         {
             resources.Add("resource_0", new Resource("Queue",       "Images/UI/queue",       1, 10, 10,  5));
             resources.Add("resource_1", new Resource("Iron",        "Images/UI/iron",        1, 10, 35,  5));
-            resources.Add("resource_2", new Resource("Wood",        "Images/UI/wood",        1, 10, 35,  0));
-            resources.Add("resource_3", new Resource("Hide",        "Images/UI/hide",        1, 10, 35,  0));
-            resources.Add("resource_4", new Resource("Herbs",       "Images/UI/herbs",       1, 10, 35,  0));
-            resources.Add("resource_5", new Resource("Steel",       "Images/UI/steel",       1, 45, 15,  0));
-            resources.Add("resource_6", new Resource("Titanium",    "Images/UI/titanium",    1, 45, 15,  0));
-            resources.Add("resource_7", new Resource("Electricity", "Images/UI/electricity", 1, 45, 15,  0));
-            resources.Add("resource_8", new Resource("Oil",         "Images/UI/oil",         1, 45, 15,  0));
+            resources.Add("resource_2", new Resource("Wood",        "Images/UI/wood",        1, 10,  0,  0));
+            resources.Add("resource_3", new Resource("Hide",        "Images/UI/hide",        1, 10,  0,  0));
+            resources.Add("resource_4", new Resource("Herbs",       "Images/UI/herbs",       1, 10,  0,  0));
+            resources.Add("resource_5", new Resource("Steel",       "Images/UI/steel",       1, 45,  0,  0));
+            resources.Add("resource_6", new Resource("Titanium",    "Images/UI/titanium",    1, 45,  0,  0));
+            resources.Add("resource_7", new Resource("Electricity", "Images/UI/electricity", 1, 45,  0,  0));
+            resources.Add("resource_8", new Resource("Oil",         "Images/UI/oil",         1, 45,  0,  0));
         }
 
         // Making components Resource instead of Item (since there won't be buy/sell components)
@@ -141,11 +141,6 @@ public class Global : MonoBehaviour
         resources.Add("component_15", new Resource("Wyrm Skull",    "Images/Component/component_57",  1, 0, 10,  0));
         resources.Add("component_16", new Resource("Starrock",      "Images/Component/component_100", 1, 0, 10,  0));
 
-
-
-
-
-
         resources["resource_1"].SetThresholdBool(true);
         resources["resource_1"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
         resources["resource_1"].SetThresholdIncrementsCoins(new List<ulong>(){100, 200, 400, 1000, 2200, 2800, 8000, 12000, 50000, 150000, 300000, 500000, 1000000, 2000000, 4000000, 10000000, 30000000, 50000000, 100000000});
@@ -155,6 +150,9 @@ public class Global : MonoBehaviour
         resources["resource_1"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
         resources["resource_1"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
         resources["resource_1"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+        resources["resource_1"].SetThresholdCaps(new List<ulong>(){35,47,58,70,81,93,104,116,127,139,150,162,173,185,196,208,219,231,242,254,265,277,288,300,311,323,334,346,357,369,380,392,403,415,426,438,449,461,472,484,495,507,518,530,541,553,564,576,587,599,610,622,633,645,656,668,679,691,702,714,725,737,748,760});
+        resources["resource_1"].SetThresholdCapCostCoins(new List<ulong>(){1225,1475,1775,2137,2572,3096,3726,4484,5398,6497,7820,9412,11328,13635,16411,19753,23775,28616,34443,41456,49897,60057,72286,87006,104722,126045,151711,182602,219784,264536,318401,383235,461269,555193,668242,804311,968085,1165208,1402468,1688040,2031761,2445470,2943419,3542761,4264142,5132410,6177477,7435341,8949332,10771604,12964929,15604861,18782338,22606817,27210040,32750575,39419280,47445873,57106849,68735003,82730893,99576640,119852535});
+        resources["resource_1"].SetThresholdCapCostGems(new List<ulong>(){2,2,2,2,3,3,3,4,4,5,5,6,7,8,9,10,12,13,15,17,19,22,25,28,32,36,41,47,53,60,69,78,88,100,114,129,147,166,189,214,243,276,313,356,404,458,520,590,670,761,863,980,1112,1263,1433,1627,1846,2096,2378,2700,3064,3478,3948});
 
         resources["resource_2"].SetThresholdBool(true);
         resources["resource_2"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
@@ -165,6 +163,9 @@ public class Global : MonoBehaviour
         resources["resource_2"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
         resources["resource_2"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
         resources["resource_2"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+        resources["resource_2"].SetThresholdCaps(new List<ulong>(){0,35,47,58,70,81,93,104,116,127,139,150,162,173,185,196,208,219,231,242,254,265,277,288,300,311,323,334,346,357,369,380,392,403,415,426,438,449,461,472,484,495,507,518,530,541,553,564,576,587,599,610,622,633,645,656,668,679,691,702,714,725,737,748,760});
+        resources["resource_2"].SetThresholdCapCostCoins(new List<ulong>(){6018,1225,1475,1775,2137,2572,3096,3726,4484,5398,6497,7820,9412,11328,13635,16411,19753,23775,28616,34443,41456,49897,60057,72286,87006,104722,126045,151711,182602,219784,264536,318401,383235,461269,555193,668242,804311,968085,1165208,1402468,1688040,2031761,2445470,2943419,3542761,4264142,5132410,6177477,7435341,8949332,10771604,12964929,15604861,18782338,22606817,27210040,32750575,39419280,47445873,57106849,68735003,82730893,99576640,119852535});
+        resources["resource_2"].SetThresholdCapCostGems(new List<ulong>(){11,2,2,2,2,3,3,3,4,4,5,5,6,7,8,9,10,12,13,15,17,19,22,25,28,32,36,41,47,53,60,69,78,88,100,114,129,147,166,189,214,243,276,313,356,404,458,520,590,670,761,863,980,1112,1263,1433,1627,1846,2096,2378,2700,3064,3478,3948});
 
         resources["resource_3"].SetThresholdBool(true);
         resources["resource_3"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
@@ -175,6 +176,9 @@ public class Global : MonoBehaviour
         resources["resource_3"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
         resources["resource_3"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
         resources["resource_3"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+        resources["resource_3"].SetThresholdCaps(new List<ulong>(){0,35,47,58,70,81,93,104,116,127,139,150,162,173,185,196,208,219,231,242,254,265,277,288,300,311,323,334,346,357,369,380,392,403,415,426,438,449,461,472,484,495,507,518,530,541,553,564,576,587,599,610,622,633,645,656,668,679,691,702,714,725,737,748,760});
+        resources["resource_3"].SetThresholdCapCostCoins(new List<ulong>(){6018,1225,1475,1775,2137,2572,3096,3726,4484,5398,6497,7820,9412,11328,13635,16411,19753,23775,28616,34443,41456,49897,60057,72286,87006,104722,126045,151711,182602,219784,264536,318401,383235,461269,555193,668242,804311,968085,1165208,1402468,1688040,2031761,2445470,2943419,3542761,4264142,5132410,6177477,7435341,8949332,10771604,12964929,15604861,18782338,22606817,27210040,32750575,39419280,47445873,57106849,68735003,82730893,99576640,119852535});
+        resources["resource_3"].SetThresholdCapCostGems(new List<ulong>(){11,2,2,2,2,3,3,3,4,4,5,5,6,7,8,9,10,12,13,15,17,19,22,25,28,32,36,41,47,53,60,69,78,88,100,114,129,147,166,189,214,243,276,313,356,404,458,520,590,670,761,863,980,1112,1263,1433,1627,1846,2096,2378,2700,3064,3478,3948});
 
         resources["resource_4"].SetThresholdBool(true);
         resources["resource_4"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
@@ -185,6 +189,9 @@ public class Global : MonoBehaviour
         resources["resource_4"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
         resources["resource_4"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
         resources["resource_4"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+        resources["resource_4"].SetThresholdCaps(new List<ulong>(){0,35,47,58,70,81,93,104,116,127,139,150,162,173,185,196,208,219,231,242,254,265,277,288,300,311,323,334,346,357,369,380,392,403,415,426,438,449,461,472,484,495,507,518,530,541,553,564,576,587,599,610,622,633,645,656,668,679,691,702,714,725,737,748,760});
+        resources["resource_4"].SetThresholdCapCostCoins(new List<ulong>(){6018,1225,1475,1775,2137,2572,3096,3726,4484,5398,6497,7820,9412,11328,13635,16411,19753,23775,28616,34443,41456,49897,60057,72286,87006,104722,126045,151711,182602,219784,264536,318401,383235,461269,555193,668242,804311,968085,1165208,1402468,1688040,2031761,2445470,2943419,3542761,4264142,5132410,6177477,7435341,8949332,10771604,12964929,15604861,18782338,22606817,27210040,32750575,39419280,47445873,57106849,68735003,82730893,99576640,119852535});
+        resources["resource_4"].SetThresholdCapCostGems(new List<ulong>(){11,2,2,2,2,3,3,3,4,4,5,5,6,7,8,9,10,12,13,15,17,19,22,25,28,32,36,41,47,53,60,69,78,88,100,114,129,147,166,189,214,243,276,313,356,404,458,520,590,670,761,863,980,1112,1263,1433,1627,1846,2096,2378,2700,3064,3478,3948});
 
         resources["resource_5"].SetThresholdBool(true);
         resources["resource_5"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
@@ -195,6 +202,9 @@ public class Global : MonoBehaviour
         resources["resource_5"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
         resources["resource_5"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
         resources["resource_5"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+        resources["resource_5"].SetThresholdCaps(new List<ulong>(){0,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,96,101,106,111,116,121,126,131,136,141,146,151,156,161,166,171,176,181,186,191,196,201,206,211,216,221,226,231,236,241,246,251,257,262,267,272,277,282,287,292,297,302,307,312,317,322,327,332});
+        resources["resource_5"].SetThresholdCapCostCoins(new List<ulong>(){59070,10715,12659,14955,17668,20873,24659,29132,34417,40660,48036,56749,67044,79205,93573,110547,130600,154290,182278,215343,254406,300555,355075,419484,495578,585475,691679,817148,965377,1140495,1347378,1591790,1880537,2221663,2624668,3100777,3663252,4327759,5112806,6040258,7135949,8430396,9959653,11766314,13900700,16422259,19401224,22920568,27078313,31990265,37793235,44648852,52748064,62316458,73620538,86975157,102752276,121391334,143411479,169426034,200159578,236468125,279362970,330038854});
+        resources["resource_5"].SetThresholdCapCostGems(new List<ulong>(){221,23,25,28,31,34,37,41,45,50,55,61,67,74,81,90,99,109,121,133,147,162,179,197,217,240,264,292,322,355,392,432,477,526,580,640,706,778,859,947,1045,1153,1271,1402,1547,1707,1883,2077,2291,2527,2788,3075,3392,3742,4128,4553,5023,5541,6112,6742,7437,8204,9050,9983});
 
         resources["resource_6"].SetThresholdBool(true);
         resources["resource_6"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
@@ -205,6 +215,9 @@ public class Global : MonoBehaviour
         resources["resource_6"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
         resources["resource_6"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
         resources["resource_6"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+        resources["resource_6"].SetThresholdCaps(new List<ulong>(){0,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,96,101,106,111,116,121,126,131,136,141,146,151,156,161,166,171,176,181,186,191,196,201,206,211,216,221,226,231,236,241,246,251,257,262,267,272,277,282,287,292,297,302,307,312,317,322,327,332});
+        resources["resource_6"].SetThresholdCapCostCoins(new List<ulong>(){59070,10715,12659,14955,17668,20873,24659,29132,34417,40660,48036,56749,67044,79205,93573,110547,130600,154290,182278,215343,254406,300555,355075,419484,495578,585475,691679,817148,965377,1140495,1347378,1591790,1880537,2221663,2624668,3100777,3663252,4327759,5112806,6040258,7135949,8430396,9959653,11766314,13900700,16422259,19401224,22920568,27078313,31990265,37793235,44648852,52748064,62316458,73620538,86975157,102752276,121391334,143411479,169426034,200159578,236468125,279362970,330038854});
+        resources["resource_6"].SetThresholdCapCostGems(new List<ulong>(){221,23,25,28,31,34,37,41,45,50,55,61,67,74,81,90,99,109,121,133,147,162,179,197,217,240,264,292,322,355,392,432,477,526,580,640,706,778,859,947,1045,1153,1271,1402,1547,1707,1883,2077,2291,2527,2788,3075,3392,3742,4128,4553,5023,5541,6112,6742,7437,8204,9050,9983});
 
         resources["resource_7"].SetThresholdBool(true);
         resources["resource_7"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
@@ -215,6 +228,9 @@ public class Global : MonoBehaviour
         resources["resource_7"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
         resources["resource_7"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
         resources["resource_7"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+        resources["resource_7"].SetThresholdCaps(new List<ulong>(){0,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,96,101,106,111,116,121,126,131,136,141,146,151,156,161,166,171,176,181,186,191,196,201,206,211,216,221,226,231,236,241,246,251,257,262,267,272,277,282,287,292,297,302,307,312,317,322,327,332});
+        resources["resource_7"].SetThresholdCapCostCoins(new List<ulong>(){59070,10715,12659,14955,17668,20873,24659,29132,34417,40660,48036,56749,67044,79205,93573,110547,130600,154290,182278,215343,254406,300555,355075,419484,495578,585475,691679,817148,965377,1140495,1347378,1591790,1880537,2221663,2624668,3100777,3663252,4327759,5112806,6040258,7135949,8430396,9959653,11766314,13900700,16422259,19401224,22920568,27078313,31990265,37793235,44648852,52748064,62316458,73620538,86975157,102752276,121391334,143411479,169426034,200159578,236468125,279362970,330038854});
+        resources["resource_7"].SetThresholdCapCostGems(new List<ulong>(){221,23,25,28,31,34,37,41,45,50,55,61,67,74,81,90,99,109,121,133,147,162,179,197,217,240,264,292,322,355,392,432,477,526,580,640,706,778,859,947,1045,1153,1271,1402,1547,1707,1883,2077,2291,2527,2788,3075,3392,3742,4128,4553,5023,5541,6112,6742,7437,8204,9050,9983});
 
         resources["resource_8"].SetThresholdBool(true);
         resources["resource_8"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
@@ -225,6 +241,9 @@ public class Global : MonoBehaviour
         resources["resource_8"].SetThresholdTypes(new List<string>(){"level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level", "level"});
         resources["resource_8"].SetThresholdDescriptions(new List<string>(){"Excitement is to be had, level 2!","Niceness, 3!!!","There's more to go level 4.","You have ascended to level 5.","You are on you way to the top, level 6.","Cool beans, level 7.","There's more to go level 8.","Sweet!, 9!","You are on you way to the top, level 10.","Sweet!, 11!","Congrats!, level 12.","You have ascended to level 13.","Merchant level 14.","Merchant level 15.","You made it to 16!","Here's a cake, level 17!","You made it to 18!","There's more to go level 19.","Excitement is to be had, 20!"});
         resources["resource_8"].SetThresholdEventBools(new List<bool>(){true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true});
+        resources["resource_8"].SetThresholdCaps(new List<ulong>(){0,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,96,101,106,111,116,121,126,131,136,141,146,151,156,161,166,171,176,181,186,191,196,201,206,211,216,221,226,231,236,241,246,251,257,262,267,272,277,282,287,292,297,302,307,312,317,322,327,332});
+        resources["resource_8"].SetThresholdCapCostCoins(new List<ulong>(){59070,10715,12659,14955,17668,20873,24659,29132,34417,40660,48036,56749,67044,79205,93573,110547,130600,154290,182278,215343,254406,300555,355075,419484,495578,585475,691679,817148,965377,1140495,1347378,1591790,1880537,2221663,2624668,3100777,3663252,4327759,5112806,6040258,7135949,8430396,9959653,11766314,13900700,16422259,19401224,22920568,27078313,31990265,37793235,44648852,52748064,62316458,73620538,86975157,102752276,121391334,143411479,169426034,200159578,236468125,279362970,330038854});
+        resources["resource_8"].SetThresholdCapCostGems(new List<ulong>(){221,23,25,28,31,34,37,41,45,50,55,61,67,74,81,90,99,109,121,133,147,162,179,197,217,240,264,292,322,355,392,432,477,526,580,640,706,778,859,947,1045,1153,1271,1402,1547,1707,1883,2077,2291,2527,2788,3075,3392,3742,4128,4553,5023,5541,6112,6742,7437,8204,9050,9983});
     }
 
     public void InitCharacters()
@@ -288,19 +307,26 @@ public class Global : MonoBehaviour
         }
         else
         {
-            inventory["axe_1"].SetIsAvailable(true); inventory["axe_1"].SetStock(0);
+            // Start off with only basic iron items
+            //inventory["axe_1"].SetIsAvailable(true); inventory["axe_1"].SetStock(0);
             inventory["dagger_1"].SetIsAvailable(true); inventory["dagger_1"].SetStock(0);
-            inventory["spear_1"].SetIsAvailable(true); inventory["spear_1"].SetStock(1);
-            inventory["bow_1"].SetIsAvailable(true); inventory["bow_1"].SetStock(1);
+            //inventory["spear_1"].SetIsAvailable(true); inventory["spear_1"].SetStock(1);
+            //inventory["bow_1"].SetIsAvailable(true); inventory["bow_1"].SetStock(1);
             inventory["harmor_1"].SetIsAvailable(true); inventory["harmor_1"].SetStock(0);
-            inventory["larmor_1"].SetIsAvailable(true); inventory["larmor_1"].SetStock(1);
+            //inventory["larmor_1"].SetIsAvailable(true); inventory["larmor_1"].SetStock(1);
             inventory["helmet_1"].SetIsAvailable(true); inventory["helmet_1"].SetStock(0);
-            inventory["headgear_1"].SetIsAvailable(true); inventory["headgear_1"].SetStock(0);
-            inventory["hat_1"].SetIsAvailable(true); inventory["hat_1"].SetStock(1);
+            //inventory["headgear_1"].SetIsAvailable(true); inventory["headgear_1"].SetStock(0);
+            //inventory["hat_1"].SetIsAvailable(true); inventory["hat_1"].SetStock(1);
             inventory["gauntlets_1"].SetIsAvailable(true); inventory["gauntlets_1"].SetStock(0);
             inventory["boots_1"].SetIsAvailable(true); inventory["boots_1"].SetStock(0);
-            inventory["shield_1"].SetIsAvailable(true); inventory["shield_1"].SetStock(0);
-            inventory["potion_1"].SetIsAvailable(true); inventory["potion_1"].SetStock(0);
+            //inventory["shield_1"].SetIsAvailable(true); inventory["shield_1"].SetStock(0);
+            //inventory["potion_1"].SetIsAvailable(true); inventory["potion_1"].SetStock(0);
+
+            // In stock but cannot make yet, to add some variety for the tutorial
+            inventory["spear_1"].SetStock(1);
+            inventory["bow_1"].SetStock(1);
+            inventory["larmor_1"].SetStock(1);
+            inventory["hat_1"].SetStock(1);
         }
 
     }

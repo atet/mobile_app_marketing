@@ -113,7 +113,8 @@ public class Tutorial : MonoBehaviour
     {
         activeUIOverlayPointer = false;
 
-        SummonUIOverlayTextBoxWithEvent("Almost...", "After years of being my apprentice, you're almost ready to take over my shop.\n\nToday will be your final test.\n\n- Biggs", 1);
+        SummonUIOverlayTextBoxWithEvent("Almost...", 
+        "After years of being my apprentice, you're almost ready to take over my shop.\n\nToday will be your final test.\n\n- Biggs", 1);
     }
     void Update()
     {

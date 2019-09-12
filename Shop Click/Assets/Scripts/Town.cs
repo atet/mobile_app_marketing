@@ -153,10 +153,10 @@ public class Town : MonoBehaviour
         panelTownDetailWindow.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = "Current Rate: " + currentResource.ToStringRate();
         panelTownDetailWindow.transform.GetChild(7).GetComponent<TextMeshProUGUI>().text = "Next Rate: " + currentResource.ToStringNextRate();
 
-        // Button coins text
+        // Button rate coins text
         panelTownDetailWindow.transform.GetChild(8).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = currentResource.GetCurrentThresholdIncrementCoins().ToString("N0");
 
-        // Button coins on click
+        // Button rate coins on click
         panelTownDetailWindow.transform.GetChild(8).GetComponent<Button>().onClick.RemoveAllListeners();
         panelTownDetailWindow.transform.GetChild(8).GetComponent<Button>().onClick.AddListener
         (
@@ -172,7 +172,7 @@ public class Town : MonoBehaviour
 
                     // Update stuff:
                         // Text progress, updated when money is added or level up.
-                        panelTownDetailWindow.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = "Next Level:\n" + currentResource.GetCurrentInvestmentValue().ToString("N0") + "/" + currentResource.GetCurrentThresholdValue();
+                        panelTownDetailWindow.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = "Next Level:\n" + currentResource.GetCurrentInvestmentValue().ToString("N0") + "/" + currentResource.GetCurrentThresholdValue().ToString("N0");
                         // Text level, updated when leveled up.
                         panelTownDetailWindow.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "  Level " + currentResource.GetLevel().ToString();
                         // Text rate, updated when leveled up.
@@ -197,10 +197,10 @@ public class Town : MonoBehaviour
         );
 
 
-        // Button gems text
+        // Button rate gems text
         panelTownDetailWindow.transform.GetChild(9).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = currentResource.GetCurrentThresholdIncrementGems().ToString("N0");
 
-        // Button gems on click
+        // Button rate gems on click
         panelTownDetailWindow.transform.GetChild(9).GetComponent<Button>().onClick.RemoveAllListeners();
         panelTownDetailWindow.transform.GetChild(9).GetComponent<Button>().onClick.AddListener
         (
@@ -240,9 +240,91 @@ public class Town : MonoBehaviour
 
 
 
+        // Text cap, updated when leveled up.
+        panelTownDetailWindow.transform.GetChild(10).GetComponent<TextMeshProUGUI>().text = "Current Cap: " + currentResource.ToStringCap();
+        panelTownDetailWindow.transform.GetChild(11).GetComponent<TextMeshProUGUI>().text = "Next Cap: " + currentResource.ToStringNextCap();
+
+        // Button cap coins text
+        panelTownDetailWindow.transform.GetChild(12).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = currentResource.GetCurrentThresholdCapCostCoins().ToString("N0");
+
+        // Button cap coins on click
+        panelTownDetailWindow.transform.GetChild(12).GetComponent<Button>().onClick.RemoveAllListeners();
+        panelTownDetailWindow.transform.GetChild(12).GetComponent<Button>().onClick.AddListener
+        (
+            delegate
+            {
+                // Check if enough coins
+                if(Global.instance.GetStats()["Coins"].CheckAmount(currentResource.GetCurrentThresholdCapCostCoins())){
+                    // Remove amount of coins
+                    Global.instance.GetStats()["Coins"].RemoveAmount(currentResource.GetCurrentThresholdCapCostCoins());
+
+                    // Level up
+                    currentResource.CheckLevelUp3();
+
+                    // Update stuff:
+                        // Text cap, updated when leveled up.
+                        panelTownDetailWindow.transform.GetChild(10).GetComponent<TextMeshProUGUI>().text = "Current Cap: " + currentResource.ToStringCap();
+                        panelTownDetailWindow.transform.GetChild(11).GetComponent<TextMeshProUGUI>().text = "Next Cap: " + currentResource.ToStringNextCap();
+                        // Button coins text
+                        panelTownDetailWindow.transform.GetChild(12).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = currentResource.GetCurrentThresholdCapCostCoins().ToString("N0");
+                        // Button gems text
+                        panelTownDetailWindow.transform.GetChild(13).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = currentResource.GetCurrentThresholdCapCostGems().ToString("N0");
+
+                    // Play SFX
+                    SFX.instance.PlaySFXSale();
+                }
+                else
+                {
+                    // Play SFX
+                    SFX.instance.PlaySFXNoGo();  
+                }
+            }
+        );
+
+        // Button cap gems text
+        panelTownDetailWindow.transform.GetChild(13).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = currentResource.GetCurrentThresholdCapCostGems().ToString("N0");
+
+        // Button cap gems on click
+        panelTownDetailWindow.transform.GetChild(13).GetComponent<Button>().onClick.RemoveAllListeners();
+        panelTownDetailWindow.transform.GetChild(13).GetComponent<Button>().onClick.AddListener
+        (
+            delegate
+            {
+                // Check if enough gems
+                if(Global.instance.GetStats()["Gems"].CheckAmount(currentResource.GetCurrentThresholdCapCostGems())){
+                    // Remove amount of gems
+                    Global.instance.GetStats()["Gems"].RemoveAmount(currentResource.GetCurrentThresholdCapCostGems());
+
+                    // Level up
+                    currentResource.CheckLevelUp3();
+
+                    // Update stuff:
+                        // Text cap, updated when leveled up.
+                        panelTownDetailWindow.transform.GetChild(10).GetComponent<TextMeshProUGUI>().text = "Current Cap: " + currentResource.ToStringCap();
+                        panelTownDetailWindow.transform.GetChild(11).GetComponent<TextMeshProUGUI>().text = "Next Cap: " + currentResource.ToStringNextCap();
+                        // Button coins text
+                        panelTownDetailWindow.transform.GetChild(12).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = currentResource.GetCurrentThresholdCapCostCoins().ToString("N0");
+                        // Button gems text
+                        panelTownDetailWindow.transform.GetChild(13).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = currentResource.GetCurrentThresholdCapCostGems().ToString("N0");
+                    // Play SFX
+                    SFX.instance.PlaySFXSale();
+                }
+                else
+                {
+                    // Play SFX
+                    SFX.instance.PlaySFXNoGo();  
+                }
+            }
+        );
+
+
+
+
+
+
         // Button close.
-        panelTownDetailWindow.transform.GetChild(10).GetComponent<Button>().onClick.RemoveAllListeners();
-        panelTownDetailWindow.transform.GetChild(10).GetComponent<Button>().onClick.AddListener
+        panelTownDetailWindow.transform.GetChild(14).GetComponent<Button>().onClick.RemoveAllListeners();
+        panelTownDetailWindow.transform.GetChild(14).GetComponent<Button>().onClick.AddListener
         (
             delegate
             {
