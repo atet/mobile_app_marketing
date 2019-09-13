@@ -13,10 +13,12 @@ using UnityEngine;
     public string prerequisiteWorker2;
     public ulong prerequisiteWorker2Level;
     public ulong costResource1, costResource2, costResource3, costResource4, costResource5, costResource6, costResource7, costResource8;
-    public string costComponent1Name, costComponent1Quality; 
-    public ulong costComponent1; 
-    public string costComponent2Name, costComponent2Quality; 
-    public ulong costComponent2; 
+    // public string costComponent1Name, costComponent1Quality; 
+    // public ulong costComponent1; 
+    // public string costComponent2Name, costComponent2Quality; 
+    // public ulong costComponent2; 
+    public ulong costComponent1, costComponent2, costComponent3, costComponent4, costComponent5, costComponent6, costComponent7, costComponent8, costComponent9, costComponent10, costComponent11, costComponent12, costComponent13, costComponent14, costComponent15, costComponent16;
+    public ulong costAmulet_1, costAxe_2, costBoots_3, costBow_2, costClothing_2, costCrossbow_3, costDagger_2, costDagger_3, costGauntlets_2, costHarmor_1, costHarmor_2, costHarmor_3, costHeadgear_1, costHelmet_1, costHelmet_2, costMace_1, costMace_4, costMagic_1, costMagic_3, costMedicine_1, costRing_1, costRing_3, costRunestone_1, costRunestone_2, costShoes_2, costSpear_2, costStaff_2, costSword_1;
     public ulong statATK, statDEF, statHP; 
     public string upgradeCrafting1, upgradeCrafting1Key, upgradeCrafting1Value;
     public string upgradeCrafting1Count; 
@@ -67,6 +69,22 @@ using UnityEngine;
         Global.instance.GetResources()["resource_6"].RemoveAmount(costResource6);
         Global.instance.GetResources()["resource_7"].RemoveAmount(costResource7);
         Global.instance.GetResources()["resource_8"].RemoveAmount(costResource8);
+        Global.instance.GetResources()["component_1"].RemoveAmount(costComponent1);
+        Global.instance.GetResources()["component_2"].RemoveAmount(costComponent2);
+        Global.instance.GetResources()["component_3"].RemoveAmount(costComponent3);
+        Global.instance.GetResources()["component_4"].RemoveAmount(costComponent4);
+        Global.instance.GetResources()["component_5"].RemoveAmount(costComponent5);
+        Global.instance.GetResources()["component_6"].RemoveAmount(costComponent6);
+        Global.instance.GetResources()["component_7"].RemoveAmount(costComponent7);
+        Global.instance.GetResources()["component_8"].RemoveAmount(costComponent8);
+        Global.instance.GetResources()["component_9"].RemoveAmount(costComponent9);
+        Global.instance.GetResources()["component_10"].RemoveAmount(costComponent10);
+        Global.instance.GetResources()["component_11"].RemoveAmount(costComponent11);
+        Global.instance.GetResources()["component_12"].RemoveAmount(costComponent12);
+        Global.instance.GetResources()["component_13"].RemoveAmount(costComponent13);
+        Global.instance.GetResources()["component_14"].RemoveAmount(costComponent14);
+        Global.instance.GetResources()["component_15"].RemoveAmount(costComponent15);
+        Global.instance.GetResources()["component_16"].RemoveAmount(costComponent16);
     }
     public void CraftItem()
     {
@@ -98,7 +116,23 @@ using UnityEngine;
             (Global.instance.GetResources()["resource_5"].CheckAmount(costResource5)) &&
             (Global.instance.GetResources()["resource_6"].CheckAmount(costResource6)) &&
             (Global.instance.GetResources()["resource_7"].CheckAmount(costResource7)) &&
-            (Global.instance.GetResources()["resource_8"].CheckAmount(costResource8))
+            (Global.instance.GetResources()["resource_8"].CheckAmount(costResource8)) &&
+            (Global.instance.GetResources()["component_1"].CheckAmount(costComponent1)) &&
+            (Global.instance.GetResources()["component_2"].CheckAmount(costComponent2)) &&
+            (Global.instance.GetResources()["component_3"].CheckAmount(costComponent3)) &&
+            (Global.instance.GetResources()["component_4"].CheckAmount(costComponent4)) &&
+            (Global.instance.GetResources()["component_5"].CheckAmount(costComponent5)) &&
+            (Global.instance.GetResources()["component_6"].CheckAmount(costComponent6)) &&
+            (Global.instance.GetResources()["component_7"].CheckAmount(costComponent7)) &&
+            (Global.instance.GetResources()["component_8"].CheckAmount(costComponent8)) &&
+            (Global.instance.GetResources()["component_9"].CheckAmount(costComponent9)) &&
+            (Global.instance.GetResources()["component_10"].CheckAmount(costComponent10)) &&
+            (Global.instance.GetResources()["component_11"].CheckAmount(costComponent11)) &&
+            (Global.instance.GetResources()["component_12"].CheckAmount(costComponent12)) &&
+            (Global.instance.GetResources()["component_13"].CheckAmount(costComponent13)) &&
+            (Global.instance.GetResources()["component_14"].CheckAmount(costComponent14)) &&
+            (Global.instance.GetResources()["component_15"].CheckAmount(costComponent15)) &&
+            (Global.instance.GetResources()["component_16"].CheckAmount(costComponent16))
             )
         {
             //Debug.Log("CheckResource() = true");
