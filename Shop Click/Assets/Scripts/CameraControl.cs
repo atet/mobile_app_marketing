@@ -265,6 +265,10 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped right, going left");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position) & swipeEnabledMine){
                 //Debug.Log("At Shop, going left to Mine");
+                if(Global.instance.GetMODE_TUTORIAL() && (Tutorial.instance.GetID_TUTORIAL_EVENT() == 5))
+                {
+                    Tutorial.instance.SummonUIOverlayTextBoxImageLarge("Crafting", "Do this:\n\n- Biggs", "Images/Tutorial/shop");
+                }
                 CameraPosition("Mine");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Mine", cameraPositions["Mine"]} };
                 //Debug.Log("currentScreen = Mine");

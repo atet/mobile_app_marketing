@@ -12,6 +12,7 @@ public class Tutorial : MonoBehaviour
     private Button buttonUIOverlayTextboxClose;
     private TextMeshProUGUI TMProUIOverlayTextboxTitle, TMProUIOverlayTextboxText;
 
+    private GameObject uIOverlayTextboxImageSmall, uIOverlayTextboxImageLarge;
 
     [SerializeField] public GameObject uIOverlayPointer;
     private bool activeUIOverlayPointer;
@@ -107,7 +108,15 @@ public class Tutorial : MonoBehaviour
 
         TMProUIOverlayTextboxTitle = uIOverlayTextbox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         TMProUIOverlayTextboxText = uIOverlayTextbox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        buttonUIOverlayTextboxClose = uIOverlayTextbox.transform.GetChild(2).GetComponent<Button>();
+
+        uIOverlayTextboxImageSmall = uIOverlayTextbox.transform.GetChild(2).gameObject;
+        uIOverlayTextboxImageSmall.SetActive(false);
+        uIOverlayTextboxImageLarge = uIOverlayTextbox.transform.GetChild(3).gameObject;
+        uIOverlayTextboxImageLarge.SetActive(false);
+
+// child.transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(kvp.Value.filepathImage);
+
+        buttonUIOverlayTextboxClose = uIOverlayTextbox.transform.GetChild(4).GetComponent<Button>();
     }
     void Start()
     {
@@ -140,6 +149,61 @@ public class Tutorial : MonoBehaviour
                 PanelScreens.SetActive(true);
                 uIOverlayTextbox.SetActive(false);
                 CameraControl.instance.EnableSwipe();
+            }
+        );
+    }
+    public void SummonUIOverlayTextBoxImageSmall(string title, string body, string filepathImageSmall)
+    {
+        CameraControl.instance.DisableSwipe();
+        PanelUIOverlayStats.SetActive(false);
+        PanelScreens.SetActive(false);
+        uIOverlayTextbox.SetActive(true);
+
+        TMProUIOverlayTextboxTitle.text = title;
+        TMProUIOverlayTextboxText.text = body;
+
+        uIOverlayTextboxImageSmall.SetActive(true);
+        uIOverlayTextboxImageSmall.GetComponent<Image>().sprite = Resources.Load<Sprite>(filepathImageSmall);
+
+        buttonUIOverlayTextboxClose.onClick.RemoveAllListeners();
+        buttonUIOverlayTextboxClose.onClick.AddListener
+        (
+            delegate
+            {
+                PanelUIOverlayStats.SetActive(true);
+                PanelScreens.SetActive(true);
+                uIOverlayTextbox.SetActive(false);
+                CameraControl.instance.EnableSwipe();
+
+                uIOverlayTextboxImageSmall.SetActive(false);
+            }
+        );
+
+    }
+    public void SummonUIOverlayTextBoxImageLarge(string title, string body, string filepathImageLarge)
+    {
+        CameraControl.instance.DisableSwipe();
+        PanelUIOverlayStats.SetActive(false);
+        PanelScreens.SetActive(false);
+        uIOverlayTextbox.SetActive(true);
+
+        TMProUIOverlayTextboxTitle.text = title;
+        TMProUIOverlayTextboxText.text = body;
+
+        uIOverlayTextboxImageLarge.SetActive(true);
+        uIOverlayTextboxImageLarge.GetComponent<Image>().sprite = Resources.Load<Sprite>(filepathImageLarge);
+
+        buttonUIOverlayTextboxClose.onClick.RemoveAllListeners();
+        buttonUIOverlayTextboxClose.onClick.AddListener
+        (
+            delegate
+            {
+                PanelUIOverlayStats.SetActive(true);
+                PanelScreens.SetActive(true);
+                uIOverlayTextbox.SetActive(false);
+                CameraControl.instance.EnableSwipe();
+
+                uIOverlayTextboxImageLarge.SetActive(false);
             }
         );
     }

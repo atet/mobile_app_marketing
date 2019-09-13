@@ -547,7 +547,7 @@ public class Shop : MonoBehaviour
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
         // Animation to swipe to go left
-        Tutorial.instance.SummonUIOverlayTextBox("Crafting", "We need to make this next item.\n\nSwipe right to go to the Mine.\n\n- Biggs");
+        Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Crafting", "We need to make this next item.\n\nSwipe right to go to the Mine.\n\n- Biggs", "Images/UI/hand_swipe_static_right");
     }
 
     public void TutorialSixthCustomer()
