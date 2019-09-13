@@ -6,7 +6,7 @@ public class CameraControl : MonoBehaviour
 {
     [SerializeField] public Camera cameraControl;
     public static CameraControl instance;
-    private bool inputEnabled;
+    //private bool inputEnabled;
     private bool swipeEnabled;
     private bool swipeEnabledTown;
     private bool swipeEnabledMine;
@@ -31,7 +31,7 @@ public class CameraControl : MonoBehaviour
     private Vector3 unrestrictedOnClickAreaTopLeft, unrestrictedOnClickAreaBottomRight;
     public void SetUnrestrictedOnClickArea(Vector3 unrestrictedOnClickAreaTopLeft, Vector3 unrestrictedOnClickAreaBottomRight)
     {
-        Debug.Log("Unrestricted area set as: Top-Left x,y = " + unrestrictedOnClickAreaTopLeft.x.ToString() + "," + unrestrictedOnClickAreaTopLeft.y.ToString() + 
+        Debug.Log("Unrestricted area set as: Top-Left x,y = " + unrestrictedOnClickAreaTopLeft.x.ToString() + "," + unrestrictedOnClickAreaTopLeft.y.ToString() +
         " and Bottom-Right x,y = " + unrestrictedOnClickAreaBottomRight.x.ToString() + "," + unrestrictedOnClickAreaBottomRight.y.ToString());
         this.unrestrictedOnClickAreaTopLeft = unrestrictedOnClickAreaTopLeft;
         this.unrestrictedOnClickAreaBottomRight = unrestrictedOnClickAreaBottomRight;
@@ -62,7 +62,7 @@ public class CameraControl : MonoBehaviour
             {
                 // DO SOMETHING
                 // TODO: Don't allow clicking
-                Debug.Log("Outside unrestricted area: x = " + absolutePosition.x + ", y = " + absolutePosition.y); 
+                Debug.Log("Outside unrestricted area: x = " + absolutePosition.x + ", y = " + absolutePosition.y);
 
                 // WARNING: Weird issues with above not executing on phone, stuck on last tutorial with no navigation, disabling for now by also calling this outside of unrestricted area.
                 Tutorial.instance.RemoveUIOverlayPointer();
@@ -103,7 +103,7 @@ public class CameraControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inputEnabled = true;
+        //inputEnabled = true;
         swipeEnabled = true;
         swipeEnabledTown = true;
         swipeEnabledMine = true;
@@ -117,6 +117,7 @@ public class CameraControl : MonoBehaviour
 
         Camera.main.transform.position = cameraPositions["Shop"];
 
+        // Start with navigating to these screens disabled.
         DisableSwipeColosseum();
         DisableSwipeMine();
         DisableSwipeTown();
@@ -132,7 +133,7 @@ public class CameraControl : MonoBehaviour
         {
             Swipe();
         }
-        if(restrictOnClick)
+        if(restrictOnClick) // Required to make pointer go away.
         {
             CheckUnrestrictedOnClickArea();
         }
@@ -169,7 +170,7 @@ public class CameraControl : MonoBehaviour
             // save ended touch 2d point
             secondPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             secondPressTime = Time.time;
-            
+
             // create vector from the two points
             currentSwipe = new Vector2(secondPressPos.x - firstPressPos.x, secondPressPos.y - firstPressPos.y);
 
@@ -203,7 +204,7 @@ public class CameraControl : MonoBehaviour
                 }
             }
         }
-        
+
     }
 
     public void CameraTransition(string direction)

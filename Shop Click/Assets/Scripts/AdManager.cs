@@ -11,7 +11,7 @@ using TMPro;
 
 public class AdManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI tMPStatusAdRewardedVideo; //, tMPAdRewardedVideoClickThrough, tMPAdRewardedVideoRewarded;
+    [SerializeField] public TextMeshProUGUI tMPStatusAdRewardedVideo; //, tMPAdRewardedVideoClickThrough, tMPAdRewardedVideoRewarded;
     private int adRewardedVideoClickThrough, adRewardedVideoRewarded;
 
     // Re-defining: If the user is already opting-in to view the ad, then that is probably a click-through already,
