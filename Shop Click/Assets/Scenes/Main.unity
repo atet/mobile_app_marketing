@@ -54350,7 +54350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1312913749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -78203,6 +78203,8 @@ MonoBehaviour:
   PanelScreens: {fileID: 1550087873}
   uIOverlayTextbox: {fileID: 1312913748}
   uIOverlayPointer: {fileID: 1327728816}
+  SEEN_UIOVERLAYTEXTBOX_SHOP_1: 0
+  SEEN_UIOVERLAYTEXTBOX_TOWN_1: 0
 --- !u!1 &1921732405
 GameObject:
   m_ObjectHideFlags: 0

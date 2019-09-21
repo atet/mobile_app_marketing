@@ -100,7 +100,12 @@ public class Tutorial : MonoBehaviour
     // Moving all code dealing with tutorials here.
 
     public static Tutorial instance;
+    
+    // This ID is to progress specific shop events during tutorial
     private int ID_TUTORIAL_EVENT = 0; public int GetID_TUTORIAL_EVENT(){ return(ID_TUTORIAL_EVENT); } public void IncrementID_TUTORIAL_EVENT(){ ID_TUTORIAL_EVENT++; }
+
+    // These bools are to keep track of specific UIOverlayTextBoxes not in Shop
+    public bool SEEN_UIOVERLAYTEXTBOX_SHOP_1, SEEN_UIOVERLAYTEXTBOX_TOWN_1;
 
     void Awake()
     {
@@ -121,6 +126,8 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         activeUIOverlayPointer = false;
+        SEEN_UIOVERLAYTEXTBOX_SHOP_1 = false;
+        SEEN_UIOVERLAYTEXTBOX_TOWN_1 = false;
 
         SummonUIOverlayTextBoxWithEvent("Almost...", 
         "After years of being my apprentice, you're almost ready to take over my shop.\n\nToday will be your final test.\n\n- Biggs", 1);

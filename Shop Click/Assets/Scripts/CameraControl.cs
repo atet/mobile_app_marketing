@@ -214,6 +214,11 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped up, going down");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position) & swipeEnabledTown){
                 //Debug.Log("At Shop, going down to Town");
+                if(!Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_TOWN_1)
+                {
+                    Tutorial.instance.SummonUIOverlayTextBoxImageLarge("Upgrading", "Click on your workers to upgrade resource rates and caps\n\n- Biggs", "Images/Tutorial/town");
+                    Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_TOWN_1 = true;
+                }
                 CameraPosition("Town");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Town", cameraPositions["Town"]} };
                 //Debug.Log("currentScreen = Town");
@@ -265,9 +270,10 @@ public class CameraControl : MonoBehaviour
             //Debug.Log("Swiped right, going left");
             if(cameraPositions["Shop"].Equals(Camera.main.transform.position) & swipeEnabledMine){
                 //Debug.Log("At Shop, going left to Mine");
-                if(Global.instance.GetMODE_TUTORIAL() && (Tutorial.instance.GetID_TUTORIAL_EVENT() == 5))
+                if(!Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_SHOP_1)
                 {
                     Tutorial.instance.SummonUIOverlayTextBoxImageLarge("Crafting", "Do this:\n\n- Biggs", "Images/Tutorial/shop");
+                    Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_SHOP_1 = true;
                 }
                 CameraPosition("Mine");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Mine", cameraPositions["Mine"]} };
