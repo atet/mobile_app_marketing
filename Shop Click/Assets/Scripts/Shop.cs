@@ -553,7 +553,7 @@ public class Shop : MonoBehaviour
     public void TutorialSixthCustomer()
     {
         Debug.Log("Sixth tutorial customer: Suggest something else.");
-        currentItem = Global.instance.GetInventory()["dagger_1"];
+        currentItem = Global.instance.GetInventory()["dagger_7"];
 
         // Update Item Sprite.
         UpdateSpriteItem();

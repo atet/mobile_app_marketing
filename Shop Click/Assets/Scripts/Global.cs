@@ -8,7 +8,7 @@ public class Global : MonoBehaviour
     private bool MODE_TUTORIAL = true; public bool GetMODE_TUTORIAL(){ return(MODE_TUTORIAL); } public void SetMODE_TUTORIAL(bool MODE_TUTORIAL){ this.MODE_TUTORIAL = MODE_TUTORIAL; }
     private const bool MODE_DEBUG = false; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
     // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
-    private const float globalMultiplier = 10; public float GetGlobalMultiplier(){ return(globalMultiplier); }
+    private const float globalMultiplier = 1; public float GetGlobalMultiplier(){ return(globalMultiplier); }
 
     private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190913";
     private const string filepathCharactersJSON = "Data/shop_click_characters";
@@ -66,11 +66,11 @@ public class Global : MonoBehaviour
         else
         {
             stats.Add("Level",  new Resource("Level",  "Images/UI/level" , 1, 0, System.UInt64.MaxValue,  1));
-            // stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins" , 1, 0, System.UInt64.MaxValue,  0));
-            stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins" , 1, 0, System.UInt64.MaxValue, 99999));
+            stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins" , 1, 0, System.UInt64.MaxValue,  0));
+            //stats.Add("Coins",  new Resource("Coins",  "Images/UI/coins" , 1, 0, System.UInt64.MaxValue, 99999));
             stats.Add("Chakra", new Resource("Chakra", "Images/UI/chakra", 1, 0,                    100, 46));
-            // stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems"  , 1, 0, System.UInt64.MaxValue,  0));
-            stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems"  , 1, 0, System.UInt64.MaxValue,  999));
+            stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems"  , 1, 0, System.UInt64.MaxValue,  0));
+            //stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems"  , 1, 0, System.UInt64.MaxValue,  999));
             stats.Add("Stock",  new Resource("Stock",  "Images/UI/stock" , 1, 0,                     15,  0));
         }
 
@@ -338,7 +338,7 @@ public class Global : MonoBehaviour
         inventory["spear_1"].SetStock(1);
         inventory["bow_1"].SetStock(1);
         inventory["larmor_1"].SetStock(1);
-        inventory["hat_1"].SetStock(1);
+        inventory["helmet_1"].SetStock(1);
     }
 
     public Item RandomItem(bool isStocked)
