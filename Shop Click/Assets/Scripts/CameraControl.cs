@@ -216,7 +216,7 @@ public class CameraControl : MonoBehaviour
                 //Debug.Log("At Shop, going down to Town");
                 if(!Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_TOWN_1)
                 {
-                    Tutorial.instance.SummonUIOverlayTextBoxImageLarge("Upgrading", "Click on your workers to upgrade resource rates and caps\n\n- Biggs", "Images/Tutorial/town");
+                    Tutorial.instance.SummonUIOverlayTextBoxImageLarge("Upgrading", "Click on your workers to upgrade resource rates and caps\n\n- Bigly", "Images/Tutorial/town");
                     Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_TOWN_1 = true;
                 }
                 CameraPosition("Town");
@@ -272,7 +272,7 @@ public class CameraControl : MonoBehaviour
                 //Debug.Log("At Shop, going left to Mine");
                 if(!Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_SHOP_1)
                 {
-                    Tutorial.instance.SummonUIOverlayTextBoxImageLarge("Crafting", "Do this:\n\n- Biggs", "Images/Tutorial/shop");
+                    Tutorial.instance.SummonUIOverlayTextBoxImageLarge("Crafting", "Craft new items using this menu:\n\n- Bigly", "Images/Tutorial/shop");
                     Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_SHOP_1 = true;
                 }
                 CameraPosition("Mine");

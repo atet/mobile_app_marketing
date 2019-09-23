@@ -129,8 +129,10 @@ public class Tutorial : MonoBehaviour
         SEEN_UIOVERLAYTEXTBOX_SHOP_1 = false;
         SEEN_UIOVERLAYTEXTBOX_TOWN_1 = false;
 
-        SummonUIOverlayTextBoxWithEvent("Almost...", 
-        "After years of being my apprentice, you're almost ready to take over my shop.\n\nToday will be your final test.\n\n- Biggs", 1);
+        SummonUIOverlayTextBoxWithEventImageLarge("Final Test", 
+        "You are almost ready to take over my shop.\n- Bigly",
+        1,
+        "Images/Tutorial/bigly_sm");
     }
     void Update()
     {
@@ -248,6 +250,88 @@ public class Tutorial : MonoBehaviour
                         break;
                 }
 
+            }
+        );
+    }
+    public void SummonUIOverlayTextBoxWithEventImageSmall(string title, string body, int eventID, string filepathImageSmall)
+    {
+        CameraControl.instance.DisableSwipe();
+        PanelUIOverlayStats.SetActive(false);
+        PanelScreens.SetActive(false);
+        uIOverlayTextbox.SetActive(true);
+
+        TMProUIOverlayTextboxTitle.text = title;
+        TMProUIOverlayTextboxText.text = body;
+
+        uIOverlayTextboxImageSmall.SetActive(true);
+        uIOverlayTextboxImageSmall.GetComponent<Image>().sprite = Resources.Load<Sprite>(filepathImageSmall);
+
+        buttonUIOverlayTextboxClose.onClick.RemoveAllListeners();
+        buttonUIOverlayTextboxClose.onClick.AddListener
+        (
+            delegate
+            {
+                PanelUIOverlayStats.SetActive(true);
+                PanelScreens.SetActive(true);
+                uIOverlayTextbox.SetActive(false);
+                CameraControl.instance.EnableSwipe();
+
+                switch(eventID)
+                {
+                    case 1:
+                        // Console.WriteLine("someInt = 1");
+                        SummonUIOverlayPointer("ButtonQueue");
+                        break;
+                    case 2:
+                        // Console.WriteLine("someInt = 2");
+                        break;
+                    default:
+                        // Console.WriteLine("someInt = something other than 1 or 2");
+                        break;
+                }
+
+                uIOverlayTextboxImageSmall.SetActive(false);
+            }
+        );
+    }
+    public void SummonUIOverlayTextBoxWithEventImageLarge(string title, string body, int eventID, string filepathImageLarge)
+    {
+        CameraControl.instance.DisableSwipe();
+        PanelUIOverlayStats.SetActive(false);
+        PanelScreens.SetActive(false);
+        uIOverlayTextbox.SetActive(true);
+
+        TMProUIOverlayTextboxTitle.text = title;
+        TMProUIOverlayTextboxText.text = body;
+
+        uIOverlayTextboxImageLarge.SetActive(true);
+        uIOverlayTextboxImageLarge.GetComponent<Image>().sprite = Resources.Load<Sprite>(filepathImageLarge);
+
+        buttonUIOverlayTextboxClose.onClick.RemoveAllListeners();
+        buttonUIOverlayTextboxClose.onClick.AddListener
+        (
+            delegate
+            {
+                PanelUIOverlayStats.SetActive(true);
+                PanelScreens.SetActive(true);
+                uIOverlayTextbox.SetActive(false);
+                CameraControl.instance.EnableSwipe();
+
+                switch(eventID)
+                {
+                    case 1:
+                        // Console.WriteLine("someInt = 1");
+                        SummonUIOverlayPointer("ButtonQueue");
+                        break;
+                    case 2:
+                        // Console.WriteLine("someInt = 2");
+                        break;
+                    default:
+                        // Console.WriteLine("someInt = something other than 1 or 2");
+                        break;
+                }
+
+                uIOverlayTextboxImageLarge.SetActive(false);
             }
         );
     }

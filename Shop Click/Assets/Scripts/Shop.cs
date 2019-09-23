@@ -390,7 +390,7 @@ public class Shop : MonoBehaviour
 
         panelBonusButton.SetActive(true);
 
-        Tutorial.instance.SummonUIOverlayTextBox("Shop Click", "You're ready to take over my shop.\n\nGood luck!\n\n- Biggs");
+        Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Congrats!", "You're ready to take over my shop.\n\nSwipe down to go to town.\n\nGood luck!\n\n- Bigly", "Images/UI/hand_swipe_static_up");
     }
     public void TutorialFirstCustomer()
     {
@@ -416,7 +416,7 @@ public class Shop : MonoBehaviour
 
         // Custom character picture and text.
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
-        tMProDialog.text = "Biggs: Sell me this item for some coins.";
+        tMProDialog.text = "Bigly: Sell me this item for some coins.";
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
@@ -446,7 +446,7 @@ public class Shop : MonoBehaviour
 
         // Custom character picture and text.
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
-        tMProDialog.text = "Biggs: Save up energy by rebating.";
+        tMProDialog.text = "Bigly: Save up energy by rebating.";
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
@@ -477,7 +477,7 @@ public class Shop : MonoBehaviour
 
         // Custom character picture and text.
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
-        tMProDialog.text = "Biggs: Spend that energy to upcharge!";
+        tMProDialog.text = "Bigly: Spend that energy to upcharge!";
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
@@ -508,7 +508,7 @@ public class Shop : MonoBehaviour
 
         // Custom character picture and text.
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
-        tMProDialog.text = "Biggs: Can't make this yet, Refuse sale.";
+        tMProDialog.text = "Bigly: Can't make this yet, Refuse sale.";
 
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
@@ -540,20 +540,20 @@ public class Shop : MonoBehaviour
 
         // Custom character picture and text.
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
-        tMProDialog.text = "Biggs: Not in stock, but we can make it.";
+        tMProDialog.text = "Bigly: Not in stock, but we can make it.";
 
         CameraControl.instance.EnableSwipeMine();
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
         // Instructions to swipe to go left
-        Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Crafting", "We need to make this next item.\n\nSwipe right to go to the Mine.\n\n- Biggs", "Images/UI/hand_swipe_static_right");
+        Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Crafting", "We are out of Dirks.\n\nSwipe right to go to the Mine to craft another one.\n\n- Bigly", "Images/UI/hand_swipe_static_right");
     }
 
     public void TutorialSixthCustomer()
     {
         Debug.Log("Sixth tutorial customer: Suggest something else.");
-        currentItem = Global.instance.GetInventory()["dagger_7"];
+        currentItem = Global.instance.GetInventory()["harmor_7"];
 
         // Update Item Sprite.
         UpdateSpriteItem();
@@ -574,7 +574,7 @@ public class Shop : MonoBehaviour
 
         // Custom character picture and text.
         imageCharacter.sprite = Resources.Load<Sprite>("Images/Characters/20");
-        tMProDialog.text = "Biggs: Let's suggest something else.";
+        tMProDialog.text = "Bigly: Suggest something in stock.";
 
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
