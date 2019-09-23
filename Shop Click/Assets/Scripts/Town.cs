@@ -11,6 +11,7 @@ public class Town : MonoBehaviour
     private List<GameObject> panelTownWorkers = new List<GameObject>(); // To activate/inactivate workers.
     // private List<TextMeshProUGUI> uITownResourcesDetailsLevels = new List<TextMeshProUGUI>(); // Update UI.
     // private List<TextMeshProUGUI> uITownResourcesDetailsRates = new List<TextMeshProUGUI>(); // Update UI.
+    public List<GameObject> GetPanelTownWorkers(){ return(panelTownWorkers); }
     [SerializeField] public GameObject panelTownDetailWindow; // This is the window with the details.
 
     // Only first eight workers for now
@@ -37,6 +38,12 @@ public class Town : MonoBehaviour
             tMProResourceLevels.Add( panelTownWorker.transform.GetChild(i).transform.GetChild(0).transform.GetChild(3).GetComponent<TextMeshProUGUI>() );
             tMProResourceRates.Add( panelTownWorker.transform.GetChild(i).transform.GetChild(0).transform.GetChild(4).GetComponent<TextMeshProUGUI>() );
         }
+
+        // Disable advanced resources at start, need to upgrade basic resources to level 7 to unlock
+        panelTownWorkers[4].SetActive(false); // resource_4
+        panelTownWorkers[5].SetActive(false); // resource_5
+        panelTownWorkers[6].SetActive(false); // resource_6
+        panelTownWorkers[7].SetActive(false); // resource_7
         
     }
 

@@ -155,10 +155,52 @@ public class Resource
     {
         //Debug.Log("Called LevelUp()");
         level = thresholdKeys[index];
+
         if(thresholdEventBools[index])
         {
-            Tutorial.instance.SummonUIOverlayTextBox("Level Up!", thresholdDescriptions[index]);
+            switch(thresholdTypes[index])
+            {
+                case "level":
+                    Tutorial.instance.SummonUIOverlayTextBox("Level Up!", thresholdDescriptions[index]);                    
+                    break;
+                case "unlock_id01":
+                    // resource_1 just turned level 7, so unlock resource_5
+                    Town.instance.GetPanelTownWorkers()[4].SetActive(true);
+                    UI.instance.panelMineResource.transform.GetChild(4).gameObject.SetActive(true);
+                    UI.instance.panelMineResourceDetail.transform.GetChild(4).gameObject.SetActive(true);
+                    Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Unlocked", "Your Workshop is now\nLevel 7!\n\nYou've unlocked the Forge to research the Steel resource.", "Images/UI/steel");   
+
+                    break;
+                case "unlock_id02":
+                    // resource_2 just turned level 7, so unlock resource_6
+                    Town.instance.GetPanelTownWorkers()[5].SetActive(true);
+                    UI.instance.panelMineResource.transform.GetChild(5).gameObject.SetActive(true);
+                    UI.instance.panelMineResourceDetail.transform.GetChild(5).gameObject.SetActive(true);
+                    Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Unlocked!", "Your Saw Mill is now\nLevel 7!\n\nYou've unlocked the University to research the Titanium resource.", "Images/UI/titanium");   
+
+                    break;
+                case "unlock_id03":
+                    // resource_3 just turned level 7, so unlock resource_7
+                    Town.instance.GetPanelTownWorkers()[6].SetActive(true);
+                    UI.instance.panelMineResource.transform.GetChild(6).gameObject.SetActive(true);
+                    UI.instance.panelMineResourceDetail.transform.GetChild(6).gameObject.SetActive(true);
+                    Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Unlocked!", "Your Guild is now\nLevel 7!\n\nYou've unlocked the Laboratory to research the Electricity resource.", "Images/UI/electricity");   
+
+                    break;
+                case "unlock_id04":
+                    // resource_4 just turned level 7, so unlock resource_8
+                    Town.instance.GetPanelTownWorkers()[7].SetActive(true);
+                    UI.instance.panelMineResource.transform.GetChild(7).gameObject.SetActive(true);
+                    UI.instance.panelMineResourceDetail.transform.GetChild(7).gameObject.SetActive(true);
+                    Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Unlocked!", "Your Dispensary is now\nLevel 7!\n\nYou've unlocked the Restaurant to research the Oil resource.", "Images/UI/oil");   
+
+                    break;
+                default:
+                    break;
+            }
         }
+
+
         // Make SFX sound
         SFX.instance.PlaySFXLevelUp();
     }

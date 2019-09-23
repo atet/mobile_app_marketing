@@ -216,7 +216,7 @@ public class CameraControl : MonoBehaviour
                 //Debug.Log("At Shop, going down to Town");
                 if(!Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_TOWN_1)
                 {
-                    Tutorial.instance.SummonUIOverlayTextBoxImageLarge("Upgrading", "Click on your workers to upgrade resource rates and caps\n\n- Bigly", "Images/Tutorial/town");
+                    Tutorial.instance.SummonUIOverlayTextBoxImageLarge("Upgrading", "Click on your workers to upgrade resource rates and caps.\n\nYou'll unlock new workers as you upgrade!\n\n- Bigly", "Images/Tutorial/town");
                     Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_TOWN_1 = true;
                 }
                 CameraPosition("Town");

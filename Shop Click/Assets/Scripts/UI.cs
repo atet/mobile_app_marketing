@@ -6,6 +6,7 @@ using TMPro;
 
 public class UI : MonoBehaviour
 {
+    public static UI instance;
     // UI Overlay: Shown on all screens.
     [SerializeField] public GameObject panelUIOverlayStats;
     // Order is coins, level, chakra, gems
@@ -55,6 +56,13 @@ public class UI : MonoBehaviour
         {
             tMProMineResources.Add( panelMineResource.transform.GetChild(i).transform.GetChild(1).GetComponent<TextMeshProUGUI>() );
         }
+
+        // Disable advanced resources at start, need to upgrade basic resources to level 7 to unlock
+        panelMineResource.transform.GetChild(4).gameObject.SetActive(false);
+        panelMineResource.transform.GetChild(5).gameObject.SetActive(false);
+        panelMineResource.transform.GetChild(6).gameObject.SetActive(false);
+        panelMineResource.transform.GetChild(7).gameObject.SetActive(false);
+
     }
     public void UpdatePanelMineResources()
     {
@@ -131,6 +139,12 @@ public class UI : MonoBehaviour
             tMProMineComponentsDetailsLabels.Add( panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(i).transform.GetChild(1).GetComponent<TextMeshProUGUI>() );
             tMProMineComponentsDetailsCaps.Add( panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(i).transform.GetChild(2).GetComponent<TextMeshProUGUI>() );
         }
+
+        // Disable advanced resources at start, need to upgrade basic resources to level 7 to unlock
+        panelMineResourceDetail.transform.GetChild(4).gameObject.SetActive(false);
+        panelMineResourceDetail.transform.GetChild(5).gameObject.SetActive(false);
+        panelMineResourceDetail.transform.GetChild(6).gameObject.SetActive(false);
+        panelMineResourceDetail.transform.GetChild(7).gameObject.SetActive(false);
     }
     public void UpdatePanelMineResourcesDetail(int index, string resource)
     {
@@ -172,6 +186,11 @@ public class UI : MonoBehaviour
         UpdatePanelMineComponentsDetail(13, "component_14");
         UpdatePanelMineComponentsDetail(14, "component_15");
         UpdatePanelMineComponentsDetail(15, "component_16");
+    }
+
+    void Awake()
+    {
+        instance = this;
     }
 
     // Start is called before the first frame update
