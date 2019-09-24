@@ -8,9 +8,9 @@ public class Global : MonoBehaviour
     private bool MODE_TUTORIAL = true; public bool GetMODE_TUTORIAL(){ return(MODE_TUTORIAL); } public void SetMODE_TUTORIAL(bool MODE_TUTORIAL){ this.MODE_TUTORIAL = MODE_TUTORIAL; }
     private const bool MODE_DEBUG = false; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
     // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
-    private const float globalMultiplier = 1; public float GetGlobalMultiplier(){ return(globalMultiplier); }
+    private const float globalMultiplier = 10; public float GetGlobalMultiplier(){ return(globalMultiplier); }
 
-    private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190913";
+    private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190923";
     private const string filepathCharactersJSON = "Data/shop_click_characters";
     
     private const string filepathSecretJSON = "Data/AdMob"; private Secret secret; public Secret GetSecret(){ return(secret); }

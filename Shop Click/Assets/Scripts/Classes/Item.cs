@@ -21,15 +21,15 @@ using UnityEngine;
     public ulong costAmulet_1, costAxe_2, costBoots_3, costBow_2, costClothing_2, costCrossbow_3, costDagger_2, costDagger_3, costGauntlets_2, costHarmor_1, costHarmor_2, costHarmor_3, costHeadgear_1, costHelmet_1, costHelmet_2, costMace_1, costMace_4, costMagic_1, costMagic_3, costMedicine_1, costRing_1, costRing_3, costRunestone_1, costRunestone_2, costShoes_2, costSpear_2, costStaff_2, costSword_1;
     public ulong statATK, statDEF, statHP; 
     public string upgradeCrafting1, upgradeCrafting1Key, upgradeCrafting1Value;
-    public string upgradeCrafting1Count; 
+    public int upgradeCrafting1Count; 
     public string upgradeCrafting2, upgradeCrafting2Key, upgradeCrafting2Value;
-    public string upgradeCrafting2Count; 
+    public int upgradeCrafting2Count; 
     public string upgradeCrafting3, upgradeCrafting3Key, upgradeCrafting3Value; 
-    public string upgradeCrafting3Count; 
+    public int upgradeCrafting3Count; 
     public string upgradeCrafting4, upgradeCrafting4Key, upgradeCrafting4Value; 
-    public string upgradeCrafting4Count; 
+    public int upgradeCrafting4Count; 
     public string upgradeCrafting5, upgradeCrafting5Key, upgradeCrafting5Value;
-    public string upgradeCrafting5Count; 
+    public int upgradeCrafting5Count; 
     public string upgradeAscension1, upgradeAscension1Key, upgradeAscension1Value; 
     public string upgradeAscension1Cost; 
     public string upgradeAscension2, upgradeAscension2Key, upgradeAscension2Value; 
@@ -92,7 +92,41 @@ using UnityEngine;
         stock += 1; lifetimeCrafted += 1;
         // Now increment Global stock
         Global.instance.GetStats()["Stock"].IncrementAmount();
+
+        // This occurs when you confirm the item crafted by clicking "Finished"
+        // if(lifetimeCrafted == 5)
+        // {
+        //     Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Unlocked!", "You're pretty good at " + name + "crafting!\n\nYou've unlocked the <ITEM_NAME>.", "Images/Items/null");
+        // }
+
+        if(lifetimeCrafted == upgradeCrafting1Count)
+        {
+            UpgradeCrafting(upgradeCrafting1, upgradeCrafting1Key, upgradeCrafting1Value);
+        }
+        else if(lifetimeCrafted == upgradeCrafting2Count)
+        {
+            UpgradeCrafting(upgradeCrafting2, upgradeCrafting2Key, upgradeCrafting2Value);
+        }
+        else if(lifetimeCrafted == upgradeCrafting3Count)
+        {
+            UpgradeCrafting(upgradeCrafting3, upgradeCrafting3Key, upgradeCrafting3Value);
+        }
+        else if(lifetimeCrafted == upgradeCrafting4Count)
+        {
+            UpgradeCrafting(upgradeCrafting4, upgradeCrafting4Key, upgradeCrafting4Value);
+        }
+        else if(lifetimeCrafted == upgradeCrafting5Count)
+        {
+            UpgradeCrafting(upgradeCrafting5, upgradeCrafting5Key, upgradeCrafting5Value);
+        }
+
     }
+    public void UpgradeCrafting(string upgradeCrafting, string upgradeCraftingKey, string upgradeCraftingValue)
+    {
+        // upgradeCrafting is the text of what's going on
+        Tutorial.instance.SummonUIOverlayTextBoxImageSmall("TEST", name + "\n\n" + upgradeCrafting, "Images/Items/null");
+    }
+
     public int lifetimeSold;
     public void SoldItem(){ stock -= 1; lifetimeSold += 1; }
 
