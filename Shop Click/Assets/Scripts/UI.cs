@@ -140,6 +140,13 @@ public class UI : MonoBehaviour
             tMProMineComponentsDetailsCaps.Add( panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(i).transform.GetChild(2).GetComponent<TextMeshProUGUI>() );
         }
 
+        // Make basic resource buttons non-interactable at start (make interactable at tutorial end)
+        panelMineResourceDetail.transform.GetChild(0).GetComponent<Button>().interactable = false;
+        panelMineResourceDetail.transform.GetChild(1).GetComponent<Button>().interactable = false;
+        panelMineResourceDetail.transform.GetChild(2).GetComponent<Button>().interactable = false;
+        panelMineResourceDetail.transform.GetChild(3).GetComponent<Button>().interactable = false;
+        panelMineResourceDetail.transform.GetChild(8).GetComponent<Button>().interactable = false;
+
         // Disable advanced resources at start, need to upgrade basic resources to level 7 to unlock
         panelMineResourceDetail.transform.GetChild(4).gameObject.SetActive(false);
         panelMineResourceDetail.transform.GetChild(5).gameObject.SetActive(false);

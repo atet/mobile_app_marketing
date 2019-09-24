@@ -387,7 +387,6 @@ public class Shop : MonoBehaviour
         CameraControl.instance.EnableSwipeTown();
         CameraControl.instance.EnableSwipeColosseum();
 
-
         panelBonusButton.SetActive(true);
 
         Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Congrats!", "You're ready to take over my shop.\n\nSwipe down to go to town.\n\nGood luck!\n\n- Bigly", "Images/UI/hand_swipe_static_up");

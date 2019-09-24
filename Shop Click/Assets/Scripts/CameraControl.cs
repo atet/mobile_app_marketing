@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class CameraControl : MonoBehaviour
 {
     [SerializeField] public Camera cameraControl;
@@ -218,6 +219,13 @@ public class CameraControl : MonoBehaviour
                 {
                     Tutorial.instance.SummonUIOverlayTextBoxImageLarge("Upgrading", "Click on your workers to upgrade resource rates and caps.\n\nYou'll unlock new workers as you upgrade!\n\n- Bigly", "Images/Tutorial/town");
                     Tutorial.instance.SEEN_UIOVERLAYTEXTBOX_TOWN_1 = true;
+                    
+                    // Make basic resource buttons interactable at tutorial end.
+                    UI.instance.panelMineResourceDetail.transform.GetChild(0).GetComponent<Button>().interactable = true;
+                    UI.instance.panelMineResourceDetail.transform.GetChild(1).GetComponent<Button>().interactable = true;
+                    UI.instance.panelMineResourceDetail.transform.GetChild(2).GetComponent<Button>().interactable = true;
+                    UI.instance.panelMineResourceDetail.transform.GetChild(3).GetComponent<Button>().interactable = true;
+                    UI.instance.panelMineResourceDetail.transform.GetChild(8).GetComponent<Button>().interactable = true;
                 }
                 CameraPosition("Town");
                 //currentScreen = new Dictionary<string, Vector2>(){ {"Town", cameraPositions["Town"]} };
