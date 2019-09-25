@@ -124,7 +124,147 @@ using UnityEngine;
     public void UpgradeCrafting(string upgradeCrafting, string upgradeCraftingKey, string upgradeCraftingValue)
     {
         // upgradeCrafting is the text of what's going on
-        Tutorial.instance.SummonUIOverlayTextBoxImageSmall("TEST", name + "\n\n" + upgradeCrafting, "Images/Items/null");
+        //Tutorial.instance.SummonUIOverlayTextBoxImageSmall("TEST", name + "\n\n" + upgradeCrafting, "Images/Items/null");
+    
+        SFX.instance.PlaySFXLevelUp();
+
+        switch(upgradeCraftingKey)
+        {
+            case "Unlock":
+                // Tested
+                Global.instance.GetInventory()[upgradeCraftingValue].SetIsAvailable(true);
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Unlock", Global.instance.GetInventory()[upgradeCraftingValue].name + " is now unlocked!", Global.instance.GetInventory()[upgradeCraftingValue].filepathImage);
+                break;
+            case "Time":
+                // Tested
+                timeCrafting = (ulong)Mathf.RoundToInt((float)timeCrafting * float.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCrafting + "\n\n" + name + " now takes " + Helper.TimeFormatter(timeCrafting) + " to craft!", "Images/UI/icon_time");
+                break;
+            case "Value":
+                // Tested
+                value = (ulong)Mathf.RoundToInt((float)value * float.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCrafting + "\n\n" + name + " now sells for " + value.ToString("N0") + " coins!", "Images/UI/coins");
+                break;
+            case "Quality":
+                // Tested
+                // Item quality is not implemented yet
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCrafting, "Images/UI/icon_craft");
+                break;
+            case "resource_1":
+                // Tested
+                costResource1 = (ulong)((int)costResource1 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "resource_2":
+                //
+                costResource2 = (ulong)((int)costResource2 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "resource_3":
+                //
+                costResource3 = (ulong)((int)costResource3 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "resource_4":
+                //
+                costResource4 = (ulong)((int)costResource4 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "resource_5":
+                //
+                costResource5 = (ulong)((int)costResource5 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "resource_6":
+                //
+                costResource6 = (ulong)((int)costResource6 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "resource_7":
+                //
+                costResource7 = (ulong)((int)costResource7 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "resource_8":
+                //
+                costResource8 = (ulong)((int)costResource8 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_1":
+                //
+                costComponent1 = (ulong)((int)costComponent1 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_2":
+                //
+                costComponent2 = (ulong)((int)costComponent2 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_4":
+                //
+                costComponent4 = (ulong)((int)costComponent4 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_5":
+                //
+                costComponent5 = (ulong)((int)costComponent5 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_6":
+                //
+                costComponent6 = (ulong)((int)costComponent6 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_7":
+                //
+                costComponent7 = (ulong)((int)costComponent7 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_8":
+                //
+                costComponent8 = (ulong)((int)costComponent8 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_9":
+                //
+                costComponent9 = (ulong)((int)costComponent9 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_10":
+                //
+                costComponent10 = (ulong)((int)costComponent10 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_11":
+                //
+                costComponent11 = (ulong)((int)costComponent11 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_12":
+                //
+                costComponent12 = (ulong)((int)costComponent12 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_13":
+                //
+                costComponent13 = (ulong)((int)costComponent13 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_14":
+                //
+                costComponent14 = (ulong)((int)costComponent14 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            case "component_15":
+                //
+                costComponent15 = (ulong)((int)costComponent15 + int.Parse(upgradeCraftingValue));
+                Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Upgrade", upgradeCraftingValue + " of " + Global.instance.GetResources()[upgradeCraftingKey].GetLabel() + " required for crafting!", Global.instance.GetResources()[upgradeCraftingKey].GetFilepathImage());
+                break;
+            default:
+                break;
+
+        }
+    
     }
 
     public int lifetimeSold;

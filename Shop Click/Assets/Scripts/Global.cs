@@ -8,9 +8,9 @@ public class Global : MonoBehaviour
     private bool MODE_TUTORIAL = true; public bool GetMODE_TUTORIAL(){ return(MODE_TUTORIAL); } public void SetMODE_TUTORIAL(bool MODE_TUTORIAL){ this.MODE_TUTORIAL = MODE_TUTORIAL; }
     private const bool MODE_DEBUG = false; public bool GetMODE_DEBUG(){ return(MODE_DEBUG); }
     // 1 is original values, 2 would be a 2x speedup (each resource takes 50% less time to get, item crafting duration is 50%).
-    private const float globalMultiplier = 10; public float GetGlobalMultiplier(){ return(globalMultiplier); }
+    private const float globalMultiplier = 100; public float GetGlobalMultiplier(){ return(globalMultiplier); }
 
-    private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190923";
+    private const string filepathInventoryJSON = "Data/shop_click_values_vanilla_munged_20190925";
     private const string filepathCharactersJSON = "Data/shop_click_characters";
     
     private const string filepathSecretJSON = "Data/AdMob"; private Secret secret; public Secret GetSecret(){ return(secret); }
@@ -71,7 +71,8 @@ public class Global : MonoBehaviour
             stats.Add("Chakra", new Resource("Chakra", "Images/UI/chakra", 1, 0,                    100, 46));
             stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems"  , 1, 0, System.UInt64.MaxValue,  0));
             //stats.Add("Gems",   new Resource("Gems",   "Images/UI/gems"  , 1, 0, System.UInt64.MaxValue,  999));
-            stats.Add("Stock",  new Resource("Stock",  "Images/UI/stock" , 1, 0,                     15,  0));
+            // stats.Add("Stock",  new Resource("Stock",  "Images/UI/stock" , 1, 0,                     15,  0));
+            stats.Add("Stock",  new Resource("Stock",  "Images/UI/stock" , 1, 0,                    999,  0));
         }
 
         stats["Level"].SetThresholdBool(true);
@@ -87,7 +88,8 @@ public class Global : MonoBehaviour
     public void InitResources()
     {
         resources = new Dictionary<string, Resource>();
-
+        ulong componentStartCap;
+        ulong componentStartAmount;
         // resources
         // 1 iron
         // 2 wood
@@ -109,25 +111,12 @@ public class Global : MonoBehaviour
             resources.Add("resource_6", new Resource("Titanium",    "Images/UI/titanium",    1,  1, 999, 900));
             resources.Add("resource_7", new Resource("Electricity", "Images/UI/electricity", 1,  1, 999, 900));
             resources.Add("resource_8", new Resource("Oil",         "Images/UI/oil",         1,  1, 999, 900));
-            resources.Add("component_1", new Resource("Fish Scale",     "Images/Component/component_2",   1, 0, 999, 999));
-            resources.Add("component_2", new Resource("Egg",            "Images/Component/component_10",  1, 0, 999, 999));
-            resources.Add("component_3", new Resource("Broken Bone",    "Images/Component/component_15",  1, 0, 999, 999));
-            resources.Add("component_4", new Resource("Snake Fang",     "Images/Component/component_16",  1, 0, 999, 999));
-            resources.Add("component_5", new Resource("Whole Bone",     "Images/Component/component_21",  1, 0, 999, 999));
-            resources.Add("component_6", new Resource("Petrified Rock", "Images/Component/component_26",  1, 0, 999, 999));
-            resources.Add("component_7", new Resource("Blue Tooth",     "Images/Component/component_29",  1, 0, 999, 999));
-            resources.Add("component_8", new Resource("Red Eye",        "Images/Component/component_31",  1, 0, 999, 999));
-            resources.Add("component_9", new Resource("Spiral Fruit",   "Images/Component/component_32",  1, 0, 999, 999));
-            resources.Add("component_10", new Resource("Aquamarine",    "Images/Component/component_40",  1, 0, 999, 999));
-            resources.Add("component_11", new Resource("Bat Wing",      "Images/Component/component_49",  1, 0, 999, 999));
-            resources.Add("component_12", new Resource("Diamond Stud",  "Images/Component/component_51",  1, 0, 999, 999));
-            resources.Add("component_13", new Resource("Tomacco Leaf",  "Images/Component/component_54",  1, 0, 999, 999));
-            resources.Add("component_14", new Resource("Giant Claw",    "Images/Component/component_55",  1, 0, 999, 999));
-            resources.Add("component_15", new Resource("Wyrm Skull",    "Images/Component/component_57",  1, 0, 999, 999));
-            resources.Add("component_16", new Resource("Starrock",      "Images/Component/component_100", 1, 0, 999, 999));
+            componentStartCap = 999;
+            componentStartAmount = 999;
         }
         else
         {
+            // Start only with iron (and queue)
             resources.Add("resource_0", new Resource("Queue",       "Images/UI/queue",       1, 10, 10,  5));
             resources.Add("resource_1", new Resource("Iron",        "Images/UI/iron",        1, 10, 35,  5));
             resources.Add("resource_2", new Resource("Wood",        "Images/UI/wood",        1, 10,  0,  0));
@@ -138,25 +127,28 @@ public class Global : MonoBehaviour
             resources.Add("resource_7", new Resource("Electricity", "Images/UI/electricity", 1, 45,  0,  0));
             resources.Add("resource_8", new Resource("Oil",         "Images/UI/oil",         1, 45,  0,  0));
             // Making components Resource instead of Item (since there won't be buy/sell components)
-            resources.Add("component_1", new Resource("Fish Scale",     "Images/Component/component_2",   1, 0, 10,  0));
-            resources.Add("component_2", new Resource("Egg",            "Images/Component/component_10",  1, 0, 10,  0));
-            resources.Add("component_3", new Resource("Broken Bone",    "Images/Component/component_15",  1, 0, 10,  0));
-            resources.Add("component_4", new Resource("Snake Fang",     "Images/Component/component_16",  1, 0, 10,  0));
-            resources.Add("component_5", new Resource("Whole Bone",     "Images/Component/component_21",  1, 0, 10,  0));
-            resources.Add("component_6", new Resource("Petrified Rock", "Images/Component/component_26",  1, 0, 10,  0));
-            resources.Add("component_7", new Resource("Blue Tooth",     "Images/Component/component_29",  1, 0, 10,  0));
-            resources.Add("component_8", new Resource("Red Eye",        "Images/Component/component_31",  1, 0, 10,  0));
-            resources.Add("component_9", new Resource("Spiral Fruit",   "Images/Component/component_32",  1, 0, 10,  0));
-            resources.Add("component_10", new Resource("Aquamarine",    "Images/Component/component_40",  1, 0, 10,  0));
-            resources.Add("component_11", new Resource("Bat Wing",      "Images/Component/component_49",  1, 0, 10,  0));
-            resources.Add("component_12", new Resource("Diamond Stud",  "Images/Component/component_51",  1, 0, 10,  0));
-            resources.Add("component_13", new Resource("Tomacco Leaf",  "Images/Component/component_54",  1, 0, 10,  0));
-            resources.Add("component_14", new Resource("Giant Claw",    "Images/Component/component_55",  1, 0, 10,  0));
-            resources.Add("component_15", new Resource("Wyrm Skull",    "Images/Component/component_57",  1, 0, 10,  0));
-            resources.Add("component_16", new Resource("Starrock",      "Images/Component/component_100", 1, 0, 10,  0));
+            // componentStartCap = 0;
+            // componentStartAmount = 0;
+            componentStartCap = 999;
+            componentStartAmount = 999;
         }
 
-
+        resources.Add("component_1", new Resource("Fish Scale",     "Images/Component/component_2",   1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_2", new Resource("Egg",            "Images/Component/component_10",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_3", new Resource("Broken Bone",    "Images/Component/component_15",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_4", new Resource("Snake Fang",     "Images/Component/component_16",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_5", new Resource("Whole Bone",     "Images/Component/component_21",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_6", new Resource("Petrified Rock", "Images/Component/component_26",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_7", new Resource("Blue Tooth",     "Images/Component/component_29",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_8", new Resource("Red Eye",        "Images/Component/component_31",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_9", new Resource("Spiral Fruit",   "Images/Component/component_32",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_10", new Resource("Aquamarine",    "Images/Component/component_40",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_11", new Resource("Bat Wing",      "Images/Component/component_49",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_12", new Resource("Diamond Stud",  "Images/Component/component_51",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_13", new Resource("Tomacco Leaf",  "Images/Component/component_54",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_14", new Resource("Giant Claw",    "Images/Component/component_55",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_15", new Resource("Wyrm Skull",    "Images/Component/component_57",  1, 0, componentStartCap, componentStartAmount));
+        resources.Add("component_16", new Resource("Starrock",      "Images/Component/component_100", 1, 0, componentStartCap, componentStartAmount));
 
         resources["resource_1"].SetThresholdBool(true);
         resources["resource_1"].SetThresholdKeys(new List<int>(){2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
@@ -347,6 +339,13 @@ public class Global : MonoBehaviour
         inventory["bow_1"].SetStock(1);
         inventory["larmor_1"].SetStock(1);
         inventory["helmet_1"].SetStock(1);
+
+        // Make every item craft time 10s to test upgrade time reduction
+        foreach(var kvp in inventory)
+        {
+            kvp.Value.timeCrafting = 1;
+        }
+
     }
 
     public Item RandomItem(bool isStocked)
