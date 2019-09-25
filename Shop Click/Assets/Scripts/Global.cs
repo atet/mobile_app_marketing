@@ -320,25 +320,44 @@ public class Global : MonoBehaviour
         {
             // Start off with only basic iron items
             //inventory["axe_1"].SetIsAvailable(true); inventory["axe_1"].SetStock(0);
-            inventory["dagger_1"].SetIsAvailable(true); inventory["dagger_1"].SetStock(0);
+            //inventory["dagger_1"].SetIsAvailable(true); inventory["dagger_1"].SetStock(0);
             //inventory["spear_1"].SetIsAvailable(true); inventory["spear_1"].SetStock(1);
             //inventory["bow_1"].SetIsAvailable(true); inventory["bow_1"].SetStock(1);
-            inventory["harmor_1"].SetIsAvailable(true); inventory["harmor_1"].SetStock(0);
+            //inventory["harmor_1"].SetIsAvailable(true); inventory["harmor_1"].SetStock(0);
             //inventory["larmor_1"].SetIsAvailable(true); inventory["larmor_1"].SetStock(1);
-            inventory["helmet_1"].SetIsAvailable(true); inventory["helmet_1"].SetStock(0);
+            //inventory["helmet_1"].SetIsAvailable(true); inventory["helmet_1"].SetStock(0);
             //inventory["headgear_1"].SetIsAvailable(true); inventory["headgear_1"].SetStock(0);
             //inventory["hat_1"].SetIsAvailable(true); inventory["hat_1"].SetStock(1);
-            inventory["gauntlets_1"].SetIsAvailable(true); inventory["gauntlets_1"].SetStock(0);
-            inventory["boots_1"].SetIsAvailable(true); inventory["boots_1"].SetStock(0);
+            //inventory["gauntlets_1"].SetIsAvailable(true); inventory["gauntlets_1"].SetStock(0);
+            //inventory["boots_1"].SetIsAvailable(true); inventory["boots_1"].SetStock(0);
             //inventory["shield_1"].SetIsAvailable(true); inventory["shield_1"].SetStock(0);
             //inventory["potion_1"].SetIsAvailable(true); inventory["potion_1"].SetStock(0);
+
+            // These must be unlocked to ensure all items can be made
+            inventory["sword_1"].SetIsAvailable(true);
+            inventory["mace_1"].SetIsAvailable(true);
+            inventory["staff_1"].SetIsAvailable(true);
+            inventory["wand_1"].SetIsAvailable(true);
+            inventory["crossbow_1"].SetIsAvailable(true);
+            inventory["gun_1"].SetIsAvailable(true);
+            inventory["medicine_1"].SetIsAvailable(true);
+            inventory["magic_1"].SetIsAvailable(true);
+            inventory["harmor_1"].SetIsAvailable(true);
+            inventory["clothing_1"].SetIsAvailable(true);
+            inventory["gloves_1"].SetIsAvailable(true);
+            inventory["shoes_1"].SetIsAvailable(true);
+            inventory["ring_1"].SetIsAvailable(true);
+            inventory["amulet_1"].SetIsAvailable(true);
+            inventory["runestone_1"].SetIsAvailable(true);
+            inventory["enchantment_1"].SetIsAvailable(true);
+            inventory["spirit_1"].SetIsAvailable(true);
         }
 
         // For the tutorial
-        inventory["spear_1"].SetStock(1);
-        inventory["bow_1"].SetStock(1);
-        inventory["larmor_1"].SetStock(1);
-        inventory["helmet_1"].SetStock(1);
+        inventory["sword_1"].SetStock(1);
+        inventory["staff_1"].SetStock(1);
+        inventory["shoes_1"].SetStock(1);
+        inventory["clothing_1"].SetStock(1);
 
         // Make every item craft time 10s to test upgrade time reduction
         foreach(var kvp in inventory)

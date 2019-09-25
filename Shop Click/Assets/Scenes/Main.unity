@@ -35440,7 +35440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &890723880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -72481,7 +72481,7 @@ MonoBehaviour:
   m_text: 'Limited Time Offer
 
 
-    Get 2x Gems!!!'
+    Get 10x Gems when you complete each video advertisement!!!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a1d8af48520a464b87c3d4c45e9956c, type: 2}
   m_sharedMaterial: {fileID: -4326999343849825469, guid: 9a1d8af48520a464b87c3d4c45e9956c,
@@ -72551,12 +72551,12 @@ MonoBehaviour:
   m_margin: {x: 2.590909, y: 16.887001, z: 2.590909, w: 2.1562853}
   m_textInfo:
     textComponent: {fileID: 1776473409}
-    characterCount: 34
+    characterCount: 78
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 6
+    spaceCount: 12
+    wordCount: 12
     linkCount: 0
-    lineCount: 3
+    lineCount: 5
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

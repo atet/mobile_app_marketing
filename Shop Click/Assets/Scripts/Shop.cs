@@ -389,12 +389,12 @@ public class Shop : MonoBehaviour
 
         panelBonusButton.SetActive(true);
 
-        Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Congrats!", "You're ready to take over my shop.\n\nSwipe down to go to town.\n\nGood luck!\n\n- Bigly", "Images/UI/hand_swipe_static_up");
+        Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Congrats!", "You're ready to take over my shop.\n\nSwipe up to go to town.\n\nGood luck!\n\n- Bigly", "Images/UI/hand_swipe_static_up");
     }
     public void TutorialFirstCustomer()
     {
         Debug.Log("First tutorial customer: Selling an item.");
-        currentItem = Global.instance.GetInventory()["bow_1"];
+        currentItem = Global.instance.GetInventory()["sword_1"];
 
         // Update Item Sprite.
         UpdateSpriteItem();
@@ -424,7 +424,7 @@ public class Shop : MonoBehaviour
     public void TutorialSecondCustomer()
     {
         Debug.Log("Second tutorial customer: Rebating an item to get energy.");
-        currentItem = Global.instance.GetInventory()["spear_1"];
+        currentItem = Global.instance.GetInventory()["staff_1"];
 
         // Update Item Sprite.
         UpdateSpriteItem();
@@ -455,7 +455,7 @@ public class Shop : MonoBehaviour
     public void TutorialThirdCustomer()
     {
         Debug.Log("Third tutorial customer: Spending energy to upcharge");
-        currentItem = Global.instance.GetInventory()["larmor_1"];
+        currentItem = Global.instance.GetInventory()["shoes_1"];
 
         // Update Item Sprite.
         UpdateSpriteItem();
@@ -518,7 +518,7 @@ public class Shop : MonoBehaviour
     public void TutorialFifthCustomer()
     {
         Debug.Log("Fifth tutorial customer: We don't have but we can make, go to Mine.");
-        currentItem = Global.instance.GetInventory()["dagger_1"];
+        currentItem = Global.instance.GetInventory()["sword_1"];
 
         // Update Item Sprite.
         UpdateSpriteItem();
@@ -546,7 +546,7 @@ public class Shop : MonoBehaviour
         Tutorial.instance.IncrementID_TUTORIAL_EVENT();
 
         // Instructions to swipe to go left
-        Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Crafting", "We are out of Dirks.\n\nSwipe right to go to the Mine to craft another one.\n\n- Bigly", "Images/UI/hand_swipe_static_right");
+        Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Crafting", "Squire Swords are out of stock.\n\nSwipe right to go to the Mine to craft another one.\n\n- Bigly", "Images/UI/hand_swipe_static_right");
     }
 
     public void TutorialSixthCustomer()

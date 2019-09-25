@@ -45,6 +45,24 @@ public class Town : MonoBehaviour
         panelTownWorkers[6].SetActive(false); // resource_6
         panelTownWorkers[7].SetActive(false); // resource_7
         
+        // Disable these last four workers right now, not implemented
+        for(int i = 8; i < 12; i++)
+        {
+            panelTownWorkers.Add(panelTownWorker.transform.GetChild(i).gameObject);
+            //panelTownWorkers[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(filepathImageCharacter[i]);
+            //panelTownWorkers[i].transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()[idResource[i]].GetFilepathImage());
+            //panelTownWorkers[i].transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = idLabel[i];
+        
+            // TODO: First eight are the workers that deal with resources (for now)
+            //tMProResourceLevels.Add( panelTownWorker.transform.GetChild(i).transform.GetChild(0).transform.GetChild(3).GetComponent<TextMeshProUGUI>() );
+            //tMProResourceRates.Add( panelTownWorker.transform.GetChild(i).transform.GetChild(0).transform.GetChild(4).GetComponent<TextMeshProUGUI>() );
+        }
+        panelTownWorkers[8].SetActive(false); // resource_4
+        panelTownWorkers[9].SetActive(false); // resource_5
+        panelTownWorkers[10].SetActive(false); // resource_6
+        panelTownWorkers[11].SetActive(false); // resource_7
+
+
     }
 
     public void UpdatePanelTownWorker()
