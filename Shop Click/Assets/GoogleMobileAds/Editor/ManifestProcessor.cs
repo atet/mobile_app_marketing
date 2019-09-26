@@ -50,24 +50,21 @@ public class ManifestProcessor : IPreprocessBuild
         catch (IOException e)
         #pragma warning restore 0168
         {
-            Debug.LogError(
-                    "[GoogleMobileAds] AndroidManifest.xml is missing. Try re-importing the plugin.");
+            //Debug.LogError("[GoogleMobileAds] AndroidManifest.xml is missing. Try re-importing the plugin.");
             return;
         }
 
         XElement elemManifest = manifest.Element("manifest");
         if (elemManifest == null)
         {
-            Debug.LogError(
-                    "[GoogleMobileAds] AndroidManifest.xml is not valid. Try re-importing the plugin.");
+            //Debug.LogError("[GoogleMobileAds] AndroidManifest.xml is not valid. Try re-importing the plugin.");
             return;
         }
 
         XElement elemApplication = elemManifest.Element("application");
         if (elemApplication == null)
         {
-            Debug.LogError(
-                    "[GoogleMobileAds] AndroidManifest.xml is not valid. Try re-importing the plugin.");
+            //Debug.LogError("[GoogleMobileAds] AndroidManifest.xml is not valid. Try re-importing the plugin.");
             return;
         }
 
@@ -101,8 +98,7 @@ public class ManifestProcessor : IPreprocessBuild
 
             if (appId.Length == 0)
             {
-                Debug.LogError(
-                        "Android AdMob app ID is empty. Please enter a valid app ID to run ads properly.");
+                //Debug.LogError("Android AdMob app ID is empty. Please enter a valid app ID to run ads properly.");
             }
 
             if (elemAdMobEnabled == null)

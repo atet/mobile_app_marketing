@@ -164,13 +164,13 @@ public class Shop : MonoBehaviour
             
             if(itemName == "Random")
             {
-                Debug.Log("Next random customer...");
+                //Debug.Log("Next random customer...");
                 // Pick random item from inventory that is in stock, if nothing in stock will be something that can be made
                 currentItem = Global.instance.RandomItem(true);
-            }
+            } 
             else
             {
-                Debug.Log("Next customer specifically wanting: " + itemName);
+                //Debug.Log("Next customer specifically wanting: " + itemName);
                 // Specific item to sell (e.g. Use for tutorial)
                 currentItem = Global.instance.GetInventory()[itemName];
             }
@@ -254,7 +254,7 @@ public class Shop : MonoBehaviour
             // Go to different item, same person
             // TODO: No window selection, just go to random new item in stock
             currentItem = Global.instance.RandomItem(true);
-            Debug.Log("Suggested item is: " + currentItem.name);
+            //Debug.Log("Suggested item is: " + currentItem.name);
             UpdateSpriteItem();
             //UpdateSpriteCharacter();
             SetSellGainCoins(currentItem.value);
@@ -277,7 +277,7 @@ public class Shop : MonoBehaviour
 
             // Get experience from sale.
             Global.instance.GetStats()["Level"].AddAmount(currentItem.xPMerchant);
-            Debug.Log("XP from sale: " + currentItem.xPMerchant + "(Lifetime " + currentItem.lifetimeCrafted + ")");
+            //Debug.Log("XP from sale: " + currentItem.xPMerchant + "(Lifetime " + currentItem.lifetimeCrafted + ")");
 
             // Remove stock.
             currentItem.SoldItem();
@@ -309,7 +309,7 @@ public class Shop : MonoBehaviour
         }
     }
     public void OnPressRefuse(){
-        Debug.Log("Pressed Refuse...");
+        //Debug.Log("Pressed Refuse...");
         // chakraRefuse will be a positive or negative number depending.
 
         if(chakraRefuse >= 0)
@@ -376,7 +376,7 @@ public class Shop : MonoBehaviour
     // TUTORIAL EVENTS
     // Before anything starts, point out the customer queue.
     public void TutorialDone(){
-        Debug.Log("Tutorial done.");
+        //Debug.Log("Tutorial done.");
         Global.instance.SetMODE_TUTORIAL(false);
         panelRefuse.SetActive(true);
         panelRebate.SetActive(true);
@@ -393,7 +393,7 @@ public class Shop : MonoBehaviour
     }
     public void TutorialFirstCustomer()
     {
-        Debug.Log("First tutorial customer: Selling an item.");
+        //Debug.Log("First tutorial customer: Selling an item.");
         currentItem = Global.instance.GetInventory()["sword_1"];
 
         // Update Item Sprite.
@@ -423,7 +423,7 @@ public class Shop : MonoBehaviour
     }
     public void TutorialSecondCustomer()
     {
-        Debug.Log("Second tutorial customer: Rebating an item to get energy.");
+        //Debug.Log("Second tutorial customer: Rebating an item to get energy.");
         currentItem = Global.instance.GetInventory()["staff_1"];
 
         // Update Item Sprite.
@@ -454,7 +454,7 @@ public class Shop : MonoBehaviour
 
     public void TutorialThirdCustomer()
     {
-        Debug.Log("Third tutorial customer: Spending energy to upcharge");
+        //Debug.Log("Third tutorial customer: Spending energy to upcharge");
         currentItem = Global.instance.GetInventory()["shoes_1"];
 
         // Update Item Sprite.
@@ -485,7 +485,7 @@ public class Shop : MonoBehaviour
 
     public void TutorialFourthCustomer()
     {
-        Debug.Log("Fourth tutorial customer: We don't know how to even make this item... yet. Refuse.");
+        //Debug.Log("Fourth tutorial customer: We don't know how to even make this item... yet. Refuse.");
         currentItem = Global.instance.GetInventory()["ring_7"];
 
         // Update Item Sprite.
@@ -517,7 +517,7 @@ public class Shop : MonoBehaviour
 
     public void TutorialFifthCustomer()
     {
-        Debug.Log("Fifth tutorial customer: We don't have but we can make, go to Mine.");
+        //Debug.Log("Fifth tutorial customer: We don't have but we can make, go to Mine.");
         currentItem = Global.instance.GetInventory()["sword_1"];
 
         // Update Item Sprite.
@@ -551,7 +551,7 @@ public class Shop : MonoBehaviour
 
     public void TutorialSixthCustomer()
     {
-        Debug.Log("Sixth tutorial customer: Suggest something else.");
+        //Debug.Log("Sixth tutorial customer: Suggest something else.");
         currentItem = Global.instance.GetInventory()["harmor_7"];
 
         // Update Item Sprite.

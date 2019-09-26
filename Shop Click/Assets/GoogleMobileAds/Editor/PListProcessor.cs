@@ -29,7 +29,7 @@ public static class PListProcessor
             string appId = GoogleMobileAdsSettings.Instance.AdMobIOSAppId;
             if (appId.Length == 0)
             {
-                Debug.LogError("iOS AdMob app ID is empty. Please enter a valid app ID to run ads properly.");
+                //Debug.LogError("iOS AdMob app ID is empty. Please enter a valid app ID to run ads properly.");
             }
             else
             {

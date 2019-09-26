@@ -88,7 +88,7 @@ public class AdManager : MonoBehaviour
     public void HandleRewardBasedVideoOpened(object sender, EventArgs args){ }
     public void HandleRewardBasedVideoStarted(object sender, EventArgs args){ }
     public void HandleRewardBasedVideoClosed(object sender, EventArgs args){ RequestAdRewardedVideo(); }
-    public void HandleRewardBasedVideoRewarded(object sender, Reward args){ adRewardedVideoRewarded += 10; Global.instance.GetStats()["Gems"].IncrementAmount(); string type = args.Type; double amount = args.Amount; }
+    public void HandleRewardBasedVideoRewarded(object sender, Reward args){ adRewardedVideoRewarded += 1; Global.instance.GetStats()["Gems"].AddAmount(10); string type = args.Type; double amount = args.Amount; }
     public void HandleRewardBasedVideoLeftApplication(object sender, EventArgs args){ } // Warning this happens multiple times per click-through
 
 }

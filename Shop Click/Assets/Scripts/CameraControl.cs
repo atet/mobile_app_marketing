@@ -32,8 +32,7 @@ public class CameraControl : MonoBehaviour
     private Vector3 unrestrictedOnClickAreaTopLeft, unrestrictedOnClickAreaBottomRight;
     public void SetUnrestrictedOnClickArea(Vector3 unrestrictedOnClickAreaTopLeft, Vector3 unrestrictedOnClickAreaBottomRight)
     {
-        Debug.Log("Unrestricted area set as: Top-Left x,y = " + unrestrictedOnClickAreaTopLeft.x.ToString() + "," + unrestrictedOnClickAreaTopLeft.y.ToString() +
-        " and Bottom-Right x,y = " + unrestrictedOnClickAreaBottomRight.x.ToString() + "," + unrestrictedOnClickAreaBottomRight.y.ToString());
+        //Debug.Log("Unrestricted area set as: Top-Left x,y = " + unrestrictedOnClickAreaTopLeft.x.ToString() + "," + unrestrictedOnClickAreaTopLeft.y.ToString() + " and Bottom-Right x,y = " + unrestrictedOnClickAreaBottomRight.x.ToString() + "," + unrestrictedOnClickAreaBottomRight.y.ToString());
         this.unrestrictedOnClickAreaTopLeft = unrestrictedOnClickAreaTopLeft;
         this.unrestrictedOnClickAreaBottomRight = unrestrictedOnClickAreaBottomRight;
     }
@@ -56,14 +55,14 @@ public class CameraControl : MonoBehaviour
             {
                 // DO SOMETHING
                 // TODO: Allow clicking
-                Debug.Log("Inside unrestricted area: x = " + absolutePosition.x + ", y = " + absolutePosition.y);
+                //Debug.Log("Inside unrestricted area: x = " + absolutePosition.x + ", y = " + absolutePosition.y);
                 Tutorial.instance.RemoveUIOverlayPointer();
             }
             else
             {
                 // DO SOMETHING
                 // TODO: Don't allow clicking
-                Debug.Log("Outside unrestricted area: x = " + absolutePosition.x + ", y = " + absolutePosition.y);
+                //Debug.Log("Outside unrestricted area: x = " + absolutePosition.x + ", y = " + absolutePosition.y);
 
                 // WARNING: Weird issues with above not executing on phone, stuck on last tutorial with no navigation, disabling for now by also calling this outside of unrestricted area.
                 Tutorial.instance.RemoveUIOverlayPointer();

@@ -20,7 +20,7 @@ public class UIControl : MonoBehaviour
         DisableUIOverlayButtons();
         panelCoinsDetail.SetActive(true);
 
-        panelCoinsDetail.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "| Coins |";
+        panelCoinsDetail.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "Coins";
         panelCoinsDetail.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = 
             "Current Coins:\n" + Global.instance.GetStats()["Coins"].ToStringAmount() + "\n\n" +
             "Lifetime Gain:\n" + Global.instance.GetStats()["Coins"].GetAmountLifetimeGain().ToString("N0") + "\n\n" +
@@ -31,7 +31,7 @@ public class UIControl : MonoBehaviour
         DisableUIOverlayButtons();
         panelLevelDetail.SetActive(true);
 
-        panelLevelDetail.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "| Level |";
+        panelLevelDetail.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "Level";
         panelLevelDetail.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = 
             "Current Level:\n" + Global.instance.GetStats()["Level"].GetLevel().ToString() + "\n\n" +
             "Current Experience:\n" + Global.instance.GetStats()["Level"].GetAmountLifetimeGain().ToString("N0") + "\n\n" +
@@ -42,7 +42,7 @@ public class UIControl : MonoBehaviour
         DisableUIOverlayButtons();
         panelChakraDetail.SetActive(true);
 
-        panelChakraDetail.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "| Chakra |";
+        panelChakraDetail.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "Chakra";
         panelChakraDetail.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = 
             "Current Chakra:\n" + Global.instance.GetStats()["Chakra"].ToStringAmount() + "\n\n" +
             "Lifetime Gain:\n" + Global.instance.GetStats()["Chakra"].GetAmountLifetimeGain().ToString("N0") + "\n\n" +
@@ -53,7 +53,7 @@ public class UIControl : MonoBehaviour
         DisableUIOverlayButtons();
         panelGemsDetail.SetActive(true);
 
-        panelGemsDetail.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "| Gems |";
+        panelGemsDetail.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = "Gems";
         panelGemsDetail.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = 
             "Current Gems:\n" + Global.instance.GetStats()["Gems"].ToStringAmount() + "\n\n" +
             "Lifetime Gain:\n" + Global.instance.GetStats()["Gems"].GetAmountLifetimeGain().ToString("N0") + "\n\n" +

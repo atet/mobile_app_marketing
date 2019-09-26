@@ -88,7 +88,7 @@ using UnityEngine;
     }
     public void CraftItem()
     {
-        Debug.Log(name + " has been crafted.");
+        //Debug.Log(name + " has been crafted.");
         stock += 1; lifetimeCrafted += 1;
         // Now increment Global stock
         Global.instance.GetStats()["Stock"].IncrementAmount();

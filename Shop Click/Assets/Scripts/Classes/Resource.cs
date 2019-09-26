@@ -220,7 +220,10 @@ public class Resource
     public ulong GetAmountLifetimeSpend(){ return(amountLifetimeSpend); }
 
 
-    public void DebugLog(){ Debug.Log("label: " + label + ", level: " + level.ToString() + ", rate: " + rate.ToString() + ", cap: " + cap.ToString() + ", amount: " + amount.ToString()); }
+    public void DebugLog()
+    { 
+        //Debug.Log("label: " + label + ", level: " + level.ToString() + ", rate: " + rate.ToString() + ", cap: " + cap.ToString() + ", amount: " + amount.ToString()); 
+    }
 
     public string ToStringAmount(){ return(amount.ToString("N0")); }
 

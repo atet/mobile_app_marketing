@@ -61,7 +61,7 @@ public class Mine : MonoBehaviour
             CraftingItemSlotOpen()
           )
         {
-            Debug.Log("CraftingItem(" + itemID + ")");
+            //Debug.Log("CraftingItem(" + itemID + ")");
 
             // Subtract resources.
             Global.instance.GetInventory()[itemID].AcquireResources();
@@ -90,7 +90,7 @@ public class Mine : MonoBehaviour
                 else
                 {
                     SFX.instance.PlaySFXNoGo();
-                    Debug.Log("Stock at capacity!");
+                    //Debug.Log("Stock at capacity!");
                 }
             });
 
@@ -109,7 +109,7 @@ public class Mine : MonoBehaviour
             CraftingItemUpdateTime(currentIndex);
 
             // Add item to Recent (ly crafted items list)
-            Debug.Log("Adding item to Recent");
+            //Debug.Log("Adding item to Recent");
             PopulateCraftRecentWindow(itemID);
 
             // Panel Craft Window is not directly related to Panel Craft Recent and Favorites.
@@ -132,7 +132,7 @@ public class Mine : MonoBehaviour
         }
         else
         {
-            Debug.Log("No crafting slots open!");
+            //Debug.Log("No crafting slots open!");
             return(false);
         }
     }
@@ -402,7 +402,7 @@ public class Mine : MonoBehaviour
             {
                 if(itemsRecent[i].id == itemIDRecent)
                 {
-                    Debug.Log("Already have a " + itemIDRecent + " in Recent list.");
+                    //Debug.Log("Already have a " + itemIDRecent + " in Recent list.");
                     itemsRecent.RemoveAt(i);
                     break;
                 }
@@ -415,7 +415,7 @@ public class Mine : MonoBehaviour
         // Remove oldest item if list gets over panelsCraft.Count, currently max of 7 slots
         if(itemsRecent.Count > panelsCraft.Count)
         {
-            Debug.Log("Removing the oldest item.");
+            //Debug.Log("Removing the oldest item.");
             itemsRecent.RemoveAt(0);
         }
     }
@@ -477,7 +477,7 @@ public class Mine : MonoBehaviour
         // Remove oldest item if list gets over panelsCraft.Count, currently max of 7 slots
         if(itemsFavorites.Count > panelsCraft.Count)
         {
-            Debug.Log("Removing the oldest item.");
+            //Debug.Log("Removing the oldest item.");
             itemsFavorites[0].SetIsFavorite(false);
             itemsFavorites.RemoveAt(0);
         }

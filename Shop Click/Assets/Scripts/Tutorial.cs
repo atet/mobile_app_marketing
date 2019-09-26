@@ -66,7 +66,7 @@ public class Tutorial : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Calling SummonUIOverlayPointer(" + coordOverlayPointer.x + ", " + coordOverlayPointer.y + ", "+ coordOverlayPointer.z + ")");
+        //Debug.Log("Calling SummonUIOverlayPointer(" + coordOverlayPointer.x + ", " + coordOverlayPointer.y + ", "+ coordOverlayPointer.z + ")");
         uIOverlayPointer.SetActive(true);
 
         // Disable clicking anywhere outside of immediate area of pointer
@@ -92,7 +92,7 @@ public class Tutorial : MonoBehaviour
             CameraControl.instance.DisableRestrictOnClick();
 
             uIOverlayPointer.SetActive(false);
-            Debug.Log("Calling RemoveUIOverlayPointer()");
+            //Debug.Log("Calling RemoveUIOverlayPointer()");
             activeUIOverlayPointer = false;
         }
     }

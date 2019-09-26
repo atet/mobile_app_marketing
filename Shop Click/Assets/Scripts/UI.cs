@@ -117,6 +117,8 @@ public class UI : MonoBehaviour
         panelMineResourceDetail.transform.GetChild(7).GetComponent<Button>().onClick.AddListener( delegate{ Town.instance.FocusTownDetailWindow("resource_8"); } );
 
         // Components
+        panelMineResourceDetail.transform.GetChild(8).GetComponent<Button>().onClick.AddListener( delegate{ Tutorial.instance.SummonUIOverlayTextBoxImageSmall("Components", "Components are special resources that currently generate very slowly and cannot be upgraded.\n\nSwipe left twice to check out the Colosseum to get more components.", "Images/UI/hand_swipe_static_left"); } );
+
         panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_1"].GetFilepathImage());
         panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_2"].GetFilepathImage());
         panelMineResourceDetail.transform.GetChild(8).transform.GetChild(0).transform.GetChild(2).transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(Global.instance.GetResources()["component_3"].GetFilepathImage());
