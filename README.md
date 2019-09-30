@@ -2,7 +2,8 @@
 
 ### Mobile Applications Marketing: Data Analytics on Shop Click
 
-* **My goal is to apply my data science skill set on the mobile applications marketing field**.
+* **Update: Game released as "Bigly's Shop Click" on Google Play Store** (Early Access Open Beta, https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick)
+* Goal: Apply my data science skill set on the mobile applications marketing field.
 * There are four major parts to this project:
    * 1.) Development of a mobile game
    * 2.) Integration of tools to measure KPIs
@@ -30,18 +31,6 @@
 * [Customer Service](#customer-service)
 * [Mobile App Marketing Primer](#mobile-app-marketing-primer)
 * [Marketing Dashboard](#marketing-dashboard)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
 * [Acknowledgements](#acknowledgements)
 
 --------------------------------------------------------------------------------------------------
@@ -94,6 +83,7 @@
 
 ### Marketing Analytics Hooks
 
+* Stay tuned, data from Google Play Console Statistics dashboard and Google AdMob Console may suffice instead of hard-coded hooks to report KPIs.
 * There are a few KPI's that I am keeping track of:
    * Android device ID, this is unique to each device
    * Session length/count
@@ -112,7 +102,7 @@
 #### Beta Testing
 
 * Builds in which a user could make it to endgame (level 80) will be tested by a small group of experienced mobile gaming players.
-* Beta testing was through Google Play Store testing framework.
+* An open beta test is currently being run on Google Play Store Early Access.
 
 [Back to Top](#table-of-contents)
 
@@ -120,12 +110,20 @@
 
 ### Media Kit
 
-* Google Play Store link: 
-* Website: https://shopclick.athitkao.com
+* Google Play Store link: https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick
+* Website: http://labs.athitkao.com
 * Graphics:
    * Icon
-   * Banner advertisement
+   
+      ![.img\icon_apk_64x64.png](.img\icon_apk_64x64.png)
+   
+   * Feature Graphic
+
+      ![.img\feature_256x125.jpg](.img\feature_256x125.jpg)
+
    * Screenshots
+
+      ![.img\screenshots_435x256.png](.img\screenshots_435x256.png)
 
 [Back to Top](#table-of-contents)
 
@@ -135,7 +133,7 @@
 
 ***<center>I am not a lawyer and am not providing any legal advice here.</center>***
 
-* In order to collect _any_ user data from an app on the Google Play Store, **you must provide a user agreement**.
+* In order to collect _any_ user data from an app on the Google Play Store, **you must provide a link to a user agreement that exists online**.
 * It is your responsibility to protect any user information you collect for marketing analytics, etc.
 
 [Back to Top](#table-of-contents)
@@ -143,6 +141,13 @@
 --------------------------------------------------------------------------------------------------
 
 ### Launch on Google Play Store
+
+* Even if you watch a current walkthrough video on Youtube, etc. many details can change between Unity and Google Play overnight.
+* These are the big differences that I experienced:
+   * You must build your *.apk OR *.aab as ARM64-only, select Scripting Backend as IL2CPP and the Target Architecture as only ARM64
+   * You must increment the Bundle Version Code **everytime** you upload a build to Google Play for processing, even if there was an error with the build
+   * You build cannot be in development mode or have any Debug.Log commands (that are uncommented)
+   * Your first submission may take a few days to clear Google Play's checks
 
 [Back to Top](#table-of-contents)
 
@@ -182,6 +187,7 @@
 
 Term | Description
 --- | ---
+KPI | Key Performance Indicator
 
 #### Experimental Design
 
@@ -195,77 +201,13 @@ Term | Description
 
 ### Marketing Dashboard
 
+#### Under Construction
+
 * https://scdash.athitkao.com
 * Framework: Shiny (R Statistical Language)
 * Webserver: Linux
 
 This is the _coup de grace_ of my project. All the KPIs from my Shop Click app will be summarized here.
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
-
-[Back to Top](#table-of-contents)
-
---------------------------------------------------------------------------------------------------
-
-### 
 
 [Back to Top](#table-of-contents)
 
