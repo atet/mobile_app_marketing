@@ -5,10 +5,10 @@
 * **Update: Game released as "Bigly's Shop Click" on Google Play Store** (Early Access Open Beta, https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick)
 * Goal: Apply my data science skill set on the mobile applications marketing field.
 * There are four major parts to this project:
-   * 1.) Development of a mobile game
-   * 2.) Integration of tools to measure KPIs
-   * 3.) Launch and user acquisition
-   * 4.) Marketing dashboard
+   * 1.) (DONE) Development of a mobile game
+   * 2.) (DONE) Launch
+   * 3.) (TODO) User acquisition
+   * 4.) (TODO) Marketing dashboard
 
 --------------------------------------------------------------------------------------------------
 
@@ -59,7 +59,7 @@
 
 ### Android Developer Fee
 
-* There is a one-time fee you need to pay to publish apps on the Google Play Store.
+* There is a one-time $25 USD fee you need to pay to publish apps on the Google Play Store.
 * Sign up/log in here: https://developer.android.com
 
 [Back to Top](#table-of-contents)
@@ -71,11 +71,11 @@
 #### Monetization: Advertisements
 
 * **My conversion goal is that a user get all the way to watching at least one advertisement**.
-* I am using Google AdMob to deliver video-based advertisements in exchange for in-game rewards.
+* I am using Google AdMob to deliver rewarded video-based advertisements in exchange for in-game premium currency.
 
 #### Monetization: In-App Purchases
 
-* I will set up this framework in my app, but it is more of an academic exercise than a monetization goal.
+* I plan to set up this framework in my app, but it is more of an academic exercise than a monetization goal.
 
 [Back to Top](#table-of-contents)
 
@@ -83,7 +83,7 @@
 
 ### Marketing Analytics Hooks
 
-* Stay tuned, data from Google Play Console Statistics dashboard and Google AdMob Console may suffice instead of hard-coded hooks to report KPIs.
+* **Stay tuned**: Data from Google Play Console Statistics dashboard and Google AdMob Console may suffice instead of hard-coded hooks to report KPIs.
 * There are a few KPI's that I am keeping track of:
    * Android device ID, this is unique to each device
    * Session length/count
@@ -115,15 +115,15 @@
 * Graphics:
    * Icon
    
-      ![.img\icon_apk_64x64.png](.img\icon_apk_64x64.png)
+      [![.img\icon_apk_64x64.png](.img\icon_apk_64x64.png)](#nolink)
    
    * Feature Graphic
 
-      ![.img\feature_256x125.jpg](.img\feature_256x125.jpg)
+      [![.img\feature_256x125.jpg](.img\feature_256x125.jpg)](#nolink)
 
    * Screenshots
 
-      ![.img\screenshots_435x256.png](.img\screenshots_435x256.png)
+      [![.img\screenshots_435x256.png](.img\screenshots_435x256.png)](#nolink)
 
 [Back to Top](#table-of-contents)
 
@@ -133,7 +133,7 @@
 
 ***<center>I am not a lawyer and am not providing any legal advice here.</center>***
 
-* In order to collect _any_ user data from an app on the Google Play Store, **you must provide a link to a user agreement that exists online**.
+* In order to collect _any_ user data from an app on the Google Play Store, **you must provide a link to your user agreement that exists online**.
 * It is your responsibility to protect any user information you collect for marketing analytics, etc.
 
 [Back to Top](#table-of-contents)
@@ -188,6 +188,11 @@
 Term | Description
 --- | ---
 KPI | Key Performance Indicator
+DAU | Daily Active Users
+ARPU | Average Revenue Per User
+Session | Event where a user is actively using the application
+Session Length | The amount of time a user spends during a session
+Session Inverval | The amount of time between active sessions
 
 #### Experimental Design
 
