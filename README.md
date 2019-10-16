@@ -115,15 +115,15 @@
 * Graphics:
 #### Icon
    
-[![.img\icon_apk_64x64.png](.img\icon_apk_64x64.png)](#nolink)
+[![https://github.com/atet/mobile_app_marketing/blob/master/.img/icon_apk_64x64.png?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/icon_apk_64x64.png?raw=true)](#nolink)
    
 #### Feature Graphic
 
-[![.img\feature_256x125.jpg](.img\feature_256x125.jpg)](#nolink)
+[![https://github.com/atet/mobile_app_marketing/blob/master/.img/feature_256x125.jpg?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/feature_256x125.jpg?raw=true)](#nolink)
 
 #### Screenshots
 
-[![.img\screenshots_435x256.png](.img\screenshots_435x256.png)](#nolink)
+[![https://github.com/atet/mobile_app_marketing/blob/master/.img/screenshots_435x256.png?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/screenshots_435x256.png?raw=true)](#nolink)
 
 [Back to Top](#table-of-contents)
 
