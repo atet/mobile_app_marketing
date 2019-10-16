@@ -7,7 +7,7 @@
 * There are four major parts to this project:
    * 1.) (**DONE**) Development of a mobile game
    * 2.) (**DONE**) Launch
-   * 3.) (TODO) Inorganic user acquisition
+   * 3.) (**IN PROGRESS**) Inorganic user acquisition
    * 4.) (TODO) Marketing report
 
 --------------------------------------------------------------------------------------------------
@@ -21,11 +21,12 @@
    * [Advertisements](#monetization-advertisements)
    * [In-App Purchases](#monetization-in-app-purchases)
 * [Marketing Analytics Hooks](#marketing-analytics-hooks)
-* [Pre-Launch Testing](#pre-launch-testing)
+* [Testing](#testing)
 * [Media Kit](#media-kit)
 * [Required Legal Stuff for Google Play Store](#required-legal-stuff-for-google-play-store)
 * [Launch on Google Play Store](#launch-on-google-play-store)
 * [Obtaining Users](#obtaining-users)
+   * [Word-of-Mouth](#word-of-mouth)
    * [Organic Growth](#organic-growth)
    * [Inorganic Growth](#inorganic-growth)
 * [Customer Service](#customer-service)
@@ -94,15 +95,18 @@
 
 --------------------------------------------------------------------------------------------------
 
-### Pre-Launch Testing
+### Testing
 
-#### Alpha Testing
+#### (**DONE**) Alpha Testing
 
 * Specific implementations were privately tested on several Android devices.
 
-#### Beta Testing
+#### (**DONE**) Closed Beta Testing
 
 * Builds in which a user could make it to endgame (level 80) will be tested by a small group of experienced mobile gaming players.
+
+#### (**IN PROGRESS**) Open Beta Testing
+
 * An open beta test is currently being run on Google Play Store Early Access.
 
 [Back to Top](#table-of-contents)
