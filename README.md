@@ -113,17 +113,17 @@
 * Google Play Store link: https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick
 * Website: http://labs.athitkao.com
 * Graphics:
-   * Icon
+#### Icon
    
-      [![.img\icon_apk_64x64.png](.img\icon_apk_64x64.png)](#nolink)
+[![.img\icon_apk_64x64.png](.img\icon_apk_64x64.png)](#nolink)
    
-   * Feature Graphic
+#### Feature Graphic
 
-      [![.img\feature_256x125.jpg](.img\feature_256x125.jpg)](#nolink)
+[![.img\feature_256x125.jpg](.img\feature_256x125.jpg)](#nolink)
 
-   * Screenshots
+#### Screenshots
 
-      [![.img\screenshots_435x256.png](.img\screenshots_435x256.png)](#nolink)
+[![.img\screenshots_435x256.png](.img\screenshots_435x256.png)](#nolink)
 
 [Back to Top](#table-of-contents)
 
