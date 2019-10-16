@@ -2,13 +2,13 @@
 
 ### Mobile Applications Marketing: Data Analytics on Shop Click
 
-* **Update: Game released as "Bigly's Shop Click" on Google Play Store** (Early Access Open Beta, https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick)
+* **UPDATE: Game released as "Bigly's Shop Click" on Google Play Store** (Early Access Open Beta, https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick)
 * Goal: Apply my data science skill set on the mobile applications marketing field.
 * There are four major parts to this project:
-   * 1.) (DONE) Development of a mobile game
-   * 2.) (DONE) Launch
-   * 3.) (TODO) User acquisition
-   * 4.) (TODO) Marketing dashboard
+   * 1.) (**DONE**) Development of a mobile game
+   * 2.) (**DONE**) Launch
+   * 3.) (TODO) Inorganic user acquisition
+   * 4.) (TODO) Marketing report
 
 --------------------------------------------------------------------------------------------------
 
@@ -50,6 +50,7 @@
 ### Game Development
 
 * Engine: Unity 2019.2.0f1 (C#).
+   * NOTE: I recently upgraded to 2019.2.8f1 and some menu items were slightly different,
 * Assets: CC0 (https://wiki.creativecommons.org/wiki/CC0) licensed assets from Open Game Art (https://opengameart.org/)
 * Platform: Android
 
@@ -126,6 +127,8 @@
 
    [![https://github.com/atet/mobile_app_marketing/blob/master/.img/screenshots_435x256.png?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/screenshots_435x256.png?raw=true)](#nolink)
 
+* NOTE: Graphics, descriptions of your application, email contact for customer service, etc. are required by Google Play to submit your application for their store.
+
 [Back to Top](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------
@@ -146,7 +149,7 @@
 * Even if you watch a current walkthrough video on Youtube, etc. many details can change between Unity and Google Play overnight.
 * These are the big differences that I experienced:
    * You must build your *.apk OR *.aab as ARM64-only, select Scripting Backend as IL2CPP and the Target Architecture as only ARM64
-   * You must increment the Bundle Version Code **everytime** you upload a build to Google Play for processing, even if there was an error with the build
+   * You must increment the Bundle Version Code **everytime** you upload a build to Google Play for processing, even if Google detected an error with your build during the uploading process
    * You build cannot be in development mode or have any Debug.Log commands (that are uncommented)
    * Your first submission may take a few days to clear Google Play's checks
 
@@ -158,9 +161,17 @@
 
 #### Word-of-Mouth
 
+* My mobile application is currently in beta phase (though, it is fully playable), so currently it's asking friends and family to test it.
+
 #### Organic Growth
 
 #### Inorganic Growth
+
+* Incorporated in Google Play Console is the ability to run Google Ads campaigns (promoted postings in Google Play Store, etc.).
+* There are other avenues to obtain inorganic growth outside of Google:
+   * Social media campaigns (Facebook, Instagram, etc.)
+   * Printed flyers
+   * Door-to-door sales
 
 [Back to Top](#table-of-contents)
 
@@ -207,13 +218,22 @@ Session Inverval | The amount of time between active sessions
 
 ### Marketing Dashboard
 
-#### Under Construction
+#### UPDATE
+
+* Google Play Console includes all tools needed for what I would've wanted to make as a dashboard. No need for me to reinvent the wheel.
+* I am changing goal #4 to be a marketing report data product instead of a stand-alone dashboard.
+
+#### DEPRECATED
+
+<strike>
 
 * https://scdash.athitkao.com
 * Framework: Shiny (R Statistical Language)
 * Webserver: Linux
 
 This is the _coup de grace_ of my project. All the KPIs from my Shop Click app will be summarized here.
+
+</strike>
 
 [Back to Top](#table-of-contents)
 
