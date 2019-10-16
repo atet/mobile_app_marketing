@@ -113,17 +113,18 @@
 * Google Play Store link: https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick
 * Website: http://labs.athitkao.com
 * Graphics:
-#### Icon
+
+   #### Icon
    
-[![https://github.com/atet/mobile_app_marketing/blob/master/.img/icon_apk_64x64.png?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/icon_apk_64x64.png?raw=true)](#nolink)
+   [![https://github.com/atet/mobile_app_marketing/blob/master/.img/icon_apk_64x64.png?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/icon_apk_64x64.png?raw=true)](#nolink)
    
-#### Feature Graphic
+   #### Feature Graphic
 
-[![https://github.com/atet/mobile_app_marketing/blob/master/.img/feature_256x125.jpg?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/feature_256x125.jpg?raw=true)](#nolink)
+   [![https://github.com/atet/mobile_app_marketing/blob/master/.img/feature_256x125.jpg?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/feature_256x125.jpg?raw=true)](#nolink)
 
-#### Screenshots
+   #### Screenshots
 
-[![https://github.com/atet/mobile_app_marketing/blob/master/.img/screenshots_435x256.png?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/screenshots_435x256.png?raw=true)](#nolink)
+   [![https://github.com/atet/mobile_app_marketing/blob/master/.img/screenshots_435x256.png?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/screenshots_435x256.png?raw=true)](#nolink)
 
 [Back to Top](#table-of-contents)
 
