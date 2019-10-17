@@ -2,7 +2,7 @@
 
 ### Mobile Applications Marketing: Data Analytics on Shop Click
 
-* **UPDATE: Game released as "Bigly's Shop Click" on Google Play Store** (Early Access Open Beta, https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick)
+* **UPDATE: Game released as "Bigly's Shop Click" on Google Play Store** (Early Access Open Beta, [https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick](https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick))
 * Goal: Apply my data science skill set on the mobile applications marketing field.
 * There are four major parts to this project:
    * 1.) (**DONE**) Development of a mobile game
@@ -127,6 +127,8 @@
 
    [![https://github.com/atet/mobile_app_marketing/blob/master/.img/feature_256x125.jpg?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/feature_256x125.jpg?raw=true)](#nolink)
 
+   * Thanks for the concept art [Mondul Kao](https://www.mondulkao.com)!
+
    #### Screenshots
 
    [![https://github.com/atet/mobile_app_marketing/blob/master/.img/screenshots_435x256.png?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/screenshots_435x256.png?raw=true)](#nolink)
@@ -175,7 +177,7 @@
 * There are other avenues to obtain inorganic growth outside of Google:
    * Social media campaigns (Facebook, Instagram, etc.)
    * Printed flyers
-   * Door-to-door sales
+   * Door-to-door advertising
 
 [Back to Top](#table-of-contents)
 
@@ -245,8 +247,8 @@ This is the _coup de grace_ of my project. All the KPIs from my Shop Click app w
 
 ### Acknowledgements
 
-* **Mondul Kao**: I wouldn't have started on this journey without him.
-* **The Gaming Industry**: Everyone from Big Huge Games and GDC that were encouraging and welcoming.
+* [**Mondul Kao**](https://www.mondulkao.com): I wouldn't have started on this journey into the gaming industry without him.
+* **The Gaming Industry**: Everyone from Big Huge Games and GDC that was encouraging and welcoming.
 * **GameDev.tv**: Thanks Ben, Rick, and Yann for making high-quality educational content on Udemy.
 * **Countless Others**: From open game assets to helping with bugs, many thanks to the online community.
 
