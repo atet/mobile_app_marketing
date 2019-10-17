@@ -1,8 +1,11 @@
 # [atet](https://github.com/atet) / [mobile_app_marketing](https://github.com/atet/mobile_app_marketing)
 
-### Mobile Applications Marketing: Data Analytics on Shop Click
+[![https://github.com/atet/mobile_app_marketing/blob/master/.img/feature_256x125.jpg?raw=true](https://github.com/atet/mobile_app_marketing/blob/master/.img/feature_256x125.jpg?raw=true)](#nolink)
 
-* **UPDATE: Game released as "Bigly's Shop Click" on Google Play Store** (Early Access Open Beta, [https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick](https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick))
+### **Mobile Applications Marketing: Data Analytics on Bigly's Shop Click**
+
+* **UPDATE: Released on Google Play Store**
+   * Early Access Open Beta: [https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick](https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick)
 * Goal: Apply my data science skill set on the mobile applications marketing field.
 * There are four major parts to this project:
    * 1.) (**DONE**) Development of a mobile game
@@ -249,7 +252,7 @@ This is the _coup de grace_ of my project. All the KPIs from my Shop Click app w
 
 * [**Mondul Kao**](https://www.mondulkao.com): I wouldn't have started on this journey into the gaming industry without him.
 * **The Gaming Industry**: Everyone from Big Huge Games and GDC that was encouraging and welcoming.
-* **GameDev.tv**: Thanks Ben, Rick, and Yann for making high-quality educational content on Udemy.
+* [**GameDev.tv**](https://www.gamedev.tv): Thanks Ben, Rick, and Yann for making high-quality educational content on Udemy.
 * **Countless Others**: From open game assets to helping with bugs, many thanks to the online community.
 
 [Back to Top](#table-of-contents)
