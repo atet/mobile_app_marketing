@@ -8,7 +8,7 @@
    * Early Access Open Beta: [https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick](https://play.google.com/store/apps/details?id=com.atetkaolabs.shopclick)
 * Goal: Apply my data science skill set on the mobile applications marketing field.
 * There are four major parts to this project:
-   * 1.) (**DONE**) Development of a mobile game
+   * 1.) (**DONE**) Development of a mobile game (tracked on [GitHub](https://github.com/atet/mobile_app_marketing/tree/master/Shop%20Click))
    * 2.) (**DONE**) Launch
    * 3.) (**IN PROGRESS**) Inorganic user acquisition
    * 4.) (TODO) Marketing report
@@ -54,8 +54,9 @@
 ### Game Development
 
 * Engine: Unity 2019.2.0f1 (C#).
-   * NOTE: I recently upgraded to 2019.2.8f1 and some menu items were slightly different,
-* Assets: CC0 (https://wiki.creativecommons.org/wiki/CC0) licensed assets from Open Game Art (https://opengameart.org/)
+   * NOTE: I recently upgraded to 2019.2.8f1 and some menu items were slightly different.
+* Version Control: GitHub @ [https://github.com/atet/mobile_app_marketing/tree/master/Shop%20Click](https://github.com/atet/mobile_app_marketing/tree/master/Shop%20Click)
+* Assets: [CC0](https://wiki.creativecommons.org/wiki/CC0) licensed assets from Open Game Art (https://opengameart.org/)
 * Platform: Android
 
 [Back to Top](#table-of-contents)
